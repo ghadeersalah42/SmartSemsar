@@ -9,6 +9,7 @@ numpy
 ollama
 pydantic
 gradio
+langgraph
 # 2D plan -> 3D model pipeline
 shapely
 trimesh
