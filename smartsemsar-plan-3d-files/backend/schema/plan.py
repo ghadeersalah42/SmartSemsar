@@ -39,6 +39,12 @@ RoomType = Literal[
 # Room types that do not count toward indoor area / المساحات الخارجية
 OUTDOOR_TYPES = {"outdoor", "garage"}
 
+FixtureType = Literal[
+    "toilet", "sink", "shower", "bathtub", "base_cabinet", "wall_cabinet",
+    "appliance", "closet", "fireplace", "chimney", "sauna_bench",
+    "stairs", "column", "other",
+]
+
 Point = tuple[float, float]
 
 
@@ -80,6 +86,22 @@ class Window(BaseModel):
     height_m: float = 1.2
 
 
+class Fixture(BaseModel):
+    """Built-in element already drawn on the plan (الحاجات الثابتة: حمام، مطبخ، سلم، عمود)."""
+    id: str
+    type: FixtureType
+    raw_type: Optional[str] = None          # e.g. CubiCasa class "FixedFurniture Toilet"
+    room_id: Optional[str] = None           # None = not inside any room (e.g. column in a wall)
+    polygon: list[Point]                    # footprint, meters
+    height_m: float = 1.0
+    elevation_m: float = 0.0                # bottom above the floor (wall cabinets)
+
+    @property
+    def on_floor(self) -> bool:
+        """False for wall-hung fixtures: furniture may stand under them."""
+        return self.elevation_m == 0.0
+
+
 class Floor(BaseModel):
     level: int                              # 0 = ground, 1 = first, -1 = basement
     name: str = ""
@@ -87,6 +109,7 @@ class Floor(BaseModel):
     walls: list[Wall] = Field(default_factory=list)
     doors: list[Door] = Field(default_factory=list)
     windows: list[Window] = Field(default_factory=list)
+    fixtures: list[Fixture] = Field(default_factory=list)
 
     @property
     def indoor_area_sqm(self) -> float:
@@ -126,6 +149,10 @@ class Plan(BaseModel):
 
     def count(self, room_type: str) -> int:
         return len(self.rooms(room_type))
+
+    def fixtures(self, room_id: Optional[str] = None) -> list[Fixture]:
+        return [x for f in self.floors for x in f.fixtures
+                if room_id is None or x.room_id == room_id]
 
     def recompute_total_area(self) -> float:
         self.total_area_sqm = round(sum(f.indoor_area_sqm for f in self.floors), 2)

@@ -237,3 +237,6 @@ __pycache__/
 *.pyc
 .env
 >>>>>>> main
+
+# inference.py results (per-run outputs, user furniture)
+smartsemsar-plan-3d-files/out/

@@ -1,0 +1,25 @@
+{
+ "schema_version": 1,
+ "items": [
+  {"id": "bed_double", "kind": "bed", "category": "bed", "name": "Double bed", "width_m": 1.6, "depth_m": 2.0, "height_m": 0.5, "room_types": ["bedroom"], "against_wall": true, "clearance_front_m": 0.6, "color": [196, 178, 160], "mesh": "data/catalog/models/bed_double.glb"},
+  {"id": "bed_single", "kind": "bed", "category": "bed", "name": "Single bed", "width_m": 0.9, "depth_m": 2.0, "height_m": 0.5, "room_types": ["bedroom"], "against_wall": true, "clearance_front_m": 0.6, "color": [196, 178, 160], "mesh": "data/catalog/models/bed_single.glb"},
+  {"id": "nightstand", "kind": "nightstand", "category": "storage", "name": "Nightstand", "width_m": 0.55, "depth_m": 0.45, "height_m": 0.55, "room_types": ["bedroom"], "against_wall": true, "clearance_front_m": 0.0, "color": [150, 120, 95], "mesh": "data/catalog/models/nightstand.glb"},
+  {"id": "wardrobe", "kind": "wardrobe", "category": "storage", "name": "Storage unit", "width_m": 1.14, "depth_m": 0.49, "height_m": 1.88, "room_types": ["bedroom"], "against_wall": true, "clearance_front_m": 0.7, "color": [150, 120, 95], "mesh": "data/catalog/models/wardrobe.glb"},
+  {"id": "dresser", "kind": "dresser", "category": "storage", "name": "Dresser", "width_m": 1.33, "depth_m": 0.58, "height_m": 0.83, "room_types": ["bedroom"], "against_wall": true, "clearance_front_m": 0.6, "color": [150, 120, 95], "mesh": "data/catalog/models/dresser.glb"},
+  {"id": "desk", "kind": "desk", "category": "table", "name": "Desk", "width_m": 2.0, "depth_m": 0.95, "height_m": 0.79, "room_types": ["bedroom", "room"], "against_wall": true, "clearance_front_m": 0.7, "color": [176, 150, 120], "mesh": "data/catalog/models/desk.glb"},
+
+  {"id": "sofa_3_seat", "kind": "sofa", "category": "sofa", "name": "Leather sofa", "width_m": 1.81, "depth_m": 0.82, "height_m": 0.71, "room_types": ["living"], "against_wall": true, "clearance_front_m": 0.5, "color": [120, 135, 150], "mesh": "data/catalog/models/sofa_3_seat.glb"},
+  {"id": "sofa_2_seat", "kind": "sofa", "category": "sofa", "name": "Fabric sofa", "width_m": 1.57, "depth_m": 0.66, "height_m": 0.8, "room_types": ["living"], "against_wall": true, "clearance_front_m": 0.5, "color": [120, 135, 150], "mesh": "data/catalog/models/sofa_2_seat.glb"},
+  {"id": "armchair", "kind": "armchair", "category": "sofa", "name": "Armchair", "width_m": 0.82, "depth_m": 0.99, "height_m": 1.02, "room_types": ["living", "bedroom"], "against_wall": false, "clearance_front_m": 0.5, "color": [120, 135, 150], "mesh": "data/catalog/models/armchair.glb"},
+  {"id": "coffee_table", "kind": "coffee_table", "category": "table", "name": "Coffee table", "width_m": 1.2, "depth_m": 0.6, "height_m": 0.39, "room_types": ["living"], "against_wall": false, "clearance_front_m": 0.0, "color": [176, 150, 120], "mesh": "data/catalog/models/coffee_table.glb"},
+  {"id": "tv_unit", "kind": "tv", "category": "storage", "name": "TV unit", "width_m": 2.44, "depth_m": 0.52, "height_m": 0.68, "room_types": ["living"], "against_wall": true, "clearance_front_m": 0.6, "color": [90, 85, 80], "mesh": "data/catalog/models/tv_unit.glb"},
+  {"id": "bookshelf", "kind": "bookshelf", "category": "storage", "name": "Display shelves", "width_m": 1.08, "depth_m": 0.37, "height_m": 1.56, "room_types": ["living", "bedroom", "room"], "against_wall": true, "clearance_front_m": 0.6, "color": [150, 120, 95], "mesh": "data/catalog/models/bookshelf.glb"},
+
+  {"id": "dining_table_4", "kind": "dining_table", "category": "table", "name": "Round dining table for 4", "width_m": 1.4, "depth_m": 1.4, "height_m": 1.01, "room_types": ["dining", "living", "kitchen"], "against_wall": false, "clearance_front_m": 0.0, "color": [176, 150, 120], "mesh": "data/catalog/models/dining_table_4.glb"},
+  {"id": "dining_table_6", "kind": "dining_table", "category": "table", "name": "Dining table for 6", "width_m": 2.26, "depth_m": 1.39, "height_m": 0.88, "room_types": ["dining", "living"], "against_wall": false, "clearance_front_m": 0.0, "color": [176, 150, 120], "mesh": "data/catalog/models/dining_table_6.glb"},
+  {"id": "dining_chair", "kind": "dining_chair", "category": "chair", "name": "Dining chair", "width_m": 0.43, "depth_m": 0.54, "height_m": 0.96, "room_types": ["dining", "living", "kitchen"], "against_wall": false, "clearance_front_m": 0.0, "color": [140, 115, 95], "mesh": "data/catalog/models/dining_chair.glb"},
+
+  {"id": "console_table", "kind": "console_table", "category": "table", "name": "Console table", "width_m": 1.72, "depth_m": 0.34, "height_m": 0.66, "room_types": ["entry", "hallway"], "against_wall": true, "clearance_front_m": 0.8, "color": [176, 150, 120], "mesh": "data/catalog/models/console_table.glb"},
+  {"id": "shoe_cabinet", "kind": "shoe_cabinet", "category": "storage", "name": "Shoe cabinet", "width_m": 0.86, "depth_m": 0.46, "height_m": 0.55, "room_types": ["entry", "hallway"], "against_wall": true, "clearance_front_m": 0.8, "color": [150, 120, 95], "mesh": "data/catalog/models/shoe_cabinet.glb"}
+ ]
+}

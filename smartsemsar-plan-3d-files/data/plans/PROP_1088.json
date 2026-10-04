@@ -1468,6 +1468,138 @@
      "sill_height_m": 0.9,
      "height_m": 1.2
     }
+   ],
+   "fixtures": [
+    {
+     "id": "F0_X0",
+     "type": "base_cabinet",
+     "raw_type": "FixedFurniture BaseCabinet",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       3.4704,
+       13.9498
+      ],
+      [
+       3.4704,
+       10.9824
+      ],
+      [
+       2.2661,
+       10.9824
+      ],
+      [
+       2.2661,
+       13.9498
+      ]
+     ],
+     "height_m": 0.9,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X1",
+     "type": "other",
+     "raw_type": "FixedFurniture Housing",
+     "room_id": "F0_R4",
+     "polygon": [
+      [
+       3.7751,
+       8.2762
+      ],
+      [
+       3.7751,
+       7.6843
+      ],
+      [
+       0.4817,
+       7.6843
+      ],
+      [
+       0.4817,
+       8.2762
+      ]
+     ],
+     "height_m": 1.0,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X2",
+     "type": "other",
+     "raw_type": "FixedFurniture Housing",
+     "room_id": "F0_R0",
+     "polygon": [
+      [
+       9.9206,
+       4.656
+      ],
+      [
+       10.4282,
+       4.656
+      ],
+      [
+       10.4282,
+       3.2471
+      ],
+      [
+       9.9206,
+       3.2471
+      ]
+     ],
+     "height_m": 1.0,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X3",
+     "type": "sauna_bench",
+     "raw_type": "FixedFurniture SaunaBench",
+     "room_id": "F0_R10",
+     "polygon": [
+      [
+       14.4142,
+       7.6316
+      ],
+      [
+       11.9753,
+       7.6316
+      ],
+      [
+       11.9753,
+       8.511
+      ],
+      [
+       14.4142,
+       8.511
+      ]
+     ],
+     "height_m": 0.5,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X4",
+     "type": "stairs",
+     "raw_type": "Flight",
+     "room_id": "F0_R2",
+     "polygon": [
+      [
+       9.0303,
+       10.4945
+      ],
+      [
+       9.0303,
+       13.4924
+      ],
+      [
+       10.301,
+       13.4924
+      ],
+      [
+       10.301,
+       10.4945
+      ]
+     ],
+     "height_m": 2.7,
+     "elevation_m": 0.0
+    }
    ]
   }
  ],
