@@ -36,7 +36,7 @@ from backend.schema.design import FurniturePhoto
 from backend.schema.staging import Catalog, load_catalog
 
 KEY_ENV, MODEL_ENV, URL_ENV = "GEMINI_API_KEY", "SMARTSEMSAR_GEMINI_MODEL", "SMARTSEMSAR_GEMINI_URL"
-DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_MODEL = "gemini-flash-latest"   # alias Google keeps pointed at the current Flash model
 DEFAULT_URL = "https://generativelanguage.googleapis.com/v1beta"
 MAX_IMAGE_PX = 1024
 WIDTH_RANGE_M = (0.3, 3.5)      # an estimate outside this is ignored
