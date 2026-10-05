@@ -24,7 +24,7 @@ import numpy as np
 import trimesh
 
 from backend.schema.staging import Catalog, CatalogItem, load_catalog
-from backend.services import colab_service
+from backend.services import colab_service, trellis_service
 
 SIZE_LIMITS_M = (0.15, 4.0)     # a fitted piece outside this range is a bad model or a wrong width
 
@@ -126,10 +126,18 @@ def add_furniture_model(raw_glb, kind: str, folder, catalog: Optional[Catalog] =
 
 def add_furniture_from_photo(image_path, kind: str, folder, catalog: Optional[Catalog] = None,
                              width_m: Optional[float] = None, yaw_deg: float = 0.0,
-                             name: Optional[str] = None, **colab_options) -> tuple[Catalog, CatalogItem]:
-    """Photo -> Colab (image-to-3D) -> fit -> catalog. The raw model is kept next to the fitted one,
-    so a wrong direction can be fixed with add_furniture_model(raw, ..., yaw_deg=90) without the GPU."""
+                             name: Optional[str] = None, generator: str = "colab",
+                             **options) -> tuple[Catalog, CatalogItem]:
+    """Photo -> image-to-3D -> fit -> catalog. The raw model is kept next to the fitted one,
+    so a wrong direction can be fixed with add_furniture_model(raw, ..., yaw_deg=90) without the GPU.
+    generator: "colab" = TripoSR on our Colab GPU (colab_service),
+               "trellis" = TRELLIS.2 on its free Hugging Face Space (trellis_service), textured."""
     catalog = catalog or load_catalog()
     raw = Path(folder) / f"{stock_item(catalog, kind).id}_raw.glb"
-    colab_service.generate_model(image_path, raw, **colab_options)
+    if generator == "trellis":
+        trellis_service.generate_model(image_path, raw, **options)
+    elif generator == "colab":
+        colab_service.generate_model(image_path, raw, **options)
+    else:
+        raise ValueError(f"Unknown generator '{generator}' (use 'colab' or 'trellis')")
     return add_furniture_model(raw, kind, folder, catalog, width_m, yaw_deg, name)

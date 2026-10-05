@@ -19,3 +19,4 @@ matplotlib
 kaggle
 pytest
 requests
+gradio_client
