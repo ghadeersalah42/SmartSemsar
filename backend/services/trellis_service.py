@@ -6,7 +6,8 @@ Same contract as colab_service.generate_model(): one photo of one piece in, a GL
 no real size and may face any way; custom_furniture.fit_model() fixes both afterwards.
 
 Steps on the Space: start_session -> preprocess_image (removes the background) -> image_to_3d -> extract_glb.
-Measured on PROP_1002's test chair: ~40 s at resolution 512, GLB ~8 MB with 200k faces.
+Measured on a test chair: ~40 s at resolution 512; the GLB is ~8 MB at 200k faces, so the
+default asks for 100k faces to keep walkthrough pages light.
 
 Key: HF_TOKEN in the environment or .env (a Read token is enough). Without it the Space still works
 but with the much smaller anonymous GPU quota.
@@ -50,7 +51,7 @@ def _path(result) -> str:
     return result["path"] if isinstance(result, dict) else str(result)
 
 
-def generate_model(image_path, out_glb, resolution: str = "512", faces: int = 200_000,
+def generate_model(image_path, out_glb, resolution: str = "512", faces: int = 100_000,
                    texture_size: int = 1024, seed: Optional[int] = None, space: Optional[str] = None,
                    token: Optional[str] = None, client=None) -> Path:
     """One photo of one piece of furniture -> textured GLB saved at out_glb.

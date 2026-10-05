@@ -11,6 +11,8 @@ Examples (from this folder):
     python inference.py PROP_1002 --model chair.glb --kind armchair --width 0.9
     python inference.py PROP_1002 --photo sofa.jpg --kind sofa   # needs the Colab server running
     python inference.py PROP_1002 --photo chair.jpg              # kind and width read from the photo (Gemini)
+    python inference.py PROP_1002 --photo chair.jpg --kind armchair --generator trellis   # TRELLIS.2 (HF_TOKEN)
+    python inference.py PROP_1002 --planner llm --style-brief "warm, light wood"         # Gemini places furniture
 
 Everything is written to out/<property id>/ ; nothing under data/ is touched.
 The same run() is used by the demo page (app.py).
@@ -32,7 +34,10 @@ from backend.schema.staging import load_catalog, save_staging
 from backend.services import vision_service
 from backend.services.colab_service import ColabError
 from backend.services.custom_furniture import add_furniture_from_photo, add_furniture_model
+from backend.services.furniture_actions import apply_actions
 from backend.services.furniture_placer import stage_plan
+from backend.services.llm_furnisher import furnish
+from backend.services.trellis_service import TrellisError
 from backend.services.staging_validator import validate_staging
 from backend.services.walkthrough import build_walkthrough
 
@@ -48,9 +53,35 @@ def load_listings() -> pd.DataFrame:
     return pd.read_csv(ROOT / "data" / "final_merged_dataset.csv", encoding="utf-8-sig")
 
 
+def place_unplaced(plan, staging, catalog):
+    """Pieces that were asked for but did not fit the rules (often the user's own piece):
+    try once more with placement instructions - beside the main piece of the room, else in
+    open floor. -> (new staging, names placed now)"""
+    placed = []
+    for name in list(staging.unplaced):
+        item = next((i for i in catalog.items if i.is_a([name])), None)
+        if item is None:
+            continue
+        for room in (r for r in plan.rooms() if r.type in item.room_types):
+            anchors = [i for i in staging.in_room(room.id) if i.catalog_id.split("_")[0] in ("sofa", "bed")]
+            tries = [[{"item": item.id, "place": "beside", "ref": a.id, "side": side}]
+                     for a in anchors for side in ("right", "left")]
+            tries.append([{"item": item.id, "place": "free", "min_clearance_m": 0.4}])
+            for actions in tries:
+                new, errors = apply_actions(plan, staging, {room.id: actions}, catalog)
+                if not errors:
+                    staging = new.model_copy(update={"unplaced": [u for u in new.unplaced if u != name]})
+                    placed.append(name)
+                    break
+            if name in placed:
+                break
+    return staging, placed
+
+
 def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None, model=None,
         kind: Optional[str] = None, width_m: Optional[float] = None, yaw_deg: float = 0.0,
-        out_dir=OUT_DIR, say: Callable[[str], None] = print) -> Optional[Path]:
+        out_dir=OUT_DIR, say: Callable[[str], None] = print, generator: str = "colab",
+        planner: str = "rules") -> Optional[Path]:
     """One full run. Reports each step through say(); returns the walkthrough page,
     or None if the validator rejected the staging."""
     started = time.time()
@@ -97,16 +128,32 @@ def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None,
             raise PipelineError("Say what the model is (kind), e.g. sofa.")
         try:
             add = add_furniture_from_photo if photo else add_furniture_model
-            catalog, item = add(photo or model, kind, out_dir / "custom", catalog, width_m=width_m, yaw_deg=yaw_deg)
-        except (ColabError, KeyError, ValueError) as e:
+            extra = {"generator": generator} if photo else {}
+            catalog, item = add(photo or model, kind, out_dir / "custom", catalog, width_m=width_m,
+                                yaw_deg=yaw_deg, **extra)
+        except (ColabError, TrellisError, KeyError, ValueError) as e:
             raise PipelineError(str(e)) from e
         say(f"3. your item {item.name}: {item.width_m} x {item.depth_m} x {item.height_m} m "
-            f"(replaces {item.id}) from {'photo' if photo else 'model'}")
+            f"(replaces {item.id}) from {'photo via ' + generator if photo else 'model'}")
+        if item.id not in prefs.must_have:      # the user's own piece should appear in the walkthrough
+            prefs = prefs.model_copy(update={"must_have": prefs.must_have + [item.id]})
     else:
         say("3. your item none (stock catalog)")
 
     # 4) place and check
-    staging = stage_plan(plan, catalog, preferences=prefs)
+    if planner == "llm":
+        staging, report = furnish(plan, prefs, catalog)
+        say(f"4. planner   {report.planner}" + (f" ({report.rounds} round(s))" if report.rounds else ""))
+        for w in report.warnings:
+            say(f"             {w}")
+        if report.summary:
+            say(f"             model says: {report.summary}")
+    else:
+        staging = stage_plan(plan, catalog, preferences=prefs)
+    if staging.unplaced:
+        staging, rescued = place_unplaced(plan, staging, catalog)
+        if rescued:
+            say(f"             placed with instructions after the rules: {rescued}")
     result = validate_staging(plan, staging, catalog)
     room_type = {r.id: r.type for r in plan.rooms()}
     say(f"4. placed    {len(staging.items)} items")
@@ -155,7 +202,11 @@ def main() -> int:
     ap.add_argument("--must-have", dest="must_have", nargs="*", help="catalog names to force, e.g. desk armchair")
     ap.add_argument("--exclude", nargs="*", help="catalog names to leave out, e.g. tv")
     ap.add_argument("--dining-seats", dest="dining_seats", type=int, help="4 or 6")
-    ap.add_argument("--photo", help="photo of ONE piece of furniture (sent to the Colab server)")
+    ap.add_argument("--photo", help="photo of ONE piece of furniture (turned into 3D by --generator)")
+    ap.add_argument("--generator", default="colab", choices=["colab", "trellis"],
+                    help="photo -> 3D: colab = TripoSR on our Colab server, trellis = TRELLIS.2 on Hugging Face")
+    ap.add_argument("--planner", default="rules", choices=["rules", "llm"],
+                    help="rules = furniture_placer; llm = Gemini/Groq chooses and arranges (falls back to rules)")
     ap.add_argument("--model", help="a GLB to use as your own furniture instead of a photo")
     ap.add_argument("--kind", help="what the photo / model is: sofa, armchair, bed, desk, ...")
     ap.add_argument("--width", type=float, help="real width of your piece in meters (default: the stock item's)")
@@ -165,7 +216,8 @@ def main() -> int:
     args = ap.parse_args()
     try:
         html = run(args.property_id, read_preferences(args), photo=args.photo, model=args.model, kind=args.kind,
-                   width_m=args.width, yaw_deg=args.yaw, out_dir=args.out)
+                   width_m=args.width, yaw_deg=args.yaw, out_dir=args.out, generator=args.generator,
+                   planner=args.planner)
     except PipelineError as e:
         print(f"error: {e}")
         return 1

@@ -240,3 +240,6 @@ __pycache__/
 
 # inference.py results (per-run outputs, user furniture)
 smartsemsar-plan-3d-files/out/
+
+# inference.py / app.py results
+out/
