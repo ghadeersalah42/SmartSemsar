@@ -60,13 +60,17 @@ def test_stairs_kept_on_multi_floor_plans():
     assert any(x.type == "stairs" for x in plan.fixtures())
 
 
-def test_fixtures_scale_with_the_plan():
+def test_fixtures_keep_real_size_when_the_plan_is_stretched():
+    """A look-alike is stretched to the listing area, but a toilet must stay toilet-sized:
+    only fixture positions follow the stretch, and each one stays inside its room."""
     raw = parse_svg("data/cubicasa_svg/12803.svg")
     small = build_plan(raw, "t", target_area_sqm=60.0)
     big = build_plan(raw, "t", target_area_sqm=240.0)
-    a = Polygon(small.fixtures()[0].polygon).area
-    b = Polygon(big.fixtures()[0].polygon).area
-    assert b / a == pytest.approx(4.0, rel=0.02)
+    for a, b in zip(small.fixtures(), big.fixtures()):
+        assert Polygon(b.polygon).area == pytest.approx(Polygon(a.polygon).area, rel=0.01)
+    rooms = {r.id: Polygon(r.polygon).buffer(0.05) for r in big.rooms()}
+    placed = [x for x in big.fixtures() if x.room_id]
+    assert placed and all(rooms[x.room_id].contains(Polygon(x.polygon).centroid) for x in placed)
 
 
 def test_saved_plans_carry_fixtures():

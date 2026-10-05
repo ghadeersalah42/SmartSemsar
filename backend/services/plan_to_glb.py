@@ -23,6 +23,17 @@ ROOM_COLORS = {
     "outdoor": (180, 215, 160), "garage": (190, 190, 190), "sauna": (215, 180, 140),
 }
 DEFAULT_ROOM_COLOR = (225, 220, 210)
+FIXTURE_COLORS = {
+    "closet": (214, 200, 178), "base_cabinet": (232, 228, 220), "wall_cabinet": (232, 228, 220),
+    "sink": (205, 214, 222), "appliance": (226, 230, 232), "toilet": (250, 250, 250),
+    "shower": (200, 214, 222), "bathtub": (250, 250, 250), "fireplace": (150, 120, 105),
+    "chimney": (150, 120, 105), "sauna_bench": (196, 160, 118), "stairs": (190, 170, 145),
+    "column": (236, 236, 232), "other": (215, 210, 200),
+}
+STEP_RISE_M = 0.17        # one stair step
+STEP_RUN_M = 0.28
+MIN_FLIGHT_WIDTH_M = 0.6  # straight stair pieces narrower than this are steps, not a flight
+MIN_FLIGHT_RUN_M = 1.2    # ... and so are shorter ones (terrace steps, a step between two levels)
 WALL_COLOR = (245, 245, 240)
 WALL_EXTERIOR_COLOR = (200, 196, 188)
 
@@ -87,13 +98,107 @@ def floor_meshes(floor, base_z=0.0):
     return meshes
 
 
+def _sides(poly):
+    """(short side, long side) of a piece's minimum rectangle, meters."""
+    pts = np.array(poly.minimum_rotated_rectangle.exterior.coords[:3])
+    a, b = np.linalg.norm(pts[1] - pts[0]), np.linalg.norm(pts[2] - pts[1])
+    return min(a, b), max(a, b)
+
+
+def _steps(poly, z0, z1, start, color, along_short=False):
+    """Steps on one stair piece, rising from z0 to z1 along its long side (short side for porch
+    steps), starting at the end nearest to `start` (a point) or at the first end if None."""
+    rect = poly.minimum_rotated_rectangle
+    pts = np.array(rect.exterior.coords[:4])
+    e1, e2 = pts[1] - pts[0], pts[3] - pts[0]
+    run, side = (e1, e2) if np.linalg.norm(e1) >= np.linalg.norm(e2) else (e2, e1)
+    if along_short:
+        run, side = side, run
+    origin = pts[0]
+    if start is not None:
+        far = origin + run
+        if np.linalg.norm(far + side / 2 - start) < np.linalg.norm(origin + side / 2 - start):
+            origin, run = far, -run
+    n = max(1, int(round(np.linalg.norm(run) / STEP_RUN_M)))
+    parts = []
+    for i in range(n):
+        a = origin + run * i / n
+        step = Polygon([a, a + run / n, a + run / n + side, a + side]).intersection(poly)
+        for p in _polys(step):
+            m = _prism(p, z0, z0 + (z1 - z0) * (i + 1) / n, color)
+            if m is not None:
+                parts.append(m)
+    end = origin + run + side / 2
+    return parts, end
+
+
+def _stair_runs(fixtures):
+    """Group touching stair pieces (flight, turn, flight ...) in drawing order."""
+    runs = []
+    for fx in fixtures:
+        poly = Polygon(fx.polygon).buffer(0)
+        if runs and runs[-1][-1][1].distance(poly) < 0.05:
+            runs[-1].append((fx, poly))
+        else:
+            runs.append([(fx, poly)])
+    return runs
+
+
+def fixture_meshes(floor, base_z=0.0, storey_height_m=2.75):
+    """Built-ins from the drawing: boxes at their real height; stairs as steps."""
+    meshes = {}
+    for fx in floor.fixtures:
+        if fx.type == "stairs":
+            continue
+        poly = Polygon(fx.polygon).buffer(0)
+        z0 = base_z + fx.elevation_m
+        parts = [m for m in (_prism(p, z0, z0 + fx.height_m, FIXTURE_COLORS.get(fx.type, FIXTURE_COLORS["other"]))
+                             for p in _polys(poly)) if m is not None]
+        if parts:
+            meshes[f"fixture_{fx.id}"] = trimesh.util.concatenate(parts)
+
+    color = FIXTURE_COLORS["stairs"]
+    room_type = {r.id: r.type for r in floor.rooms}
+    stairs = [fx for fx in floor.fixtures if fx.type == "stairs"]
+    flights = []
+    for run in _stair_runs(stairs):
+        has_turn = any((fx.raw_type or "").startswith("Winding") for fx, _p in run)
+        indoor = all(room_type.get(fx.room_id) not in ("outdoor", "garage") for fx, _p in run)
+        wide = min(_sides(p)[0] for _fx, p in run) >= MIN_FLIGHT_WIDTH_M
+        long_ = sum(_sides(p)[1] for _fx, p in run) >= MIN_FLIGHT_RUN_M
+        if has_turn or (indoor and wide and long_):
+            flights.append(run)
+            continue
+        for fx, poly in run:   # terrace / porch steps or a single step: climbed along the short side
+            n = max(1, round(_sides(poly)[0] / STEP_RUN_M))
+            parts, _end = _steps(poly, base_z, base_z + STEP_RISE_M * n, None, color, along_short=True)
+            if parts:
+                meshes[f"fixture_{fx.id}"] = trimesh.util.concatenate(parts)
+    for run in flights:     # a flight always reaches the next floor (the source has no rise data)
+        height = storey_height_m
+        start = None
+        if len(run) > 1:     # begin at the end of the first piece away from the second one
+            c2 = np.array(run[1][1].centroid.coords[0])
+            rect = np.array(run[0][1].minimum_rotated_rectangle.exterior.coords[:4])
+            start = max(rect, key=lambda q: np.linalg.norm(q - c2))
+        for k, (fx, poly) in enumerate(run):
+            z0 = base_z + height * k / len(run)
+            z1 = base_z + height * (k + 1) / len(run)
+            parts, start = _steps(poly, z0, z1, start, color)
+            if parts:
+                meshes[f"fixture_{fx.id}"] = trimesh.util.concatenate(parts)
+    return meshes
+
+
 def plan_to_scene(plan: Plan, storey_height_m=None) -> trimesh.Scene:
     """Stack floors by level (basement below 0)."""
     scene = trimesh.Scene()
     for floor in plan.floors:
         wall_h = max((w.height_m for w in floor.walls), default=2.7)
         step = storey_height_m or (wall_h + FLOOR_THICKNESS_M)
-        for name, mesh in floor_meshes(floor, base_z=floor.level * step).items():
+        meshes = {**floor_meshes(floor, base_z=floor.level * step),
+                  **fixture_meshes(floor, base_z=floor.level * step, storey_height_m=step)}
+        for name, mesh in meshes.items():
             scene.add_geometry(mesh, node_name=f"L{floor.level}_{name}", geom_name=f"L{floor.level}_{name}")
     return scene
 

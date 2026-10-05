@@ -143,8 +143,7 @@ def build_walkthrough(plan_path, out_html, glb_path=None, listing: Optional[Mapp
     """catalog: the one the staging was made with (needed when it holds a user's own furniture)."""
     plan = load_plan(plan_path)
     glb_path = Path(glb_path or Path(out_html).with_suffix(".glb"))
-    if not glb_path.exists():
-        export_glb(plan, glb_path)
+    export_glb(plan, glb_path)        # always rebuild: plan.json is the source of truth
     out_html = Path(out_html)
     out_html.write_text(render_walkthrough_html(plan, glb_path.read_bytes(), listing, standalone, staging,
                                                 catalog), encoding="utf-8")

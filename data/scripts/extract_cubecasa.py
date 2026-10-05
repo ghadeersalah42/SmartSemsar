@@ -23,6 +23,7 @@ import xml.etree.ElementTree as ET
 
 import pandas as pd
 from shapely.geometry import MultiPoint, Polygon
+from shapely.ops import unary_union
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, REPO_ROOT)
@@ -244,6 +245,89 @@ def native_indoor_area_sqm(raw):
                if r["type"] not in ("outdoor", "garage")) / ppm2
 
 
+ANCHOR_M = 0.25        # a fixture group this close to a room side stays glued to it when stretched
+GROUP_GAP_M = 0.05     # fixtures closer than this move together (kitchen run, wardrobe row, stair flights)
+
+
+def fixture_polygons_m(fixtures, rooms_px, min_x, max_y, ppm, factor):
+    """Fixture footprints in plan meters, at REAL size.
+    On a stretched look-alike (factor != 1) only positions change: touching fixtures form a group
+    that moves rigidly. Along each axis a group within ANCHOR_M of one of its room's wall segments
+    keeps that distance to the segment (a wardrobe stays against its wall, also in L-shaped rooms);
+    otherwise it keeps its relative place. A group outside every room (a column in a wall)
+    simply follows the stretch."""
+    def native(pts):
+        return [((x - min_x) / ppm, (max_y - y) / ppm) for x, y in pts]
+
+    polys = [Polygon(native(x["pts"])).buffer(0) for x in fixtures]
+    if factor == 1.0 or not polys:
+        return [[(round(px, 4), round(py, 4)) for px, py in _outline(p)] for p in polys]
+    rooms = [Polygon(native(r["pts"])).buffer(0) for r in rooms_px]
+
+    parent = list(range(len(polys)))
+
+    def find(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+    for i in range(len(polys)):
+        for j in range(i + 1, len(polys)):
+            if polys[i].distance(polys[j]) < GROUP_GAP_M:
+                parent[find(i)] = find(j)
+    groups = {}
+    for i in range(len(polys)):
+        groups.setdefault(find(i), []).append(i)
+
+    shift = [None] * len(polys)
+    for members in groups.values():
+        shape = unary_union([polys[i] for i in members])
+        c = shape.centroid
+        room = min((r for r in rooms if r.contains(c)), key=lambda r: r.area, default=None)
+        if room is None and not all(fixtures[i]["type"] == "column" for i in members):
+            # in a niche or doorway: use the nearest room (a column in a wall just follows the stretch)
+            room = min(rooms, key=lambda r: r.distance(shape), default=None)
+            if room is not None and room.distance(shape) > ANCHOR_M:
+                room = None
+        if room is None:
+            dx, dy = (factor - 1) * c.x, (factor - 1) * c.y
+        else:
+            dx = _axis_shift(shape, room, 0, factor)
+            dy = _axis_shift(shape, room, 1, factor)
+        for i in members:
+            shift[i] = (dx, dy)
+    return [[(round(px + shift[k][0], 4), round(py + shift[k][1], 4)) for px, py in _outline(p)]
+            for k, p in enumerate(polys)]
+
+
+def _axis_shift(shape, room, axis, factor):
+    """Shift along x (axis 0) or y (axis 1) for a fixture group in a stretched room."""
+    g0, g1 = shape.bounds[axis], shape.bounds[axis + 2]
+    o0, o1 = shape.bounds[1 - axis], shape.bounds[3 - axis]          # extent on the other axis
+    room = max(getattr(room, "geoms", [room]), key=lambda g: g.area)
+    pts = list(room.exterior.coords)
+    best = None                                                      # (gap, wall coordinate)
+    for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+        a, b = (ax, ay), (bx, by)
+        if abs(a[axis] - b[axis]) > 0.05:                             # not perpendicular to this axis
+            continue
+        lo, hi = sorted((a[1 - axis], b[1 - axis]))
+        if hi < o0 - 0.05 or lo > o1 + 0.05:                          # segment not beside the group
+            continue
+        w = (a[axis] + b[axis]) / 2
+        gap = min(abs(g0 - w), abs(w - g1))
+        if gap < ANCHOR_M and (best is None or gap < best[0]):
+            best = (gap, w)
+    if best is not None:
+        return (factor - 1) * best[1]
+    return (factor - 1) * (g0 + g1) / 2
+
+
+def _outline(poly):
+    poly = max(getattr(poly, "geoms", [poly]), key=lambda g: g.area)
+    return list(poly.exterior.coords)[:-1]
+
+
 # ---------- 2) raw geometry -> Plan (meters) ----------
 def build_plan(raw, plan_id, source="cubicasa_lookalike", source_ref=None,
                listing_id=None, target_area_sqm=None):
@@ -288,10 +372,10 @@ def build_plan(raw, plan_id, source="cubicasa_lookalike", source_ref=None,
                 op = tf(o["pts"])
                 fl.windows.append(Window(id=f"{wid}_O{j}", wall_id=wid, polygon=op,
                                          width_m=round(_long_side(op), 3)))
-        # fixtures: owned by the smallest room that contains them
+        # fixtures: real size (never stretched), owned by the smallest room that contains them
         room_polys = sorted(((Polygon(r.polygon).buffer(0), r.id) for r in fl.rooms), key=lambda t: t[0].area)
-        for i, x in enumerate(f.get("fixtures", [])):
-            poly = tf(x["pts"])
+        placed = fixture_polygons_m(f.get("fixtures", []), f["rooms"], min_x, max_y, ppm, factor)
+        for i, (x, poly) in enumerate(zip(f.get("fixtures", []), placed)):
             inside = Polygon(poly).buffer(0).representative_point()
             room_id = next((rid for rp, rid in room_polys if rp.contains(inside)), None)
             fl.fixtures.append(Fixture(id=f"F{f['level']}_X{i}", type=x["type"], raw_type=x["raw_type"],

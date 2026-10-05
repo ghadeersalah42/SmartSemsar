@@ -266,7 +266,7 @@
       o.material = glbMat;
       o.applyMatrix4(o.parent.matrixWorld);   // bake transforms before re-parenting
       lv.group.add(o);
-      if (name.includes("_wall_")) lv.walls.push(o);
+      if (name.includes("_wall_") || name.includes("_fixture_")) lv.walls.push(o);   // built-ins are solid too
     });
     setFloor(VIEW.start_level);
     setMode("overview");
@@ -390,7 +390,7 @@
     orbit.dist = Math.max(4, Math.min(120, orbit.dist * (1 + Math.sign(e.deltaY) * 0.1)));
   }, { passive: false });
 
-  // ---------- collision: rays at knee and chest height against this floor's walls ----------
+  // ---------- collision: rays at knee and chest height against this floor's walls and built-ins ----------
   // knee ray is blocked by window sills, both rays pass through door openings
   // furniture gets one more ray at shin height so low pieces (coffee table) block too
   const ray = new THREE.Raycaster();
