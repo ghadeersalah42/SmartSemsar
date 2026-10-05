@@ -102,7 +102,12 @@ def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None,
 
     # 2) what the user asked for
     catalog = load_catalog()
+    both = sorted(set(prefs.must_have) & set(prefs.exclude))
+    if both:      # ticked as "must have" and "leave out": must have wins
+        prefs = prefs.model_copy(update={"exclude": [n for n in prefs.exclude if n not in both]})
     say(f"2. wishes    {prefs.model_dump(exclude_defaults=True) or 'none (defaults)'}")
+    if both:
+        say(f"             {both} was both 'must have' and 'leave out'; kept it as must have")
     unknown = prefs.unknown_names(catalog.vocabulary())
     if unknown:
         say(f"             not catalog names, will be reported as unplaced: {unknown}")
@@ -114,12 +119,17 @@ def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None,
             try:
                 seen = vision_service.analyze_photo(photo, catalog)
             except vision_service.VisionError as e:
-                raise PipelineError(str(e)) from e
-            say(f"3. photo     {seen.name or seen.scene}: kind {seen.kind}, about {seen.width_m} m wide, "
-                f"style {seen.style}")
-            if not seen.usable and not (kind and seen.scene == "single_item"):
-                raise PipelineError(seen.reason)
-            kind, width_m = kind or seen.kind, width_m or seen.width_m
+                if not kind:
+                    raise PipelineError(f"Could not read the photo: {e} Choose what it is yourself "
+                                        "('What is it?' / --kind) and run again.") from e
+                seen = None
+                say(f"3. photo     could not be read ({str(e)[:90]}); using your choice: {kind}")
+            if seen is not None:
+                say(f"3. photo     {seen.name or seen.scene}: kind {seen.kind}, about {seen.width_m} m wide, "
+                    f"style {seen.style}")
+                if not seen.usable and not (kind and seen.scene == "single_item"):
+                    raise PipelineError(seen.reason)
+                kind, width_m = kind or seen.kind, width_m or seen.width_m
         elif not kind:
             raise PipelineError(f"Say what the photo is (kind), or set {vision_service.KEY_ENV} "
                                 "so it is recognised from the photo.")
@@ -137,6 +147,8 @@ def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None,
             f"(replaces {item.id}) from {'photo via ' + generator if photo else 'model'}")
         if item.id not in prefs.must_have:      # the user's own piece should appear in the walkthrough
             prefs = prefs.model_copy(update={"must_have": prefs.must_have + [item.id]})
+        if item.is_a(prefs.exclude):            # ... and "leave out" never removes it
+            prefs = prefs.model_copy(update={"exclude": [n for n in prefs.exclude if not item.is_a([n])]})
     else:
         say("3. your item none (stock catalog)")
 

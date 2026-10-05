@@ -44,7 +44,8 @@ def read_photo(photo, style_brief):
     try:
         seen = vision_service.analyze_photo(photo)
     except vision_service.VisionError as e:
-        return same, same, f"Could not read the photo: {e}", same
+        return same, same, (f"Gemini could not read the photo right now ({e}). "
+                            "**Choose \"What is it?\" below yourself**; everything else still works."), same
     brief = seen.description if seen.description and not (style_brief or "").strip() else same
     if not seen.usable:
         return same, same, f"**This photo cannot be turned into 3D.** {seen.reason}", brief
@@ -60,19 +61,24 @@ def furnish(property_id, density, must_have, exclude, dining_seats, style_brief,
         "style_brief": (style_brief or "").strip() or None,
     })
     lines: list[str] = []
+    no_model = gr.update(value=None, visible=False)
     try:
         html = run(property_id, prefs, photo=photo, model=model, kind=kind or None,
                    width_m=width_m or None, yaw_deg=float(yaw_deg), say=lines.append,
                    generator=generator, planner=planner)
     except PipelineError as e:
-        return EMPTY_VIEW, "\n".join(lines + [f"error: {e}"])
+        return EMPTY_VIEW, "\n".join(lines + [f"error: {e}"]), no_model
     if html is None:
-        return EMPTY_VIEW, "\n".join(lines)
+        return EMPTY_VIEW, "\n".join(lines), no_model
     # the page is a file under out/, served by Gradio; the timestamp defeats the browser cache
     src = f"/gradio_api/file={Path(html).resolve().as_posix()}?t={int(time.time())}"
     frame = (f'<iframe src="{src}" title="3D walkthrough" allow="fullscreen" allowfullscreen '
              f'style="width:100%;height:680px;border:0;border-radius:8px"></iframe>')
-    return frame, "\n".join(lines)
+    # the 3D model made from the photo: offer it, so the next run can use it without GPU quota
+    made = [f for f in sorted((Path(html).parent / "custom").glob("*.glb"), key=lambda f: f.stat().st_mtime)
+            if not f.stem.endswith("_raw")] if photo else []
+    piece = gr.update(value=str(made[-1]), visible=True) if made else no_model
+    return frame, "\n".join(lines), piece
 
 
 with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
@@ -95,7 +101,8 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
                 generator = gr.Radio(GENERATORS, value="trellis" if trellis_service.is_configured() else "colab",
                                      label="Photo to 3D with")
                 photo_note = gr.Markdown()
-                model = gr.File(file_types=[".glb"], type="filepath", label="…or a GLB model")
+                model = gr.File(file_types=[".glb"], type="filepath",
+                                label="Optional: a 3D model file (.glb) you already have. Leave empty when you use a photo.")
                 kind = gr.Dropdown(KINDS, label="What is it? (filled from the photo when possible)")
                 width_m = gr.Number(label="Real width in meters (empty = same as the stock item)", value=None)
                 yaw_deg = gr.Radio(["0", "90", "180", "270"], value="0", label="Turn it (if it faces sideways)")
@@ -103,6 +110,8 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
         with gr.Column(scale=3):
             view = gr.HTML(EMPTY_VIEW)
             report = gr.Textbox(label="What happened", lines=12, max_lines=20)
+            made_model = gr.File(label="Your piece as a 3D model (.glb): download it and upload it in the .glb box "
+                                       "next time - no photo-to-3D quota needed", visible=False)
 
     gr.Markdown(f"Keys found: HF_TOKEN {'yes' if trellis_service.is_configured() else 'no'} · "
                 f"GEMINI_API_KEY {'yes' if vision_service.is_configured() else 'no'} · "
@@ -110,8 +119,8 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
     inputs = [property_id, density, must_have, exclude, dining_seats, style_brief, photo, model, kind, width_m,
               yaw_deg, generator, planner]
     photo.change(read_photo, [photo, style_brief], [kind, width_m, photo_note, style_brief])
-    go.click(furnish, inputs, [view, report])
-    demo.load(furnish, inputs, [view, report])      # show the default listing straight away
+    go.click(furnish, inputs, [view, report, made_model])
+    demo.load(furnish, inputs, [view, report, made_model])      # show the default listing straight away
 
 if __name__ == "__main__":
     demo.launch(share="--share" in sys.argv)

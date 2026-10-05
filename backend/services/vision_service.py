@@ -24,6 +24,7 @@ import base64
 import io
 import json
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -39,6 +40,8 @@ KEY_ENV, MODEL_ENV, URL_ENV = "GEMINI_API_KEY", "SMARTSEMSAR_GEMINI_MODEL", "SMA
 DEFAULT_MODEL = "gemini-flash-latest"   # alias Google keeps pointed at the current Flash model
 DEFAULT_URL = "https://generativelanguage.googleapis.com/v1beta"
 MAX_IMAGE_PX = 1024
+BUSY_CODES = {500, 502, 503, 504}      # "high demand" and other temporary errors
+BUSY_RETRY_WAITS_S = (2, 5)            # wait before the 2nd and 3rd try
 WIDTH_RANGE_M = (0.3, 3.5)      # an estimate outside this is ignored
 
 PROMPT = """You are helping a home-staging app. Look at the photo and answer with ONE JSON object, nothing else.
@@ -87,21 +90,27 @@ def _ask_gemini(prompt: str, image_path, api_key: str, model: str, base_url: str
     request = urllib.request.Request(
         f"{base_url.rstrip('/')}/models/{model}:generateContent", data=json.dumps(body).encode("utf-8"),
         method="POST", headers={"Content-Type": "application/json", "x-goog-api-key": api_key})
-    try:
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            answer = json.loads(response.read())
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", "replace")
+    for wait in (*BUSY_RETRY_WAITS_S, None):
         try:
-            detail = json.loads(detail)["error"]["message"]
-        except (ValueError, KeyError, TypeError):
-            pass
-        hint = {400: " Check GEMINI_API_KEY.", 403: " Check GEMINI_API_KEY.",
-                404: f" The model name '{model}' may be out of date; set {MODEL_ENV}.",
-                429: " The free quota is used up for now; try again later."}.get(e.code, "")
-        raise VisionError(f"Gemini answered {e.code}: {detail}{hint}") from e
-    except (urllib.error.URLError, TimeoutError, OSError) as e:
-        raise VisionError(f"Gemini not reachable ({e}).") from e
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                answer = json.loads(response.read())
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in BUSY_CODES and wait is not None:      # Google is overloaded for a moment: retry
+                time.sleep(wait)
+                continue
+            detail = e.read().decode("utf-8", "replace")
+            try:
+                detail = json.loads(detail)["error"]["message"]
+            except (ValueError, KeyError, TypeError):
+                pass
+            hint = {400: " Check GEMINI_API_KEY.", 403: " Check GEMINI_API_KEY.",
+                    404: f" The model name '{model}' may be out of date; set {MODEL_ENV}.",
+                    429: " The free quota is used up for now; try again later.",
+                    503: " Google's servers are busy; this is temporary."}.get(e.code, "")
+            raise VisionError(f"Gemini answered {e.code}: {detail}{hint}") from e
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            raise VisionError(f"Gemini not reachable ({e}).") from e
 
     try:
         text = answer["candidates"][0]["content"]["parts"][0]["text"]
