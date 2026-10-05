@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 data_pipeline
 *.zip
 *.tar
@@ -231,12 +230,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
-=======
 venv/
 __pycache__/
 *.pyc
 .env
->>>>>>> main
 
 # inference.py results (per-run outputs, user furniture)
 smartsemsar-plan-3d-files/out/
