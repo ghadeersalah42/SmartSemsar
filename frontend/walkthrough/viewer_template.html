@@ -104,6 +104,9 @@
 
 <div id="controls">
   <div class="seg panel" id="floors" role="group" aria-label="Floor"></div>
+  <div class="seg panel" id="furniture-seg" role="group" aria-label="Furniture" hidden>
+    <button id="toggle-furniture" aria-pressed="true">Furniture</button>
+  </div>
   <div class="seg panel" role="group" aria-label="View mode">
     <button id="mode-overview" aria-pressed="true">Overview</button>
     <button id="mode-walk" aria-pressed="false">Walk</button>
@@ -117,15 +120,18 @@
 
 <script type="application/json" id="plan-data">__PLAN_JSON__</script>
 <script type="application/json" id="viewer-data">__VIEWER_JSON__</script>
+<script type="application/json" id="staging-data">__STAGING_JSON__</script>
 <script type="text/plain" id="glb-data">__GLB_B64__</script>
 
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/environments/RoomEnvironment.js"></script>
 <script>
 (() => {
   // ---------- data (plan.json is the source of truth; GLB is built from it) ----------
   const PLAN = JSON.parse(document.getElementById("plan-data").textContent);
   const VIEW = JSON.parse(document.getElementById("viewer-data").textContent);
+  const STAGING = JSON.parse(document.getElementById("staging-data").textContent);   // null = unfurnished
   const EYE = 1.6, RADIUS = 0.3, WALK = 1.6, RUN = 3.2;
   const ROOM_NAMES = { bedroom: "Bedroom", bathroom: "Bathroom", living: "Living room", kitchen: "Kitchen",
     dining: "Dining", entry: "Entrance", hallway: "Hallway", storage: "Storage", closet: "Closet",
@@ -175,7 +181,7 @@
     const rooms = new THREE.Group(); rooms.name = "rooms";   // furniture goes in rooms/<room id>
     g.add(ceilings, rooms);
     f.rooms.forEach(r => { const rg = new THREE.Group(); rg.name = r.id; rg.userData = { type: r.type, area_sqm: r.area_sqm }; rooms.add(rg); });
-    levels[f.level] = { floor: f, group: g, walls: [], ceilings, rooms };
+    levels[f.level] = { floor: f, group: g, walls: [], furniture: [], ceilings, rooms };
     scene.add(g);
   });
 
@@ -188,6 +194,50 @@
     mesh.position.y = floorBase(f.level) + VIEW.wall_height_m;
     levels[f.level].ceilings.add(mesh);
   }));
+
+  // ---------- furniture from staging.json ----------
+  // item (x, y) is the footprint centre; rotation_deg is counter-clockwise in the plan = +Y rotation here.
+  // Every item gets a box of its real size: it is what the visitor collides with, and what is
+  // shown until (or unless) the item's GLB model loads. Models come ready-made from
+  // data/scripts/build_furniture_models.py: metres, centred, standing on y = 0, front toward +z.
+  const furnitureEdge = new THREE.LineBasicMaterial({ color: 0x2f2b27, transparent: true, opacity: 0.4 });
+  // soft studio reflections for furniture only (leather, varnish, metal look flat without them)
+  const furnitureEnv = THREE.RoomEnvironment
+    ? new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(), 0.04).texture : null;
+  const holders = {};     // catalog id -> [{ holder, box }]
+  ((STAGING && STAGING.items) || []).forEach(it => {
+    const lv = levels[it.level]; if (!lv) return;
+    const holder = new THREE.Group();
+    holder.name = it.id; holder.userData = it;
+    holder.position.copy(toWorld(it.x, it.y, floorBase(it.level)));
+    holder.rotation.y = it.rotation_deg * Math.PI / 180;
+    const geo = new THREE.BoxGeometry(it.width_m, it.height_m, it.depth_m);
+    const [r, g, b] = it.color || [170, 160, 150];
+    const box = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+      color: new THREE.Color(r / 255, g / 255, b / 255).convertSRGBToLinear(), roughness: 0.9, metalness: 0 }));
+    box.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo), furnitureEdge));
+    box.position.y = it.height_m / 2;
+    holder.add(box);
+    (lv.rooms.getObjectByName(it.room_id) || lv.rooms).add(holder);
+    lv.furniture.push(box);
+    (holders[it.catalog_id] = holders[it.catalog_id] || []).push({ holder, box });
+  });
+  Object.entries((STAGING && STAGING.models) || {}).forEach(([catalogId, glb]) => {
+    const data = Uint8Array.from(atob(glb), c => c.charCodeAt(0));
+    new THREE.GLTFLoader().parse(data.buffer, "", gltf => {
+      gltf.scene.traverse(o => {
+        if (!o.isMesh) return;
+        // low-poly kit models carry no normals: shade them flat. Textured models keep their own.
+        if (!o.geometry.attributes.normal) { o.material.flatShading = true; o.material.roughness = 0.85; o.material.metalness = 0; }
+        if (furnitureEnv) { o.material.envMap = furnitureEnv; o.material.envMapIntensity = 0.55; }
+        o.material.needsUpdate = true;
+      });
+      (holders[catalogId] || []).forEach(({ holder, box }) => {
+        holder.add(gltf.scene.clone(true));
+        box.visible = false;      // hidden, still the collider (the raycaster ignores visibility)
+      });
+    }, err => console.error("furniture model failed, keeping the box:", catalogId, err));
+  });
 
   // ---------- load the GLB ----------
   const b64 = document.getElementById("glb-data").textContent.trim();
@@ -234,6 +284,16 @@
   const pos = new THREE.Vector3();
   const keys = new Set();
   const orbit = { yaw: -0.6, dist: 1, target: new THREE.Vector3() };
+
+  // furniture on / off (only when the page carries a staging)
+  let furnished = true;
+  const furnitureBtn = document.getElementById("toggle-furniture");
+  document.getElementById("furniture-seg").hidden = !(STAGING && STAGING.items.length);
+  furnitureBtn.addEventListener("click", () => {
+    furnished = !furnished;
+    furnitureBtn.setAttribute("aria-pressed", String(furnished));
+    Object.values(levels).forEach(v => { v.rooms.visible = furnished; });
+  });
 
   // floor buttons (only when there is more than one floor)
   const floorsEl = document.getElementById("floors");
@@ -332,13 +392,15 @@
 
   // ---------- collision: rays at knee and chest height against this floor's walls ----------
   // knee ray is blocked by window sills, both rays pass through door openings
+  // furniture gets one more ray at shin height so low pieces (coffee table) block too
   const ray = new THREE.Raycaster();
   function blocked(dir, dist) {
-    const walls = levels[level].walls;
-    for (const h of [0.45, 1.5]) {
+    const lv = levels[level];
+    for (const h of [0.15, 0.45, 1.5]) {
       ray.set(new THREE.Vector3(pos.x, floorBase(level) + h, pos.z), dir);
       ray.far = dist + RADIUS;
-      if (ray.intersectObjects(walls, false).length) return true;
+      if (h > 0.2 && ray.intersectObjects(lv.walls, false).length) return true;
+      if (furnished && ray.intersectObjects(lv.furniture, false).length) return true;
     }
     return false;
   }
@@ -443,8 +505,8 @@
     renderer.render(scene, camera);
   }
 
-  // hook for the interior-staging phase: furniture is added per room id
-  window.smartsemsar = { plan: PLAN, scene, levels, roomGroup: id => scene.getObjectByName(id),
+  // hook for other scripts: furniture lives in roomGroup(<room id>), one mesh per staging item id
+  window.smartsemsar = { plan: PLAN, staging: STAGING, scene, levels, roomGroup: id => scene.getObjectByName(id),
                          state: () => ({ x: pos.x, y: -pos.z, yaw, level, mode }) };
 })();
 </script>

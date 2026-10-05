@@ -951,6 +951,294 @@
      "sill_height_m": 0.9,
      "height_m": 1.2
     }
+   ],
+   "fixtures": [
+    {
+     "id": "F0_X0",
+     "type": "column",
+     "raw_type": "Column Rectangle",
+     "room_id": "F0_R1",
+     "polygon": [
+      [
+       6.7318,
+       7.8666
+      ],
+      [
+       7.1463,
+       7.8666
+      ],
+      [
+       7.1463,
+       7.4829
+      ],
+      [
+       6.7318,
+       7.4829
+      ]
+     ],
+     "height_m": 2.7,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X1",
+     "type": "base_cabinet",
+     "raw_type": "FixedFurniture BaseCabinet",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       5.0965,
+       7.2898
+      ],
+      [
+       0.7044,
+       7.2898
+      ],
+      [
+       0.7044,
+       8.3464
+      ],
+      [
+       5.0965,
+       8.3464
+      ]
+     ],
+     "height_m": 0.9,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X2",
+     "type": "sink",
+     "raw_type": "FixedFurniture Sink",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       2.5557,
+       7.5011
+      ],
+      [
+       1.7739,
+       7.5011
+      ],
+      [
+       1.7739,
+       8.2497
+      ],
+      [
+       2.5557,
+       8.2497
+      ]
+     ],
+     "height_m": 0.85,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X3",
+     "type": "appliance",
+     "raw_type": "FixedFurniture ElectricalAppliance Dishwasher",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       3.4127,
+       7.2898
+      ],
+      [
+       2.5909,
+       7.2898
+      ],
+      [
+       2.5909,
+       8.3464
+      ],
+      [
+       3.4127,
+       8.3464
+      ]
+     ],
+     "height_m": 0.85,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X4",
+     "type": "appliance",
+     "raw_type": "FixedFurniture ElectricalAppliance IntegratedStove",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       4.2573,
+       7.2557
+      ],
+      [
+       3.386,
+       7.2557
+      ],
+      [
+       3.386,
+       8.377
+      ],
+      [
+       4.2573,
+       8.377
+      ]
+     ],
+     "height_m": 0.85,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X5",
+     "type": "other",
+     "raw_type": "FixedFurniture Housing",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       0.7044,
+       12.854
+      ],
+      [
+       0.9753,
+       12.854
+      ],
+      [
+       0.9753,
+       12.0182
+      ],
+      [
+       0.7044,
+       12.0182
+      ]
+     ],
+     "height_m": 1.0,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X6",
+     "type": "closet",
+     "raw_type": "FixedFurniture Closet",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       0.9753,
+       12.8544
+      ],
+      [
+       1.7954,
+       12.8544
+      ],
+      [
+       1.7954,
+       12.0176
+      ],
+      [
+       0.9753,
+       12.0176
+      ]
+     ],
+     "height_m": 2.1,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X7",
+     "type": "appliance",
+     "raw_type": "FixedFurniture ElectricalAppliance Refrigerator",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       2.6445,
+       12.8542
+      ],
+      [
+       3.482,
+       12.8542
+      ],
+      [
+       3.482,
+       12.0165
+      ],
+      [
+       2.6445,
+       12.0165
+      ]
+     ],
+     "height_m": 0.85,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X8",
+     "type": "appliance",
+     "raw_type": "FixedFurniture ElectricalAppliance Refrigerator",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       3.482,
+       12.8555
+      ],
+      [
+       4.2938,
+       12.8555
+      ],
+      [
+       4.2938,
+       12.0178
+      ],
+      [
+       3.482,
+       12.0178
+      ]
+     ],
+     "height_m": 0.85,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X9",
+     "type": "closet",
+     "raw_type": "FixedFurniture Closet",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       4.2938,
+       12.855
+      ],
+      [
+       5.1005,
+       12.855
+      ],
+      [
+       5.1005,
+       12.0182
+      ],
+      [
+       4.2938,
+       12.0182
+      ]
+     ],
+     "height_m": 2.1,
+     "elevation_m": 0.0
+    },
+    {
+     "id": "F0_X10",
+     "type": "appliance",
+     "raw_type": "FixedFurniture ElectricalAppliance SpaceForAppliance",
+     "room_id": "F0_R3",
+     "polygon": [
+      [
+       1.7954,
+       12.8543
+      ],
+      [
+       2.6465,
+       12.8543
+      ],
+      [
+       2.6465,
+       12.0147
+      ],
+      [
+       1.7954,
+       12.0147
+      ]
+     ],
+     "height_m": 0.85,
+     "elevation_m": 0.0
+    }
    ]
   }
  ],
