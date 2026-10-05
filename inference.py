@@ -143,7 +143,7 @@ def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None,
     # 4) place and check
     if planner == "llm":
         staging, report = furnish(plan, prefs, catalog)
-        say(f"4. planner   {report.planner}" + (f" ({report.rounds} round(s))" if report.rounds else ""))
+        say(f"4. arranged  by {report.planner}" + (f" ({report.rounds} round(s))" if report.rounds else ""))
         for w in report.warnings:
             say(f"             {w}")
         if report.summary:

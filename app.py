@@ -5,7 +5,9 @@ Smart Semsar - demo page for the furniture pipeline (Gradio).
 Same pipeline as inference.py, with a form instead of command-line flags.
 
     python app.py            -> http://127.0.0.1:7860
+    python app.py --share    -> also a public *.gradio.live link (use this on Colab)
 """
+import sys
 import time
 from pathlib import Path
 
@@ -13,7 +15,8 @@ import gradio as gr
 
 from backend.schema.design import DesignPreferences
 from backend.schema.staging import load_catalog
-from backend.services import vision_service
+from backend.services import trellis_service, vision_service
+from backend.services.llm_furnisher import detect_llm
 from inference import OUT_DIR, PipelineError, load_listings, run
 
 OUT_DIR.mkdir(exist_ok=True)
@@ -24,6 +27,10 @@ LISTING_CHOICES = [(f"{r.property_id} · {str(r.title).strip()[:55]} · {r.pf_ar
                     r.property_id) for r in LISTINGS.itertuples()]
 KINDS = sorted({i.kind for i in load_catalog().items})
 AUTO = "Auto"
+GENERATORS = [("TRELLIS.2 on Hugging Face (textured, needs HF_TOKEN)", "trellis"),
+              ("TripoSR on our Colab server (needs SMARTSEMSAR_COLAB_URL)", "colab")]
+PLANNERS = [("Rules", "rules"), ("Gemini designs it (needs GEMINI_API_KEY)", "llm")]
+PLANNER_MODEL = detect_llm()
 EMPTY_VIEW = "<div style='padding:40px;text-align:center;color:#888'>The 3D walkthrough appears here.</div>"
 
 
@@ -46,7 +53,7 @@ def read_photo(photo, style_brief):
 
 
 def furnish(property_id, density, must_have, exclude, dining_seats, style_brief,
-            photo, model, kind, width_m, yaw_deg):
+            photo, model, kind, width_m, yaw_deg, generator="trellis", planner="rules"):
     prefs = DesignPreferences.from_loose({
         "density": density, "must_have": must_have or [], "exclude": exclude or [],
         "dining_seats": None if dining_seats == AUTO else int(dining_seats),
@@ -55,7 +62,8 @@ def furnish(property_id, density, must_have, exclude, dining_seats, style_brief,
     lines: list[str] = []
     try:
         html = run(property_id, prefs, photo=photo, model=model, kind=kind or None,
-                   width_m=width_m or None, yaw_deg=float(yaw_deg), say=lines.append)
+                   width_m=width_m or None, yaw_deg=float(yaw_deg), say=lines.append,
+                   generator=generator, planner=planner)
     except PipelineError as e:
         return EMPTY_VIEW, "\n".join(lines + [f"error: {e}"])
     if html is None:
@@ -77,12 +85,15 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
             must_have = gr.CheckboxGroup(KINDS, label="Must have")
             exclude = gr.CheckboxGroup(KINDS, label="Leave out")
             dining_seats = gr.Radio([AUTO, "4", "6"], value=AUTO, label="Dining seats")
-            style_brief = gr.Textbox(label="Style description (saved with the result, not used for placement yet)",
-                                     placeholder="e.g. calm modern, light wood, grey fabric")
+            style_brief = gr.Textbox(label="Style description (used by the Gemini planner)",
+                                     placeholder="e.g. calm modern, light wood, grey fabric, a reading corner")
+            planner = gr.Radio(PLANNERS, value="rules", label="Who arranges the furniture")
             with gr.Accordion("Use my own furniture", open=False):
-                gr.Markdown("A photo of **one** piece needs the Colab server running. "
-                            "A `.glb` model works without it.")
+                gr.Markdown("A photo of **one** piece, fully visible, is turned into a 3D model "
+                            "(about 40 s with TRELLIS.2). A `.glb` model works without either service.")
                 photo = gr.Image(type="filepath", label="Photo of one piece")
+                generator = gr.Radio(GENERATORS, value="trellis" if trellis_service.is_configured() else "colab",
+                                     label="Photo to 3D with")
                 photo_note = gr.Markdown()
                 model = gr.File(file_types=[".glb"], type="filepath", label="…or a GLB model")
                 kind = gr.Dropdown(KINDS, label="What is it? (filled from the photo when possible)")
@@ -93,10 +104,14 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
             view = gr.HTML(EMPTY_VIEW)
             report = gr.Textbox(label="What happened", lines=12, max_lines=20)
 
-    inputs = [property_id, density, must_have, exclude, dining_seats, style_brief, photo, model, kind, width_m, yaw_deg]
+    gr.Markdown(f"Keys found: HF_TOKEN {'yes' if trellis_service.is_configured() else 'no'} · "
+                f"GEMINI_API_KEY {'yes' if vision_service.is_configured() else 'no'} · "
+                f"planner model: {PLANNER_MODEL.name if PLANNER_MODEL else 'none (rules only)'}")
+    inputs = [property_id, density, must_have, exclude, dining_seats, style_brief, photo, model, kind, width_m,
+              yaw_deg, generator, planner]
     photo.change(read_photo, [photo, style_brief], [kind, width_m, photo_note, style_brief])
     go.click(furnish, inputs, [view, report])
     demo.load(furnish, inputs, [view, report])      # show the default listing straight away
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(share="--share" in sys.argv)

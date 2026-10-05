@@ -70,9 +70,11 @@ def generate_model(image_path, out_glb, resolution: str = "512", faces: int = 10
         glb, _ = c.predict(faces, texture_size, api_name="/extract_glb")
     except Exception as e:
         text = str(e)
-        hint = " The free GPU quota may be used up; try again later or log in with HF_TOKEN." \
-            if "quota" in text.lower() or "zerogpu" in text.lower() else ""
-        raise TrellisError(f"TRELLIS.2 failed: {text[:200]}{hint}") from e
+        if "quota" in text.lower() or "zerogpu" in text.lower() or "limit" in text.lower():
+            who = "this Hugging Face account" if (token or setting(TOKEN_ENV)) else "anonymous use (set HF_TOKEN)"
+            raise TrellisError(f"The free daily GPU quota for {who} is used up. It refills within a day; "
+                               "until then use a .glb model or the Colab TripoSR generator.") from e
+        raise TrellisError(f"TRELLIS.2 failed: {text[:200]}") from e
     src = Path(_path(glb))
     if not src.exists() or src.read_bytes()[:4] != b"glTF":
         raise TrellisError("TRELLIS.2 did not return a GLB model.")

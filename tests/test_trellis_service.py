@@ -37,7 +37,7 @@ def test_generate_model_runs_the_space_steps_in_order(tmp_path):
 def test_quota_and_bad_output_are_explained(tmp_path):
     photo = tmp_path / "chair.jpg"
     photo.write_bytes(b"jpg")
-    with pytest.raises(TrellisError, match="quota"):
+    with pytest.raises(TrellisError, match="daily GPU quota"):
         generate_model(photo, tmp_path / "a.glb", client=FakeSpace(tmp_path, fail="/image_to_3d"))
     with pytest.raises(TrellisError, match="did not return a GLB"):
         generate_model(photo, tmp_path / "b.glb", client=FakeSpace(tmp_path, glb=b"<html>error</html>"))
