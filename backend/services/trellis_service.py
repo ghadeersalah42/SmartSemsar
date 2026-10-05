@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-from backend.config import setting
+from backend.config import mask_secrets, setting
 
 SPACE_ENV, TOKEN_ENV = "SMARTSEMSAR_TRELLIS_SPACE", "HF_TOKEN"
 DEFAULT_SPACE = "microsoft/TRELLIS.2"
@@ -41,7 +41,7 @@ def _client(space: str, token: Optional[str]):
     try:
         return Client(space, token=token or None, verbose=False)
     except Exception as e:      # network, Space asleep or renamed
-        raise TrellisError(f"Could not connect to the Space {space} ({e}).") from e
+        raise TrellisError(f"Could not connect to the Space {space} ({mask_secrets(e)}).") from e
 
 
 def _path(result) -> str:
@@ -69,7 +69,7 @@ def generate_model(image_path, out_glb, resolution: str = "512", faces: int = 10
         c.predict(handle_file(_path(clean)), seed_value, str(resolution), api_name="/image_to_3d")
         glb, _ = c.predict(faces, texture_size, api_name="/extract_glb")
     except Exception as e:
-        text = str(e)
+        text = mask_secrets(e)
         if "quota" in text.lower() or "zerogpu" in text.lower() or "limit" in text.lower():
             who = "this Hugging Face account" if (token or setting(TOKEN_ENV)) else "anonymous use (set HF_TOKEN)"
             raise TrellisError(f"The free daily GPU quota for {who} is used up. It refills within a day; "

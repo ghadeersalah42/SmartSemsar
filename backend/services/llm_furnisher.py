@@ -27,7 +27,7 @@ from typing import Optional, Union
 
 import requests
 
-from backend.config import setting
+from backend.config import mask_secrets, setting
 from backend.schema.design import DesignPreferences
 from backend.schema.plan import Plan, load_plan
 from backend.schema.staging import REPO_ROOT, Catalog, Staging, load_catalog, save_staging
@@ -79,21 +79,29 @@ class LLMClient:
         return json.loads(text[text.find("{"):text.rfind("}") + 1])
 
 
-def detect_llm() -> Optional[LLMClient]:
+def detect_llms() -> list[LLMClient]:
+    """Every configured model, best first: Gemini, Groq, local Ollama."""
+    found = []
     if setting("GEMINI_API_KEY"):
         model = setting("SMARTSEMSAR_GEMINI_MODEL", "gemini-flash-latest")
-        return LLMClient(f"gemini/{model}", "https://generativelanguage.googleapis.com/v1beta/openai",
-                         model, setting("GEMINI_API_KEY"))
+        found.append(LLMClient(f"gemini/{model}", "https://generativelanguage.googleapis.com/v1beta/openai",
+                               model, setting("GEMINI_API_KEY")))
     if setting("GROQ_API_KEY"):
         model = setting("SMARTSEMSAR_GROQ_MODEL", "llama-3.3-70b-versatile")
-        return LLMClient(f"groq/{model}", "https://api.groq.com/openai/v1", model, setting("GROQ_API_KEY"))
+        found.append(LLMClient(f"groq/{model}", "https://api.groq.com/openai/v1", model, setting("GROQ_API_KEY")))
     base = setting("OLLAMA_BASE_URL", "http://localhost:11434/v1").rstrip("/")
     try:
         requests.get(f"{base}/models", timeout=1.5).raise_for_status()
         model = setting("SMARTSEMSAR_OLLAMA_MODEL", "qwen2.5")
-        return LLMClient(f"ollama/{model}", base, model, timeout=240.0)
+        found.append(LLMClient(f"ollama/{model}", base, model, timeout=240.0))
     except requests.RequestException:
-        return None
+        pass
+    return found
+
+
+def detect_llm() -> Optional[LLMClient]:
+    found = detect_llms()
+    return found[0] if found else None
 
 
 @dataclass
@@ -145,7 +153,10 @@ def furnish(plan: Plan, preferences: Union[DesignPreferences, dict, None] = None
     style = prefs.style if prefs.style != "unknown" else None
     staging_id = staging_id or f"{plan.listing_id or plan.plan_id}_{style or 'auto'}"
     report = FurnishReport()
-    llm = llm or (detect_llm() if use_llm else None)
+    backups: list = []
+    if llm is None and use_llm:
+        found = detect_llms()
+        llm, backups = (found[0], found[1:]) if found else (None, [])
 
     room_types = {t for i in catalog.items for t in i.room_types}
     rooms = [r for r in plan.rooms() if r.type in room_types]
@@ -165,10 +176,18 @@ def furnish(plan: Plan, preferences: Union[DesignPreferences, dict, None] = None
     messages = [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": user}]
     pending = {r.id for r in rooms}
     for round_no in range(1, MAX_ROUNDS + 1):
-        try:
-            answer = llm.chat_json(messages)
-        except Exception as e:      # network, quota, bad JSON: keep what we have, rules do the rest
-            report.warnings.append(f"LLM stopped in round {round_no} ({type(e).__name__}: {str(e)[:120]}).")
+        answer = None
+        while answer is None:
+            try:
+                answer = llm.chat_json(messages)
+            except Exception as e:  # busy, quota, network, bad JSON: next model, else rules do the rest
+                report.warnings.append(f"{llm.name} failed in round {round_no} "
+                                       f"({type(e).__name__}: {mask_secrets(e)[:120]}).")
+                if not backups:
+                    break
+                llm = backups.pop(0)
+                report.warnings.append(f"Switched to {llm.name}.")
+        if answer is None:
             break
         report.rounds = round_no
         report.summary = answer.get("summary") or report.summary

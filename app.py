@@ -13,6 +13,7 @@ from pathlib import Path
 
 import gradio as gr
 
+from backend.config import setting
 from backend.schema.design import DesignPreferences
 from backend.schema.staging import load_catalog
 from backend.services import trellis_service, vision_service
@@ -29,7 +30,7 @@ KINDS = sorted({i.kind for i in load_catalog().items})
 AUTO = "Auto"
 GENERATORS = [("TRELLIS.2 on Hugging Face (textured, needs HF_TOKEN)", "trellis"),
               ("TripoSR on our Colab server (needs SMARTSEMSAR_COLAB_URL)", "colab")]
-PLANNERS = [("Rules", "rules"), ("Gemini designs it (needs GEMINI_API_KEY)", "llm")]
+PLANNERS = [("Rules", "rules"), ("AI designs it (Gemini, Groq if Gemini is busy)", "llm")]
 PLANNER_MODEL = detect_llm()
 EMPTY_VIEW = "<div style='padding:40px;text-align:center;color:#888'>The 3D walkthrough appears here.</div>"
 
@@ -114,7 +115,8 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
                                        "next time - no photo-to-3D quota needed", visible=False)
 
     gr.Markdown(f"Keys found: HF_TOKEN {'yes' if trellis_service.is_configured() else 'no'} · "
-                f"GEMINI_API_KEY {'yes' if vision_service.is_configured() else 'no'} · "
+                f"GEMINI_API_KEY {'yes' if setting('GEMINI_API_KEY') else 'no'} · "
+                f"GROQ_API_KEY {'yes' if setting('GROQ_API_KEY') else 'no'} · "
                 f"planner model: {PLANNER_MODEL.name if PLANNER_MODEL else 'none (rules only)'}")
     inputs = [property_id, density, must_have, exclude, dining_seats, style_brief, photo, model, kind, width_m,
               yaw_deg, generator, planner]

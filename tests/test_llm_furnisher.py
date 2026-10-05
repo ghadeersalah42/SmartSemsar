@@ -107,5 +107,5 @@ def test_no_model_or_broken_model_falls_back_to_rules(plan, catalog):
         def chat_json(self, messages):
             raise ConnectionError("offline")
     st, report = furnish(plan, None, catalog, llm=Broken())
-    assert report.planner == "rules" and st.items and "LLM stopped" in report.warnings[0]
+    assert report.planner == "rules" and st.items and "failed in round 1" in report.warnings[0]
     assert validate_staging(plan, st, catalog)["approved"]

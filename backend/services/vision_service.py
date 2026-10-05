@@ -32,11 +32,15 @@ from typing import Optional
 
 from PIL import Image
 
-from backend.config import setting
+from backend.config import mask_secrets, setting
 from backend.schema.design import FurniturePhoto
 from backend.schema.staging import Catalog, load_catalog
 
 KEY_ENV, MODEL_ENV, URL_ENV = "GEMINI_API_KEY", "SMARTSEMSAR_GEMINI_MODEL", "SMARTSEMSAR_GEMINI_URL"
+# backup when Gemini is busy or not set: Groq's vision model (OpenAI-compatible API)
+GROQ_KEY_ENV, GROQ_MODEL_ENV = "GROQ_API_KEY", "SMARTSEMSAR_GROQ_VISION_MODEL"
+GROQ_DEFAULT_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 DEFAULT_MODEL = "gemini-flash-latest"   # alias Google keeps pointed at the current Flash model
 DEFAULT_URL = "https://generativelanguage.googleapis.com/v1beta"
 MAX_IMAGE_PX = 1024
@@ -128,20 +132,59 @@ def _ask_gemini(prompt: str, image_path, api_key: str, model: str, base_url: str
     return data
 
 
+def _ask_groq(prompt: str, image_path, api_key: str, model: str, timeout: float) -> dict:
+    """Same question to Groq's vision model (OpenAI-compatible chat API)."""
+    image = _image_part(image_path)["inline_data"]
+    body = {"model": model, "temperature": 0, "response_format": {"type": "json_object"},
+            "messages": [{"role": "user", "content": [
+                {"type": "text", "text": prompt},
+                {"type": "image_url", "image_url": {"url": f"data:{image['mime_type']};base64,{image['data']}"}}]}]}
+    request = urllib.request.Request(GROQ_URL, data=json.dumps(body).encode("utf-8"), method="POST",
+                                     headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}",
+                                              "User-Agent": "SmartSemsar"})
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            answer = json.loads(response.read())
+        text = answer["choices"][0]["message"]["content"]
+        data = json.loads(text[text.find("{"):text.rfind("}") + 1])
+    except urllib.error.HTTPError as e:
+        raise VisionError(f"Groq answered {e.code}: {mask_secrets(e.read().decode('utf-8', 'replace'))[:160]}") from e
+    except (urllib.error.URLError, TimeoutError, OSError, KeyError, IndexError, ValueError) as e:
+        raise VisionError(f"Groq gave no usable answer ({mask_secrets(e)[:120]}).") from e
+    if not isinstance(data, dict):
+        raise VisionError("Groq's answer was not a JSON object.")
+    return data
+
+
 def analyze_photo(image_path, catalog: Optional[Catalog] = None, api_key: Optional[str] = None,
                   model: Optional[str] = None, base_url: Optional[str] = None, timeout: float = 60) -> FurniturePhoto:
-    """What is in this photo, and can it go to the image-to-3D model?"""
+    """What is in this photo, and can it go to the image-to-3D model?
+    Gemini first; if it is busy or not set and GROQ_API_KEY is set, Groq's vision model answers instead."""
     api_key = api_key or setting(KEY_ENV)
-    if not api_key:
+    groq_key = setting(GROQ_KEY_ENV)
+    if not api_key and not groq_key:
         raise VisionError(f"No vision key. Get one at https://aistudio.google.com/apikey and set {KEY_ENV} in .env.")
     kinds = sorted({i.kind for i in (catalog or load_catalog()).items if i.kind})
-    data = _ask_gemini(PROMPT.format(kinds=json.dumps(kinds)), Path(image_path), api_key,
-                       model or setting(MODEL_ENV, DEFAULT_MODEL), base_url or setting(URL_ENV, DEFAULT_URL), timeout)
+    prompt = PROMPT.format(kinds=json.dumps(kinds))
+    gemini_error = None
+    if api_key:
+        try:
+            data = _ask_gemini(prompt, Path(image_path), api_key, model or setting(MODEL_ENV, DEFAULT_MODEL),
+                               base_url or setting(URL_ENV, DEFAULT_URL), timeout)
+            return FurniturePhoto.from_model_answer(data, kinds, WIDTH_RANGE_M)
+        except VisionError as e:
+            if not groq_key:
+                raise
+            gemini_error = e
+    try:
+        data = _ask_groq(prompt, Path(image_path), groq_key, setting(GROQ_MODEL_ENV, GROQ_DEFAULT_MODEL), timeout)
+    except VisionError as e:
+        raise VisionError(f"{gemini_error} Then: {e}" if gemini_error else str(e)) from e
     return FurniturePhoto.from_model_answer(data, kinds, WIDTH_RANGE_M)
 
 
 def is_configured() -> bool:
-    return bool(setting(KEY_ENV))
+    return bool(setting(KEY_ENV) or setting(GROQ_KEY_ENV))
 
 
 if __name__ == "__main__":
