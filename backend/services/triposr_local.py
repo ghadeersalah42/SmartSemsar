@@ -13,7 +13,9 @@ GPU time, so the ZeroGPU quota that stops TRELLIS.2 does not apply. Measured on 
 Differences from the TripoSR repo, so it installs anywhere with pip only:
   - marching cubes: scikit-image when torchmcubes (a C++/CUDA build) is not installed
   - checkpoints load with transformers 4 and 5 (5 renamed the ViT weights)
-  - background: rembg when it works, else a cut-out of a plain background
+  - background: u2net (the model rembg uses) run directly with onnxruntime, else a cut-out of a plain
+    background. rembg itself is not used: its recent versions require numpy >= 2.3, and installing
+    them upgrades numpy under a running notebook.
 
     pip install -r requirements-photo3d.txt
     glb = generate_model("chair.jpg", "out/chair_raw.glb")
@@ -21,11 +23,14 @@ Differences from the TripoSR repo, so it installs anywhere with pip only:
 Usage:
     python -m backend.services.triposr_local <photo> <out.glb> [resolution]
 """
+import hashlib
 import importlib.util
 import re
 import sys
 import threading
 import types
+import urllib.request
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Optional
 
@@ -41,7 +46,11 @@ NEEDS = ("torch", "omegaconf", "einops", "transformers", "huggingface_hub")
 DEFAULT_RESOLUTION = 192        # marching-cubes grid: 128 is coarser and faster, 256 finer and larger
 MAX_PHOTO_PX = 1024
 FOREGROUND_RATIO = 0.85         # how much of the square the piece fills, as in TripoSR's demo
-REMBG_MODEL = "u2net"           # 170 MB, the one TripoSR uses; rembg's newer default is a 1 GB model
+ALPHA_MIN = 16                  # fainter mask values are background noise, not the piece's outline
+# background remover: u2net (Apache-2.0, 170 MB), the one TripoSR's demo uses through rembg
+U2NET_URL = "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx"
+U2NET_MD5 = "60024c5c889badc19c04ad937298a77b"
+CACHE_DIR = Path.home() / ".cache" / "smartsemsar"
 # transformers 5 renamed the ViT weights that the checkpoint stores under their version-4 names
 VIT_RENAMES = [(r"\.encoder\.layer\.(\d+)\.", r".layers.\1."),
                (r"\.attention\.attention\.query\.", ".attention.q_proj."),
@@ -89,10 +98,22 @@ def _marching_cubes(level, threshold):
     return torch.from_numpy(verts[:, ::-1].copy()).float(), torch.from_numpy(faces.astype(np.int64))
 
 
-def _stub(name: str, needs: tuple = (), **attrs):
-    """Stand-in for a module TripoSR imports but this project does not need (or cannot import)."""
-    if name not in sys.modules and any(importlib.util.find_spec(m) is None for m in (name, *needs)):
-        sys.modules[name] = types.SimpleNamespace(**attrs)
+@contextmanager
+def _stand_ins():
+    """While TripoSR's code is imported: stand-ins for modules it imports but never runs here
+    (rembg: backgrounds are removed by cut_out(); imageio: only for videos) and for torchmcubes
+    when it is not installed. Real modules that are already imported are left alone."""
+    stand_ins = {"rembg": {}, "imageio": {}}
+    if importlib.util.find_spec("torchmcubes") is None:
+        stand_ins["torchmcubes"] = {"marching_cubes": _marching_cubes}
+    added = [name for name in stand_ins if name not in sys.modules]
+    for name in added:
+        sys.modules[name] = types.SimpleNamespace(**stand_ins[name])
+    try:
+        yield
+    finally:
+        for name in added:
+            sys.modules.pop(name, None)
 
 
 def _code_dir() -> str:
@@ -126,21 +147,18 @@ def load_model():
         from huggingface_hub import hf_hub_download
         from omegaconf import OmegaConf
 
-        _stub("torchmcubes", marching_cubes=_marching_cubes)
-        # tsr.utils imports rembg, which exits Python when onnxruntime is missing; cut_out() copes without it
-        _stub("rembg", needs=("onnxruntime",))
-        _stub("imageio")          # only for TripoSR's videos
         try:
             code = _code_dir()
             if code not in sys.path:
                 sys.path.insert(0, code)
-            from tsr.models.tokenizers import image as tokenizer
-            from tsr.system import TSR
-            # public files: never send a token (a wrong HF_TOKEN would make the download fail)
-            tokenizer.hf_hub_download = lambda *a, **k: hf_hub_download(*a, **{**k, "token": False})
-            cfg = OmegaConf.load(hf_hub_download(WEIGHTS_REPO, "config.yaml", token=False))
-            OmegaConf.resolve(cfg)
-            model = TSR(cfg)
+            with _stand_ins():
+                from tsr.models.tokenizers import image as tokenizer
+                from tsr.system import TSR
+                # public files: never send a token (a wrong HF_TOKEN would make the download fail)
+                tokenizer.hf_hub_download = lambda *a, **k: hf_hub_download(*a, **{**k, "token": False})
+                cfg = OmegaConf.load(hf_hub_download(WEIGHTS_REPO, "config.yaml", token=False))
+                OmegaConf.resolve(cfg)
+                model = TSR(cfg)
             state = torch.load(hf_hub_download(WEIGHTS_REPO, "model.ckpt", token=False), map_location="cpu")
             model.load_state_dict(_renamed(state, set(model.state_dict())))
         except Exception as e:      # network, disk, an incompatible package version
@@ -159,8 +177,8 @@ def _plain_background_cut(rgb: np.ndarray) -> np.ndarray:
     background = np.median(border, axis=0)
     spread = np.percentile(np.linalg.norm(border - background, axis=1), 90)
     if spread > 40:
-        raise TripoSRError("The photo's background is not plain and the background remover (rembg) is not "
-                           "available. Use a photo on a plain background, or pip install rembg onnxruntime.")
+        raise TripoSRError("The photo's background is not plain and the background remover is not "
+                           "available. Use a photo on a plain background, or pip install onnxruntime.")
     piece = np.linalg.norm(rgb.astype(np.float32) - background, axis=2) > max(30.0, 2.5 * spread)
     piece = ndimage.binary_opening(piece, iterations=2)
     labels, n = ndimage.label(piece)
@@ -171,24 +189,48 @@ def _plain_background_cut(rgb: np.ndarray) -> np.ndarray:
     return (keep * 255).astype(np.uint8)
 
 
+def _u2net_session():
+    """u2net on onnxruntime; the model is downloaded once into CACHE_DIR and checked."""
+    import onnxruntime
+    path = CACHE_DIR / "u2net.onnx"
+    if not path.exists():
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        part = path.with_suffix(".part")
+        urllib.request.urlretrieve(U2NET_URL, part)
+        if hashlib.md5(part.read_bytes()).hexdigest() != U2NET_MD5:
+            part.unlink()
+            raise TripoSRError("The background remover's model download was damaged; try again.")
+        part.rename(path)
+    return onnxruntime.InferenceSession(str(path), providers=["CPUExecutionProvider"])
+
+
+def _u2net_mask(session, rgb: Image.Image) -> Image.Image:
+    """Alpha mask, as rembg's u2net computes it."""
+    x = np.asarray(rgb.resize((320, 320), Image.Resampling.LANCZOS), np.float32)
+    x = (x / max(x.max(), 1e-6) - (0.485, 0.456, 0.406)) / (0.229, 0.224, 0.225)
+    pred = session.run(None, {session.get_inputs()[0].name: x.transpose(2, 0, 1)[None].astype(np.float32)})[0][0, 0]
+    pred = (pred - pred.min()) / max(pred.max() - pred.min(), 1e-6)
+    mask = Image.fromarray((pred.clip(0, 1) * 255).astype(np.uint8), "L")
+    return mask.resize(rgb.size, Image.Resampling.LANCZOS)
+
+
 def cut_out(image: Image.Image, say=None) -> Image.Image:
-    """RGBA with the background transparent: the photo's own alpha, else rembg, else a plain-background cut."""
+    """RGBA with the background transparent: the photo's own alpha, else u2net, else a plain-background cut."""
     if image.mode == "RGBA" and image.getextrema()[3][0] < 255:
         return image
     rgb = image.convert("RGB")
-    if "rembg" not in _loaded:
+    if "u2net" not in _loaded:
         try:
-            import rembg
-            _loaded["rembg"] = rembg, rembg.new_session(REMBG_MODEL)
-        except Exception as e:      # not installed, or its model download failed
-            _loaded["rembg"] = None
+            _loaded["u2net"] = _u2net_session()
+        except Exception as e:      # onnxruntime missing, or the model download failed
+            _loaded["u2net"] = None
             if say:
-                say(f"rembg not usable ({type(e).__name__}); cutting out a plain background instead")
-    if _loaded["rembg"]:
-        rembg, session = _loaded["rembg"]
-        return rembg.remove(rgb, session=session)
+                say(f"background remover not available ({type(e).__name__}); cutting out a plain background instead")
     out = rgb.convert("RGBA")
-    out.putalpha(Image.fromarray(_plain_background_cut(np.asarray(rgb))))
+    if _loaded["u2net"]:
+        out.putalpha(_u2net_mask(_loaded["u2net"], rgb))
+    else:
+        out.putalpha(Image.fromarray(_plain_background_cut(np.asarray(rgb))))
     return out
 
 
@@ -197,7 +239,7 @@ def prepare(photo, say=None) -> Image.Image:
     image = ImageOps.exif_transpose(Image.open(photo))
     image.thumbnail((MAX_PHOTO_PX, MAX_PHOTO_PX))
     rgba = np.asarray(cut_out(image, say))
-    ys, xs = np.nonzero(rgba[..., 3] > 0)
+    ys, xs = np.nonzero(rgba[..., 3] > ALPHA_MIN)
     if len(xs) < 100:
         raise TripoSRError("No piece of furniture found in the photo.")
     piece = rgba[ys.min():ys.max() + 1, xs.min():xs.max() + 1]

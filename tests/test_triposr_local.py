@@ -34,20 +34,48 @@ def studio_photo(path, background=(235, 235, 232)):
     return path
 
 
-def test_plain_background_is_cut_out_without_rembg(tmp_path, monkeypatch):
-    monkeypatch.setitem(triposr_local._loaded, "rembg", None)
+def test_plain_background_is_cut_out_without_the_background_remover(tmp_path, monkeypatch):
+    monkeypatch.setitem(triposr_local._loaded, "u2net", None)
     cut = np.asarray(triposr_local.cut_out(Image.open(studio_photo(tmp_path / "chair.png"))))
     alpha = cut[..., 3]
     assert alpha[100, 100] == 255 and alpha[250, 70] == 255          # body and a leg kept
     assert alpha[5, 5] == 0 and alpha[250, 120] == 0                  # background and the gap between legs removed
 
 
-def test_busy_background_without_rembg_is_a_clear_error(tmp_path, monkeypatch):
-    monkeypatch.setitem(triposr_local._loaded, "rembg", None)
+def test_busy_background_without_the_background_remover_is_a_clear_error(tmp_path, monkeypatch):
+    monkeypatch.setitem(triposr_local._loaded, "u2net", None)
     noise = np.random.default_rng(0).integers(0, 255, (200, 200, 3), dtype=np.uint8)
     Image.fromarray(noise).save(tmp_path / "room.png")
     with pytest.raises(TripoSRError, match="plain background"):
         triposr_local.cut_out(Image.open(tmp_path / "room.png"))
+
+
+class FakeU2net:
+    """onnxruntime session stand-in: 'foreground' wherever the 320 x 320 input is dark."""
+    def get_inputs(self):
+        return [type("Input", (), {"name": "input.1"})()]
+
+    def run(self, outputs, feed):
+        x = feed["input.1"]
+        assert x.shape == (1, 3, 320, 320) and x.dtype == np.float32
+        return [(x.mean(axis=1, keepdims=True) < 0).astype(np.float32) * 5 - 2]
+
+
+def test_u2net_mask_is_scaled_to_the_photo(tmp_path, monkeypatch):
+    monkeypatch.setitem(triposr_local._loaded, "u2net", FakeU2net())
+    cut = np.asarray(triposr_local.cut_out(Image.open(studio_photo(tmp_path / "chair.png"))))
+    assert cut.shape == (300, 240, 4)
+    assert cut[100, 100, 3] > 200 and cut[5, 5, 3] < 30               # piece kept, background cleared
+
+
+def test_triposr_imports_see_stand_ins_only_while_loading():
+    import sys
+    already = "imageio" in sys.modules
+    with triposr_local._stand_ins():
+        import rembg
+        assert not hasattr(rembg, "remove")                              # never the real rembg
+    assert "rembg" not in sys.modules or hasattr(sys.modules["rembg"], "remove")
+    assert ("imageio" in sys.modules) == already
 
 
 def test_prepare_centres_the_piece_on_grey(tmp_path):

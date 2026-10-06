@@ -8,5 +8,6 @@ huggingface_hub
 omegaconf
 einops
 scikit-image
-rembg
 onnxruntime
+# not rembg: its recent versions need numpy >= 2.3 and would upgrade numpy (triposr_local runs
+# rembg's u2net model with onnxruntime directly)
