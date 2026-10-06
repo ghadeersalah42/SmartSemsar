@@ -16,7 +16,7 @@ import gradio as gr
 from backend.config import setting
 from backend.schema.design import DesignPreferences
 from backend.schema.staging import load_catalog
-from backend.services import trellis_service, vision_service
+from backend.services import trellis_service, triposr_local, vision_service
 from backend.services.llm_furnisher import detect_llm
 from inference import OUT_DIR, PipelineError, load_listings, run
 
@@ -28,8 +28,13 @@ LISTING_CHOICES = [(f"{r.property_id} · {str(r.title).strip()[:55]} · {r.pf_ar
                     r.property_id) for r in LISTINGS.itertuples()]
 KINDS = sorted({i.kind for i in load_catalog().items})
 AUTO = "Auto"
-GENERATORS = [("TRELLIS.2 on Hugging Face (textured, needs HF_TOKEN)", "trellis"),
-              ("TripoSR on a Colab GPU (this notebook on a T4, or the Colab server)", "colab")]
+DEVICE = triposr_local.device()
+GENERATORS = [(f"TripoSR here, free, no account ({'GPU, a few seconds' if DEVICE != 'cpu' else 'CPU, about 1 min'})",
+               "local"),
+              ("TRELLIS.2 on Hugging Face (textured; daily GPU quota, needs HF_TOKEN)", "trellis"),
+              ("TripoSR on the Colab server (cv_service/colab_server.ipynb)", "colab")]
+DEFAULT_GENERATOR = ("local" if triposr_local.is_available()
+                     else "colab" if setting("SMARTSEMSAR_COLAB_URL") else "trellis")
 PLANNERS = [("Rules", "rules"), ("AI designs it (Gemini, Groq if Gemini is busy)", "llm")]
 PLANNER_MODEL = detect_llm()
 EMPTY_VIEW = "<div style='padding:40px;text-align:center;color:#888'>The 3D walkthrough appears here.</div>"
@@ -55,7 +60,7 @@ def read_photo(photo, style_brief):
 
 
 def furnish(property_id, density, must_have, exclude, dining_seats, style_brief,
-            photo, model, kind, width_m, yaw_deg, generator="trellis", planner="rules"):
+            photo, model, kind, width_m, yaw_deg, generator="local", planner="rules"):
     prefs = DesignPreferences.from_loose({
         "density": density, "must_have": must_have or [], "exclude": exclude or [],
         "dining_seats": None if dining_seats == AUTO else int(dining_seats),
@@ -96,11 +101,11 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
                                      placeholder="e.g. calm modern, light wood, grey fabric, a reading corner")
             planner = gr.Radio(PLANNERS, value="rules", label="Who arranges the furniture")
             with gr.Accordion("Use my own furniture", open=False):
-                gr.Markdown("A photo of **one** piece, fully visible, is turned into a 3D model "
-                            "(about 40 s with TRELLIS.2). A `.glb` model works without either service.")
+                gr.Markdown("A photo of **one** piece, fully visible, is turned into a 3D model. "
+                            "TripoSR runs right here with no account or quota; the first photo also loads "
+                            "the model (1-2 min). A `.glb` model works without any of them.")
                 photo = gr.Image(type="filepath", label="Photo of one piece")
-                generator = gr.Radio(GENERATORS, value="colab" if setting("SMARTSEMSAR_COLAB_URL") else "trellis",
-                                     label="Photo to 3D with")
+                generator = gr.Radio(GENERATORS, value=DEFAULT_GENERATOR, label="Photo to 3D with")
                 photo_note = gr.Markdown()
                 model = gr.File(file_types=[".glb"], type="filepath",
                                 label="Optional: a 3D model file (.glb) you already have. Leave empty when you use a photo.")
@@ -114,7 +119,9 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
             made_model = gr.File(label="Your piece as a 3D model (.glb): download it and upload it in the .glb box "
                                        "next time - no photo-to-3D quota needed", visible=False)
 
-    gr.Markdown(f"Keys found: HF_TOKEN {'yes' if trellis_service.is_configured() else 'no'} · "
+    missing = triposr_local.missing_packages()
+    gr.Markdown(f"TripoSR: {'ready on ' + DEVICE if not missing else 'missing ' + ', '.join(missing)} · "
+                f"Keys found: HF_TOKEN {'yes' if trellis_service.is_configured() else 'no'} · "
                 f"GEMINI_API_KEY {'yes' if setting('GEMINI_API_KEY') else 'no'} · "
                 f"GROQ_API_KEY {'yes' if setting('GROQ_API_KEY') else 'no'} · "
                 f"planner model: {PLANNER_MODEL.name if PLANNER_MODEL else 'none (rules only)'}")

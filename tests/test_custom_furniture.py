@@ -183,7 +183,8 @@ def test_width_defaults_to_the_stock_items_width(tmp_path):
 # ---------- photo -> walkthrough ----------
 def test_photo_to_walkthrough(colab, photo, tmp_path):
     plan = load_plan("data/plans/PROP_1002.json")
-    catalog, item = add_furniture_from_photo(photo, "sofa", tmp_path / "user1", width_m=2.0, yaw_deg=90)
+    catalog, item = add_furniture_from_photo(photo, "sofa", tmp_path / "user1", width_m=2.0, yaw_deg=90,
+                                             generator="colab")
     assert (item.width_m, item.depth_m) == (2.0, 0.71)
     assert (tmp_path / "user1" / "sofa_3_seat_raw.glb").exists()            # kept for a later re-fit
 

@@ -188,7 +188,7 @@ def test_run_takes_kind_and_width_from_the_photo(monkeypatch, photo, tmp_path):
     from inference import run
     fake_tools(monkeypatch, ARMCHAIR)
     lines = []
-    html = run("PROP_1007", photo=photo, out_dir=tmp_path, say=lines.append)
+    html = run("PROP_1007", photo=photo, out_dir=tmp_path, say=lines.append, generator="colab")
     report = "\n".join(lines)
     assert html is not None and html.exists()
     assert "round swivel armchair: kind armchair, about 1.3 m wide" in report
@@ -206,5 +206,6 @@ def test_users_own_answers_win_over_the_photo(monkeypatch, photo, tmp_path):
     from inference import run
     fake_tools(monkeypatch, {**ARMCHAIR, "kind": "other"})        # model could not name it; the user did
     lines = []
-    run("PROP_1007", photo=photo, kind="armchair", width_m=1.0, out_dir=tmp_path, say=lines.append)
+    run("PROP_1007", photo=photo, kind="armchair", width_m=1.0, out_dir=tmp_path, say=lines.append,
+        generator="colab")
     assert "Your armchair: 1.0 x" in "\n".join(lines)

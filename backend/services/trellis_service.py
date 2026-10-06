@@ -57,7 +57,7 @@ def explain(text: str, token_set: bool) -> str:
                   if token_set else "Set HF_TOKEN (a 'Read' token) to use your account's own quota."))
     elif "quota" in low or "zerogpu" in low or "limit" in low:
         why = ("This account's free daily GPU time is used up (about 5 min a day; it resets 24 h after "
-               "its first use). Meanwhile use a .glb model or TripoSR on a Colab GPU.")
+               "its first use). Meanwhile choose \"TripoSR here\" (no account, no quota) or a .glb model.")
     else:
         return f"TRELLIS.2 failed: {text[:300]}"
     return f"{why}\n             Hugging Face said: {text[:300]}"

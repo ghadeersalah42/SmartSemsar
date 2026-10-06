@@ -9,7 +9,8 @@ Examples (from this folder):
     python inference.py PROP_1007 --density full --must-have desk --exclude tv --dining-seats 4
     python inference.py PROP_1002 --prefs my_prefs.json          # e.g. an LLM's JSON answer
     python inference.py PROP_1002 --model chair.glb --kind armchair --width 0.9
-    python inference.py PROP_1002 --photo sofa.jpg --kind sofa   # needs the Colab server running
+    python inference.py PROP_1002 --photo sofa.jpg --kind sofa   # TripoSR on this machine (GPU or CPU, no account)
+    python inference.py PROP_1002 --photo sofa.jpg --kind sofa --generator colab   # the Colab server
     python inference.py PROP_1002 --photo chair.jpg              # kind and width read from the photo (Gemini)
     python inference.py PROP_1002 --photo chair.jpg --kind armchair --generator trellis   # TRELLIS.2 (HF_TOKEN)
     python inference.py PROP_1002 --planner llm --style-brief "warm, light wood"         # Gemini places furniture
@@ -38,6 +39,7 @@ from backend.services.furniture_actions import apply_actions
 from backend.services.furniture_placer import stage_plan
 from backend.services.llm_furnisher import furnish
 from backend.services.trellis_service import TrellisError
+from backend.services.triposr_local import TripoSRError
 from backend.services.staging_validator import validate_staging
 from backend.services.walkthrough import build_walkthrough
 
@@ -80,7 +82,7 @@ def place_unplaced(plan, staging, catalog):
 
 def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None, model=None,
         kind: Optional[str] = None, width_m: Optional[float] = None, yaw_deg: float = 0.0,
-        out_dir=OUT_DIR, say: Callable[[str], None] = print, generator: str = "colab",
+        out_dir=OUT_DIR, say: Callable[[str], None] = print, generator: str = "local",
         planner: str = "rules") -> Optional[Path]:
     """One full run. Reports each step through say(); returns the walkthrough page,
     or None if the validator rejected the staging."""
@@ -139,9 +141,15 @@ def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None,
         try:
             add = add_furniture_from_photo if photo else add_furniture_model
             extra = {"generator": generator} if photo else {}
+            if photo and generator == "local":
+                from backend.services import triposr_local
+                if triposr_local.is_available() and not triposr_local.is_loaded():
+                    say(f"3. 3D model  TripoSR on this machine ({triposr_local.device()}); the first photo also "
+                        "downloads and loads the model (1-2 min)")
+                extra["say"] = lambda m: say(f"             {m}")
             catalog, item = add(photo or model, kind, out_dir / "custom", catalog, width_m=width_m,
                                 yaw_deg=yaw_deg, **extra)
-        except (ColabError, TrellisError, KeyError, ValueError) as e:
+        except (ColabError, TrellisError, TripoSRError, KeyError, ValueError) as e:
             raise PipelineError(str(e)) from e
         say(f"3. your item {item.name}: {item.width_m} x {item.depth_m} x {item.height_m} m "
             f"(replaces {item.id}) from {'photo via ' + generator if photo else 'model'}")
@@ -215,8 +223,9 @@ def main() -> int:
     ap.add_argument("--exclude", nargs="*", help="catalog names to leave out, e.g. tv")
     ap.add_argument("--dining-seats", dest="dining_seats", type=int, help="4 or 6")
     ap.add_argument("--photo", help="photo of ONE piece of furniture (turned into 3D by --generator)")
-    ap.add_argument("--generator", default="colab", choices=["colab", "trellis"],
-                    help="photo -> 3D: colab = TripoSR on our Colab server, trellis = TRELLIS.2 on Hugging Face")
+    ap.add_argument("--generator", default="local", choices=["local", "colab", "trellis"],
+                    help="photo -> 3D: local = TripoSR on this machine (GPU or CPU, no account), "
+                         "colab = TripoSR on our Colab server, trellis = TRELLIS.2 on Hugging Face (GPU quota)")
     ap.add_argument("--planner", default="rules", choices=["rules", "llm"],
                     help="rules = furniture_placer; llm = Gemini/Groq chooses and arranges (falls back to rules)")
     ap.add_argument("--model", help="a GLB to use as your own furniture instead of a photo")

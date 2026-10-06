@@ -1,10 +1,10 @@
-"""triposr_local without downloading TripoSR: checkpoint names, photo preparation, the turn to +z."""
+"""triposr_local without downloading TripoSR: checkpoint names, photo preparation, the turn to +z, dispatch."""
 import numpy as np
 import pytest
 import trimesh
 from PIL import Image
 
-from backend.services import triposr_local
+from backend.services import custom_furniture, triposr_local
 from backend.services.triposr_local import TripoSRError
 
 
@@ -100,3 +100,20 @@ def test_missing_packages_are_named(monkeypatch):
     with pytest.raises(TripoSRError, match="no_such_module_xyz.*requirements-photo3d"):
         triposr_local.load_model()
 
+
+def test_custom_furniture_uses_local_by_default_and_turns_colab_models(tmp_path, monkeypatch):
+    calls, fitted = [], []
+
+    def fake_generate(name):
+        def generate(image, raw, **kw):
+            calls.append(name)
+        return generate
+    monkeypatch.setattr(triposr_local, "generate_model", fake_generate("local"))
+    monkeypatch.setattr(custom_furniture.colab_service, "generate_model", fake_generate("colab"))
+    monkeypatch.setattr(custom_furniture, "add_furniture_model",
+                        lambda raw, kind, folder, catalog, width_m, yaw_deg, name: fitted.append(yaw_deg))
+    custom_furniture.add_furniture_from_photo(tmp_path / "x.jpg", "armchair", tmp_path, yaw_deg=90)
+    custom_furniture.add_furniture_from_photo(tmp_path / "x.jpg", "armchair", tmp_path, yaw_deg=270,
+                                              generator="colab")
+    assert calls == ["local", "colab"]
+    assert fitted == [90, 90]        # TripoSR through the Colab server faces -z: half a turn more
