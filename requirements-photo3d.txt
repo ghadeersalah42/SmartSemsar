@@ -1,0 +1,12 @@
+# Photo -> 3D on this machine (backend/services/triposr_local.py): TripoSR, GPU or CPU, no account.
+#   pip install -r requirements-photo3d.txt
+# Colab already has torch, transformers, scikit-image and huggingface_hub.
+# CPU-only PyTorch is much smaller: pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch
+transformers
+huggingface_hub
+omegaconf
+einops
+scikit-image
+rembg
+onnxruntime
