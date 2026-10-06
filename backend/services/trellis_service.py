@@ -44,6 +44,25 @@ def _client(space: str, token: Optional[str]):
         raise TrellisError(f"Could not connect to the Space {space} ({mask_secrets(e)}).") from e
 
 
+def explain(text: str, token_set: bool) -> str:
+    """Hugging Face's own message, plus what it means for the user. ZeroGPU reserves the time a
+    Space asks for (TRELLIS.2: 120 s) before running; free accounts get about 5 min a day,
+    reset 24 h after their first use; calls without a recognised token share the quota of the
+    machine they come from (on Colab: shared by many users, usually empty)."""
+    low = text.lower()
+    if "authenticate" in low or "sign in" in low or "log in" in low:
+        why = ("Hugging Face treated this call as anonymous, so the shared quota of this machine was used. "
+               + ("HF_TOKEN is set but was not accepted for GPU quota: use a 'Read' token of a verified "
+                  "account, paste it again on one line, and restart the runtime."
+                  if token_set else "Set HF_TOKEN (a 'Read' token) to use your account's own quota."))
+    elif "quota" in low or "zerogpu" in low or "limit" in low:
+        why = ("This account's free daily GPU time is used up (about 5 min a day; it resets 24 h after "
+               "its first use). Meanwhile use a .glb model or TripoSR on a Colab GPU.")
+    else:
+        return f"TRELLIS.2 failed: {text[:300]}"
+    return f"{why}\n             Hugging Face said: {text[:300]}"
+
+
 def _path(result) -> str:
     """gradio returns a file path or a {'path': ...} dict depending on the version."""
     if isinstance(result, (list, tuple)):
@@ -69,12 +88,7 @@ def generate_model(image_path, out_glb, resolution: str = "512", faces: int = 10
         c.predict(handle_file(_path(clean)), seed_value, str(resolution), api_name="/image_to_3d")
         glb, _ = c.predict(faces, texture_size, api_name="/extract_glb")
     except Exception as e:
-        text = mask_secrets(e)
-        if "quota" in text.lower() or "zerogpu" in text.lower() or "limit" in text.lower():
-            who = "this Hugging Face account" if (token or setting(TOKEN_ENV)) else "anonymous use (set HF_TOKEN)"
-            raise TrellisError(f"The free daily GPU quota for {who} is used up. It refills within a day; "
-                               "until then use a .glb model or the Colab TripoSR generator.") from e
-        raise TrellisError(f"TRELLIS.2 failed: {text[:200]}") from e
+        raise TrellisError(explain(mask_secrets(e), bool(token or setting(TOKEN_ENV)))) from e
     src = Path(_path(glb))
     if not src.exists() or src.read_bytes()[:4] != b"glTF":
         raise TrellisError("TRELLIS.2 did not return a GLB model.")

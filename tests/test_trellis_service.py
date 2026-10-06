@@ -37,7 +37,7 @@ def test_generate_model_runs_the_space_steps_in_order(tmp_path):
 def test_quota_and_bad_output_are_explained(tmp_path):
     photo = tmp_path / "chair.jpg"
     photo.write_bytes(b"jpg")
-    with pytest.raises(TrellisError, match="daily GPU quota"):
+    with pytest.raises(TrellisError, match="free daily GPU time"):
         generate_model(photo, tmp_path / "a.glb", client=FakeSpace(tmp_path, fail="/image_to_3d"))
     with pytest.raises(TrellisError, match="did not return a GLB"):
         generate_model(photo, tmp_path / "b.glb", client=FakeSpace(tmp_path, glb=b"<html>error</html>"))
@@ -58,3 +58,14 @@ def test_custom_furniture_can_use_trellis(tmp_path, monkeypatch):
     assert called["raw"].name == "armchair_raw.glb"
     with pytest.raises(ValueError):
         custom_furniture.add_furniture_from_photo(tmp_path / "x.jpg", "armchair", tmp_path, generator="dalle")
+
+
+def test_anonymous_quota_is_explained_as_a_token_problem():
+    from backend.services.trellis_service import explain
+    msg = ("You have exceeded your ZeroGPU quota (120s requested vs. 0s left). Try again in 0:00:00. "
+           "Authenticate with a Hugging Face token for more quota")
+    assert "treated this call as anonymous" in explain(msg, token_set=True)
+    assert "not accepted" in explain(msg, token_set=True)
+    assert "120s requested vs. 0s left" in explain(msg, token_set=True)     # the real message is kept
+    assert "Set HF_TOKEN" in explain(msg, token_set=False)
+    assert "used up" in explain("You have exceeded your ZeroGPU runs limit. Subscribe to PRO", token_set=True)

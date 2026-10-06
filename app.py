@@ -29,7 +29,7 @@ LISTING_CHOICES = [(f"{r.property_id} · {str(r.title).strip()[:55]} · {r.pf_ar
 KINDS = sorted({i.kind for i in load_catalog().items})
 AUTO = "Auto"
 GENERATORS = [("TRELLIS.2 on Hugging Face (textured, needs HF_TOKEN)", "trellis"),
-              ("TripoSR on our Colab server (needs SMARTSEMSAR_COLAB_URL)", "colab")]
+              ("TripoSR on a Colab GPU (this notebook on a T4, or the Colab server)", "colab")]
 PLANNERS = [("Rules", "rules"), ("AI designs it (Gemini, Groq if Gemini is busy)", "llm")]
 PLANNER_MODEL = detect_llm()
 EMPTY_VIEW = "<div style='padding:40px;text-align:center;color:#888'>The 3D walkthrough appears here.</div>"
@@ -99,7 +99,7 @@ with gr.Blocks(title="Smart Semsar - furnish a listing") as demo:
                 gr.Markdown("A photo of **one** piece, fully visible, is turned into a 3D model "
                             "(about 40 s with TRELLIS.2). A `.glb` model works without either service.")
                 photo = gr.Image(type="filepath", label="Photo of one piece")
-                generator = gr.Radio(GENERATORS, value="trellis" if trellis_service.is_configured() else "colab",
+                generator = gr.Radio(GENERATORS, value="colab" if setting("SMARTSEMSAR_COLAB_URL") else "trellis",
                                      label="Photo to 3D with")
                 photo_note = gr.Markdown()
                 model = gr.File(file_types=[".glb"], type="filepath",
