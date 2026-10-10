@@ -420,3 +420,28 @@ def apply_actions(plan: Plan, staging: Staging, actions_by_room: dict[str, list[
                 errors.setdefault(room_id, []).append(err)
         current = current.model_copy(update={"items": p.items})
     return current, errors
+
+
+def place_unplaced(plan: Plan, staging: Staging, catalog: Catalog) -> tuple[Staging, list[str]]:
+    """Pieces that were asked for but did not fit the rules (often the user's own piece):
+    try once more with placement instructions - beside the main piece of the room, else in
+    open floor. -> (new staging, names placed now)"""
+    placed = []
+    for name in list(staging.unplaced):
+        item = next((i for i in catalog.items if i.is_a([name])), None)
+        if item is None:
+            continue
+        for room in (r for r in plan.rooms() if r.type in item.room_types):
+            anchors = [i for i in staging.in_room(room.id) if i.catalog_id.split("_")[0] in ("sofa", "bed")]
+            tries = [[{"item": item.id, "place": "beside", "ref": a.id, "side": side}]
+                     for a in anchors for side in ("right", "left")]
+            tries.append([{"item": item.id, "place": "free", "min_clearance_m": 0.4}])
+            for actions in tries:
+                new, errors = apply_actions(plan, staging, {room.id: actions}, catalog)
+                if not errors:
+                    staging = new.model_copy(update={"unplaced": [u for u in new.unplaced if u != name]})
+                    placed.append(name)
+                    break
+            if name in placed:
+                break
+    return staging, placed

@@ -35,7 +35,7 @@ from backend.schema.staging import load_catalog, save_staging
 from backend.services import vision_service
 from backend.services.colab_service import ColabError
 from backend.services.custom_furniture import add_furniture_from_photo, add_furniture_model
-from backend.services.furniture_actions import apply_actions
+from backend.services.furniture_actions import place_unplaced
 from backend.services.furniture_placer import stage_plan
 from backend.services.llm_furnisher import furnish
 from backend.services.trellis_service import TrellisError
@@ -53,31 +53,6 @@ class PipelineError(RuntimeError):
 
 def load_listings() -> pd.DataFrame:
     return pd.read_csv(ROOT / "data" / "final_merged_dataset.csv", encoding="utf-8-sig")
-
-
-def place_unplaced(plan, staging, catalog):
-    """Pieces that were asked for but did not fit the rules (often the user's own piece):
-    try once more with placement instructions - beside the main piece of the room, else in
-    open floor. -> (new staging, names placed now)"""
-    placed = []
-    for name in list(staging.unplaced):
-        item = next((i for i in catalog.items if i.is_a([name])), None)
-        if item is None:
-            continue
-        for room in (r for r in plan.rooms() if r.type in item.room_types):
-            anchors = [i for i in staging.in_room(room.id) if i.catalog_id.split("_")[0] in ("sofa", "bed")]
-            tries = [[{"item": item.id, "place": "beside", "ref": a.id, "side": side}]
-                     for a in anchors for side in ("right", "left")]
-            tries.append([{"item": item.id, "place": "free", "min_clearance_m": 0.4}])
-            for actions in tries:
-                new, errors = apply_actions(plan, staging, {room.id: actions}, catalog)
-                if not errors:
-                    staging = new.model_copy(update={"unplaced": [u for u in new.unplaced if u != name]})
-                    placed.append(name)
-                    break
-            if name in placed:
-                break
-    return staging, placed
 
 
 def run(property_id: str, prefs: Optional[DesignPreferences] = None, photo=None, model=None,

@@ -2,9 +2,12 @@
 
 Only the 3D-model leg of the pipeline is wired so far:
 
-    staging_3d_node -> routing_node -> furniture_node   (model_state ready)
+    staging_3d_node -> routing_node -> furniture_node   (model_state ready) -> END
                                      -> staging_3d_node  (retry)
                                      -> END               (error)
+
+furniture_node reads furniture_state (wishes, planner, the user's own pieces) and writes
+what it placed back into it: furniture_state.walkthrough_path is the furnished apartment.
 
 input_node / matching_node fill selected_property and feed into this leg;
 they are still being built on their own branches and are not wired in yet.

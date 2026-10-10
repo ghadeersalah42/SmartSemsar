@@ -39,9 +39,13 @@ from backend.schema.staging import Catalog, load_catalog
 KEY_ENV, MODEL_ENV, URL_ENV = "GEMINI_API_KEY", "SMARTSEMSAR_GEMINI_MODEL", "SMARTSEMSAR_GEMINI_URL"
 # backup when Gemini is busy or not set: Groq's vision model (OpenAI-compatible API)
 GROQ_KEY_ENV, GROQ_MODEL_ENV = "GROQ_API_KEY", "SMARTSEMSAR_GROQ_VISION_MODEL"
-GROQ_DEFAULT_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
+# Groq retired llama-4-scout; this one read furniture photos in October 2026.
+# backend/services/model_check.py finds a working one when this goes too.
+GROQ_DEFAULT_MODEL = "qwen/qwen3.8-27b"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 DEFAULT_MODEL = "gemini-flash-latest"   # alias Google keeps pointed at the current Flash model
+# tried when the main model stays busy (503) or is gone (404): a lighter model, usually free of the rush
+BACKUP_MODEL_ENV, BACKUP_MODEL = "SMARTSEMSAR_GEMINI_BACKUP_MODEL", "gemini-flash-lite-latest"
 DEFAULT_URL = "https://generativelanguage.googleapis.com/v1beta"
 MAX_IMAGE_PX = 1024
 BUSY_CODES = {500, 502, 503, 504}      # "high demand" and other temporary errors
@@ -168,14 +172,17 @@ def analyze_photo(image_path, catalog: Optional[Catalog] = None, api_key: Option
     prompt = PROMPT.format(kinds=json.dumps(kinds))
     gemini_error = None
     if api_key:
-        try:
-            data = _ask_gemini(prompt, Path(image_path), api_key, model or setting(MODEL_ENV, DEFAULT_MODEL),
-                               base_url or setting(URL_ENV, DEFAULT_URL), timeout)
-            return FurniturePhoto.from_model_answer(data, kinds, WIDTH_RANGE_M)
-        except VisionError as e:
-            if not groq_key:
-                raise
-            gemini_error = e
+        main = model or setting(MODEL_ENV, DEFAULT_MODEL)
+        backup = None if model else setting(BACKUP_MODEL_ENV, BACKUP_MODEL)    # a model asked for by name is not swapped
+        for name in [main] + ([backup] if backup and backup != main else []):
+            try:
+                data = _ask_gemini(prompt, Path(image_path), api_key, name,
+                                   base_url or setting(URL_ENV, DEFAULT_URL), timeout)
+                return FurniturePhoto.from_model_answer(data, kinds, WIDTH_RANGE_M)
+            except VisionError as e:
+                gemini_error = gemini_error or e         # the main model's error is the one worth showing
+        if not groq_key:
+            raise gemini_error
     try:
         data = _ask_groq(prompt, Path(image_path), groq_key, setting(GROQ_MODEL_ENV, GROQ_DEFAULT_MODEL), timeout)
     except VisionError as e:

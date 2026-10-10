@@ -68,3 +68,64 @@ def test_no_groq_key_keeps_the_gemini_error(monkeypatch):
                         lambda *a, **k: (_ for _ in ()).throw(vision_service.VisionError("Gemini answered 503")))
     with pytest.raises(vision_service.VisionError, match="503"):
         vision_service.analyze_photo("data/matched_images/4770.png")
+
+
+def test_photo_tries_the_lighter_gemini_before_groq(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "AIza-test")
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.delenv(vision_service.MODEL_ENV, raising=False)
+    monkeypatch.delenv(vision_service.BACKUP_MODEL_ENV, raising=False)
+    tried = []
+
+    def gemini(prompt, path, key, model, url, timeout):
+        tried.append(model)
+        if model == vision_service.DEFAULT_MODEL:
+            raise vision_service.VisionError("Gemini answered 503: high demand.")
+        return {"scene": "single_item", "fully_visible": True, "kind": "sofa", "width_m": 2.1}
+    monkeypatch.setattr(vision_service, "_ask_gemini", gemini)
+    seen = vision_service.analyze_photo("data/matched_images/4770.png")
+    assert tried == [vision_service.DEFAULT_MODEL, vision_service.BACKUP_MODEL] and seen.kind == "sofa"
+
+
+def test_planner_order_gemini_groq_then_lighter_gemini(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "AIza-test")
+    monkeypatch.setenv("GROQ_API_KEY", "gsk_test")
+    for name in ("SMARTSEMSAR_GEMINI_MODEL", "SMARTSEMSAR_GROQ_MODEL", "SMARTSEMSAR_GEMINI_BACKUP_MODEL"):
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("OLLAMA_BASE_URL", "http://127.0.0.1:9/v1")      # nothing listens there
+    names = [c.name for c in llm_furnisher.detect_llms()]
+    assert names == ["gemini/gemini-flash-latest", f"groq/{llm_furnisher.GROQ_DEFAULT_MODEL}",
+                     "gemini/gemini-flash-lite-latest"]
+
+
+def test_model_check_keeps_the_first_model_that_answers(monkeypatch):
+    from backend.services import model_check
+    monkeypatch.setenv("GEMINI_API_KEY", "AIza-test")
+    monkeypatch.setenv("GROQ_API_KEY", "gsk_test")
+    for name in ("SMARTSEMSAR_GEMINI_MODEL", "SMARTSEMSAR_GROQ_MODEL", "SMARTSEMSAR_GROQ_VISION_MODEL"):
+        monkeypatch.delenv(name, raising=False)
+
+    def gemini(prompt, path, key, model, url, timeout):
+        if model == "gemini-flash-latest":
+            raise vision_service.VisionError("Gemini answered 503")
+    monkeypatch.setattr(vision_service, "_ask_gemini", gemini)
+
+    def groq_photo(prompt, path, key, model, timeout):
+        if model != "qwen/new-vision":
+            raise vision_service.VisionError("Groq answered 400: does not support images")
+    monkeypatch.setattr(vision_service, "_ask_groq", groq_photo)
+    monkeypatch.setattr(model_check, "groq_models", lambda key: ["openai/gpt-oss-120b", "qwen/new-vision",
+                                                                 "whisper-large-v3"])
+
+    def chat(self, messages):
+        if self.model in ("gemini-flash-latest", "gemini-flash-lite-latest"):
+            raise RuntimeError("503")
+        return {"ok": True}
+    monkeypatch.setattr(llm_furnisher.LLMClient, "chat_json", chat)
+
+    chosen = model_check.pick_working_models(say=lambda s: None)
+    assert chosen == {"gemini_photo": "gemini-flash-lite-latest", "gemini_text": "gemini-3.8-flash",
+                      "groq_photo": "qwen/new-vision", "groq_text": "openai/gpt-oss-120b"}
+    assert setting("SMARTSEMSAR_GEMINI_MODEL") == "gemini-flash-lite-latest"
+    assert setting("SMARTSEMSAR_GROQ_VISION_MODEL") == "qwen/new-vision"
+    assert setting("SMARTSEMSAR_GROQ_MODEL") == "openai/gpt-oss-120b"

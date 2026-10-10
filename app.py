@@ -32,7 +32,8 @@ DEVICE = triposr_local.device()
 GENERATORS = [(f"TripoSR here, free, no account ({'GPU, a few seconds' if DEVICE != 'cpu' else 'CPU, about 1 min'})",
                "local"),
               ("TRELLIS.2 on Hugging Face (textured; daily GPU quota, needs HF_TOKEN)", "trellis"),
-              ("TripoSR on the Colab server (cv_service/colab_server.ipynb)", "colab")]
+              ("Image-to-3D server: Hunyuan3D on Kaggle (cv_service/furniture_server_kaggle.ipynb) "
+               "or TripoSR on Colab (cv_service/colab_server.ipynb)", "colab")]
 DEFAULT_GENERATOR = ("local" if triposr_local.is_available()
                      else "colab" if setting("SMARTSEMSAR_COLAB_URL") else "trellis")
 PLANNERS = [("Rules", "rules"), ("AI designs it (Gemini, Groq if Gemini is busy)", "llm")]

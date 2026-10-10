@@ -12,9 +12,10 @@ Flow per call:
   5. rooms the model left empty are furnished by the rule placer (furniture_placer)
 No model configured or reachable -> the rule placer does everything (report says so).
 
-Model (OpenAI-compatible chat API), first one configured wins:
+Model (OpenAI-compatible chat API), first one configured wins; a busy one hands over to the next:
   GEMINI_API_KEY   -> Gemini (SMARTSEMSAR_GEMINI_MODEL, default gemini-flash-latest)
-  GROQ_API_KEY     -> Groq   (SMARTSEMSAR_GROQ_MODEL, default llama-3.3-70b-versatile)
+  GROQ_API_KEY     -> Groq   (SMARTSEMSAR_GROQ_MODEL, default openai/gpt-oss-120b)
+  GEMINI_API_KEY   -> the lighter Gemini (SMARTSEMSAR_GEMINI_BACKUP_MODEL, default gemini-flash-lite-latest)
   OLLAMA_BASE_URL  -> local Ollama (SMARTSEMSAR_OLLAMA_MODEL, default qwen2.5)
 
 Usage:
@@ -79,16 +80,28 @@ class LLMClient:
         return json.loads(text[text.find("{"):text.rfind("}") + 1])
 
 
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
+GEMINI_DEFAULT_MODEL = "gemini-flash-latest"
+GEMINI_BACKUP_MODEL = "gemini-flash-lite-latest"     # lighter, usually free when the main one is busy
+# Groq retired llama-3.3-70b-versatile; this one answered in October 2026.
+# backend/services/model_check.py finds a working one when this goes too.
+GROQ_DEFAULT_MODEL = "openai/gpt-oss-120b"
+
+
 def detect_llms() -> list[LLMClient]:
-    """Every configured model, best first: Gemini, Groq, local Ollama."""
+    """Every configured model, best first: Gemini, Groq, the lighter Gemini, local Ollama.
+    furnish() moves to the next one when a model is busy or fails."""
     found = []
-    if setting("GEMINI_API_KEY"):
-        model = setting("SMARTSEMSAR_GEMINI_MODEL", "gemini-flash-latest")
-        found.append(LLMClient(f"gemini/{model}", "https://generativelanguage.googleapis.com/v1beta/openai",
-                               model, setting("GEMINI_API_KEY")))
+    gemini_key = setting("GEMINI_API_KEY")
+    gemini_model = setting("SMARTSEMSAR_GEMINI_MODEL", GEMINI_DEFAULT_MODEL)
+    if gemini_key:
+        found.append(LLMClient(f"gemini/{gemini_model}", GEMINI_URL, gemini_model, gemini_key))
     if setting("GROQ_API_KEY"):
-        model = setting("SMARTSEMSAR_GROQ_MODEL", "llama-3.3-70b-versatile")
+        model = setting("SMARTSEMSAR_GROQ_MODEL", GROQ_DEFAULT_MODEL)
         found.append(LLMClient(f"groq/{model}", "https://api.groq.com/openai/v1", model, setting("GROQ_API_KEY")))
+    backup = setting("SMARTSEMSAR_GEMINI_BACKUP_MODEL", GEMINI_BACKUP_MODEL)
+    if gemini_key and backup and backup != gemini_model:
+        found.append(LLMClient(f"gemini/{backup}", GEMINI_URL, backup, gemini_key))
     base = setting("OLLAMA_BASE_URL", "http://localhost:11434/v1").rstrip("/")
     try:
         requests.get(f"{base}/models", timeout=1.5).raise_for_status()
