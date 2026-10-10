@@ -10,23 +10,26 @@ import json
 from typing import Optional, Literal
 
 from dotenv import main
-import ollama
+# import ollama
+from langchain_groq import ChatGroq
+from langchain_core.messages import SystemMessage, HumanMessage
 import gradio as gr
 from pydantic import BaseModel, Field
 from faster_whisper import WhisperModel
+from backend.schema.state import CustomerRequirements
 
 
 # ---------- 1) Schema ----------
-class CustomerRequirements(BaseModel):
-    location: Optional[str] = None
-    budget_min: Optional[float] = None
-    budget_max: Optional[float] = None
-    area_sqm: Optional[float] = None
-    bedrooms: Optional[int] = None
-    property_type: Optional[Literal["apartment", "villa", "duplex", "studio", "townhouse", "unknown"]] = "unknown"
-    purpose: Optional[Literal["living", "investment", "unknown"]] = "unknown"
-    notes: Optional[str] = None
-    missing_fields: list[str] = Field(default_factory=list)
+# class CustomerRequirements(BaseModel):
+#     location: Optional[str] = None
+#     budget_min: Optional[float] = None
+#     budget_max: Optional[float] = None
+#     area_sqm: Optional[float] = None
+#     bedrooms: Optional[int] = None
+#     property_type: Optional[Literal["apartment", "villa", "duplex", "studio", "townhouse", "unknown"]] = "unknown"
+#     purpose: Optional[Literal["living", "investment", "unknown"]] = "unknown"
+#     notes: Optional[str] = None
+#     missing_fields: list[str] = Field(default_factory=list)
 
 
 # ---------- 2) Speech to text ----------
@@ -46,7 +49,7 @@ def transcribe_audio(file_path: str) -> str:
 
 
 # ---------- 3) LLM extraction (Ollama) ----------
-MODEL_NAME = "qwen2.5"
+# MODEL_NAME = "qwen2.5"
 
 SYSTEM_PROMPT = '''You are a real-estate intake assistant.
 You receive raw text gathered from a phone call transcript and/or free text written
@@ -87,31 +90,45 @@ def build_user_prompt(call_transcript=None, raw_text=None) -> str:
         parts.append(f"--- CUSTOMER TEXT ---\n{raw_text}")
     return "\n\n".join(parts) if parts else "No input provided."
 
-
+llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
+structured_llm = llm.with_structured_output(CustomerRequirements)
+                                            
 def extract_requirements(call_transcript=None, raw_text=None) -> CustomerRequirements:
-    response = ollama.chat(
-        model=MODEL_NAME,
-        format="json",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": build_user_prompt(call_transcript, raw_text)},
-        ],
-        options={"temperature": 0},
-    )
-    raw_content = response["message"]["content"]
-    try:
-        parsed = json.loads(raw_content)
-    except json.JSONDecodeError:
-        cleaned = raw_content.strip().strip("`").replace("json\n", "", 1)
-        parsed = json.loads(cleaned)
-
-    req = CustomerRequirements(**parsed)
+    user_prompt = build_user_prompt(call_transcript, raw_text)
+    messages = [
+        SystemMessage(content=SYSTEM_PROMPT),
+        HumanMessage(content=user_prompt)
+    ]
+    req = structured_llm.invoke(messages)
 
     fields = ["location", "budget_min", "budget_max", "area_sqm",
               "bedrooms", "property_type", "purpose", "notes"]
     req.missing_fields = [f for f in fields if getattr(req, f) in (None, "unknown")]
 
     return req
+    # response = ollama.chat(
+    #     model=MODEL_NAME,
+    #     format="json",
+    #     messages=[
+    #         {"role": "system", "content": SYSTEM_PROMPT},
+    #         {"role": "user", "content": build_user_prompt(call_transcript, raw_text)},
+    #     ],
+    #     options={"temperature": 0},
+    # )
+    # raw_content = response["message"]["content"]
+    # try:
+    #     parsed = json.loads(raw_content)
+    # except json.JSONDecodeError:
+    #     cleaned = raw_content.strip().strip("`").replace("json\n", "", 1)
+    #     parsed = json.loads(cleaned)
 
-if __name__ == "__main__":
-   main()
+    # req = CustomerRequirements(**parsed)
+
+    # fields = ["location", "budget_min", "budget_max", "area_sqm",
+    #           "bedrooms", "property_type", "purpose", "notes"]
+    # req.missing_fields = [f for f in fields if getattr(req, f) in (None, "unknown")]
+
+    # return req
+
+# if __name__ == "__main__":
+#    main()

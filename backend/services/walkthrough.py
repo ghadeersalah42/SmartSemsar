@@ -113,17 +113,17 @@ def build_walkthrough(plan_path, out_html, glb_path=None, listing: Optional[Mapp
     return out_html
 
 
-if __name__ == "__main__":
-    import pandas as pd
+# if __name__ == "__main__":
+#     import pandas as pd
 
-    if len(sys.argv) < 2:
-        sys.exit("usage: python -m backend.services.walkthrough <property_id> [--fragment]")
-    pid = sys.argv[1]
-    df = pd.read_csv(REPO_ROOT / "data" / "final_merged_dataset.csv", encoding="utf-8-sig")
-    row = df[df["property_id"] == pid].iloc[0].to_dict()
-    models = REPO_ROOT / "data" / "models"
-    models.mkdir(parents=True, exist_ok=True)
-    out = build_walkthrough(REPO_ROOT / row["plan_path"], models / f"{pid}_walkthrough.html",
-                            glb_path=models / f"{pid}.glb", listing=row,
-                            standalone="--fragment" not in sys.argv)
-    print(out)
+#     if len(sys.argv) < 2:
+#         sys.exit("usage: python -m backend.services.walkthrough <property_id> [--fragment]")
+#     pid = sys.argv[1]
+#     df = pd.read_csv(REPO_ROOT / "data" / "final_merged_dataset.csv", encoding="utf-8-sig")
+#     row = df[df["property_id"] == pid].iloc[0].to_dict()
+#     models = REPO_ROOT / "data" / "models"
+#     models.mkdir(parents=True, exist_ok=True)
+#     out = build_walkthrough(REPO_ROOT / row["plan_path"], models / f"{pid}_walkthrough.html",
+#                             glb_path=models / f"{pid}.glb", listing=row,
+#                             standalone="--fragment" not in sys.argv)
+#     print(out)

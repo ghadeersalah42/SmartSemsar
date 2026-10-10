@@ -64,5 +64,5 @@ def merge_datasets():
     df_merged.to_csv(output_path, index=False, encoding='utf-8-sig')
     print(f"🎉 تم الدمج بنجاح! الملف النهائي جاهز في: {output_path}")
 
-if __name__ == "__main__":
-    merge_datasets()
+# if __name__ == "__main__":
+#     merge_datasets()

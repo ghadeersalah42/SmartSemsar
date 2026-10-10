@@ -81,5 +81,5 @@ def populate_chroma_db():
 
     print(f"\n✅ Finished! ChromaDB populated successfully at: {CHROMA_PATH}")
 
-if __name__ == "__main__":
-    populate_chroma_db()
+# if __name__ == "__main__":
+#     populate_chroma_db()

@@ -39,11 +39,11 @@ def download_svg(cubicasa_id, out_dir):
     return None
 
 
-if __name__ == "__main__":
-    if not os.environ.get("KAGGLE_API_TOKEN"):
-        raise SystemExit("Set KAGGLE_API_TOKEN in the environment first.")
-    df = pd.read_csv(os.path.join(REPO_ROOT, "data", "final_merged_dataset.csv"), encoding="utf-8-sig")
-    out_dir = os.path.join(REPO_ROOT, "data", "cubicasa_svg")
-    os.makedirs(out_dir, exist_ok=True)
-    for cid in sorted(df["cubicasa_id"].astype(int).unique()):
-        print(cid, "->", download_svg(cid, out_dir) or "NOT FOUND")
+# if __name__ == "__main__":
+#     if not os.environ.get("KAGGLE_API_TOKEN"):
+#         raise SystemExit("Set KAGGLE_API_TOKEN in the environment first.")
+#     df = pd.read_csv(os.path.join(REPO_ROOT, "data", "final_merged_dataset.csv"), encoding="utf-8-sig")
+#     out_dir = os.path.join(REPO_ROOT, "data", "cubicasa_svg")
+#     os.makedirs(out_dir, exist_ok=True)
+#     for cid in sorted(df["cubicasa_id"].astype(int).unique()):
+#         print(cid, "->", download_svg(cid, out_dir) or "NOT FOUND")

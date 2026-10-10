@@ -31,3 +31,9 @@ streamlit
 requests
 sentence-transformers
 
+langchain-groq
+langchain-google-genai
+
+librosa
+soundfile
+pyannote.audio

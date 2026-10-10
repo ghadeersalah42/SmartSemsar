@@ -496,5 +496,5 @@ def main():
     print("Saved:", out)
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

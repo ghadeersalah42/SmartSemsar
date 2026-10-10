@@ -1,5 +1,5 @@
-from services.MatchingFeature import PropertyMatchingService, CustomerRequirements
-from schema.state import AgentState, PropertyItem
+from backend.services.MatchingFeature import PropertyMatchingService, CustomerRequirements
+from backend.schema.state import AgentState, PropertyItem
 from typing import Optional, Literal, List, Dict, Any
 
 Property_matching_service= PropertyMatchingService(csv_path="data/final_merged_dataset.csv", chroma_path="data/chroma_db")
@@ -7,20 +7,27 @@ Property_matching_service= PropertyMatchingService(csv_path="data/final_merged_d
 def match_properties_node(state: AgentState)-> Dict[str, Any]:
     print("Execute Matching Property")
 
-    requirements= state.get("customer_reqs")
-
-    if not requirements:
-        return{
-            "top_properties": [],
-            "used_fallback": False,
-            "total_found": -1,
-            "selected_property": None,
-            "custom_sketch_path": "",
-            "matching_status": ""
-        }
+    requirements= state.get("customer_reqs") or {}
+    macro_intent= state.get('macro_intent')
+    micro_intent= state.get('micro_intent')
+    all_prop=""
     property_objects = []
 
-    results= Property_matching_service.search_properties(requirements)
+    if macro_intent=="general_browse":
+        all_prop="general_browse"
+
+    # if not requirements:
+    #     return{
+    #         "top_properties": [],
+    #         "used_fallback": False,
+    #         "total_found": -1,
+    #         "selected_property": None,
+    #         "custom_sketch_path": "",
+    #         "matching_status": ""
+    #     }
+    
+
+    results= Property_matching_service.search_properties(requirements, all_prop)
     
     for prop in results["properties"]:
         item = PropertyItem(
@@ -38,7 +45,8 @@ def match_properties_node(state: AgentState)-> Dict[str, Any]:
     return {
         "top_properties": property_objects,
         "total_found": results["total_found"],
-        "used_fallback": results["used_fallback"]
+        "used_fallback": results["used_fallback"],
+        "current_stage": "property_results_displayed"
     }
 
 def select_property_node(state: AgentState) -> dict:
@@ -74,6 +82,7 @@ def select_property_node(state: AgentState) -> dict:
 
     return {
         "selected_property": chosen_property,
-        "custom_sketch_path": chosen_property.image_path
+        "custom_sketch_path": chosen_property.image_path,
+        "current_stage": "property_selected"
     }
 

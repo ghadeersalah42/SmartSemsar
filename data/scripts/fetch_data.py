@@ -108,5 +108,5 @@ def download_and_prepare_dataset():
     df_final.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
     print(f"🎉 تم تجهيز داتاسيت العقارات بنجاح مع تركيب العناوين الجغرافية في: {OUTPUT_CSV}")
 
-if __name__ == "__main__":
-    download_and_prepare_dataset()
+# if __name__ == "__main__":
+#     download_and_prepare_dataset()

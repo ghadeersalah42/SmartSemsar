@@ -240,10 +240,10 @@ def process_dataset(csv_path, svg_dir, out_dir):
     return df
 
 
-if __name__ == "__main__":
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--csv", default=os.path.join(REPO_ROOT, "data", "final_merged_dataset.csv"))
-    ap.add_argument("--svg-dir", default=os.path.join(REPO_ROOT, "data", "cubicasa_svg"))
-    ap.add_argument("--out-dir", default=os.path.join(REPO_ROOT, "data", "plans"))
-    args = ap.parse_args()
-    process_dataset(args.csv, args.svg_dir, args.out_dir)
+# if __name__ == "__main__":
+#     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+#     ap.add_argument("--csv", default=os.path.join(REPO_ROOT, "data", "final_merged_dataset.csv"))
+#     ap.add_argument("--svg-dir", default=os.path.join(REPO_ROOT, "data", "cubicasa_svg"))
+#     ap.add_argument("--out-dir", default=os.path.join(REPO_ROOT, "data", "plans"))
+#     args = ap.parse_args()
+#     process_dataset(args.csv, args.svg_dir, args.out_dir)

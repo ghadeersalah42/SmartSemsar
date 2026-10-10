@@ -74,7 +74,7 @@ def render(glb_path, out_png, title=None):
     return out_png
 
 
-if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        sys.exit("usage: render_glb_preview.py <in.glb> <out.png> [title]")
-    print(render(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None))
+# if __name__ == "__main__":
+#     if len(sys.argv) < 3:
+#         sys.exit("usage: render_glb_preview.py <in.glb> <out.png> [title]")
+#     print(render(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None))

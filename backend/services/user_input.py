@@ -3,10 +3,11 @@ with user_input_text.py (requirements extraction via Ollama)."""
 from datetime import datetime
 import sys
 from pathlib import Path
+from backend.services.user_input_text import extract_requirements
 
 import gradio as gr
 
-from pipeline import (
+from backend.services.pipeline import (
     PROCESSED_AUDIO_DIR,
     build_conversation,
     get_device,
@@ -16,10 +17,9 @@ from pipeline import (
     transcribe,
     DATA_DIR
 ) 
-from user_input_text import extract_requirements
 
 DEVICE = get_device()
-OUTPUT_DIR = Path(r"D:\Ghadeer_Salah\SmartSemsar\Json_Files")
+OUTPUT_DIR = Path(r"backend\services\data\Json_Files")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def merge_turns(conversation):
@@ -86,7 +86,7 @@ demo = gr.Interface(
     description="Upload a call recording and/or type your requirements. You can fill in one or both.",
 )
 
-if __name__ == "__main__":
-    if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8")
-    demo.launch(allowed_paths=[str(OUTPUT_DIR)])
+# if __name__ == "__main__":
+#     if hasattr(sys.stdout, "reconfigure"):
+#         sys.stdout.reconfigure(encoding="utf-8")
+#     demo.launch(allowed_paths=[str(OUTPUT_DIR)])

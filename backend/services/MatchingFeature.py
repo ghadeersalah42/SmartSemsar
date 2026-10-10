@@ -2,8 +2,7 @@ import pandas as pd
 import chromadb
 from chromadb.utils import embedding_functions
 import os
-from schema.state import CustomerRequirements
-
+from backend.schema.state import CustomerRequirements
 import os
 import pandas as pd
 from typing import Optional, Literal, List, Dict, Any
@@ -49,11 +48,19 @@ class PropertyMatchingService:
         return filtered['property_id'].astype(str).tolist()
     
 
-    def search_properties(self, reqs: CustomerRequirements, min_results_threshold: int = 3) -> dict:
+    def search_properties(self, reqs: CustomerRequirements={},Purpose: str="", min_results_threshold: int = 3) -> dict:
             """
             البحث الذكي ثنائي المرحلة مع آلية التنازل التدريجي (Fallback)
             """
+            if Purpose=="general_browse":
+                return {
+                "total_found": len(self.df),
+                "used_fallback": False,
+                "properties": self.df.head(15).copy().to_dict(orient='records')
+            }
+
             print(f"\n📥 [Input Req] Location: '{reqs.location}' | Max Budget: {reqs.budget_max} | Rooms: {reqs.bedrooms} | Area: {reqs.area_sqm}")
+            
             # user_location_query = user_requirements.get("location", "")
             # max_price = user_requirements.get("budget_max")
             # bedrooms = user_requirements.get("bedrooms")

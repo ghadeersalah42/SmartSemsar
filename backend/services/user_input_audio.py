@@ -19,6 +19,7 @@ import soundfile as sf
 import torch
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
+from backend.schema.state import CustomerRequirements
 
 # ------------------------------------------------------------------ config
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -339,15 +340,15 @@ def run_qc(call_id, raw_duration, processed_duration, speakers, conversation):
 
 
 # ------------------------------------------------------------------ customer profile
-class CustomerProfile(BaseModel):
-    budget: Optional[float] = Field(default=None, description="Maximum customer budget in Egyptian pounds.")
-    location: Optional[str] = Field(default=None, description="Preferred property location.")
-    property_type: Optional[str] = Field(default=None, description="Requested property type.")
-    rooms: Optional[int] = Field(default=None, description="Number of bedrooms or rooms.")
-    area_sqm: Optional[float] = Field(default=None, description="Requested area in square meters.")
-    finishing: Optional[str] = Field(default=None, description="Preferred finishing status.")
-    payment_plan: Optional[str] = Field(default=None, description="Preferred payment plan.")
-    purpose: Optional[str] = Field(default=None, description="Purpose of buying.")
+# class CustomerProfile(BaseModel):
+#     budget: Optional[float] = Field(default=None, description="Maximum customer budget in Egyptian pounds.")
+#     location: Optional[str] = Field(default=None, description="Preferred property location.")
+#     property_type: Optional[str] = Field(default=None, description="Requested property type.")
+#     rooms: Optional[int] = Field(default=None, description="Number of bedrooms or rooms.")
+#     area_sqm: Optional[float] = Field(default=None, description="Requested area in square meters.")
+#     finishing: Optional[str] = Field(default=None, description="Preferred finishing status.")
+#     payment_plan: Optional[str] = Field(default=None, description="Preferred payment plan.")
+#     purpose: Optional[str] = Field(default=None, description="Purpose of buying.")
 
 
 SYSTEM_PROMPT = """
@@ -392,7 +393,7 @@ def extract_customer_profile(conversation):
     from langchain_google_genai import ChatGoogleGenerativeAI
 
     llm = ChatGoogleGenerativeAI(model=GEMINI_MODEL, google_api_key=GEMINI_API_KEY)
-    structured_llm = llm.with_structured_output(CustomerProfile)
+    structured_llm = llm.with_structured_output(CustomerRequirements)
 
     prompt = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
@@ -476,5 +477,5 @@ def main():
     print("Saved:", out)
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

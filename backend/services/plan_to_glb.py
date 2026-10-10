@@ -106,7 +106,7 @@ def export_glb(plan: Plan, out_path):
     return out_path
 
 
-if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        sys.exit("usage: python -m backend.services.plan_to_glb <plan.json> <out.glb>")
-    print(export_glb(load_plan(sys.argv[1]), sys.argv[2]))
+# if __name__ == "__main__":
+#     if len(sys.argv) != 3:
+#         sys.exit("usage: python -m backend.services.plan_to_glb <plan.json> <out.glb>")
+#     print(export_glb(load_plan(sys.argv[1]), sys.argv[2]))
