@@ -23,7 +23,7 @@ from typing import Callable, Mapping, Optional
 from backend.schema.design import DesignPreferences
 from backend.schema.plan import load_plan
 from backend.schema.staging import Catalog, CatalogItem, Staging, load_catalog, save_staging
-from backend.services import colab_service, trellis_service
+from backend.services import colab_service, furnishing_metrics, trellis_service
 from backend.services.custom_furniture import FRONT_TURN_DEG, add_furniture_model
 from backend.services.furniture_actions import place_unplaced
 from backend.services.furniture_placer import stage_plan
@@ -58,16 +58,26 @@ class FurnishResult:
 
 def raw_model(photo, generator: str, raw_dir, say: Callable[[str], None] = print) -> Path:
     """Photo -> raw GLB with "colab" (the diffusion server) or "trellis". Made once per photo and
-    generator: running again with the same photo (e.g. after changing a width) reuses it."""
+    generator: running again with the same photo (e.g. after changing a width) reuses it.
+    Every call is logged (time, cache hit or miss) in furnishing_metrics."""
     digest = hashlib.sha1(Path(photo).read_bytes()).hexdigest()[:12]
     raw = Path(raw_dir) / f"{generator}_{digest}.glb"
     if raw.exists():
+        furnishing_metrics.record("model_3d", generator=generator, photo=digest, cache_hit=True, seconds=0.0, ok=True)
         say("     3D model reused (same photo as before)")
         return raw
     raw.parent.mkdir(parents=True, exist_ok=True)
     started = time.time()
-    GENERATORS[generator].generate_model(photo, raw)
-    say(f"     3D model made in {time.time() - started:.0f} s")
+    try:
+        GENERATORS[generator].generate_model(photo, raw)
+    except Exception as e:
+        furnishing_metrics.record("model_3d", generator=generator, photo=digest, cache_hit=False,
+                                  seconds=round(time.time() - started, 2), ok=False, error=type(e).__name__)
+        raise
+    seconds = time.time() - started
+    furnishing_metrics.record("model_3d", generator=generator, photo=digest, cache_hit=False,
+                              seconds=round(seconds, 2), ok=True)
+    say(f"     3D model made in {seconds:.0f} s")
     return raw
 
 
@@ -164,6 +174,9 @@ def furnish_with_pieces(plan_path, pieces: list[Piece], out_dir, prefs: Optional
 
     result = validate_staging(plan, staging, catalog)
     failed = [f"{c['name']}: {c['message']} {c['actual']}" for c in result["checks"] if not c["passed"]]
+    furnishing_metrics.record("layout", plan_id=plan.plan_id, planner=planner, approved=result["approved"],
+                              failed_checks=[c["name"] for c in result["checks"] if not c["passed"]],
+                              items=len(staging.items), own_pieces=len(items))
     say("Check: " + ("APPROVED" if result["approved"] else "REJECTED"))
     for f in failed:
         say(f"  FAIL {f}")

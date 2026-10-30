@@ -265,3 +265,7 @@ token.pickle
 
 # Telegram username -> chat id of the customers who used the bot (personal data, made on each machine)
 data/telegram_users.json
+
+# furnishing / 3D metrics log (backend/services/furnishing_metrics.py)
+data/metrics/
+data/eval/raw_3d/

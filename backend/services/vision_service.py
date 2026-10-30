@@ -30,7 +30,7 @@ import urllib.request
 from pathlib import Path
 from typing import Optional
 
-from PIL import Image
+from PIL import Image, ImageOps, ImageStat
 
 from backend.config import mask_secrets, setting
 from backend.schema.design import FurniturePhoto
@@ -51,6 +51,7 @@ MAX_IMAGE_PX = 1024
 BUSY_CODES = {500, 502, 503, 504}      # "high demand" and other temporary errors
 BUSY_RETRY_WAITS_S = (2, 5)            # wait before the 2nd and 3rd try
 WIDTH_RANGE_M = (0.3, 3.5)      # an estimate outside this is ignored
+DARK_LUMA = 85                  # mean brightness (0-255) below this: the photo is brightened before it is read
 
 PROMPT = """You are helping a home-staging app. Look at the photo and answer with ONE JSON object, nothing else.
 
@@ -67,9 +68,17 @@ PROMPT = """You are helping a home-staging app. Look at the photo and answer wit
 }}
 
 Rules:
-- "single_item": exactly one piece of furniture is the subject. Cushions on a sofa are part of it.
-- "several_items": two or more separate pieces. "room": an interior scene. "not_furniture": anything else.
-- "fully_visible": false if the piece is cut off by the frame or mostly hidden.
+- "single_item": one piece of furniture is the subject. Cushions on a sofa are part of it. Photos are often
+  taken in a workshop, a shop or a street: tools, offcuts, people, cars and other pieces in the background
+  or at the edges do not count. If one piece is clearly the subject (biggest, closest, in the middle),
+  it is "single_item".
+- "several_items": two or more pieces share the picture equally and none is the subject (a pair of chairs,
+  a bed with its nightstands, a stack of parts). "room": a furnished interior seen as a whole.
+  "not_furniture": anything else, including a screen or a drawing.
+- Unfinished, unpainted or half-upholstered pieces are still furniture: judge the kind by the shape.
+  A bed may have no headboard or mattress yet (a low rectangular frame big enough to sleep in).
+- "fully_visible": false only if so much is cut off or hidden that the overall shape cannot be told.
+  A cut corner or the end of a leg is still fully visible.
 - "kind": choose the closest from the list; use "other" only if none fits. A wide one-person seat is an "armchair".
 - For "room" or "several_items", set kind to "other" and width_m to null, and still fill style, colors,
   materials and description for the whole picture.
@@ -80,13 +89,24 @@ class VisionError(RuntimeError):
     """The vision model is not configured, not reachable, or gave an unusable answer."""
 
 
+def brighten(image: Image.Image) -> Image.Image:
+    """Dark photos (a workshop at night) are stretched and lifted so the model can see the shape."""
+    luma = ImageStat.Stat(image.convert("L")).mean[0]
+    if luma >= DARK_LUMA:
+        return image
+    image = ImageOps.autocontrast(image, cutoff=1)
+    return image.point(lambda v: round(255 * (v / 255) ** 0.7))
+
+
 def _image_part(image_path) -> dict:
     image = Image.open(image_path)
     if image.mode != "RGB":
         background = Image.new("RGB", image.size, "white")      # transparent PNGs: white behind
         background.paste(image.convert("RGBA"), mask=image.convert("RGBA").split()[-1])
         image = background
+    image = ImageOps.exif_transpose(image)          # phone photos: stand them up the way they were taken
     image.thumbnail((MAX_IMAGE_PX, MAX_IMAGE_PX))
+    image = brighten(image)
     out = io.BytesIO()
     image.save(out, "JPEG", quality=88)
     return {"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(out.getvalue()).decode("ascii")}}
