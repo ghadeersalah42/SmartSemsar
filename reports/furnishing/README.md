@@ -53,15 +53,33 @@ Fixes in `vision_service`: phone photos are turned upright (EXIF rotation was ig
 brightened before the model reads them, and the prompt says how to treat a main subject with clutter
 around it, unfinished pieces, and small cut-offs.
 Cost: the bed with two nightstands is now accepted as a bed instead of being refused.
-This is recognition only (photo -> right catalog kind, usable or not). The 3D step was not in this run (see 3).
-With 30 photos, one photo is 3 points.
+This table is recognition only (photo -> right catalog kind, usable or not); section 3 adds the 3D step.
+With 30 photos, one photo is 3 points, and the same photos give ±1 photo between runs even at temperature 0
+(the 3D runs below: 21/30 and 22/30 at the recognition + 3D level).
 
-## 3. Time per 3D piece and cache hit rate
+## 3. Photo -> 3D, time per piece and cache hit rate
 
-Every photo -> 3D call now writes its time and whether it came from the cache to `data/metrics/furnishing.jsonl`
-(`multi_furnish.raw_model`). `python -m backend.services.furnishing_metrics` gives mean / median / P95 seconds
-per generated piece and the hit rate per generator.
+Server: `cv_service/furniture_server_kaggle.ipynb` (Hunyuan3D-2 mini, textured, Tesla T4 on Kaggle, reached through ngrok).
+The same 30 photos, two runs (`photo_3d_run1`, `photo_3d_run2`). Every call is logged by `multi_furnish.raw_model`.
 
-Not measured yet: the Kaggle/Colab 3D server was offline on 2026-10-30 (ngrok address expired). To get the numbers,
-start `cv_service/furniture_server_kaggle.ipynb`, put its address in `.env`, and run the photo benchmark twice with
-`--generator colab`. The first run times every piece, and the second shows the cache (same photo, same model).
+| | Number |
+|---|---:|
+| Pieces generated | 21 |
+| **Time per piece: median / mean / P95** | **246 s / 261 s / 311 s** |
+| Server calls that failed (all ngrok gateway errors, not the model) | 3 |
+| **Cache hit rate, second run of the same photos** | **18 / 22 = 82 %** |
+| Cache hit rate over both runs | 18 / 42 = 43 % |
+
+From the Kaggle log: shape takes about 5 s of diffusion plus 78 s of volume decoding. The remaining ~2.5 min is texturing.
+The cache key is the photo's bytes, so a re-run after changing a width or the wishes costs nothing. The same piece photographed
+again, or resent through WhatsApp (recompressed), is a miss.
+
+End to end (photo -> right kind -> 3D model with a sensible size), run 2: **22 / 30 (73 %)**, pieces 17 / 24.
+"Sensible size" is not enough, so every model that passed was also checked by eye (`data/eval/furniture_3d_eyecheck.csv`):
+**14 / 17 look right.** The 3 that don't: the dark gap between a table's legs became solid walls, a sofa photographed at night
+came out torn, and a glass cabinet merged with the box behind it. Background removal is the weak point in dark, cluttered photos.
+Size check failures (3): a long L-shaped sofa frame, a table photographed from its short end, and loose headboard/footboard parts.
+Photo 2 failed with an ngrok 503 in both runs after ~340 s: its response does not get through the free tunnel.
+
+Pictures: `before_after/NN_<photo>.jpg` (photo next to its 3D model), `before_after/all.jpg` (all 30),
+`before_after/photo_to_3d.mp4` (every photo, then its model turning).

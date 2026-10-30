@@ -129,3 +129,15 @@ def test_room_description_counts_placed_pieces_and_windows():
     assert "tall pieces:" in empty                       # a window wall tells tall pieces apart
     assert empty != furnished.split("\n  placed:")[0]    # the furnished room has less free wall
     assert " 0.0 m" not in furnished and " 0.1 m" not in furnished
+
+
+def test_render_turns_a_glb_into_a_picture(tmp_path):
+    import trimesh
+    from backend.eval.render_3d_results import load_mesh, render
+    box = trimesh.creation.box((1.0, 0.5, 0.4))
+    box.visual.face_colors = [200, 120, 60, 255]
+    glb = tmp_path / "box.glb"
+    box.export(glb)
+    img = render(load_mesh(glb), 30, size=200)
+    assert img.size == (200, 200)
+    assert img.getpixel((100, 100)) != (246, 244, 240)          # the box is drawn in the middle
