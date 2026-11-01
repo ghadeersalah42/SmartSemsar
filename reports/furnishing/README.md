@@ -16,8 +16,8 @@ Measured on 2026-10-30. Commands and how each number is counted: see the main RE
   each instruction is validated, failures go back to the model (up to 3 rounds), and the rules fill any room left empty.
 - Instructions that failed in round 1: 100 before, 86 after.
 
-Why the two sets differ in size: the rule planner is offline and free, so it runs on every plan x 5 profiles; the LLM
-planner costs API quota and ~30 s per layout, so it runs on 12 plans x 3 profiles.
+Rule-based planner: 500 layouts (100 plans x 5 profiles). LLM planner: 36 layouts (12 plans x 3 profiles), limited by
+API quota. The rule planner is offline and free; the LLM costs quota and ~30 s per layout, so it was not run on all 500.
 
 Rejection reasons (LLM, round 1, after the fix): 86 failed instructions, each counted once under its first reason.
 
@@ -69,7 +69,7 @@ The same 30 photos, two runs (`photo_3d_run1`, `photo_3d_run2`). Every call is l
 | | Number |
 |---|---:|
 | Pieces generated | 21 (18 in run 1, 3 new in run 2) |
-| **Time per piece: median / mean / P95** | **246 s / 261 s / 311 s** (the 21 successful generations only) |
+| **Time per piece: median / mean / P95** | **246 s / 261 s / 311 s** (initial benchmark: the 21 successful generations only) |
 | Server calls that failed (all ngrok gateway errors, not the model; not in the times) | 3 |
 | **Cache hit rate when the same photos run again** | **18 / 22 = 82 %** |
 
@@ -80,6 +80,9 @@ The same 30 photos, two runs (`photo_3d_run1`, `photo_3d_run2`). Every call is l
 
 All 18 pieces made in run 1 were cache hits in run 2. Run 2's 4 misses are 3 photos the vision step accepted only in
 run 2 and 1 retry of a failed call. (Both runs pooled give 18 / 42, but that mixes in the cold run, so 82 % is the figure quoted.)
+
+The P95 comes from only 21 timed pieces, so it is an initial figure: the slowest piece (496 s) sits just above it,
+and more runs are needed before the P95 is stable.
 
 From the Kaggle log: shape takes about 5 s of diffusion plus 78 s of volume decoding. The remaining ~2.5 min is texturing.
 The cache key is the photo's bytes, so a re-run after changing a width or the wishes costs nothing. The same piece photographed
@@ -95,8 +98,11 @@ What happened to every photo in run 2 (section 2's 87 % stops at recognition; th
 | 3D models | 17 | 3 look wrong by eye |
 | Look right | 14 | |
 
-- Automatic checks pass: **22 / 30 (73 %)** = 17 models + 5 correct refusals.
-- Right when judged by eye (`data/eval/furniture_3d_eyecheck.csv`): **19 / 30 (63 %)** = 14 models + 5 correct refusals.
+- **3D success on furniture photos: 14 / 24 (58 %)**: good models (by eye, `data/eval/furniture_3d_eyecheck.csv`)
+  out of the 24 single-piece photos. This is the success rate for turning a real furniture photo into a 3D piece.
+- Right outcome over all 30 photos: 19 / 30 (63 %) = 14 good models + 5 correct refusals. 19 does not mean 19 photos
+  became 3D models.
+- Automatic checks only: 22 / 30 (73 %) = 17 models + 5 correct refusals.
 - The 3 that look wrong: the dark gap between a table's legs became solid walls, a sofa photographed at night came out torn,
   and a glass cabinet merged with the box behind it. Background removal is the weak point in dark, cluttered photos.
 - The recognition step in this run got 27 / 30 right (26 / 30 in section 2's run): about one photo of run-to-run variation.
