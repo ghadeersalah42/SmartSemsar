@@ -78,7 +78,7 @@ The same 30 photos, two runs (`photo_3d_run1`, `photo_3d_run2`). Every call is l
 | 1 (cold) | 20 | 0 | 18 | 2 |
 | 2 (same photos) | 22 | 18 | 3 | 1 |
 
-All 18 pieces made in run 1 were cache hits in run 2. Run 2's 4 misses are 3 photos the vision step accepted only in
+All 18 pieces successfully generated in run 1 were reused (cache hits) in run 2. Run 2's 4 misses are 3 photos the vision step accepted only in
 run 2 and 1 retry of a failed call. (Both runs pooled give 18 / 42, but that mixes in the cold run, so 82 % is the figure quoted.)
 
 The P95 comes from only 21 timed pieces, so it is an initial figure: the slowest piece (496 s) sits just above it,
@@ -94,8 +94,9 @@ What happened to every photo in run 2 (section 2's 87 % stops at recognition; th
 |---|---:|---|
 | Photos | 30 | 6 should be refused: 5 refused correctly, 1 accepted by mistake (bed with nightstands) |
 | Single pieces | 24 | 2 not recognised: 1 wrong kind, 1 refused as several pieces |
-| Recognised correctly | 22 | 1 ngrok error; 4 failed the size check (L-shaped sofa frame, table shot end-on, folding table, loose bed parts) |
-| 3D models | 17 | 3 look wrong by eye |
+| Recognised correctly | 22 | 1 lost after recognition: the server ran 342 s, then its reply came back broken through ngrok (transport failure, not the model) |
+| 3D models generated | 21 | 4 failed the size check (L-shaped sofa frame, table shot end-on, folding table, loose bed parts) |
+| Passed the size check | 17 | 3 look wrong by eye |
 | Look right | 14 | |
 
 - **3D success on furniture photos: 14 / 24 (58 %)**: good models (by eye, `data/eval/furniture_3d_eyecheck.csv`)
