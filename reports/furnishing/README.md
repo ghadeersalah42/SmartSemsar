@@ -16,16 +16,20 @@ Measured on 2026-10-30. Commands and how each number is counted: see the main RE
   each instruction is validated, failures go back to the model (up to 3 rounds), and the rules fill any room left empty.
 - Instructions that failed in round 1: 100 before, 86 after.
 
-Most common rejection reasons (LLM, round 1, after the fix):
+Why the two sets differ in size: the rule planner is offline and free, so it runs on every plan x 5 profiles; the LLM
+planner costs API quota and ~30 s per layout, so it runs on 12 plans x 3 profiles.
 
-| Reason | Share | What happened |
-|---|---:|---|
-| no_free_wall | 27 % | piece put on a wall with no free stretch as wide as the piece |
-| inside_room | 20 % | piece would stick out of the room or into a wall |
-| doors_clear | 16 % | piece within 0.7 m of a door |
-| bad_reference | 14 % | "beside / in front of X" where X was never named |
-| no_overlaps | 11 % | two pieces in the same place |
-| front_clearance | 9 % | no free floor in front of a wardrobe / dresser |
+Rejection reasons (LLM, round 1, after the fix): 86 failed instructions, each counted once under its first reason.
+
+| Reason | Count | Share | What happened |
+|---|---:|---:|---|
+| no_free_wall | 23 | 26.7 % | piece put on a wall with no free stretch as wide as the piece |
+| inside_room | 17 | 19.8 % | piece would stick out of the room or into a wall |
+| doors_clear | 14 | 16.3 % | piece within 0.7 m of a door |
+| bad_reference | 12 | 14.0 % | "beside / in front of X" where X was never named |
+| no_overlaps | 9 | 10.5 % | two pieces in the same place |
+| front_clearance | 8 | 9.3 % | no free floor in front of a wardrobe / dresser |
+| no_open_floor, wrong_room_type | 3 | 3.5 % | no open floor for a free-standing piece; piece not meant for that room |
 
 What changed:
 - The room description the model reads gave "free wall" without the pieces already placed and counted the
@@ -64,21 +68,38 @@ The same 30 photos, two runs (`photo_3d_run1`, `photo_3d_run2`). Every call is l
 
 | | Number |
 |---|---:|
-| Pieces generated | 21 |
-| **Time per piece: median / mean / P95** | **246 s / 261 s / 311 s** |
-| Server calls that failed (all ngrok gateway errors, not the model) | 3 |
-| **Cache hit rate, second run of the same photos** | **18 / 22 = 82 %** |
-| Cache hit rate over both runs | 18 / 42 = 43 % |
+| Pieces generated | 21 (18 in run 1, 3 new in run 2) |
+| **Time per piece: median / mean / P95** | **246 s / 261 s / 311 s** (the 21 successful generations only) |
+| Server calls that failed (all ngrok gateway errors, not the model; not in the times) | 3 |
+| **Cache hit rate when the same photos run again** | **18 / 22 = 82 %** |
+
+| Run | Calls | Cache hits | Made | Failed |
+|---|---:|---:|---:|---:|
+| 1 (cold) | 20 | 0 | 18 | 2 |
+| 2 (same photos) | 22 | 18 | 3 | 1 |
+
+All 18 pieces made in run 1 were cache hits in run 2. Run 2's 4 misses are 3 photos the vision step accepted only in
+run 2 and 1 retry of a failed call. (Both runs pooled give 18 / 42, but that mixes in the cold run, so 82 % is the figure quoted.)
 
 From the Kaggle log: shape takes about 5 s of diffusion plus 78 s of volume decoding. The remaining ~2.5 min is texturing.
 The cache key is the photo's bytes, so a re-run after changing a width or the wishes costs nothing. The same piece photographed
 again, or resent through WhatsApp (recompressed), is a miss.
 
-End to end (photo -> right kind -> 3D model with a sensible size), run 2: **22 / 30 (73 %)**, pieces 17 / 24.
-"Sensible size" is not enough, so every model that passed was also checked by eye (`data/eval/furniture_3d_eyecheck.csv`):
-**14 / 17 look right.** The 3 that don't: the dark gap between a table's legs became solid walls, a sofa photographed at night
-came out torn, and a glass cabinet merged with the box behind it. Background removal is the weak point in dark, cluttered photos.
-Size check failures (3): a long L-shaped sofa frame, a table photographed from its short end, and loose headboard/footboard parts.
+What happened to every photo in run 2 (section 2's 87 % stops at recognition; this follows the photos through 3D):
+
+| Step | Photos | Lost here |
+|---|---:|---|
+| Photos | 30 | 6 should be refused: 5 refused correctly, 1 accepted by mistake (bed with nightstands) |
+| Single pieces | 24 | 2 not recognised: 1 wrong kind, 1 refused as several pieces |
+| Recognised correctly | 22 | 1 ngrok error; 4 failed the size check (L-shaped sofa frame, table shot end-on, folding table, loose bed parts) |
+| 3D models | 17 | 3 look wrong by eye |
+| Look right | 14 | |
+
+- Automatic checks pass: **22 / 30 (73 %)** = 17 models + 5 correct refusals.
+- Right when judged by eye (`data/eval/furniture_3d_eyecheck.csv`): **19 / 30 (63 %)** = 14 models + 5 correct refusals.
+- The 3 that look wrong: the dark gap between a table's legs became solid walls, a sofa photographed at night came out torn,
+  and a glass cabinet merged with the box behind it. Background removal is the weak point in dark, cluttered photos.
+- The recognition step in this run got 27 / 30 right (26 / 30 in section 2's run): about one photo of run-to-run variation.
 Photo 2 failed with an ngrok 503 in both runs after ~340 s: its response does not get through the free tunnel.
 
 Pictures: `before_after/NN_<photo>.jpg` (photo next to its 3D model), `before_after/all.jpg` (all 30),
