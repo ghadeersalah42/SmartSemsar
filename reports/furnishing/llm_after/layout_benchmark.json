@@ -1,0 +1,1153 @@
+{
+ "summary": {
+  "rules": {
+   "layouts": 36,
+   "scored": 36,
+   "first_try_pass": 36,
+   "first_try_rate": 1.0,
+   "final_pass": 36,
+   "final_rate": 1.0,
+   "rejection_reasons": [],
+   "seconds_mean": 1.604
+  },
+  "llm": {
+   "layouts": 36,
+   "scored": 36,
+   "first_try_pass": 4,
+   "first_try_rate": 0.111,
+   "final_pass": 36,
+   "final_rate": 1.0,
+   "rejection_reasons": [
+    {
+     "reason": "no_free_wall",
+     "count": 23,
+     "share": 0.267
+    },
+    {
+     "reason": "inside_room",
+     "count": 17,
+     "share": 0.198
+    },
+    {
+     "reason": "doors_clear",
+     "count": 14,
+     "share": 0.163
+    },
+    {
+     "reason": "bad_reference",
+     "count": 12,
+     "share": 0.14
+    },
+    {
+     "reason": "no_overlaps",
+     "count": 9,
+     "share": 0.105
+    },
+    {
+     "reason": "front_clearance",
+     "count": 8,
+     "share": 0.093
+    },
+    {
+     "reason": "no_open_floor",
+     "count": 2,
+     "share": 0.023
+    },
+    {
+     "reason": "wrong_room_type",
+     "count": 1,
+     "share": 0.012
+    }
+   ],
+   "seconds_mean": 30.078
+  },
+  "_meta": {
+   "plans": 12,
+   "profiles": {
+    "default": {},
+    "modern_full": {
+     "style": "modern",
+     "density": "full"
+    },
+    "classic_office": {
+     "style": "classic",
+     "must_have": [
+      "desk"
+     ]
+    }
+   },
+   "date": "2026-10-30 20:21"
+  }
+ },
+ "runs": {
+  "rules": [
+   {
+    "plan": "PROP_1001",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 25,
+    "unplaced": 0,
+    "seconds": 0.546
+   },
+   {
+    "plan": "PROP_1001",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 29,
+    "unplaced": 0,
+    "seconds": 1.774
+   },
+   {
+    "plan": "PROP_1001",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 25,
+    "unplaced": 0,
+    "seconds": 0.639
+   },
+   {
+    "plan": "PROP_1002",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 22,
+    "unplaced": 0,
+    "seconds": 0.669
+   },
+   {
+    "plan": "PROP_1002",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 23,
+    "unplaced": 0,
+    "seconds": 0.781
+   },
+   {
+    "plan": "PROP_1002",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 22,
+    "unplaced": 0,
+    "seconds": 2.028
+   },
+   {
+    "plan": "PROP_1003",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 24,
+    "unplaced": 0,
+    "seconds": 1.46
+   },
+   {
+    "plan": "PROP_1003",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 27,
+    "unplaced": 0,
+    "seconds": 1.719
+   },
+   {
+    "plan": "PROP_1003",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 24,
+    "unplaced": 1,
+    "seconds": 1.525
+   },
+   {
+    "plan": "PROP_1004",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 15,
+    "unplaced": 0,
+    "seconds": 1.011
+   },
+   {
+    "plan": "PROP_1004",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 15,
+    "unplaced": 0,
+    "seconds": 0.924
+   },
+   {
+    "plan": "PROP_1004",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 15,
+    "unplaced": 1,
+    "seconds": 0.801
+   },
+   {
+    "plan": "PROP_1005",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 15,
+    "unplaced": 0,
+    "seconds": 0.725
+   },
+   {
+    "plan": "PROP_1005",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 15,
+    "unplaced": 0,
+    "seconds": 0.835
+   },
+   {
+    "plan": "PROP_1005",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 15,
+    "unplaced": 1,
+    "seconds": 0.727
+   },
+   {
+    "plan": "PROP_1006",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 17,
+    "unplaced": 0,
+    "seconds": 1.393
+   },
+   {
+    "plan": "PROP_1006",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 19,
+    "unplaced": 0,
+    "seconds": 1.519
+   },
+   {
+    "plan": "PROP_1006",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 17,
+    "unplaced": 1,
+    "seconds": 1.27
+   },
+   {
+    "plan": "PROP_1007",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 35,
+    "unplaced": 0,
+    "seconds": 2.839
+   },
+   {
+    "plan": "PROP_1007",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 43,
+    "unplaced": 0,
+    "seconds": 3.526
+   },
+   {
+    "plan": "PROP_1007",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 36,
+    "unplaced": 0,
+    "seconds": 2.695
+   },
+   {
+    "plan": "PROP_1008",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 25,
+    "unplaced": 0,
+    "seconds": 1.436
+   },
+   {
+    "plan": "PROP_1008",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 29,
+    "unplaced": 0,
+    "seconds": 1.821
+   },
+   {
+    "plan": "PROP_1008",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 25,
+    "unplaced": 0,
+    "seconds": 1.302
+   },
+   {
+    "plan": "PROP_1009",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 25,
+    "unplaced": 0,
+    "seconds": 1.651
+   },
+   {
+    "plan": "PROP_1009",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 29,
+    "unplaced": 0,
+    "seconds": 1.927
+   },
+   {
+    "plan": "PROP_1009",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 25,
+    "unplaced": 0,
+    "seconds": 1.6
+   },
+   {
+    "plan": "PROP_1010",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 2,
+    "unplaced": 0,
+    "seconds": 0.293
+   },
+   {
+    "plan": "PROP_1010",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 2,
+    "unplaced": 0,
+    "seconds": 0.347
+   },
+   {
+    "plan": "PROP_1010",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 2,
+    "unplaced": 1,
+    "seconds": 0.331
+   },
+   {
+    "plan": "PROP_1011",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 18,
+    "unplaced": 0,
+    "seconds": 1.592
+   },
+   {
+    "plan": "PROP_1011",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 20,
+    "unplaced": 0,
+    "seconds": 1.462
+   },
+   {
+    "plan": "PROP_1011",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 18,
+    "unplaced": 0,
+    "seconds": 1.498
+   },
+   {
+    "plan": "PROP_1012",
+    "profile": "default",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 34,
+    "unplaced": 0,
+    "seconds": 4.489
+   },
+   {
+    "plan": "PROP_1012",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 42,
+    "unplaced": 0,
+    "seconds": 5.203
+   },
+   {
+    "plan": "PROP_1012",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rooms_repaired": 0,
+    "items_dropped": 0,
+    "items": 35,
+    "unplaced": 0,
+    "seconds": 3.393
+   }
+  ],
+  "llm": [
+   {
+    "plan": "PROP_1001",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 1,
+    "items": 12,
+    "seconds": 14.0,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1001",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall",
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 2,
+    "items": 17,
+    "seconds": 9.7,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1001",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rounds": 1,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 0,
+    "items": 13,
+    "seconds": 5.1,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1002",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall",
+     "no_overlaps"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 2,
+    "items": 13,
+    "seconds": 8.5,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1002",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear"
+    ],
+    "rounds": 2,
+    "planner": "llm:ollama/qwen2.5",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 1,
+    "items": 14,
+    "seconds": 252.7,
+    "warnings": [
+     "gemini/gemini-flash-lite-latest failed in round 3 (HTTPError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions).",
+     "Switched to groq/openai/gpt-oss-120b.",
+     "groq/openai/gpt-oss-120b failed in round 3 (HTTPError: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions).",
+     "Switched to ollama/qwen2.5.",
+     "ollama/qwen2.5 failed in round 3 (ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=240.0))."
+    ]
+   },
+   {
+    "plan": "PROP_1002",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rounds": 1,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 0,
+    "items": 12,
+    "seconds": 7.8,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1003",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear",
+     "inside_room",
+     "no_free_wall",
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 4,
+    "items": 12,
+    "seconds": 13.4,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1003",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall",
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 2,
+    "items": 14,
+    "seconds": 12.5,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1003",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 1,
+    "items": 10,
+    "seconds": 11.0,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1004",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 1,
+    "items": 12,
+    "seconds": 10.2,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1004",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear",
+     "inside_room",
+     "no_overlaps"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 2,
+    "instructions_failed_round1": 3,
+    "items": 13,
+    "seconds": 10.8,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1004",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "front_clearance",
+     "inside_room",
+     "no_overlaps"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:ollama/qwen2.5",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 3,
+    "items": 13,
+    "seconds": 372.1,
+    "warnings": [
+     "gemini/gemini-flash-lite-latest failed in round 2 (HTTPError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions).",
+     "Switched to groq/openai/gpt-oss-120b.",
+     "groq/openai/gpt-oss-120b failed in round 2 (HTTPError: 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions).",
+     "Switched to ollama/qwen2.5."
+    ]
+   },
+   {
+    "plan": "PROP_1005",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 1,
+    "items": 12,
+    "seconds": 9.6,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1005",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear",
+     "inside_room",
+     "no_overlaps"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 3,
+    "items": 13,
+    "seconds": 16.0,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1005",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room",
+     "no_overlaps"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 2,
+    "items": 13,
+    "seconds": 11.1,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1006",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall"
+    ],
+    "rounds": 2,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 2,
+    "instructions_failed_round1": 1,
+    "items": 14,
+    "seconds": 9.6,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1006",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_overlaps",
+     "inside_room",
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 2,
+    "instructions_failed_round1": 3,
+    "items": 13,
+    "seconds": 13.2,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1006",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall",
+     "no_free_wall",
+     "bad_reference",
+     "bad_reference",
+     "doors_clear",
+     "wrong_room_type",
+     "inside_room",
+     "bad_reference",
+     "no_free_wall",
+     "bad_reference"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 2,
+    "instructions_failed_round1": 10,
+    "items": 17,
+    "seconds": 14.6,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1007",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 1,
+    "items": 24,
+    "seconds": 20.0,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1007",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_overlaps",
+     "doors_clear"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 2,
+    "items": 28,
+    "seconds": 23.1,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1007",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_overlaps",
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 4,
+    "instructions_failed_round1": 2,
+    "items": 26,
+    "seconds": 21.2,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1008",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 1,
+    "items": 13,
+    "seconds": 11.9,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1008",
+    "profile": "modern_full",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rounds": 1,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 0,
+    "items": 14,
+    "seconds": 8.1,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1008",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 1,
+    "items": 13,
+    "seconds": 15.8,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1009",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 1,
+    "items": 13,
+    "seconds": 12.3,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1009",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall",
+     "doors_clear",
+     "front_clearance"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 3,
+    "items": 15,
+    "seconds": 29.8,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1009",
+    "profile": "classic_office",
+    "first_try": true,
+    "final": true,
+    "reasons": [],
+    "rounds": 1,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 0,
+    "items": 11,
+    "seconds": 11.2,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1010",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear",
+     "no_free_wall",
+     "bad_reference",
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 4,
+    "items": 3,
+    "seconds": 10.1,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1010",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "doors_clear",
+     "inside_room",
+     "bad_reference",
+     "no_free_wall",
+     "bad_reference"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 5,
+    "items": 4,
+    "seconds": 10.3,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1010",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room",
+     "bad_reference",
+     "bad_reference",
+     "no_free_wall",
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 5,
+    "items": 5,
+    "seconds": 10.0,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1011",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_free_wall",
+     "no_free_wall",
+     "no_free_wall",
+     "doors_clear"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 4,
+    "items": 10,
+    "seconds": 11.7,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1011",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "no_overlaps",
+     "no_free_wall",
+     "doors_clear",
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 4,
+    "items": 14,
+    "seconds": 13.5,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1011",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room",
+     "no_open_floor",
+     "no_open_floor",
+     "doors_clear",
+     "no_free_wall"
+    ],
+    "rounds": 3,
+    "planner": "llm:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 0,
+    "instructions_failed_round1": 5,
+    "items": 11,
+    "seconds": 19.3,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1012",
+    "profile": "default",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room",
+     "bad_reference",
+     "bad_reference",
+     "inside_room",
+     "bad_reference"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 5,
+    "items": 20,
+    "seconds": 18.7,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1012",
+    "profile": "modern_full",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room",
+     "inside_room"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 1,
+    "instructions_failed_round1": 2,
+    "items": 21,
+    "seconds": 17.7,
+    "warnings": []
+   },
+   {
+    "plan": "PROP_1012",
+    "profile": "classic_office",
+    "first_try": false,
+    "final": true,
+    "reasons": [
+     "inside_room"
+    ],
+    "rounds": 3,
+    "planner": "llm+rules:gemini/gemini-flash-lite-latest",
+    "rooms_by_rules": 4,
+    "instructions_failed_round1": 1,
+    "items": 23,
+    "seconds": 16.2,
+    "warnings": []
+   }
+  ]
+ }
+}
