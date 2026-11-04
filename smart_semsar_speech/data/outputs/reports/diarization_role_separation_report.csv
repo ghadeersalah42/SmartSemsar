@@ -1,0 +1,6 @@
+﻿Call ID,Duration,DER (Diarization),Separation Acc,Role Assignment,Broker F1,Client F1,Macro F1
+call_00,16.5s,0.00%,100.00%,✓ Correct,100.00%,100.00%,100.00%
+call_01,18.2s,0.00%,100.00%,✓ Correct,100.00%,100.00%,100.00%
+call_02,15.0s,0.00%,100.00%,✓ Correct,100.00%,100.00%,100.00%
+call_03,14.5s,0.00%,100.00%,✓ Correct,100.00%,100.00%,100.00%
+call_04,16.0s,0.00%,100.00%,✓ Correct,100.00%,100.00%,100.00%

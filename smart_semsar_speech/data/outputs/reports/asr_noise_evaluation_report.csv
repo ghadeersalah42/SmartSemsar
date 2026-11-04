@@ -1,0 +1,7 @@
+﻿Audio Condition,WER,CER,Word Accuracy,Substitutions (S),Deletions (D),Insertions (I),Hits (H)
+Clean Studio/Mobile,8.24%,4.65%,91.76%,12,1,2,169
+Telephony Filter (G.712 Bandpass),1.10%,1.42%,98.90%,0,2,0,180
+Noisy Phone (SNR 20 dB),6.59%,5.36%,93.41%,6,6,0,170
+Noisy Phone (SNR 15 dB),7.69%,7.08%,92.31%,6,8,0,168
+Noisy Phone (SNR 10 dB),6.59%,4.65%,93.41%,8,4,0,170
+Severe Phone Noise (SNR 5 dB),7.69%,5.36%,92.31%,9,5,0,168

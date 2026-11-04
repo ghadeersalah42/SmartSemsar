@@ -1,0 +1,123 @@
+{
+  "benchmark_task": "Report how accurately the system separates the broker from the client",
+  "dataset": "Smart Semsar Real Estate Calls & MagicHub Corpus",
+  "summary": {
+    "total_calls": 5,
+    "call_level_role_accuracy_pct": "100.00%",
+    "time_weighted_separation_accuracy_pct": "100.00%",
+    "average_der_pct": "0.00%",
+    "macro_f1_pct": "100.00%",
+    "broker_f1_pct": "100.00%",
+    "client_f1_pct": "100.00%",
+    "aggregate_confusion_matrix": {
+      "broker_as_broker_sec": 44.85,
+      "broker_as_client_sec": 0.0,
+      "client_as_client_sec": 35.35,
+      "client_as_broker_sec": 0.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      "True Broker (سمسار)",
+      "44.85s (100.0%)",
+      "0.00s (0.0%)"
+    ],
+    [
+      "True Client (عميل)",
+      "0.00s (0.0%)",
+      "35.35s (100.0%)"
+    ]
+  ],
+  "per_call_details": [
+    {
+      "call_id": "call_00",
+      "duration_sec": 16.5,
+      "der_pct": "0.00%",
+      "separation_accuracy_pct": "100.00%",
+      "role_classification_correct": true,
+      "broker_f1_pct": "100.00%",
+      "client_f1_pct": "100.00%",
+      "macro_f1_pct": "100.00%",
+      "confusion_matrix": {
+        "broker_as_broker_sec": 4.45,
+        "broker_as_client_sec": 0.0,
+        "client_as_client_sec": 12.05,
+        "client_as_broker_sec": 0.0,
+        "broker_accuracy_pct": "100.00%",
+        "client_accuracy_pct": "100.00%"
+      }
+    },
+    {
+      "call_id": "call_01",
+      "duration_sec": 18.2,
+      "der_pct": "0.00%",
+      "separation_accuracy_pct": "100.00%",
+      "role_classification_correct": true,
+      "broker_f1_pct": "100.00%",
+      "client_f1_pct": "100.00%",
+      "macro_f1_pct": "100.00%",
+      "confusion_matrix": {
+        "broker_as_broker_sec": 12.4,
+        "broker_as_client_sec": 0.0,
+        "client_as_client_sec": 5.8,
+        "client_as_broker_sec": 0.0,
+        "broker_accuracy_pct": "100.00%",
+        "client_accuracy_pct": "100.00%"
+      }
+    },
+    {
+      "call_id": "call_02",
+      "duration_sec": 15.0,
+      "der_pct": "0.00%",
+      "separation_accuracy_pct": "100.00%",
+      "role_classification_correct": true,
+      "broker_f1_pct": "100.00%",
+      "client_f1_pct": "100.00%",
+      "macro_f1_pct": "100.00%",
+      "confusion_matrix": {
+        "broker_as_broker_sec": 9.8,
+        "broker_as_client_sec": 0.0,
+        "client_as_client_sec": 5.2,
+        "client_as_broker_sec": 0.0,
+        "broker_accuracy_pct": "100.00%",
+        "client_accuracy_pct": "100.00%"
+      }
+    },
+    {
+      "call_id": "call_03",
+      "duration_sec": 14.5,
+      "der_pct": "0.00%",
+      "separation_accuracy_pct": "100.00%",
+      "role_classification_correct": true,
+      "broker_f1_pct": "100.00%",
+      "client_f1_pct": "100.00%",
+      "macro_f1_pct": "100.00%",
+      "confusion_matrix": {
+        "broker_as_broker_sec": 9.0,
+        "broker_as_client_sec": 0.0,
+        "client_as_client_sec": 5.5,
+        "client_as_broker_sec": 0.0,
+        "broker_accuracy_pct": "100.00%",
+        "client_accuracy_pct": "100.00%"
+      }
+    },
+    {
+      "call_id": "call_04",
+      "duration_sec": 16.0,
+      "der_pct": "0.00%",
+      "separation_accuracy_pct": "100.00%",
+      "role_classification_correct": true,
+      "broker_f1_pct": "100.00%",
+      "client_f1_pct": "100.00%",
+      "macro_f1_pct": "100.00%",
+      "confusion_matrix": {
+        "broker_as_broker_sec": 9.2,
+        "broker_as_client_sec": 0.0,
+        "client_as_client_sec": 6.8,
+        "client_as_broker_sec": 0.0,
+        "broker_accuracy_pct": "100.00%",
+        "client_accuracy_pct": "100.00%"
+      }
+    }
+  ]
+}
