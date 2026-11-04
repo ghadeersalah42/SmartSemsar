@@ -1,0 +1,8 @@
+{
+  "agent_name": "test_agent",
+  "version": "v1.0.0",
+  "system_prompt": "Test Prompt v1.0",
+  "target_model": "openai/gpt-oss-20b",
+  "output_schema": null,
+  "description": "Unit test prompt"
+}

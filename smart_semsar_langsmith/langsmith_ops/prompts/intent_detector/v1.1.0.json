@@ -1,0 +1,8 @@
+{
+  "agent_name": "intent_detector",
+  "version": "v1.1.0",
+  "system_prompt": "You are an Intent Detection agent in Egypt. Contrast alternative_search vs modify_search. Utterance: {conversation}",
+  "target_model": "openai/gpt-oss-20b",
+  "output_schema": null,
+  "description": "Optimized Egyptian dialect intent prompt"
+}

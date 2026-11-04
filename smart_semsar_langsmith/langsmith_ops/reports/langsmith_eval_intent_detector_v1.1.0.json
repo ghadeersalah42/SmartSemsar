@@ -1,0 +1,363 @@
+{
+  "agent_name": "intent_detector",
+  "prompt_version": "v1.1.0",
+  "model_name": "openai/gpt-oss-20b",
+  "dataset_name": "smart_semsar_intent_golden_set",
+  "accuracy_score": 0.95,
+  "accuracy_pct": "95.00%",
+  "is_regression": false,
+  "baseline_version": "v1.0.0",
+  "accuracy_delta": "+0.00%",
+  "status": "PASS",
+  "timestamp": "2026-11-02T19:41:15Z",
+  "eval_details": {
+    "experiment_name": "eval-intent_detector-v1.1.0_20261102_194115",
+    "prompt_version": "v1.1.0",
+    "model_name": "openai/gpt-oss-20b",
+    "total_examples": 20,
+    "accuracy_score": 0.95,
+    "accuracy_pct": "95.00%",
+    "results": [
+      {
+        "example_id": "int_01",
+        "inputs": {
+          "conversation": "عايز اشوف شقق تانية"
+        },
+        "expected": {
+          "intent": "alternative_search"
+        },
+        "predicted": {
+          "intent": "alternative_search",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_02",
+        "inputs": {
+          "conversation": "وريني بدائل تانية في نفس المنطقة"
+        },
+        "expected": {
+          "intent": "alternative_search"
+        },
+        "predicted": {
+          "intent": "alternative_search",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_03",
+        "inputs": {
+          "conversation": "عندك اختيارات تانية غير دي؟"
+        },
+        "expected": {
+          "intent": "alternative_search"
+        },
+        "predicted": {
+          "intent": "alternative_search",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_04",
+        "inputs": {
+          "conversation": "الشقة حلوة بس عايز حاجة اكبر"
+        },
+        "expected": {
+          "intent": "modify_search"
+        },
+        "predicted": {
+          "intent": "modify_search",
+          "confidence": 0.92
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_05",
+        "inputs": {
+          "conversation": "لا دي غالية اغير الميزانية ل 4 مليون"
+        },
+        "expected": {
+          "intent": "modify_search"
+        },
+        "predicted": {
+          "intent": "modify_search",
+          "confidence": 0.92
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_06",
+        "inputs": {
+          "conversation": "مش عايز الدور الارضي عايز دور متكرر"
+        },
+        "expected": {
+          "intent": "modify_search"
+        },
+        "predicted": {
+          "intent": "modify_search",
+          "confidence": 0.92
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_07",
+        "inputs": {
+          "conversation": "الشقة دي عجبتني جداً وتحفة"
+        },
+        "expected": {
+          "intent": "positive_feedback"
+        },
+        "predicted": {
+          "intent": "positive_feedback",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_08",
+        "inputs": {
+          "conversation": "المكان ممتاز وعجبني الفيو"
+        },
+        "expected": {
+          "intent": "positive_feedback"
+        },
+        "predicted": {
+          "intent": "general_question",
+          "confidence": 0.85
+        },
+        "latency_ms": 0.01,
+        "scores": {
+          "intent_accuracy": 0.0
+        }
+      },
+      {
+        "example_id": "int_09",
+        "inputs": {
+          "conversation": "لا مش عاجباني خالص والتقسيمة وحشة"
+        },
+        "expected": {
+          "intent": "negative_feedback"
+        },
+        "predicted": {
+          "intent": "negative_feedback",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_10",
+        "inputs": {
+          "conversation": "دي سيئة جدا ومش مناسبة"
+        },
+        "expected": {
+          "intent": "negative_feedback"
+        },
+        "predicted": {
+          "intent": "negative_feedback",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_11",
+        "inputs": {
+          "conversation": "كام سعر الشقة دي؟"
+        },
+        "expected": {
+          "intent": "property_inquiry"
+        },
+        "predicted": {
+          "intent": "property_inquiry",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_12",
+        "inputs": {
+          "conversation": "المساحة كام وسعر المتر كام؟"
+        },
+        "expected": {
+          "intent": "property_inquiry"
+        },
+        "predicted": {
+          "intent": "property_inquiry",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_13",
+        "inputs": {
+          "conversation": "فيها كام اوضة بالظبط؟"
+        },
+        "expected": {
+          "intent": "property_inquiry"
+        },
+        "predicted": {
+          "intent": "property_inquiry",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_14",
+        "inputs": {
+          "conversation": "عايز احجز ميعاد عشان اشوف الشقة"
+        },
+        "expected": {
+          "intent": "booking_request"
+        },
+        "predicted": {
+          "intent": "booking_request",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_15",
+        "inputs": {
+          "conversation": "ممكن ميعاد معاينة بكرة العصر؟"
+        },
+        "expected": {
+          "intent": "booking_request"
+        },
+        "predicted": {
+          "intent": "booking_request",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_16",
+        "inputs": {
+          "conversation": "عايز شقة في التجمع بميزانية 5 مليون"
+        },
+        "expected": {
+          "intent": "new_search"
+        },
+        "predicted": {
+          "intent": "new_search",
+          "confidence": 0.96
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_17",
+        "inputs": {
+          "conversation": "بدور على دوبلكس في زايد 3 غرف"
+        },
+        "expected": {
+          "intent": "new_search"
+        },
+        "predicted": {
+          "intent": "new_search",
+          "confidence": 0.96
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_18",
+        "inputs": {
+          "conversation": "محتاج فيلا تاون هاوس استلام فوري"
+        },
+        "expected": {
+          "intent": "new_search"
+        },
+        "predicted": {
+          "intent": "new_search",
+          "confidence": 0.96
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_19",
+        "inputs": {
+          "conversation": "شقة في التجمع الخامس للبيع"
+        },
+        "expected": {
+          "intent": "new_search"
+        },
+        "predicted": {
+          "intent": "new_search",
+          "confidence": 0.96
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "int_20",
+        "inputs": {
+          "conversation": "مش عارف اختار لسه ومتردد"
+        },
+        "expected": {
+          "intent": "unknown"
+        },
+        "predicted": {
+          "intent": "unknown",
+          "confidence": 0.7
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "intent_accuracy": 1.0
+        }
+      }
+    ]
+  }
+}

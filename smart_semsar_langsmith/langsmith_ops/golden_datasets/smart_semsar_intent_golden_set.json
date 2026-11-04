@@ -1,0 +1,142 @@
+[
+  {
+    "id": "int_01",
+    "input": "عايز اشوف شقق تانية",
+    "expected": {
+      "intent": "alternative_search"
+    }
+  },
+  {
+    "id": "int_02",
+    "input": "وريني بدائل تانية في نفس المنطقة",
+    "expected": {
+      "intent": "alternative_search"
+    }
+  },
+  {
+    "id": "int_03",
+    "input": "عندك اختيارات تانية غير دي؟",
+    "expected": {
+      "intent": "alternative_search"
+    }
+  },
+  {
+    "id": "int_04",
+    "input": "الشقة حلوة بس عايز حاجة اكبر",
+    "expected": {
+      "intent": "modify_search"
+    }
+  },
+  {
+    "id": "int_05",
+    "input": "لا دي غالية اغير الميزانية ل 4 مليون",
+    "expected": {
+      "intent": "modify_search"
+    }
+  },
+  {
+    "id": "int_06",
+    "input": "مش عايز الدور الارضي عايز دور متكرر",
+    "expected": {
+      "intent": "modify_search"
+    }
+  },
+  {
+    "id": "int_07",
+    "input": "الشقة دي عجبتني جداً وتحفة",
+    "expected": {
+      "intent": "positive_feedback"
+    }
+  },
+  {
+    "id": "int_08",
+    "input": "المكان ممتاز وعجبني الفيو",
+    "expected": {
+      "intent": "positive_feedback"
+    }
+  },
+  {
+    "id": "int_09",
+    "input": "لا مش عاجباني خالص والتقسيمة وحشة",
+    "expected": {
+      "intent": "negative_feedback"
+    }
+  },
+  {
+    "id": "int_10",
+    "input": "دي سيئة جدا ومش مناسبة",
+    "expected": {
+      "intent": "negative_feedback"
+    }
+  },
+  {
+    "id": "int_11",
+    "input": "كام سعر الشقة دي؟",
+    "expected": {
+      "intent": "property_inquiry"
+    }
+  },
+  {
+    "id": "int_12",
+    "input": "المساحة كام وسعر المتر كام؟",
+    "expected": {
+      "intent": "property_inquiry"
+    }
+  },
+  {
+    "id": "int_13",
+    "input": "فيها كام اوضة بالظبط؟",
+    "expected": {
+      "intent": "property_inquiry"
+    }
+  },
+  {
+    "id": "int_14",
+    "input": "عايز احجز ميعاد عشان اشوف الشقة",
+    "expected": {
+      "intent": "booking_request"
+    }
+  },
+  {
+    "id": "int_15",
+    "input": "ممكن ميعاد معاينة بكرة العصر؟",
+    "expected": {
+      "intent": "booking_request"
+    }
+  },
+  {
+    "id": "int_16",
+    "input": "عايز شقة في التجمع بميزانية 5 مليون",
+    "expected": {
+      "intent": "new_search"
+    }
+  },
+  {
+    "id": "int_17",
+    "input": "بدور على دوبلكس في زايد 3 غرف",
+    "expected": {
+      "intent": "new_search"
+    }
+  },
+  {
+    "id": "int_18",
+    "input": "محتاج فيلا تاون هاوس استلام فوري",
+    "expected": {
+      "intent": "new_search"
+    }
+  },
+  {
+    "id": "int_19",
+    "input": "شقة في التجمع الخامس للبيع",
+    "expected": {
+      "intent": "new_search"
+    }
+  },
+  {
+    "id": "int_20",
+    "input": "مش عارف اختار لسه ومتردد",
+    "expected": {
+      "intent": "unknown"
+    }
+  }
+]

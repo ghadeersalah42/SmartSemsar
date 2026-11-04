@@ -1,0 +1,8 @@
+{
+  "agent_name": "orchestrator_router",
+  "version": "v1.0.0",
+  "system_prompt": "You are the Orchestrator for Smart Semsar. Route input: {conversation}",
+  "target_model": "openai/gpt-oss-20b",
+  "output_schema": null,
+  "description": "LangGraph Supervisor orchestrator prompt"
+}

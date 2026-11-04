@@ -1,0 +1,159 @@
+{
+  "agent_name": "orchestrator_router",
+  "prompt_version": "v1.0.0",
+  "model_name": "openai/gpt-oss-20b",
+  "dataset_name": "smart_semsar_orchestrator_golden_set",
+  "accuracy_score": 1.0,
+  "accuracy_pct": "100.00%",
+  "is_regression": false,
+  "baseline_version": null,
+  "accuracy_delta": null,
+  "status": "PASS",
+  "timestamp": "2026-11-02T19:40:46Z",
+  "eval_details": {
+    "experiment_name": "eval-orchestrator_router-v1.0.0_20261102_194046",
+    "prompt_version": "v1.0.0",
+    "model_name": "openai/gpt-oss-20b",
+    "total_examples": 8,
+    "accuracy_score": 1.0,
+    "accuracy_pct": "100.00%",
+    "results": [
+      {
+        "example_id": "orch_01",
+        "inputs": {
+          "conversation": "عايز شقة شبه السكيتش ده بالظبط"
+        },
+        "expected": {
+          "macro_intent": "sketch_based_search"
+        },
+        "predicted": {
+          "macro_intent": "sketch_based_search",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_02",
+        "inputs": {
+          "conversation": "وريني شقق نفس التقسيمة بتاعة الرسمة"
+        },
+        "expected": {
+          "macro_intent": "sketch_based_search"
+        },
+        "predicted": {
+          "macro_intent": "sketch_based_search",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_03",
+        "inputs": {
+          "conversation": "عايز افرش السكيتش 3D واحط اثاث"
+        },
+        "expected": {
+          "macro_intent": "direct_sketch_staging"
+        },
+        "predicted": {
+          "macro_intent": "direct_sketch_staging",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_04",
+        "inputs": {
+          "conversation": "حول السكيتش ده لنموذج ثري دي مفروش"
+        },
+        "expected": {
+          "macro_intent": "direct_sketch_staging"
+        },
+        "predicted": {
+          "macro_intent": "direct_sketch_staging",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_05",
+        "inputs": {
+          "conversation": "عايز اتصفح كل الوحدات المتاحة عندكم"
+        },
+        "expected": {
+          "macro_intent": "general_browse"
+        },
+        "predicted": {
+          "macro_intent": "general_browse",
+          "confidence": 0.9
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_06",
+        "inputs": {
+          "conversation": "وريني المعروض كله"
+        },
+        "expected": {
+          "macro_intent": "general_browse"
+        },
+        "predicted": {
+          "macro_intent": "general_browse",
+          "confidence": 0.9
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_07",
+        "inputs": {
+          "conversation": "بدور على شقة 3 غرف في التجمع ميزانية 5 مليون"
+        },
+        "expected": {
+          "macro_intent": "search_by_reqs"
+        },
+        "predicted": {
+          "macro_intent": "search_by_reqs",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "orch_08",
+        "inputs": {
+          "conversation": "فيلا في زايد بمقدم 10%"
+        },
+        "expected": {
+          "macro_intent": "search_by_reqs"
+        },
+        "predicted": {
+          "macro_intent": "search_by_reqs",
+          "confidence": 0.95
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "routing_accuracy": 1.0
+        }
+      }
+    ]
+  }
+}

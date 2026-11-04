@@ -1,0 +1,6 @@
+{
+  "identifier": "smart-semsar/intent_detector",
+  "commit_id": "20261102_194010",
+  "description": "v1.1.0: Optimized Egyptian dialect intent prompt",
+  "content": "{'agent_name': 'intent_detector', 'version': 'v1.1.0', 'system_prompt': 'You are an Intent Detection agent in Egypt. Contrast alternative_search vs modify_search. Utterance: {conversation}', 'target_model': 'openai/gpt-oss-20b', 'output_schema': None, 'description': 'Optimized Egyptian dialect intent prompt'}"
+}

@@ -1,0 +1,93 @@
+{
+  "agent_name": "customer_requirements",
+  "prompt_version": "v1.0.0",
+  "model_name": "openai/gpt-oss-20b",
+  "dataset_name": "smart_semsar_customer_reqs_golden_set",
+  "accuracy_score": 0.9333,
+  "accuracy_pct": "93.33%",
+  "is_regression": false,
+  "baseline_version": null,
+  "accuracy_delta": null,
+  "status": "PASS",
+  "timestamp": "2026-11-02T19:40:46Z",
+  "eval_details": {
+    "experiment_name": "eval-customer_requirements-v1.0.0_20261102_194046",
+    "prompt_version": "v1.0.0",
+    "model_name": "openai/gpt-oss-20b",
+    "total_examples": 3,
+    "accuracy_score": 0.9333,
+    "accuracy_pct": "93.33%",
+    "results": [
+      {
+        "example_id": "req_01",
+        "inputs": {
+          "conversation": "عايز شقة في التجمع تلات اوض والميزانية خمسة مليون شراء"
+        },
+        "expected": {
+          "location": "التجمع الخامس",
+          "budget_max": 5000000,
+          "bedrooms": 3,
+          "property_type": "apartment",
+          "deal_type": "buy"
+        },
+        "predicted": {
+          "location": "التجمع الخامس",
+          "budget_max": 5000000,
+          "bedrooms": 3,
+          "property_type": "apartment",
+          "deal_type": "buy"
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "requirements_accuracy": 1.0
+        }
+      },
+      {
+        "example_id": "req_02",
+        "inputs": {
+          "conversation": "بدور على فيلا في الشيخ زايد غرفتين بميزانية 3 مليون تمليك"
+        },
+        "expected": {
+          "location": "الشيخ زايد",
+          "budget_max": 3000000,
+          "bedrooms": 2,
+          "property_type": "villa",
+          "deal_type": "buy"
+        },
+        "predicted": {
+          "location": "الشيخ زايد",
+          "budget_max": 3000000,
+          "bedrooms": 3,
+          "property_type": "villa",
+          "deal_type": "buy"
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "requirements_accuracy": 0.8
+        }
+      },
+      {
+        "example_id": "req_03",
+        "inputs": {
+          "conversation": "شقة في التجمع خمسة مليون"
+        },
+        "expected": {
+          "location": "التجمع الخامس",
+          "budget_max": 5000000,
+          "property_type": "apartment"
+        },
+        "predicted": {
+          "location": "التجمع الخامس",
+          "budget_max": 5000000,
+          "bedrooms": null,
+          "property_type": "apartment",
+          "deal_type": "unknown"
+        },
+        "latency_ms": 0.0,
+        "scores": {
+          "requirements_accuracy": 1.0
+        }
+      }
+    ]
+  }
+}

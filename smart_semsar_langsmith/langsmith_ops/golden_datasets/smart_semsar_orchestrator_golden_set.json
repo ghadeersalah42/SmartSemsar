@@ -1,0 +1,58 @@
+[
+  {
+    "id": "orch_01",
+    "input": "عايز شقة شبه السكيتش ده بالظبط",
+    "expected": {
+      "macro_intent": "sketch_based_search"
+    }
+  },
+  {
+    "id": "orch_02",
+    "input": "وريني شقق نفس التقسيمة بتاعة الرسمة",
+    "expected": {
+      "macro_intent": "sketch_based_search"
+    }
+  },
+  {
+    "id": "orch_03",
+    "input": "عايز افرش السكيتش 3D واحط اثاث",
+    "expected": {
+      "macro_intent": "direct_sketch_staging"
+    }
+  },
+  {
+    "id": "orch_04",
+    "input": "حول السكيتش ده لنموذج ثري دي مفروش",
+    "expected": {
+      "macro_intent": "direct_sketch_staging"
+    }
+  },
+  {
+    "id": "orch_05",
+    "input": "عايز اتصفح كل الوحدات المتاحة عندكم",
+    "expected": {
+      "macro_intent": "general_browse"
+    }
+  },
+  {
+    "id": "orch_06",
+    "input": "وريني المعروض كله",
+    "expected": {
+      "macro_intent": "general_browse"
+    }
+  },
+  {
+    "id": "orch_07",
+    "input": "بدور على شقة 3 غرف في التجمع ميزانية 5 مليون",
+    "expected": {
+      "macro_intent": "search_by_reqs"
+    }
+  },
+  {
+    "id": "orch_08",
+    "input": "فيلا في زايد بمقدم 10%",
+    "expected": {
+      "macro_intent": "search_by_reqs"
+    }
+  }
+]
