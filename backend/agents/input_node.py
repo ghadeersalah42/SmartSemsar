@@ -13,7 +13,11 @@ Writes to state:
 """
 from backend.services.user_input import audio_to_conversation
 from backend.services.user_input_text import extract_requirements
-from backend.schema.state import AgentState, PropertyItem
+from backend.schema.state import AgentState, PropertyItem, CustomerRequirements
+from backend.guardrails.clarify import (find_unclear, drop_guesses, clarification_question,
+                                        with_clarification, FIELD_ORDER)
+from backend.guardrails.pii import safe_print
+import re
 from typing import Optional, Literal, List, Dict, Any
 from langgraph.types import interrupt
 
@@ -42,6 +46,42 @@ def deal_type_from(text: str) -> Optional[str]:
     return None
 
 
+MAX_CLARIFY_QUESTIONS = 2
+_HAS_NUMBER = re.compile(r"[0-9٠-٩۰-۹]|مليون|ألف|الف|واحد|اتنين|تلات|اربع|أربع|خمس|ست|سبع|تمان|تسع|عشر|مية|ميت")
+
+
+def clarify_requirements(text: str, req: Optional[CustomerRequirements], check_text: bool = True):
+    """Ask, don't guess: لو فيه حقل مش واضح ("70 6") أو برّه الحدود المنطقية، البوت بيسأل
+    سؤال واحد قصير، ويعيد الاستخراج بالرد. لو الحقل لسه مش واضح بعدها، بيفضل فاضي (مش بنخمن)."""
+    if req is None or not text:
+        return text, req
+    unclear = find_unclear(text if check_text else "", req)
+    for _ in range(MAX_CLARIFY_QUESTIONS):
+        if not unclear:
+            break
+        req = drop_guesses(req, unclear)
+        field = next((f for f in FIELD_ORDER if f in unclear), next(iter(unclear)))
+        answer = interrupt(clarification_question(unclear))
+        answer = answer.strip() if isinstance(answer, str) else ""
+        if not answer:
+            break
+        text = with_clarification(text, answer)
+        new_req = extract_requirements(call_transcript=None, raw_text=text)
+        unclear = find_unclear(answer, new_req)      # الرقمين القدام في الكلام الأصلي اتسألنا عنهم خلاص
+        if not _HAS_NUMBER.search(answer):           # رد من غير أي رقم: أي قيمة للحقل ده تبقى تخمين
+            unclear.setdefault(field, "no_answer:" + answer[:20])
+        new_req.deal_type = new_req.deal_type if new_req.deal_type not in (None, "unknown") else req.deal_type
+        req = new_req
+    if unclear:
+        req = drop_guesses(req, unclear)
+    return text, req
+
+
+def revalidate(req: Optional[CustomerRequirements]) -> Optional[CustomerRequirements]:
+    """بعد ما نعرف إيجار ولا تمليك، حدود الميزانية بتتغير: نعدي على الـ schema تاني"""
+    return CustomerRequirements(**req.model_dump()) if req is not None else None
+
+
 def input_node(state: AgentState) -> Dict[str, Any]:
     
     print("🔥 ANA HENNA EL-GADEED 🔥")  # سطر مميز جداً عشان نتأكد إنه شايف الملف
@@ -65,6 +105,9 @@ def input_node(state: AgentState) -> Dict[str, Any]:
             resumed_text = user_response.strip() if isinstance(user_response, str) else None
             req = extract_requirements(call_transcript=None, raw_text=resumed_text) if resumed_text else None
 
+        # فيه حاجة مش واضحة ("70 6") أو مش منطقية؟ نسأل سؤال واحد بدل ما نخمن
+        resumed_text, req = clarify_requirements(resumed_text, req)
+
         # والشقق مبتطلعش غير لما نعرف هو عايزها إيجار ولا تمليك
         if req is not None and req.deal_type in (None, "unknown"):
             answer = interrupt("تمام 👌 وعايز الشقة إيجار ولا تمليك؟")
@@ -73,6 +116,8 @@ def input_node(state: AgentState) -> Dict[str, Any]:
             if req.deal_type in (None, "unknown"):
                 req.deal_type = "rent"          # رد مش مفهوم: كل الشقق عندنا إيجار، فنعرضها
             resumed_text = f"{resumed_text} - {answer}" if resumed_text else answer
+            req = revalidate(req)                       # ميزانية الإيجار غير التمليك
+            resumed_text, req = clarify_requirements(resumed_text, req, check_text=False)
 
         return {
             "user_req_text": resumed_text,
@@ -111,8 +156,9 @@ def input_node(state: AgentState) -> Dict[str, Any]:
             # "missing_fields": [],
             "error": "Please provide at least one input: a recorded call or text.",
         }
-    print(f"📥 Extracting requirements from Text: '{raw_text}' | Audio: {conversation_text is not None}")
+    safe_print(f"📥 Extracting requirements from Text: '{raw_text}' | Audio: {conversation_text is not None}")
     req = extract_requirements(call_transcript=conversation_text, raw_text=raw_text)
+    raw_text, req = clarify_requirements(raw_text or conversation_text or "", req)
     print("Here is reqs heereeeee")
 
     return {

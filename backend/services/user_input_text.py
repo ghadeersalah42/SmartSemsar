@@ -112,6 +112,8 @@ Rules:
 - Never copy budget, area, bedrooms, or location text into "notes". If there is nothing extra, set "notes" to null.
 - Do NOT guess "property_type" or "purpose". Use "unknown" unless the customer clearly states them.
 - "deal_type": "rent" for إيجار / ايجار / أأجر / rent, "buy" for تمليك / شراء / اشتري / أشتري / buy; otherwise "unknown" (a budget alone does not decide it).
+- Ask, don't guess: if a number is ambiguous (for example two bare numbers side by side such as "70 6", or a budget with no unit such as "ميزانيتي 6"), set that field to null and add it to missing_fields. Never pick one reading yourself.
+- If the input contains a line starting with "توضيح العميل:", it is the customer's answer to our question and overrides anything earlier that it contradicts.
 '''
 
 
@@ -160,7 +162,9 @@ def extract_requirements(call_transcript=None, raw_text=None) -> CustomerRequire
         cleaned = raw_content.strip().strip("`").replace("json\n", "", 1)
         parsed = json.loads(cleaned)
 
-    req = CustomerRequirements(**parsed)
+    if not isinstance(parsed.get("unclear_fields", {}), dict):
+        parsed.pop("unclear_fields")
+    req = CustomerRequirements(**parsed)      # الـ schema بيشيل أي قيمة برّه الحدود المنطقية (unclear_fields)
 
     fields = ["location", "budget_min", "budget_max", "area_sqm",
               "bedrooms", "property_type", "purpose", "deal_type", "notes"]

@@ -19,7 +19,12 @@ from services.property_service import calculate_installments
 from services.google_calendar_service import create_viewing_event
 import datetime
 
+from backend.guardrails.input_guard import check_input
+from backend.guardrails.pii import register_name, get_logger
+from backend.guardrails.actions import action_reply
+
 load_dotenv(find_dotenv())
+log = get_logger("smartsemsar.chat")       # أي سطر هنا بيتخفي منه التليفونات والأسامي
 
 # --- صفحة الفرش بعفش المستخدم (Furniture_multi_photo_edit.py) ---
 import socket
@@ -232,9 +237,8 @@ def send_report_to_telegram(prop_info):
         customer_name=st.session_state.get("customer_name") or "Valued Customer",
         installment_plan=st.session_state.get("installment_plan") if prop_info.get("deal_type") == "buy" else None,
         booking_data=st.session_state.get("booking_data"))
-    if res.get("success"):
-        return True, "✅ تم إرسال التقرير لتليجرام بنجاح!"
-    return False, f"❌ تعذر إرسال التقرير: {res.get('error')}"
+    # الرسالة من نتيجة الأداة بس: "اتبعت" مبتطلعش غير لو تليجرام رجّع success
+    return res.get("success") is True, action_reply("telegram_report", res)
 
 
 def render_chat_flow():
@@ -449,6 +453,15 @@ def render_chat_flow():
         st.session_state.messages.append({"role": "user", "content": user_query})
         st.session_state.show_checkout_page = False
 
+        # Guardrail: هجوم أو طلب بيانات عميل تاني أو كلام برّه العقارات بيترد عليه من غير ما يوصل للجراف.
+        # وقت ما البوت مستني رد على سؤال ("إيجار ولا تمليك؟")، الردود القصيرة بتعدي على القواعد بس
+        awaiting_answer = bool(current_state.tasks and any(task.interrupts for task in current_state.tasks))
+        guard = check_input(user_query, use_llm=not awaiting_answer and os.getenv("SMARTSEMSAR_LLM_GUARD", "1") == "1")
+        if guard.blocked:
+            log.info("guard blocked message (%s): %s", guard.category, user_query)
+            st.session_state.messages.append({"role": "assistant", "content": guard.reply})
+            st.rerun()
+
         with st.spinner("جاري المعالجة والبحث..."):
             try:
                 if current_state.tasks and any(task.interrupts for task in current_state.tasks):
@@ -592,6 +605,7 @@ def render_chat_flow():
             if st.button("تأكيد الحجز والإضافة للتقويم 🚀", type="primary"):
                 if cust_name.strip():
                     st.session_state["customer_name"] = cust_name.strip()
+                register_name(cust_name)            # الاسم بيتخفي من الـ logs والـ traces
                 with st.spinner("جاري إنشاء الموعد على Google Calendar..."):
                     # استدعاء دالة الكاليندر الحقيقية
                     res = create_viewing_event(
@@ -603,8 +617,8 @@ def render_chat_flow():
                         notes=booking_notes
                     )
 
-                    if res.get("success"):
-                        st.success("✅ تم حجز الموعد بنجاح وإضافته إلى Google Calendar الخاص بك!")
+                    if res.get("success") is True:
+                        st.success(action_reply("booking", res))
                         if res.get("html_link"):
                             st.markdown(f"[🔗 عرض الموعد في تقويم جوجل]({res.get('html_link')})")
                         st.session_state["show_booking_form"] = False
@@ -622,7 +636,7 @@ def render_chat_flow():
                         st.session_state["report_sent"] = False
                         deliver_booking_report(prop_info)
                     else:
-                        st.error(f"❌ حدث خطأ أثناء الحجز: {res.get('error')}")
+                        st.error(action_reply("booking", res))
         # الإيجار: الإيجار الشهري والتأمين وأول دفعة. التمليك: مقدم ثابت والعميل بيختار مدة التقسيط
         if st.session_state.get("show_installment_plan", False):
             st.markdown("---")
