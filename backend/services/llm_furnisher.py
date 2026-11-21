@@ -52,10 +52,21 @@ much free wall is left. Use only catalog items, and say where each piece goes wi
 "name" labels a piece so later instructions can refer to it. face_ref true turns a piece to face the
 reference (a free-standing TV unit facing the sofa).
 
-Design rules: beds, sofas and storage stand with their back against a wall; a piece only goes on a
-wall whose free wall is at least its width; nothing tall in front of a window; never block a door
-or the way between doors; kitchens and bathrooms already have their built-ins; sides marked "open"
-have no wall. Follow the customer's style and wishes. A few well-placed pieces beat a crowded room.
+Design rules: beds, sofas and storage stand with their back against a wall; nothing tall in front of a
+window; never block a door or the way between doors; kitchens and bathrooms already have their built-ins;
+sides marked "open" have no wall. Follow the customer's style and wishes. A few well-placed pieces beat
+a crowded room.
+
+Before each instruction, check it against the numbers (most failures come from skipping this):
+- Free wall is a list of separate stretches. A piece needs ONE stretch at least its width; it cannot
+  span two stretches. Pieces taller than 0.9 m use the "tall pieces" stretches (windows are cut out).
+  A wall with no stretch long enough: choose another wall or a smaller piece.
+- Doors keep about 0.7 m clear on both sides, and the way from each door to the others must stay open.
+- "needs X m in front" in the catalog: that strip in front of the piece must stay free of walls,
+  built-ins and other pieces, so do not put it facing a nearby wall or another piece.
+- "center" and "free" need the piece plus about 0.6 m around it inside the room's size.
+- "ref" and "align_to" must be a "name" you gave earlier in the same room, or a placed item id.
+- Only use catalog items whose rooms list the room's type.
 
 Answer with JSON only: {"rooms": {"<room id>": [<instruction>, ...]}, "summary": "<one sentence for the customer>"}"""
 
@@ -125,6 +136,8 @@ class FurnishReport:
     unresolved: dict = field(default_factory=dict)   # room id -> what still failed after the last round
     rule_rooms: list = field(default_factory=list)   # rooms furnished by the rule placer
     warnings: list = field(default_factory=list)
+    first_try_approved: Optional[bool] = None   # round 1 placed every instruction (None: no model answered)
+    first_round_errors: dict = field(default_factory=dict)  # room id -> what failed in round 1
 
 
 def _catalog_text(catalog: Catalog, style: Optional[str], exclude: list[str]) -> str:
@@ -133,7 +146,8 @@ def _catalog_text(catalog: Catalog, style: Optional[str], exclude: list[str]) ->
         if (style and i.styles and style not in i.styles) or i.is_a(exclude):
             continue
         lines.append(f"- {i.id}: {i.name}, {i.width_m} x {i.depth_m} m, h {i.height_m} m; "
-                     f"rooms: {', '.join(i.room_types)}{'; against a wall' if i.against_wall else ''}")
+                     f"rooms: {', '.join(i.room_types)}{'; against a wall' if i.against_wall else ''}"
+                     f"{f'; needs {i.clearance_front_m} m in front' if i.clearance_front_m else ''}")
     return "\n".join(lines)
 
 
@@ -209,6 +223,9 @@ def furnish(plan: Plan, preferences: Union[DesignPreferences, dict, None] = None
             break
         staging, errors = apply_actions(plan, staging, todo, catalog)
         report.unresolved = {rid: errs for rid, errs in errors.items()}
+        if round_no == 1:
+            report.first_try_approved = not errors
+            report.first_round_errors = {rid: list(errs) for rid, errs in errors.items()}
         pending = set(errors)
         if not errors:
             break

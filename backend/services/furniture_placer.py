@@ -434,8 +434,11 @@ def keep_paths_open(space: RoomSpace) -> int:
 
 # ---------- plan -> staging ----------
 def stage_plan(plan: Plan, catalog: Optional[Catalog] = None, style: Optional[str] = None,
-               preferences: Union[DesignPreferences, dict, None] = None) -> Staging:
-    """preferences: a DesignPreferences or a dict with its fields (see backend/schema/design.py)."""
+               preferences: Union[DesignPreferences, dict, None] = None,
+               drops: Optional[dict] = None) -> Staging:
+    """preferences: a DesignPreferences or a dict with its fields (see backend/schema/design.py).
+    drops: if given, filled with {room id: items dropped to keep its doors reachable} - the rooms
+    whose first arrangement the path check rejected (backend/eval/layout_benchmark.py counts them)."""
     catalog = catalog or load_catalog()
     prefs = preferences if isinstance(preferences, DesignPreferences) \
         else DesignPreferences.model_validate(preferences or {})
@@ -469,14 +472,18 @@ def stage_plan(plan: Plan, catalog: Optional[Catalog] = None, style: Optional[st
                 dining_done = furnish_dining(space, cat, seats=prefs.dining_seats or 6) or dining_done
             elif room.type in ("entry", "hallway"):
                 furnish_entry(space, cat, wishes)
-            keep_paths_open(space)
+            dropped = keep_paths_open(space)
+            if dropped and drops is not None:
+                drops[room.id] = drops.get(room.id, 0) + dropped
             spaces.append(space)
 
     if not dining_done:     # last resort: a small table in the kitchen
         for space in spaces:
             if space.room.type == "kitchen" and furnish_dining(space, available("kitchen"),
                                                                seats=prefs.dining_seats or 4):
-                keep_paths_open(space)
+                dropped = keep_paths_open(space)
+                if dropped and drops is not None:
+                    drops[space.room.id] = drops.get(space.room.id, 0) + dropped
                 break
 
     items = [i for s in spaces for i in s.items]

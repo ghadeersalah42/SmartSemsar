@@ -1,0 +1,31 @@
+photo,expected_kinds,conditions,notes
+ترابيزات/IMG20230731191111.jpg,dining_table|desk,low_light|clutter,"rectangular table, workshop floor"
+ترابيزات/IMG20230731191113.jpg,dining_table|desk,low_light|clutter,"same table, second shot (different file)"
+ترابيزات/IMG20230731191139.jpg,dining_table|desk|console_table,odd_angle|cut_off,"table seen from the short side, top runs out of frame"
+ترابيزات/IMG20220309194141.jpg,dining_table|console_table|desk,clutter,folding table among tools and offcuts
+ترابيزات/IMG20220408000920.jpg,coffee_table,clutter|odd_angle,"coffee table from above, sofa frame behind it"
+ترابيزات/٢٠٢٠٠٧٢٨_١٣٥٩٠٣.jpg,,normal,"two tall cabinets side by side: several pieces, must be refused"
+ركنة و انتريه/IMG20220904191640.jpg,sofa,low_light|clutter,"wooden sofa frame outdoors at night, car behind"
+ركنة و انتريه/IMG-20210505-WA0027.jpg,sofa,low_light|clutter,grey upholstered sofa on the street at night
+ركنة و انتريه/IMG20220904191616.jpg,sofa,low_light|clutter,"same wooden sofa, other angle"
+ركنة و انتريه/٢٠١٩٠٩١٠_١٢٠٢٠٧.jpg,sofa,clutter,"gilded classic sofa, curtains behind"
+ركنة و انتريه/IMG20221104162526.jpg,console_table|tv|dresser|bookshelf,normal,low TV unit / sideboard
+ركنة و انتريه/IMG20221019142957.jpg,sofa,clutter|odd_angle,"unfinished L-shaped corner sofa frame, TV unit behind"
+كراسي/٢٠٢٠٠٥٣١_١٣١٧٤٢.jpg,,glare,photo of a computer screen showing a rocking-chair drawing: must be refused
+كراسي/٢٠١٩٠٩٢٥_١٤١٩١٨.jpg,dining_chair|armchair,low_light,"slatted wooden chair, dark"
+كراسي/٢٠١٩٠٩٢٥_١٤١٩١٧.jpg,dining_chair|armchair,low_light,"same chair, second shot"
+كراسي/٢٠٢٠٠٤٢٦_٢١٤٠٢٥.jpg,armchair|dining_chair,odd_angle|clutter,unfinished curved chair shell from above
+كراسي/IMG20220309194146.jpg,,clutter,"two slatted chairs and more behind: several pieces, must be refused"
+كراسي/٢٠٢٠٠٤٢٧_٢٢٥٢٤٧.jpg,armchair,clutter|odd_angle,"armchair being upholstered, hands and tools in frame"
+غرفة نوم/٢٠٢٠١١٢٢_١٤٠٥١١.jpg,bed,low_light|clutter,"bed frame without headboard, child inside, dark workshop"
+غرفة نوم/٢٠٢٠١١٢٢_١٤٠٥١٤.jpg,bed,low_light|clutter,"same bed, second shot"
+غرفة نوم/IMG20231003184918.jpg,dresser|desk,odd_angle,vanity / dresser with drawers
+غرفة نوم/٢٠١٩٠٨١٩_١٩٢٦٤٤.jpg,dining_table|desk|coffee_table,clutter,"table in workshop, worker behind"
+غرفة نوم/IMG20211206115449.jpg,wardrobe,glare,built-in wardrobe doors wrapped in plastic
+غرفة أطفال/IMG20230120183142.jpg,,low_light,"two single beds in a room: several pieces, must be refused"
+غرفة أطفال/٢٠١٩٠٧٢٥_١٥٠١٢٣.jpg,bed,low_light|cut_off,"headboard and footboard only, side rails missing"
+غرفة أطفال/IMG20220627231331.jpg,,normal,"bed with two nightstands: several pieces, must be refused"
+غرفة أطفال/٢٠٢٠١٠٠٣_٢٢٠٢١٤(0).jpg,wardrobe,low_light|clutter,large unfinished wardrobe
+مطابخ/IMG20230128190850.jpg,bookshelf|wardrobe|dresser,low_light|clutter,"glass-front cabinet (made for a kitchen), dark"
+مطابخ/IMG20230127192224.jpg,bookshelf|wardrobe|dresser,low_light|clutter,"same cabinet, other angle"
+مطابخ/IMG20230404231110.jpg,,clutter,"loose cabinet door frames: parts, must be refused"
