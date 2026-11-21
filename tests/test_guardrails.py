@@ -102,10 +102,8 @@ def test_report_node_never_says_sent_without_success(monkeypatch):
 
 def test_no_whatsapp_left_in_app_code():
     for path in list((ROOT / "backend").rglob("*.py")) + list((ROOT / "frontend").rglob("*.py")):
-        if path.name == "graph.py":                 # الجراف القديم، كله commented out ومش بيتستورد
-            continue
         code = "\n".join(l for l in path.read_text(encoding="utf-8").splitlines()
-                         if not l.strip().startswith(("#", '"""')) and "قبل كده" not in l)
+                         if "قبل كده" not in l)       # الكومنت اللي بيشرح التصليح بس
         assert "whatsapp" not in code.lower() and "واتساب" not in code, path
 
 
