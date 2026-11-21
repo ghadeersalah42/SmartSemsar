@@ -1,5 +1,6 @@
 from backend.services.MatchingFeature import PropertyMatchingService, CustomerRequirements
 from backend.schema.state import AgentState, PropertyItem
+from backend.guardrails.listing_guard import check_listing, quarantine
 from typing import Optional, Literal, List, Dict, Any
 from langgraph.types import interrupt
 
@@ -49,7 +50,12 @@ def match_properties_node(state: AgentState)-> Dict[str, Any]:
     
 
     results= Property_matching_service.search_properties(requirements, all_prop)
-    
+
+    # Poisoned listings: إعلان نصه فيه أوامر ("ignore previous instructions") ميتعرضش على العميل
+    clean, flagged = quarantine(results["properties"])
+    if flagged:
+        results = {**results, "properties": clean, "total_found": max(0, results["total_found"] - len(flagged))}
+
     for prop in results["properties"]:
         item = PropertyItem(
             property_id=str(prop.get("property_id")),
@@ -75,7 +81,7 @@ def match_properties_node(state: AgentState)-> Dict[str, Any]:
 def property_item_by_id(property_id) -> Optional[PropertyItem]:
     """شقة من الداتا كـ PropertyItem (None لو الـ id مش موجود)"""
     raw_p = Property_matching_service.get_property_by_id(property_id)
-    if not raw_p:
+    if not raw_p or check_listing(raw_p):       # إعلان مشبوه مبيتفتحش حتى لو حد طلبه بالـ id
         return None
     return PropertyItem(
         property_id=str(raw_p.get("property_id")),
@@ -117,9 +123,12 @@ def select_property_node(state: AgentState) -> dict:
     if not chosen_property:
         chosen_property = property_item_by_id(selected_id)
 
-    if chosen_property:
-        print(f"Chosen Property is: {chosen_property.title} (ID: {chosen_property.property_id})")
-    
+    if not chosen_property:        # id مش موجود أو إعلان مشبوه: منكملش بشقة مش موجودة
+        print(f"Property {selected_id} not found or blocked")
+        return {"selected_property_id": None, "selected_property": None, "current_stage": "property_not_found"}
+
+    print(f"Chosen Property is: {chosen_property.title} (ID: {chosen_property.property_id})")
+
     print("finish selection node")
 
     return {

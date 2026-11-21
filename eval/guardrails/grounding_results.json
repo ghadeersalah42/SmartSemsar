@@ -1,0 +1,1809 @@
+{
+  "results": [
+    {
+      "property_id": "PROP_1001",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Luxurious Living in the Heart of Hyde Park! (#PROP_1001)\nالموقع: Hyde Park, Hyde Park, New Cairo City, Cairo | المساحة: 189 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 50,000"
+    },
+    {
+      "property_id": "PROP_1001",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 50,000\n- **التأمين (إيجار شهرين مقدم):** EGP 100,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 100,000\n- **إجمالي الإيجار في السنة:** EGP 600,000\n"
+    },
+    {
+      "property_id": "PROP_1001",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Luxurious Living in the Heart of Hyde Park! (ID: PROP_1001)\n• *Location:* 📍 Hyde Park, Hyde Park, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 50,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 189 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 50,000\n• *Security Deposit:* EGP 100,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 100,000\n• *Yearly Rent:* EGP 600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1002",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for Rent in Al Marasem Compound (#PROP_1002)\nالموقع: Moon Residences, The 5th Settlement, New Cairo City, Cairo | المساحة: 170 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 35,000"
+    },
+    {
+      "property_id": "PROP_1002",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 35,000\n- **التأمين (إيجار شهرين مقدم):** EGP 70,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 70,000\n- **إجمالي الإيجار في السنة:** EGP 420,000\n"
+    },
+    {
+      "property_id": "PROP_1002",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for Rent in Al Marasem Compound (ID: PROP_1002)\n• *Location:* 📍 Moon Residences, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 35,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 170 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 35,000\n• *Security Deposit:* EGP 70,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 70,000\n• *Yearly Rent:* EGP 420,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1003",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Flat Ultra Super Lux First Use For Rent-Villette (#PROP_1003)\nالموقع: Villette, The 5th Settlement, New Cairo City, Cairo | المساحة: 161 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 70,000"
+    },
+    {
+      "property_id": "PROP_1003",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 70,000\n- **التأمين (إيجار شهرين مقدم):** EGP 140,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 140,000\n- **إجمالي الإيجار في السنة:** EGP 840,000\n"
+    },
+    {
+      "property_id": "PROP_1003",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Flat Ultra Super Lux First Use For Rent-Villette (ID: PROP_1003)\n• *Location:* 📍 Villette, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 70,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 161 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 70,000\n• *Security Deposit:* EGP 140,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 140,000\n• *Yearly Rent:* EGP 840,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1004",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Studio for Rent — South Lotus (New Cairo) (#PROP_1004)\nالموقع: South Lotus, El Lotus, New Cairo City, Cairo | المساحة: 80 متر مربع | عدد الغرف: 1\nالإيجار الشهري: EGP 22,000"
+    },
+    {
+      "property_id": "PROP_1004",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 22,000\n- **التأمين (إيجار شهرين مقدم):** EGP 44,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 44,000\n- **إجمالي الإيجار في السنة:** EGP 264,000\n"
+    },
+    {
+      "property_id": "PROP_1004",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Studio for Rent — South Lotus (New Cairo) (ID: PROP_1004)\n• *Location:* 📍 South Lotus, El Lotus, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 22,000\n• *Bedrooms:* 🛏️ 1\n• *Area:* 📐 80 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 22,000\n• *Security Deposit:* EGP 44,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 44,000\n• *Yearly Rent:* EGP 264,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1005",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Studio for Rent — Hyde Park New Cairo   First Us (#PROP_1005)\nالموقع: Hyde Park, Hyde Park, New Cairo City, Cairo | المساحة: 80 متر مربع | عدد الغرف: 1\nالإيجار الشهري: EGP 35,000"
+    },
+    {
+      "property_id": "PROP_1005",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 35,000\n- **التأمين (إيجار شهرين مقدم):** EGP 70,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 70,000\n- **إجمالي الإيجار في السنة:** EGP 420,000\n"
+    },
+    {
+      "property_id": "PROP_1005",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Studio for Rent — Hyde Park New Cairo   First Us (ID: PROP_1005)\n• *Location:* 📍 Hyde Park, Hyde Park, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 35,000\n• *Bedrooms:* 🛏️ 1\n• *Area:* 📐 80 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 35,000\n• *Security Deposit:* EGP 70,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 70,000\n• *Yearly Rent:* EGP 420,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1006",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ultra-modern furnished apartment in Cairo Festival (#PROP_1006)\nالموقع: Cairo Festival City, North Investors Area, New Cairo City, Cairo | المساحة: 230 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 95,000"
+    },
+    {
+      "property_id": "PROP_1006",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 95,000\n- **التأمين (إيجار شهرين مقدم):** EGP 190,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 190,000\n- **إجمالي الإيجار في السنة:** EGP 1,140,000\n"
+    },
+    {
+      "property_id": "PROP_1006",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ultra-modern furnished apartment in Cairo Festival (ID: PROP_1006)\n• *Location:* 📍 Cairo Festival City, North Investors Area, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 95,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 230 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 95,000\n• *Security Deposit:* EGP 190,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 190,000\n• *Yearly Rent:* EGP 1,140,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1007",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "stand alone for rent (#PROP_1007)\nالموقع: The Address, 12th District, Sheikh Zayed City, Giza | المساحة: 450 متر مربع | عدد الغرف: 5\nالإيجار الشهري: EGP 300,000"
+    },
+    {
+      "property_id": "PROP_1007",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 300,000\n- **التأمين (إيجار شهرين مقدم):** EGP 600,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 600,000\n- **إجمالي الإيجار في السنة:** EGP 3,600,000\n"
+    },
+    {
+      "property_id": "PROP_1007",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* stand alone for rent (ID: PROP_1007)\n• *Location:* 📍 The Address, 12th District, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 300,000\n• *Bedrooms:* 🛏️ 5\n• *Area:* 📐 450 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 300,000\n• *Security Deposit:* EGP 600,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 600,000\n• *Yearly Rent:* EGP 3,600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1008",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Fully Furnished Apartment for Rent in V Residence (#PROP_1008)\nالموقع: Villette, The 5th Settlement, New Cairo City, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 95,000"
+    },
+    {
+      "property_id": "PROP_1008",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 95,000\n- **التأمين (إيجار شهرين مقدم):** EGP 190,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 190,000\n- **إجمالي الإيجار في السنة:** EGP 1,140,000\n"
+    },
+    {
+      "property_id": "PROP_1008",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Fully Furnished Apartment for Rent in V Residence (ID: PROP_1008)\n• *Location:* 📍 Villette, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 95,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 95,000\n• *Security Deposit:* EGP 190,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 190,000\n• *Yearly Rent:* EGP 1,140,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1009",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "furnished apt rent sodic villette direct landscape (#PROP_1009)\nالموقع: Villette, The 5th Settlement, New Cairo City, Cairo | المساحة: 188 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 115,000"
+    },
+    {
+      "property_id": "PROP_1009",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 115,000\n- **التأمين (إيجار شهرين مقدم):** EGP 230,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 230,000\n- **إجمالي الإيجار في السنة:** EGP 1,380,000\n"
+    },
+    {
+      "property_id": "PROP_1009",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* furnished apt rent sodic villette direct landscape (ID: PROP_1009)\n• *Location:* 📍 Villette, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 115,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 188 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 115,000\n• *Security Deposit:* EGP 230,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 230,000\n• *Yearly Rent:* EGP 1,380,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1010",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished studio for annual rent in Saba basha (#PROP_1010)\nالموقع: Batlimos Al Falaki St., Saba Basha, Hay Sharq, Alexandria | المساحة: 30 متر مربع | عدد الغرف: 1\nالإيجار الشهري: EGP 15,000"
+    },
+    {
+      "property_id": "PROP_1010",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 15,000\n- **التأمين (إيجار شهرين مقدم):** EGP 30,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 30,000\n- **إجمالي الإيجار في السنة:** EGP 180,000\n"
+    },
+    {
+      "property_id": "PROP_1010",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished studio for annual rent in Saba basha (ID: PROP_1010)\n• *Location:* 📍 Batlimos Al Falaki St., Saba Basha, Hay Sharq, Alexandria\n• *Type:* Residential\n• *Price:* EGP 15,000\n• *Bedrooms:* 🛏️ 1\n• *Area:* 📐 30 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 15,000\n• *Security Deposit:* EGP 30,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 30,000\n• *Yearly Rent:* EGP 180,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1011",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ground floor with private garden for rent  Eastown (#PROP_1011)\nالموقع: Eastown, The 5th Settlement, New Cairo City, Cairo | المساحة: 140 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 85,000"
+    },
+    {
+      "property_id": "PROP_1011",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 85,000\n- **التأمين (إيجار شهرين مقدم):** EGP 170,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 170,000\n- **إجمالي الإيجار في السنة:** EGP 1,020,000\n"
+    },
+    {
+      "property_id": "PROP_1011",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ground floor with private garden for rent  Eastown (ID: PROP_1011)\n• *Location:* 📍 Eastown, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 85,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 140 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 85,000\n• *Security Deposit:* EGP 170,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 170,000\n• *Yearly Rent:* EGP 1,020,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1012",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Luxurious Furnished  Villa for  Rent in Lake view (#PROP_1012)\nالموقع: Lake View, The 5th Settlement, New Cairo City, Cairo | المساحة: 650 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 336,000"
+    },
+    {
+      "property_id": "PROP_1012",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 336,000\n- **التأمين (إيجار شهرين مقدم):** EGP 672,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 672,000\n- **إجمالي الإيجار في السنة:** EGP 4,032,000\n"
+    },
+    {
+      "property_id": "PROP_1012",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Luxurious Furnished  Villa for  Rent in Lake view (ID: PROP_1012)\n• *Location:* 📍 Lake View, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 336,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 650 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 336,000\n• *Security Deposit:* EGP 672,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 672,000\n• *Yearly Rent:* EGP 4,032,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1013",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Stylish 200sqm Furnished Apartment Rent in  Mivida (#PROP_1013)\nالموقع: Mivida, The 5th Settlement, New Cairo City, Cairo | المساحة: 200 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 113,000"
+    },
+    {
+      "property_id": "PROP_1013",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 113,000\n- **التأمين (إيجار شهرين مقدم):** EGP 226,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 226,000\n- **إجمالي الإيجار في السنة:** EGP 1,356,000\n"
+    },
+    {
+      "property_id": "PROP_1013",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Stylish 200sqm Furnished Apartment Rent in  Mivida (ID: PROP_1013)\n• *Location:* 📍 Mivida, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 113,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 200 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 113,000\n• *Security Deposit:* EGP 226,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 226,000\n• *Yearly Rent:* EGP 1,356,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1014",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "75m Furnished Apartment for Rent – Tabarak, Maadi (#PROP_1014)\nالموقع: Tabarak, Zahraa El Maadi, Hay El Maadi, Cairo | المساحة: 75 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 12,000"
+    },
+    {
+      "property_id": "PROP_1014",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 12,000\n- **التأمين (إيجار شهرين مقدم):** EGP 24,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 24,000\n- **إجمالي الإيجار في السنة:** EGP 144,000\n"
+    },
+    {
+      "property_id": "PROP_1014",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* 75m Furnished Apartment for Rent – Tabarak, Maadi (ID: PROP_1014)\n• *Location:* 📍 Tabarak, Zahraa El Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 12,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 75 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 12,000\n• *Security Deposit:* EGP 24,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 24,000\n• *Yearly Rent:* EGP 144,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1015",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in Fifth Settlement, North Lotu (#PROP_1015)\nالموقع: North Lotus, El Lotus, New Cairo City, Cairo | المساحة: 235 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 30,000"
+    },
+    {
+      "property_id": "PROP_1015",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 30,000\n- **التأمين (إيجار شهرين مقدم):** EGP 60,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 60,000\n- **إجمالي الإيجار في السنة:** EGP 360,000\n"
+    },
+    {
+      "property_id": "PROP_1015",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in Fifth Settlement, North Lotu (ID: PROP_1015)\n• *Location:* 📍 North Lotus, El Lotus, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 30,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 235 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 30,000\n• *Security Deposit:* EGP 60,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 60,000\n• *Yearly Rent:* EGP 360,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1016",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "107m Apartment for Rent – Tabarak Buildings–Maadi (#PROP_1016)\nالموقع: Tabarak, Zahraa El Maadi, Hay El Maadi, Cairo | المساحة: 107 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 12,000"
+    },
+    {
+      "property_id": "PROP_1016",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 12,000\n- **التأمين (إيجار شهرين مقدم):** EGP 24,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 24,000\n- **إجمالي الإيجار في السنة:** EGP 144,000\n"
+    },
+    {
+      "property_id": "PROP_1016",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* 107m Apartment for Rent – Tabarak Buildings–Maadi (ID: PROP_1016)\n• *Location:* 📍 Tabarak, Zahraa El Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 12,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 107 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 12,000\n• *Security Deposit:* EGP 24,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 24,000\n• *Yearly Rent:* EGP 144,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1017",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Luxurious apartment for rent at west golf (#PROP_1017)\nالموقع: West Golf, El Katameya, New Cairo City, Cairo | المساحة: 160 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1017",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1017",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Luxurious apartment for rent at west golf (ID: PROP_1017)\n• *Location:* 📍 West Golf, El Katameya, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 160 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1018",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Townhouse corner for rent at O-West October Whyt (#PROP_1018)\nالموقع: O West, 6 October Compounds, 6 October City, Giza | المساحة: 266 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 65,000"
+    },
+    {
+      "property_id": "PROP_1018",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 65,000\n- **التأمين (إيجار شهرين مقدم):** EGP 130,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 130,000\n- **إجمالي الإيجار في السنة:** EGP 780,000\n"
+    },
+    {
+      "property_id": "PROP_1018",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Townhouse corner for rent at O-West October Whyt (ID: PROP_1018)\n• *Location:* 📍 O West, 6 October Compounds, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 65,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 266 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 65,000\n• *Security Deposit:* EGP 130,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 130,000\n• *Yearly Rent:* EGP 780,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1019",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent at O-West Tulwa prime location (#PROP_1019)\nالموقع: O West, 6 October Compounds, 6 October City, Giza | المساحة: 132 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 27,000"
+    },
+    {
+      "property_id": "PROP_1019",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 27,000\n- **التأمين (إيجار شهرين مقدم):** EGP 54,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 54,000\n- **إجمالي الإيجار في السنة:** EGP 324,000\n"
+    },
+    {
+      "property_id": "PROP_1019",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent at O-West Tulwa prime location (ID: PROP_1019)\n• *Location:* 📍 O West, 6 October Compounds, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 27,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 132 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 27,000\n• *Security Deposit:* EGP 54,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 54,000\n• *Yearly Rent:* EGP 324,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1020",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ground duplex for rent in O-west phase Tulwa (#PROP_1020)\nالموقع: O West, 6 October Compounds, 6 October City, Giza | المساحة: 287 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1020",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1020",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ground duplex for rent in O-west phase Tulwa (ID: PROP_1020)\n• *Location:* 📍 O West, 6 October Compounds, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 287 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1021",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent at O-West Tulwa prime location (#PROP_1021)\nالموقع: O West, 6 October Compounds, 6 October City, Giza | المساحة: 168 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 35,000"
+    },
+    {
+      "property_id": "PROP_1021",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 35,000\n- **التأمين (إيجار شهرين مقدم):** EGP 70,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 70,000\n- **إجمالي الإيجار في السنة:** EGP 420,000\n"
+    },
+    {
+      "property_id": "PROP_1021",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent at O-West Tulwa prime location (ID: PROP_1021)\n• *Location:* 📍 O West, 6 October Compounds, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 35,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 168 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 35,000\n• *Security Deposit:* EGP 70,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 70,000\n• *Yearly Rent:* EGP 420,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1022",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in New Giza Amberville (#PROP_1022)\nالموقع: New Giza, Cairo Alexandria Desert Road, 6 October City, Giza | المساحة: 173 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1022",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1022",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in New Giza Amberville (ID: PROP_1022)\n• *Location:* 📍 New Giza, Cairo Alexandria Desert Road, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 173 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1023",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in New Giza Amberville (#PROP_1023)\nالموقع: New Giza, Cairo Alexandria Desert Road, 6 October City, Giza | المساحة: 230 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 55,000"
+    },
+    {
+      "property_id": "PROP_1023",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 55,000\n- **التأمين (إيجار شهرين مقدم):** EGP 110,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 110,000\n- **إجمالي الإيجار في السنة:** EGP 660,000\n"
+    },
+    {
+      "property_id": "PROP_1023",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in New Giza Amberville (ID: PROP_1023)\n• *Location:* 📍 New Giza, Cairo Alexandria Desert Road, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 55,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 230 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 55,000\n• *Security Deposit:* EGP 110,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 110,000\n• *Yearly Rent:* EGP 660,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1024",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in New Giza Westridge (#PROP_1024)\nالموقع: New Giza, Cairo Alexandria Desert Road, 6 October City, Giza | المساحة: 285 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1024",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1024",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in New Giza Westridge (ID: PROP_1024)\n• *Location:* 📍 New Giza, Cairo Alexandria Desert Road, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 285 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1025",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ground furnished apartment for rent at ZED west (#PROP_1025)\nالموقع: Village Views, Sheikh Zayed Compounds, Sheikh Zayed City, Giza | المساحة: 290 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 70,000"
+    },
+    {
+      "property_id": "PROP_1025",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 70,000\n- **التأمين (إيجار شهرين مقدم):** EGP 140,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 140,000\n- **إجمالي الإيجار في السنة:** EGP 840,000\n"
+    },
+    {
+      "property_id": "PROP_1025",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ground furnished apartment for rent at ZED west (ID: PROP_1025)\n• *Location:* 📍 Village Views, Sheikh Zayed Compounds, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 70,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 290 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 70,000\n• *Security Deposit:* EGP 140,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 140,000\n• *Yearly Rent:* EGP 840,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1026",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment rent in Palm Parks October (#PROP_1026)\nالموقع: Palm Parks   Palm Hills, South Dahshur Link, 6 October City, Giza | المساحة: 93 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1026",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1026",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment rent in Palm Parks October (ID: PROP_1026)\n• *Location:* 📍 Palm Parks   Palm Hills, South Dahshur Link, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 93 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1027",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment for rent at ZED west open view (#PROP_1027)\nالموقع: Village Views, Sheikh Zayed Compounds, Sheikh Zayed City, Giza | المساحة: 102 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 50,000"
+    },
+    {
+      "property_id": "PROP_1027",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 50,000\n- **التأمين (إيجار شهرين مقدم):** EGP 100,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 100,000\n- **إجمالي الإيجار في السنة:** EGP 600,000\n"
+    },
+    {
+      "property_id": "PROP_1027",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment for rent at ZED west open view (ID: PROP_1027)\n• *Location:* 📍 Village Views, Sheikh Zayed Compounds, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 50,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 102 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 50,000\n• *Security Deposit:* EGP 100,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 100,000\n• *Yearly Rent:* EGP 600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1028",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Town house for Rent in Woodville Palm Hills (#PROP_1028)\nالموقع: Palm Hills WoodVille, Al Wahat Road, 6 October City, Giza | المساحة: 280 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 80,000"
+    },
+    {
+      "property_id": "PROP_1028",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 80,000\n- **التأمين (إيجار شهرين مقدم):** EGP 160,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 160,000\n- **إجمالي الإيجار في السنة:** EGP 960,000\n"
+    },
+    {
+      "property_id": "PROP_1028",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Town house for Rent in Woodville Palm Hills (ID: PROP_1028)\n• *Location:* 📍 Palm Hills WoodVille, Al Wahat Road, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 80,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 280 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 80,000\n• *Security Deposit:* EGP 160,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 160,000\n• *Yearly Rent:* EGP 960,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1029",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Fully furnished villa with private pool in layan (#PROP_1029)\nالموقع: Layan Residence, The 5th Settlement, New Cairo City, Cairo | المساحة: 330 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 180,000"
+    },
+    {
+      "property_id": "PROP_1029",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 180,000\n- **التأمين (إيجار شهرين مقدم):** EGP 360,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 360,000\n- **إجمالي الإيجار في السنة:** EGP 2,160,000\n"
+    },
+    {
+      "property_id": "PROP_1029",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Fully furnished villa with private pool in layan (ID: PROP_1029)\n• *Location:* 📍 Layan Residence, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 180,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 330 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 180,000\n• *Security Deposit:* EGP 360,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 360,000\n• *Yearly Rent:* EGP 2,160,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1030",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "100m Super Lux Apartment for Rent–Zahraa El-Maadi (#PROP_1030)\nالموقع: Togary St., Zahraa El Maadi, Hay El Maadi, Cairo | المساحة: 100 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 12,000"
+    },
+    {
+      "property_id": "PROP_1030",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 12,000\n- **التأمين (إيجار شهرين مقدم):** EGP 24,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 24,000\n- **إجمالي الإيجار في السنة:** EGP 144,000\n"
+    },
+    {
+      "property_id": "PROP_1030",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* 100m Super Lux Apartment for Rent–Zahraa El-Maadi (ID: PROP_1030)\n• *Location:* 📍 Togary St., Zahraa El Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 12,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 100 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 12,000\n• *Security Deposit:* EGP 24,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 24,000\n• *Yearly Rent:* EGP 144,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1031",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "140m Apartment for Rent, Degla Landmark, Nasr City (#PROP_1031)\nالموقع: Degla Landmark, Nasr City Compounds, Nasr City, Cairo | المساحة: 140 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 15,000"
+    },
+    {
+      "property_id": "PROP_1031",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 15,000\n- **التأمين (إيجار شهرين مقدم):** EGP 30,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 30,000\n- **إجمالي الإيجار في السنة:** EGP 180,000\n"
+    },
+    {
+      "property_id": "PROP_1031",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* 140m Apartment for Rent, Degla Landmark, Nasr City (ID: PROP_1031)\n• *Location:* 📍 Degla Landmark, Nasr City Compounds, Nasr City, Cairo\n• *Type:* Residential\n• *Price:* EGP 15,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 140 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 15,000\n• *Security Deposit:* EGP 30,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 30,000\n• *Yearly Rent:* EGP 180,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1032",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Super lux Apartment for rent in Eastown sodic (#PROP_1032)\nالموقع: Eastown, The 5th Settlement, New Cairo City, Cairo | المساحة: 240 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 100,000"
+    },
+    {
+      "property_id": "PROP_1032",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 100,000\n- **التأمين (إيجار شهرين مقدم):** EGP 200,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 200,000\n- **إجمالي الإيجار في السنة:** EGP 1,200,000\n"
+    },
+    {
+      "property_id": "PROP_1032",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Super lux Apartment for rent in Eastown sodic (ID: PROP_1032)\n• *Location:* 📍 Eastown, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 100,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 240 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 100,000\n• *Security Deposit:* EGP 200,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 200,000\n• *Yearly Rent:* EGP 1,200,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1033",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in Smouha, 175 sq m – Open view (#PROP_1033)\nالموقع: Valore Smouha, Smouha, Hay Sharq, Alexandria | المساحة: 175 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 21,000"
+    },
+    {
+      "property_id": "PROP_1033",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 21,000\n- **التأمين (إيجار شهرين مقدم):** EGP 42,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 42,000\n- **إجمالي الإيجار في السنة:** EGP 252,000\n"
+    },
+    {
+      "property_id": "PROP_1033",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in Smouha, 175 sq m – Open view (ID: PROP_1033)\n• *Location:* 📍 Valore Smouha, Smouha, Hay Sharq, Alexandria\n• *Type:* Residential\n• *Price:* EGP 21,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 175 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 21,000\n• *Security Deposit:* EGP 42,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 42,000\n• *Yearly Rent:* EGP 252,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1034",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ground Floor Apartment for Rent (#PROP_1034)\nالموقع: Lake View Residence, The 5th Settlement, New Cairo City, Cairo | المساحة: 120 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 50,000"
+    },
+    {
+      "property_id": "PROP_1034",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 50,000\n- **التأمين (إيجار شهرين مقدم):** EGP 100,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 100,000\n- **إجمالي الإيجار في السنة:** EGP 600,000\n"
+    },
+    {
+      "property_id": "PROP_1034",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ground Floor Apartment for Rent (ID: PROP_1034)\n• *Location:* 📍 Lake View Residence, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 50,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 120 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 50,000\n• *Security Deposit:* EGP 100,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 100,000\n• *Yearly Rent:* EGP 600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1035",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished Garden Apartment for Rent in Al Patio (#PROP_1035)\nالموقع: El Patio Oro, The 5th Settlement, New Cairo City, Cairo | المساحة: 165 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1035",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1035",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished Garden Apartment for Rent in Al Patio (ID: PROP_1035)\n• *Location:* 📍 El Patio Oro, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 165 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1036",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Standalone Villa for Rent with kitchen and ACs (#PROP_1036)\nالموقع: Stone Park, The 5th Settlement, New Cairo City, Cairo | المساحة: 500 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 110,000"
+    },
+    {
+      "property_id": "PROP_1036",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 110,000\n- **التأمين (إيجار شهرين مقدم):** EGP 220,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 220,000\n- **إجمالي الإيجار في السنة:** EGP 1,320,000\n"
+    },
+    {
+      "property_id": "PROP_1036",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Standalone Villa for Rent with kitchen and ACs (ID: PROP_1036)\n• *Location:* 📍 Stone Park, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 110,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 500 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 110,000\n• *Security Deposit:* EGP 220,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 220,000\n• *Yearly Rent:* EGP 1,320,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1037",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment in lake view residence (#PROP_1037)\nالموقع: Lake View Residence, The 5th Settlement, New Cairo City, Cairo | المساحة: 146 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 80,000"
+    },
+    {
+      "property_id": "PROP_1037",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 80,000\n- **التأمين (إيجار شهرين مقدم):** EGP 160,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 160,000\n- **إجمالي الإيجار في السنة:** EGP 960,000\n"
+    },
+    {
+      "property_id": "PROP_1037",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment in lake view residence (ID: PROP_1037)\n• *Location:* 📍 Lake View Residence, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 80,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 146 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 80,000\n• *Security Deposit:* EGP 160,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 160,000\n• *Yearly Rent:* EGP 960,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1038",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Townhouse Middle for Rent – District 5 by Marakez (#PROP_1038)\nالموقع: District 5, The 5th Settlement, New Cairo City, Cairo | المساحة: 258 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 105,000"
+    },
+    {
+      "property_id": "PROP_1038",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 105,000\n- **التأمين (إيجار شهرين مقدم):** EGP 210,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 210,000\n- **إجمالي الإيجار في السنة:** EGP 1,260,000\n"
+    },
+    {
+      "property_id": "PROP_1038",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Townhouse Middle for Rent – District 5 by Marakez (ID: PROP_1038)\n• *Location:* 📍 District 5, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 105,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 258 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 105,000\n• *Security Deposit:* EGP 210,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 210,000\n• *Yearly Rent:* EGP 1,260,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1039",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in Lake View Residence (#PROP_1039)\nالموقع: Lake View Residence, The 5th Settlement, New Cairo City, Cairo | المساحة: 130 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1039",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1039",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in Lake View Residence (ID: PROP_1039)\n• *Location:* 📍 Lake View Residence, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 130 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1040",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Fully Furnished Roof Apartment forRent – 1st Sett (#PROP_1040)\nالموقع: Mostafa Kamel Axis, The 1st Settlement, New Cairo City, Cairo | المساحة: 250 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 65,000"
+    },
+    {
+      "property_id": "PROP_1040",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 65,000\n- **التأمين (إيجار شهرين مقدم):** EGP 130,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 130,000\n- **إجمالي الإيجار في السنة:** EGP 780,000\n"
+    },
+    {
+      "property_id": "PROP_1040",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Fully Furnished Roof Apartment forRent – 1st Sett (ID: PROP_1040)\n• *Location:* 📍 Mostafa Kamel Axis, The 1st Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 65,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 250 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 65,000\n• *Security Deposit:* EGP 130,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 130,000\n• *Yearly Rent:* EGP 780,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1041",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Cozy Furn Apart For Rent Near T All Service best p (#PROP_1041)\nالموقع: El Rehab Extension, Al Rehab, New Cairo City, Cairo | المساحة: 123 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 39,999"
+    },
+    {
+      "property_id": "PROP_1041",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 39,999\n- **التأمين (إيجار شهرين مقدم):** EGP 79,998، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 79,998\n- **إجمالي الإيجار في السنة:** EGP 479,988\n"
+    },
+    {
+      "property_id": "PROP_1041",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Cozy Furn Apart For Rent Near T All Service best p (ID: PROP_1041)\n• *Location:* 📍 El Rehab Extension, Al Rehab, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 39,999\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 123 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 39,999\n• *Security Deposit:* EGP 79,998 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 79,998\n• *Yearly Rent:* EGP 479,988\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1042",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Villa for rent With Kitchen and AC&#x27;S Mivida Emaar (#PROP_1042)\nالموقع: Mivida, The 5th Settlement, New Cairo City, Cairo | المساحة: 356 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 170,000"
+    },
+    {
+      "property_id": "PROP_1042",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 170,000\n- **التأمين (إيجار شهرين مقدم):** EGP 340,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 340,000\n- **إجمالي الإيجار في السنة:** EGP 2,040,000\n"
+    },
+    {
+      "property_id": "PROP_1042",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Villa for rent With Kitchen and AC'S Mivida Emaar (ID: PROP_1042)\n• *Location:* 📍 Mivida, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 170,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 356 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 170,000\n• *Security Deposit:* EGP 340,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 340,000\n• *Yearly Rent:* EGP 2,040,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1043",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Super Lux Apartment for Rent in Garden City (#PROP_1043)\nالموقع: Garden City St., Garden City St., Garden City, Cairo | المساحة: 140 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 35,000"
+    },
+    {
+      "property_id": "PROP_1043",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 35,000\n- **التأمين (إيجار شهرين مقدم):** EGP 70,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 70,000\n- **إجمالي الإيجار في السنة:** EGP 420,000\n"
+    },
+    {
+      "property_id": "PROP_1043",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Super Lux Apartment for Rent in Garden City (ID: PROP_1043)\n• *Location:* 📍 Garden City St., Garden City St., Garden City, Cairo\n• *Type:* Residential\n• *Price:* EGP 35,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 140 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 35,000\n• *Security Deposit:* EGP 70,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 70,000\n• *Yearly Rent:* EGP 420,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1044",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment for rent -The Address Compound (#PROP_1044)\nالموقع: The Address, 12th District, Sheikh Zayed City, Giza | المساحة: 134 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 35,000"
+    },
+    {
+      "property_id": "PROP_1044",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 35,000\n- **التأمين (إيجار شهرين مقدم):** EGP 70,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 70,000\n- **إجمالي الإيجار في السنة:** EGP 420,000\n"
+    },
+    {
+      "property_id": "PROP_1044",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment for rent -The Address Compound (ID: PROP_1044)\n• *Location:* 📍 The Address, 12th District, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 35,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 134 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 35,000\n• *Security Deposit:* EGP 70,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 70,000\n• *Yearly Rent:* EGP 420,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1045",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment attractive price-Westown sodic (#PROP_1045)\nالموقع: Westown, Sheikh Zayed Compounds, Sheikh Zayed City, Giza | المساحة: 152 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1045",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1045",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment attractive price-Westown sodic (ID: PROP_1045)\n• *Location:* 📍 Westown, Sheikh Zayed Compounds, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 152 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1046",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished Apartment for rent at maadi cornich (#PROP_1046)\nالموقع: Cornish El Nile St., Maadi, Hay El Maadi, Cairo | المساحة: 110 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 19,999"
+    },
+    {
+      "property_id": "PROP_1046",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 19,999\n- **التأمين (إيجار شهرين مقدم):** EGP 39,998، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 39,998\n- **إجمالي الإيجار في السنة:** EGP 239,988\n"
+    },
+    {
+      "property_id": "PROP_1046",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished Apartment for rent at maadi cornich (ID: PROP_1046)\n• *Location:* 📍 Cornish El Nile St., Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 19,999\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 110 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 19,999\n• *Security Deposit:* EGP 39,998 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 39,998\n• *Yearly Rent:* EGP 239,988\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1047",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished Cozy Furnished Apart Prime Location Bes (#PROP_1047)\nالموقع: Eastown, The 5th Settlement, New Cairo City, Cairo | المساحة: 160 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 69,999"
+    },
+    {
+      "property_id": "PROP_1047",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 69,999\n- **التأمين (إيجار شهرين مقدم):** EGP 139,998، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 139,998\n- **إجمالي الإيجار في السنة:** EGP 839,988\n"
+    },
+    {
+      "property_id": "PROP_1047",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished Cozy Furnished Apart Prime Location Bes (ID: PROP_1047)\n• *Location:* 📍 Eastown, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 69,999\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 160 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 69,999\n• *Security Deposit:* EGP 139,998 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 139,998\n• *Yearly Rent:* EGP 839,988\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1048",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in Fifth Settlement, in the Am (#PROP_1048)\nالموقع: American University Housing District, The 5th Settlement, New Cairo City, Cairo | المساحة: 250 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 85,000"
+    },
+    {
+      "property_id": "PROP_1048",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 85,000\n- **التأمين (إيجار شهرين مقدم):** EGP 170,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 170,000\n- **إجمالي الإيجار في السنة:** EGP 1,020,000\n"
+    },
+    {
+      "property_id": "PROP_1048",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in Fifth Settlement, in the Am (ID: PROP_1048)\n• *Location:* 📍 American University Housing District, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 85,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 250 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 85,000\n• *Security Deposit:* EGP 170,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 170,000\n• *Yearly Rent:* EGP 1,020,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1049",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "luxury apartment rent in katameya heights (#PROP_1049)\nالموقع: Katameya Heights, El Katameya, New Cairo City, Cairo | المساحة: 200 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 80,000"
+    },
+    {
+      "property_id": "PROP_1049",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 80,000\n- **التأمين (إيجار شهرين مقدم):** EGP 160,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 160,000\n- **إجمالي الإيجار في السنة:** EGP 960,000\n"
+    },
+    {
+      "property_id": "PROP_1049",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* luxury apartment rent in katameya heights (ID: PROP_1049)\n• *Location:* 📍 Katameya Heights, El Katameya, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 80,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 200 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 80,000\n• *Security Deposit:* EGP 160,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 160,000\n• *Yearly Rent:* EGP 960,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1050",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Studio for rent,fully furnished, in Courtyard Comp (#PROP_1050)\nالموقع: Six West, Sheikh Zayed Compounds, Sheikh Zayed City, Giza | المساحة: 50 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 28,000"
+    },
+    {
+      "property_id": "PROP_1050",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 28,000\n- **التأمين (إيجار شهرين مقدم):** EGP 56,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 56,000\n- **إجمالي الإيجار في السنة:** EGP 336,000\n"
+    },
+    {
+      "property_id": "PROP_1050",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Studio for rent,fully furnished, in Courtyard Comp (ID: PROP_1050)\n• *Location:* 📍 Six West, Sheikh Zayed Compounds, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 28,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 50 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 28,000\n• *Security Deposit:* EGP 56,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 56,000\n• *Yearly Rent:* EGP 336,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1051",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "amazing apartment with private pool &amp; garden (#PROP_1051)\nالموقع: Katameya Heights, El Katameya, New Cairo City, Cairo | المساحة: 250 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 150,000"
+    },
+    {
+      "property_id": "PROP_1051",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 150,000\n- **التأمين (إيجار شهرين مقدم):** EGP 300,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 300,000\n- **إجمالي الإيجار في السنة:** EGP 1,800,000\n"
+    },
+    {
+      "property_id": "PROP_1051",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* amazing apartment with private pool & garden (ID: PROP_1051)\n• *Location:* 📍 Katameya Heights, El Katameya, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 150,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 250 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 150,000\n• *Security Deposit:* EGP 300,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 300,000\n• *Yearly Rent:* EGP 1,800,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1052",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished Apartment For Rent In Maadi Degla (#PROP_1052)\nالموقع: Street 213, Degla, Hay El Maadi, Cairo | المساحة: 220 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 117,000"
+    },
+    {
+      "property_id": "PROP_1052",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 117,000\n- **التأمين (إيجار شهرين مقدم):** EGP 234,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 234,000\n- **إجمالي الإيجار في السنة:** EGP 1,404,000\n"
+    },
+    {
+      "property_id": "PROP_1052",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished Apartment For Rent In Maadi Degla (ID: PROP_1052)\n• *Location:* 📍 Street 213, Degla, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 117,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 220 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 117,000\n• *Security Deposit:* EGP 234,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 234,000\n• *Yearly Rent:* EGP 1,404,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1053",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Amazing Modern Apartment With Terrace In Zamalek (#PROP_1053)\nالموقع: Mohamed Mazhar St., Mohamed Mazhar St., Zamalek, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 141,000"
+    },
+    {
+      "property_id": "PROP_1053",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 141,000\n- **التأمين (إيجار شهرين مقدم):** EGP 282,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 282,000\n- **إجمالي الإيجار في السنة:** EGP 1,692,000\n"
+    },
+    {
+      "property_id": "PROP_1053",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Amazing Modern Apartment With Terrace In Zamalek (ID: PROP_1053)\n• *Location:* 📍 Mohamed Mazhar St., Mohamed Mazhar St., Zamalek, Cairo\n• *Type:* Residential\n• *Price:* EGP 141,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 141,000\n• *Security Deposit:* EGP 282,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 282,000\n• *Yearly Rent:* EGP 1,692,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1054",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Modern Duplex for Rent in Sarayat El Maadi (#PROP_1054)\nالموقع: Sarayat Al Maadi, Sarayat Al Maadi, Hay El Maadi, Cairo | المساحة: 260 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 77,000"
+    },
+    {
+      "property_id": "PROP_1054",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 77,000\n- **التأمين (إيجار شهرين مقدم):** EGP 154,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 154,000\n- **إجمالي الإيجار في السنة:** EGP 924,000\n"
+    },
+    {
+      "property_id": "PROP_1054",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Modern Duplex for Rent in Sarayat El Maadi (ID: PROP_1054)\n• *Location:* 📍 Sarayat Al Maadi, Sarayat Al Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 77,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 260 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 77,000\n• *Security Deposit:* EGP 154,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 154,000\n• *Yearly Rent:* EGP 924,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1055",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Studio for Rent – Banafseg Villas, New Cairo First (#PROP_1055)\nالموقع: El Banafseg 12, El Banafseg, New Cairo City, Cairo | المساحة: 80 متر مربع | عدد الغرف: 1\nالإيجار الشهري: EGP 30,000"
+    },
+    {
+      "property_id": "PROP_1055",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 30,000\n- **التأمين (إيجار شهرين مقدم):** EGP 60,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 60,000\n- **إجمالي الإيجار في السنة:** EGP 360,000\n"
+    },
+    {
+      "property_id": "PROP_1055",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Studio for Rent – Banafseg Villas, New Cairo First (ID: PROP_1055)\n• *Location:* 📍 El Banafseg 12, El Banafseg, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 30,000\n• *Bedrooms:* 🛏️ 1\n• *Area:* 📐 80 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 30,000\n• *Security Deposit:* EGP 60,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 60,000\n• *Yearly Rent:* EGP 360,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1056",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished Apartment For Rent In Maadi Degla (#PROP_1056)\nالموقع: Street 213, Degla, Hay El Maadi, Cairo | المساحة: 150 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 80,000"
+    },
+    {
+      "property_id": "PROP_1056",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 80,000\n- **التأمين (إيجار شهرين مقدم):** EGP 160,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 160,000\n- **إجمالي الإيجار في السنة:** EGP 960,000\n"
+    },
+    {
+      "property_id": "PROP_1056",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished Apartment For Rent In Maadi Degla (ID: PROP_1056)\n• *Location:* 📍 Street 213, Degla, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 80,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 150 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 80,000\n• *Security Deposit:* EGP 160,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 160,000\n• *Yearly Rent:* EGP 960,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1057",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Luxury Furnish Hotel Apart First Use Prime Locatio (#PROP_1057)\nالموقع: Mivida, The 5th Settlement, New Cairo City, Cairo | المساحة: 156 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 79,999"
+    },
+    {
+      "property_id": "PROP_1057",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 79,999\n- **التأمين (إيجار شهرين مقدم):** EGP 159,998، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 159,998\n- **إجمالي الإيجار في السنة:** EGP 959,988\n"
+    },
+    {
+      "property_id": "PROP_1057",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Luxury Furnish Hotel Apart First Use Prime Locatio (ID: PROP_1057)\n• *Location:* 📍 Mivida, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 79,999\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 156 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 79,999\n• *Security Deposit:* EGP 159,998 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 159,998\n• *Yearly Rent:* EGP 959,988\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1058",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Luxurious Semi-Furnished Apartment For Rent Modern (#PROP_1058)\nالموقع: Villette, The 5th Settlement, New Cairo City, Cairo | المساحة: 210 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 59,999"
+    },
+    {
+      "property_id": "PROP_1058",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 59,999\n- **التأمين (إيجار شهرين مقدم):** EGP 119,998، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 119,998\n- **إجمالي الإيجار في السنة:** EGP 719,988\n"
+    },
+    {
+      "property_id": "PROP_1058",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Luxurious Semi-Furnished Apartment For Rent Modern (ID: PROP_1058)\n• *Location:* 📍 Villette, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 59,999\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 210 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 59,999\n• *Security Deposit:* EGP 119,998 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 119,998\n• *Yearly Rent:* EGP 719,988\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1059",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished Apartment for Rent in Maadi Sarayat (#PROP_1059)\nالموقع: Street 6, Maadi, Hay El Maadi, Cairo | المساحة: 160 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1059",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1059",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished Apartment for Rent in Maadi Sarayat (ID: PROP_1059)\n• *Location:* 📍 Street 6, Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 160 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1060",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Amazing Apartment 4 Rent Prime Loc Degla Maadi (#PROP_1060)\nالموقع: Street 209, Degla, Hay El Maadi, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1060",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1060",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Amazing Apartment 4 Rent Prime Loc Degla Maadi (ID: PROP_1060)\n• *Location:* 📍 Street 209, Degla, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1061",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Modern Apartment 4 Rent wth Prime Loc-Degla Maadi (#PROP_1061)\nالموقع: Street 204, Degla, Hay El Maadi, Cairo | المساحة: 250 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1061",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1061",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Modern Apartment 4 Rent wth Prime Loc-Degla Maadi (ID: PROP_1061)\n• *Location:* 📍 Street 204, Degla, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 250 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1062",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for Rent in Madinaty – Ultra Modern (#PROP_1062)\nالموقع: Privado, Privado, Madinaty, Cairo | المساحة: 96 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 27,000"
+    },
+    {
+      "property_id": "PROP_1062",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 27,000\n- **التأمين (إيجار شهرين مقدم):** EGP 54,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 54,000\n- **إجمالي الإيجار في السنة:** EGP 324,000\n"
+    },
+    {
+      "property_id": "PROP_1062",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for Rent in Madinaty – Ultra Modern (ID: PROP_1062)\n• *Location:* 📍 Privado, Privado, Madinaty, Cairo\n• *Type:* Residential\n• *Price:* EGP 27,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 96 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 27,000\n• *Security Deposit:* EGP 54,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 54,000\n• *Yearly Rent:* EGP 324,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1063",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in Fifth Settlement, Third Dist (#PROP_1063)\nالموقع: Street17, The 5th Settlement, New Cairo City, Cairo | المساحة: 177 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 25,000"
+    },
+    {
+      "property_id": "PROP_1063",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 25,000\n- **التأمين (إيجار شهرين مقدم):** EGP 50,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 50,000\n- **إجمالي الإيجار في السنة:** EGP 300,000\n"
+    },
+    {
+      "property_id": "PROP_1063",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in Fifth Settlement, Third Dist (ID: PROP_1063)\n• *Location:* 📍 Street17, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 25,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 177 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 25,000\n• *Security Deposit:* EGP 50,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 50,000\n• *Yearly Rent:* EGP 300,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1064",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "شقة للايجار اكسترا سكن متميز بالتعاون ترسا الهرم (#PROP_1064)\nالموقع: Tersa Bridge, El Haram, Hay El Haram, Giza | المساحة: 130 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 8,000"
+    },
+    {
+      "property_id": "PROP_1064",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 8,000\n- **التأمين (إيجار شهرين مقدم):** EGP 16,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 16,000\n- **إجمالي الإيجار في السنة:** EGP 96,000\n"
+    },
+    {
+      "property_id": "PROP_1064",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* شقة للايجار اكسترا سكن متميز بالتعاون ترسا الهرم (ID: PROP_1064)\n• *Location:* 📍 Tersa Bridge, El Haram, Hay El Haram, Giza\n• *Type:* Residential\n• *Price:* EGP 8,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 130 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 8,000\n• *Security Deposit:* EGP 16,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 16,000\n• *Yearly Rent:* EGP 96,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1065",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Duplex apartment for rent, 220 m, Smouha (#PROP_1065)\nالموقع: Victor Ammanuel Square, Smouha, Hay Sharq, Alexandria | المساحة: 220 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 30,000"
+    },
+    {
+      "property_id": "PROP_1065",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 30,000\n- **التأمين (إيجار شهرين مقدم):** EGP 60,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 60,000\n- **إجمالي الإيجار في السنة:** EGP 360,000\n"
+    },
+    {
+      "property_id": "PROP_1065",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Duplex apartment for rent, 220 m, Smouha (ID: PROP_1065)\n• *Location:* 📍 Victor Ammanuel Square, Smouha, Hay Sharq, Alexandria\n• *Type:* Residential\n• *Price:* EGP 30,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 220 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 30,000\n• *Security Deposit:* EGP 60,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 60,000\n• *Yearly Rent:* EGP 360,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1066",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment for rent in Al Yasmin 7 (#PROP_1066)\nالموقع: Al Sheikh Hassan Maamoun St., El Yasmeen, New Cairo City, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 27,000"
+    },
+    {
+      "property_id": "PROP_1066",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 27,000\n- **التأمين (إيجار شهرين مقدم):** EGP 54,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 54,000\n- **إجمالي الإيجار في السنة:** EGP 324,000\n"
+    },
+    {
+      "property_id": "PROP_1066",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment for rent in Al Yasmin 7 (ID: PROP_1066)\n• *Location:* 📍 Al Sheikh Hassan Maamoun St., El Yasmeen, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 27,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 27,000\n• *Security Deposit:* EGP 54,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 54,000\n• *Yearly Rent:* EGP 324,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1067",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Fully Finished Apartment for Rent  Mivida compound (#PROP_1067)\nالموقع: Mivida, The 5th Settlement, New Cairo City, Cairo | المساحة: 135 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 50,000"
+    },
+    {
+      "property_id": "PROP_1067",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 50,000\n- **التأمين (إيجار شهرين مقدم):** EGP 100,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 100,000\n- **إجمالي الإيجار في السنة:** EGP 600,000\n"
+    },
+    {
+      "property_id": "PROP_1067",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Fully Finished Apartment for Rent  Mivida compound (ID: PROP_1067)\n• *Location:* 📍 Mivida, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 50,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 135 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 50,000\n• *Security Deposit:* EGP 100,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 100,000\n• *Yearly Rent:* EGP 600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1068",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment with private Garden for Rent FifthSquare (#PROP_1068)\nالموقع: Moon Residences, The 5th Settlement, New Cairo City, Cairo | المساحة: 143 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 55,000"
+    },
+    {
+      "property_id": "PROP_1068",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 55,000\n- **التأمين (إيجار شهرين مقدم):** EGP 110,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 110,000\n- **إجمالي الإيجار في السنة:** EGP 660,000\n"
+    },
+    {
+      "property_id": "PROP_1068",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment with private Garden for Rent FifthSquare (ID: PROP_1068)\n• *Location:* 📍 Moon Residences, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 55,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 143 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 55,000\n• *Security Deposit:* EGP 110,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 110,000\n• *Yearly Rent:* EGP 660,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1069",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent, empty, in South Academy (#PROP_1069)\nالموقع: Orouba Axis, Ganoob El Acadimia, New Cairo City, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 30,000"
+    },
+    {
+      "property_id": "PROP_1069",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 30,000\n- **التأمين (إيجار شهرين مقدم):** EGP 60,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 60,000\n- **إجمالي الإيجار في السنة:** EGP 360,000\n"
+    },
+    {
+      "property_id": "PROP_1069",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent, empty, in South Academy (ID: PROP_1069)\n• *Location:* 📍 Orouba Axis, Ganoob El Acadimia, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 30,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 30,000\n• *Security Deposit:* EGP 60,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 60,000\n• *Yearly Rent:* EGP 360,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1070",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Premium Apartment for Rent In V Residence Villette (#PROP_1070)\nالموقع: Villette, The 5th Settlement, New Cairo City, Cairo | المساحة: 160 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 95,000"
+    },
+    {
+      "property_id": "PROP_1070",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 95,000\n- **التأمين (إيجار شهرين مقدم):** EGP 190,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 190,000\n- **إجمالي الإيجار في السنة:** EGP 1,140,000\n"
+    },
+    {
+      "property_id": "PROP_1070",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Premium Apartment for Rent In V Residence Villette (ID: PROP_1070)\n• *Location:* 📍 Villette, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 95,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 160 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 95,000\n• *Security Deposit:* EGP 190,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 190,000\n• *Yearly Rent:* EGP 1,140,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1071",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ground floor with garden for rent in Maadi (#PROP_1071)\nالموقع: Al Golf St., Maadi, Hay El Maadi, Cairo | المساحة: 160 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 37,000"
+    },
+    {
+      "property_id": "PROP_1071",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 37,000\n- **التأمين (إيجار شهرين مقدم):** EGP 74,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 74,000\n- **إجمالي الإيجار في السنة:** EGP 444,000\n"
+    },
+    {
+      "property_id": "PROP_1071",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ground floor with garden for rent in Maadi (ID: PROP_1071)\n• *Location:* 📍 Al Golf St., Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 37,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 160 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 37,000\n• *Security Deposit:* EGP 74,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 74,000\n• *Yearly Rent:* EGP 444,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1072",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Modern Furnished Apartment for Rent in Degla Maadi (#PROP_1072)\nالموقع: Street 200, Degla, Hay El Maadi, Cairo | المساحة: 100 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 30,000"
+    },
+    {
+      "property_id": "PROP_1072",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 30,000\n- **التأمين (إيجار شهرين مقدم):** EGP 60,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 60,000\n- **إجمالي الإيجار في السنة:** EGP 360,000\n"
+    },
+    {
+      "property_id": "PROP_1072",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Modern Furnished Apartment for Rent in Degla Maadi (ID: PROP_1072)\n• *Location:* 📍 Street 200, Degla, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 30,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 100 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 30,000\n• *Security Deposit:* EGP 60,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 60,000\n• *Yearly Rent:* EGP 360,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1073",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent, unfurnished, in Al Narjis 1 (#PROP_1073)\nالموقع: Beram Al Tunsi St., Al Narges, New Cairo City, Cairo | المساحة: 230 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 25,000"
+    },
+    {
+      "property_id": "PROP_1073",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 25,000\n- **التأمين (إيجار شهرين مقدم):** EGP 50,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 50,000\n- **إجمالي الإيجار في السنة:** EGP 300,000\n"
+    },
+    {
+      "property_id": "PROP_1073",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent, unfurnished, in Al Narjis 1 (ID: PROP_1073)\n• *Location:* 📍 Beram Al Tunsi St., Al Narges, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 25,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 230 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 25,000\n• *Security Deposit:* EGP 50,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 50,000\n• *Yearly Rent:* EGP 300,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1074",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent, empty, in the second district (#PROP_1074)\nالموقع: Street70, The 5th Settlement, New Cairo City, Cairo | المساحة: 240 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1074",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1074",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent, empty, in the second district (ID: PROP_1074)\n• *Location:* 📍 Street70, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 240 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1075",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Modern Apartment For Rent Furnished in Old Maadi (#PROP_1075)\nالموقع: Street 14, Maadi, Hay El Maadi, Cairo | المساحة: 148 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1075",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1075",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Modern Apartment For Rent Furnished in Old Maadi (ID: PROP_1075)\n• *Location:* 📍 Street 14, Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 148 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1076",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent, empty, in Andalus 2 (#PROP_1076)\nالموقع: Al Andalus El Gedida, Al Andalus District, New Cairo City, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 25,000"
+    },
+    {
+      "property_id": "PROP_1076",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 25,000\n- **التأمين (إيجار شهرين مقدم):** EGP 50,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 50,000\n- **إجمالي الإيجار في السنة:** EGP 300,000\n"
+    },
+    {
+      "property_id": "PROP_1076",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent, empty, in Andalus 2 (ID: PROP_1076)\n• *Location:* 📍 Al Andalus El Gedida, Al Andalus District, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 25,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 25,000\n• *Security Deposit:* EGP 50,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 50,000\n• *Yearly Rent:* EGP 300,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1077",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment 158m | First Use | Kitchen And Acs (#PROP_1077)\nالموقع: Eastown, The 5th Settlement, New Cairo City, Cairo | المساحة: 158 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1077",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1077",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment 158m | First Use | Kitchen And Acs (ID: PROP_1077)\n• *Location:* 📍 Eastown, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 158 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1078",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment for rent in Abu El Feda Compou (#PROP_1078)\nالموقع: Al Feda Gardens, The 5th Settlement, New Cairo City, Cairo | المساحة: 180 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 28,000"
+    },
+    {
+      "property_id": "PROP_1078",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 28,000\n- **التأمين (إيجار شهرين مقدم):** EGP 56,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 56,000\n- **إجمالي الإيجار في السنة:** EGP 336,000\n"
+    },
+    {
+      "property_id": "PROP_1078",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment for rent in Abu El Feda Compou (ID: PROP_1078)\n• *Location:* 📍 Al Feda Gardens, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 28,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 180 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 28,000\n• *Security Deposit:* EGP 56,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 56,000\n• *Yearly Rent:* EGP 336,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1079",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Stand alone villa for rent at stone park (#PROP_1079)\nالموقع: Stone Park, The 5th Settlement, New Cairo City, Cairo | المساحة: 350 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 110,000"
+    },
+    {
+      "property_id": "PROP_1079",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 110,000\n- **التأمين (إيجار شهرين مقدم):** EGP 220,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 220,000\n- **إجمالي الإيجار في السنة:** EGP 1,320,000\n"
+    },
+    {
+      "property_id": "PROP_1079",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Stand alone villa for rent at stone park (ID: PROP_1079)\n• *Location:* 📍 Stone Park, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 110,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 350 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 110,000\n• *Security Deposit:* EGP 220,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 220,000\n• *Yearly Rent:* EGP 1,320,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1080",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Furnished apartment 160m for rent in Al Marasem (#PROP_1080)\nالموقع: Moon Residences, The 5th Settlement, New Cairo City, Cairo | المساحة: 160 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 55,000"
+    },
+    {
+      "property_id": "PROP_1080",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 55,000\n- **التأمين (إيجار شهرين مقدم):** EGP 110,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 110,000\n- **إجمالي الإيجار في السنة:** EGP 660,000\n"
+    },
+    {
+      "property_id": "PROP_1080",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Furnished apartment 160m for rent in Al Marasem (ID: PROP_1080)\n• *Location:* 📍 Moon Residences, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 55,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 160 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 55,000\n• *Security Deposit:* EGP 110,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 110,000\n• *Yearly Rent:* EGP 660,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1081",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "PREMIUM APARTMENT 139 SQM IN SIERRAS UPTOWN CAIRO (#PROP_1081)\nالموقع: The Sierras, Uptown Cairo, Mokattam, Cairo | المساحة: 139 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 40,000"
+    },
+    {
+      "property_id": "PROP_1081",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 40,000\n- **التأمين (إيجار شهرين مقدم):** EGP 80,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 80,000\n- **إجمالي الإيجار في السنة:** EGP 480,000\n"
+    },
+    {
+      "property_id": "PROP_1081",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* PREMIUM APARTMENT 139 SQM IN SIERRAS UPTOWN CAIRO (ID: PROP_1081)\n• *Location:* 📍 The Sierras, Uptown Cairo, Mokattam, Cairo\n• *Type:* Residential\n• *Price:* EGP 40,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 139 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 40,000\n• *Security Deposit:* EGP 80,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 80,000\n• *Yearly Rent:* EGP 480,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1082",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Penthouse 207m semi furnished for Rent in Marassem (#PROP_1082)\nالموقع: Moon Residences, The 5th Settlement, New Cairo City, Cairo | المساحة: 207 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 45,000"
+    },
+    {
+      "property_id": "PROP_1082",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 45,000\n- **التأمين (إيجار شهرين مقدم):** EGP 90,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 90,000\n- **إجمالي الإيجار في السنة:** EGP 540,000\n"
+    },
+    {
+      "property_id": "PROP_1082",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Penthouse 207m semi furnished for Rent in Marassem (ID: PROP_1082)\n• *Location:* 📍 Moon Residences, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 45,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 207 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 45,000\n• *Security Deposit:* EGP 90,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 90,000\n• *Yearly Rent:* EGP 540,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1083",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "View Garden next to services and mosque B10 (#PROP_1083)\nالموقع: Privado, Privado, Madinaty, Cairo | المساحة: 165 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 23,000"
+    },
+    {
+      "property_id": "PROP_1083",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 23,000\n- **التأمين (إيجار شهرين مقدم):** EGP 46,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 46,000\n- **إجمالي الإيجار في السنة:** EGP 276,000\n"
+    },
+    {
+      "property_id": "PROP_1083",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* View Garden next to services and mosque B10 (ID: PROP_1083)\n• *Location:* 📍 Privado, Privado, Madinaty, Cairo\n• *Type:* Residential\n• *Price:* EGP 23,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 165 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 23,000\n• *Security Deposit:* EGP 46,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 46,000\n• *Yearly Rent:* EGP 276,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1084",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "amazing apartment rent in maadi sarayate pool (#PROP_1084)\nالموقع: Sarayat Al Maadi, Sarayat Al Maadi, Hay El Maadi, Cairo | المساحة: 250 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 150,000"
+    },
+    {
+      "property_id": "PROP_1084",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 150,000\n- **التأمين (إيجار شهرين مقدم):** EGP 300,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 300,000\n- **إجمالي الإيجار في السنة:** EGP 1,800,000\n"
+    },
+    {
+      "property_id": "PROP_1084",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* amazing apartment rent in maadi sarayate pool (ID: PROP_1084)\n• *Location:* 📍 Sarayat Al Maadi, Sarayat Al Maadi, Hay El Maadi, Cairo\n• *Type:* Residential\n• *Price:* EGP 150,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 250 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 150,000\n• *Security Deposit:* EGP 300,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 300,000\n• *Yearly Rent:* EGP 1,800,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1085",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "The Largest Villa Finished+ furnished Lowest Price (#PROP_1085)\nالموقع: Al Shouyfat, The 5th Settlement, New Cairo City, Cairo | المساحة: 1000 متر مربع | عدد الغرف: 5\nالإيجار الشهري: EGP 175,000"
+    },
+    {
+      "property_id": "PROP_1085",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 175,000\n- **التأمين (إيجار شهرين مقدم):** EGP 350,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 350,000\n- **إجمالي الإيجار في السنة:** EGP 2,100,000\n"
+    },
+    {
+      "property_id": "PROP_1085",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* The Largest Villa Finished+ furnished Lowest Price (ID: PROP_1085)\n• *Location:* 📍 Al Shouyfat, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 175,000\n• *Bedrooms:* 🛏️ 5\n• *Area:* 📐 1000 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 175,000\n• *Security Deposit:* EGP 350,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 350,000\n• *Yearly Rent:* EGP 2,100,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1086",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "luxury apartment rent in Cairo festival city (#PROP_1086)\nالموقع: Cairo Festival City, North Investors Area, New Cairo City, Cairo | المساحة: 150 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 50,000"
+    },
+    {
+      "property_id": "PROP_1086",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 50,000\n- **التأمين (إيجار شهرين مقدم):** EGP 100,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 100,000\n- **إجمالي الإيجار في السنة:** EGP 600,000\n"
+    },
+    {
+      "property_id": "PROP_1086",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* luxury apartment rent in Cairo festival city (ID: PROP_1086)\n• *Location:* 📍 Cairo Festival City, North Investors Area, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 50,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 150 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 50,000\n• *Security Deposit:* EGP 100,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 100,000\n• *Yearly Rent:* EGP 600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1087",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Fully furnished apartment for rent in Casa Compoun (#PROP_1087)\nالموقع: Casa, Sheikh Zayed Compounds, Sheikh Zayed City, Giza | المساحة: 125 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 55,000"
+    },
+    {
+      "property_id": "PROP_1087",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 55,000\n- **التأمين (إيجار شهرين مقدم):** EGP 110,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 110,000\n- **إجمالي الإيجار في السنة:** EGP 660,000\n"
+    },
+    {
+      "property_id": "PROP_1087",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Fully furnished apartment for rent in Casa Compoun (ID: PROP_1087)\n• *Location:* 📍 Casa, Sheikh Zayed Compounds, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 55,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 125 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 55,000\n• *Security Deposit:* EGP 110,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 110,000\n• *Yearly Rent:* EGP 660,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1088",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Fully furnished apartment for rent in Courtyard Co (#PROP_1088)\nالموقع: The Courtyards, Sheikh Zayed Compounds, Sheikh Zayed City, Giza | المساحة: 200 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1088",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1088",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Fully furnished apartment for rent in Courtyard Co (ID: PROP_1088)\n• *Location:* 📍 The Courtyards, Sheikh Zayed Compounds, Sheikh Zayed City, Giza\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 200 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1089",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "amazing ground floor rent in katameya heights (#PROP_1089)\nالموقع: Katameya Heights, El Katameya, New Cairo City, Cairo | المساحة: 250 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 125,000"
+    },
+    {
+      "property_id": "PROP_1089",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 125,000\n- **التأمين (إيجار شهرين مقدم):** EGP 250,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 250,000\n- **إجمالي الإيجار في السنة:** EGP 1,500,000\n"
+    },
+    {
+      "property_id": "PROP_1089",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* amazing ground floor rent in katameya heights (ID: PROP_1089)\n• *Location:* 📍 Katameya Heights, El Katameya, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 125,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 250 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 125,000\n• *Security Deposit:* EGP 250,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 250,000\n• *Yearly Rent:* EGP 1,500,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1090",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "amazing villa rent in katameya heights (#PROP_1090)\nالموقع: Katameya Heights, El Katameya, New Cairo City, Cairo | المساحة: 700 متر مربع | عدد الغرف: 4\nالإيجار الشهري: EGP 300,000"
+    },
+    {
+      "property_id": "PROP_1090",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 300,000\n- **التأمين (إيجار شهرين مقدم):** EGP 600,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 600,000\n- **إجمالي الإيجار في السنة:** EGP 3,600,000\n"
+    },
+    {
+      "property_id": "PROP_1090",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* amazing villa rent in katameya heights (ID: PROP_1090)\n• *Location:* 📍 Katameya Heights, El Katameya, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 300,000\n• *Bedrooms:* 🛏️ 4\n• *Area:* 📐 700 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 300,000\n• *Security Deposit:* EGP 600,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 600,000\n• *Yearly Rent:* EGP 3,600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1091",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment Fully Finished With Very Special Price (#PROP_1091)\nالموقع: Moon Residences, The 5th Settlement, New Cairo City, Cairo | المساحة: 168 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 40,000"
+    },
+    {
+      "property_id": "PROP_1091",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 40,000\n- **التأمين (إيجار شهرين مقدم):** EGP 80,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 80,000\n- **إجمالي الإيجار في السنة:** EGP 480,000\n"
+    },
+    {
+      "property_id": "PROP_1091",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment Fully Finished With Very Special Price (ID: PROP_1091)\n• *Location:* 📍 Moon Residences, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 40,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 168 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 40,000\n• *Security Deposit:* EGP 80,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 80,000\n• *Yearly Rent:* EGP 480,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1092",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Luxury Furn Apart For Rent Near T All Service best (#PROP_1092)\nالموقع: El Rehab Extension, Al Rehab, New Cairo City, Cairo | المساحة: 123 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 38,888"
+    },
+    {
+      "property_id": "PROP_1092",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 38,888\n- **التأمين (إيجار شهرين مقدم):** EGP 77,776، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 77,776\n- **إجمالي الإيجار في السنة:** EGP 466,656\n"
+    },
+    {
+      "property_id": "PROP_1092",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Luxury Furn Apart For Rent Near T All Service best (ID: PROP_1092)\n• *Location:* 📍 El Rehab Extension, Al Rehab, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 38,888\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 123 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 38,888\n• *Security Deposit:* EGP 77,776 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 77,776\n• *Yearly Rent:* EGP 466,656\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1093",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "APT Fully Finished with ACs Kitchen Special Price (#PROP_1093)\nالموقع: Regents Park, Al Andalus District, New Cairo City, Cairo | المساحة: 240 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 65,000"
+    },
+    {
+      "property_id": "PROP_1093",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 65,000\n- **التأمين (إيجار شهرين مقدم):** EGP 130,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 130,000\n- **إجمالي الإيجار في السنة:** EGP 780,000\n"
+    },
+    {
+      "property_id": "PROP_1093",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* APT Fully Finished with ACs Kitchen Special Price (ID: PROP_1093)\n• *Location:* 📍 Regents Park, Al Andalus District, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 65,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 240 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 65,000\n• *Security Deposit:* EGP 130,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 130,000\n• *Yearly Rent:* EGP 780,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1094",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent in South Academy B, First Settl (#PROP_1094)\nالموقع: Area B, Ganoob El Acadimia, New Cairo City, Cairo | المساحة: 175 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 18,000"
+    },
+    {
+      "property_id": "PROP_1094",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 18,000\n- **التأمين (إيجار شهرين مقدم):** EGP 36,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 36,000\n- **إجمالي الإيجار في السنة:** EGP 216,000\n"
+    },
+    {
+      "property_id": "PROP_1094",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent in South Academy B, First Settl (ID: PROP_1094)\n• *Location:* 📍 Area B, Ganoob El Acadimia, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 18,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 175 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 18,000\n• *Security Deposit:* EGP 36,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 36,000\n• *Yearly Rent:* EGP 216,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1095",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Apartment for rent with kitchen in Promenade Resid (#PROP_1095)\nالموقع: Promenade New Cairo, The 5th Settlement, New Cairo City, Cairo | المساحة: 225 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 28,000"
+    },
+    {
+      "property_id": "PROP_1095",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 28,000\n- **التأمين (إيجار شهرين مقدم):** EGP 56,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 56,000\n- **إجمالي الإيجار في السنة:** EGP 336,000\n"
+    },
+    {
+      "property_id": "PROP_1095",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Apartment for rent with kitchen in Promenade Resid (ID: PROP_1095)\n• *Location:* 📍 Promenade New Cairo, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 28,000\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 225 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 28,000\n• *Security Deposit:* EGP 56,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 56,000\n• *Yearly Rent:* EGP 336,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1096",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Ultra Super Lux With Kitchen- Parking-Open View (#PROP_1096)\nالموقع: Mountain View iCity October, 6 October Compounds, 6 October City, Giza | المساحة: 150 متر مربع | عدد الغرف: 3\nالإيجار الشهري: EGP 26,999"
+    },
+    {
+      "property_id": "PROP_1096",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 26,999\n- **التأمين (إيجار شهرين مقدم):** EGP 53,998، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 53,998\n- **إجمالي الإيجار في السنة:** EGP 323,988\n"
+    },
+    {
+      "property_id": "PROP_1096",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Ultra Super Lux With Kitchen- Parking-Open View (ID: PROP_1096)\n• *Location:* 📍 Mountain View iCity October, 6 October Compounds, 6 October City, Giza\n• *Type:* Residential\n• *Price:* EGP 26,999\n• *Bedrooms:* 🛏️ 3\n• *Area:* 📐 150 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 26,999\n• *Security Deposit:* EGP 53,998 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 53,998\n• *Yearly Rent:* EGP 323,988\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1097",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Empty basement for rent, residential or commercial (#PROP_1097)\nالموقع: Abdullah Bin Omar St., Al Narges, New Cairo City, Cairo | المساحة: 120 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 20,000"
+    },
+    {
+      "property_id": "PROP_1097",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 20,000\n- **التأمين (إيجار شهرين مقدم):** EGP 40,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 40,000\n- **إجمالي الإيجار في السنة:** EGP 240,000\n"
+    },
+    {
+      "property_id": "PROP_1097",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Empty basement for rent, residential or commercial (ID: PROP_1097)\n• *Location:* 📍 Abdullah Bin Omar St., Al Narges, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 20,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 120 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 20,000\n• *Security Deposit:* EGP 40,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 40,000\n• *Yearly Rent:* EGP 240,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1098",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Studio apartment, daily or monthly rental (#PROP_1098)\nالموقع: Porto New Cairo, The 5th Settlement, New Cairo City, Cairo | المساحة: 115 متر مربع | عدد الغرف: 1\nالإيجار الشهري: EGP 50,000"
+    },
+    {
+      "property_id": "PROP_1098",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 50,000\n- **التأمين (إيجار شهرين مقدم):** EGP 100,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 100,000\n- **إجمالي الإيجار في السنة:** EGP 600,000\n"
+    },
+    {
+      "property_id": "PROP_1098",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Studio apartment, daily or monthly rental (ID: PROP_1098)\n• *Location:* 📍 Porto New Cairo, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 50,000\n• *Bedrooms:* 🛏️ 1\n• *Area:* 📐 115 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 50,000\n• *Security Deposit:* EGP 100,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 100,000\n• *Yearly Rent:* EGP 600,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1099",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "Brand New Apartment Fully Furnished In Azad (#PROP_1099)\nالموقع: Azad, The 5th Settlement, New Cairo City, Cairo | المساحة: 140 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 75,000"
+    },
+    {
+      "property_id": "PROP_1099",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 75,000\n- **التأمين (إيجار شهرين مقدم):** EGP 150,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 150,000\n- **إجمالي الإيجار في السنة:** EGP 900,000\n"
+    },
+    {
+      "property_id": "PROP_1099",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* Brand New Apartment Fully Furnished In Azad (ID: PROP_1099)\n• *Location:* 📍 Azad, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 75,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 140 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 75,000\n• *Security Deposit:* EGP 150,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 150,000\n• *Yearly Rent:* EGP 900,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    },
+    {
+      "property_id": "PROP_1100",
+      "reply_type": "chat_card",
+      "problems": [],
+      "reply": "2BR Apartment Fully Furnished For Rent In VGK (#PROP_1100)\nالموقع: Village Gardens Katameya, The 5th Settlement, New Cairo City, Cairo | المساحة: 174 متر مربع | عدد الغرف: 2\nالإيجار الشهري: EGP 60,000"
+    },
+    {
+      "property_id": "PROP_1100",
+      "reply_type": "rent_details",
+      "problems": [],
+      "reply": "- **الإيجار الشهري:** EGP 60,000\n- **التأمين (إيجار شهرين مقدم):** EGP 120,000، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.\n- **أول دفعة عند الاستلام (التأمين فقط):** EGP 120,000\n- **إجمالي الإيجار في السنة:** EGP 720,000\n"
+    },
+    {
+      "property_id": "PROP_1100",
+      "reply_type": "telegram_report",
+      "problems": [],
+      "reply": "🏡 *SmartSemsar Property Report*\n━━━━━━━━━━━━━━━━━━━━━\nHello *Client*, here is the requested property report:\n\n📋 *Property Overview*\n• *Property:* 2BR Apartment Fully Furnished For Rent In VGK (ID: PROP_1100)\n• *Location:* 📍 Village Gardens Katameya, The 5th Settlement, New Cairo City, Cairo\n• *Type:* Residential\n• *Price:* EGP 60,000\n• *Bedrooms:* 🛏️ 2\n• *Area:* 📐 174 m²\n• *Finishing:* Standard\n\n🔑 *Rent Details*\n• *Monthly Rent:* EGP 60,000\n• *Security Deposit:* EGP 120,000 (2 months' rent in advance, refunded at the end of the lease if there is no damage)\n• *First Payment at handover (deposit only):* EGP 120,000\n• *Yearly Rent:* EGP 720,000\nℹ️ _Estimate only: the deposit and payment dates are set in the lease with the owner._\n\n━━━━━━━━━━━━━━━━━━━━━\n_Thank you for choosing SmartSemsar! Let us know if you would like to adjust payment options or arrange additional viewings._"
+    }
+  ],
+  "control": {
+    "tampered": 300,
+    "caught": 300,
+    "missed": []
+  }
+}

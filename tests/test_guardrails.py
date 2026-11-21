@@ -204,3 +204,74 @@ def test_holdout_normal_requests_pass():
 def test_short_answers_are_not_blocked():
     for t in ["اه", "ايجار", "تمليك", "6 مليون و700 ألف", "تمام شكراً", "لا", "1002"]:
         assert not check_input(t).blocked, t
+
+
+# ---------- Grounded replies ----------
+from backend.guardrails import grounding  # noqa: E402
+
+REC = {"property_id": "PROP_1001", "title": "Luxurious Living in the Heart of Hyde Park!", "price": 50000.0,
+       "location": "Hyde Park, Hyde Park, New Cairo City, Cairo", "pf_bedrooms": 3, "pf_bathrooms": 3,
+       "pf_area_sqm": 189.0}
+COMPOUNDS = ["Hyde Park", "Mivida", "Eastown"]
+
+
+@pytest.mark.parametrize("text,nums", [
+    ("EGP 50,000", [50000]), ("٥٠٬٠٠٠ جنيه", [50000]), ("3 مليون", [3_000_000]), ("50 ألف", [50000]),
+    ("(#PROP_1001) 189 متر", [189]), ("2.5", [2.5]),
+])
+def test_numbers_in(text, nums):
+    assert grounding.numbers_in(text) == nums
+
+
+def test_app_replies_are_grounded():
+    for reply in (grounding.card_text(REC), grounding.rent_details_text(REC["price"])):
+        assert grounding.check_reply(reply, REC, COMPOUNDS, deposit_months=grounding.DEPOSIT_MONTHS) == []
+
+
+@pytest.mark.parametrize("bad", [
+    "Hyde Park | المساحة: 200 متر مربع",            # مساحة غلط
+    "الإيجار الشهري: EGP 45,000",                  # سعر غلط
+    "شقة 4 غرف في Hyde Park",                      # أوض غلط
+    "شقة في Mivida بـ EGP 50,000",                  # كمبوند شقة تانية
+])
+def test_check_reply_catches_wrong_facts(bad):
+    assert grounding.check_reply(bad, REC, COMPOUNDS)
+
+
+def test_missing_values_are_not_invented():
+    card = grounding.display_fields({"property_id": "X", "title": "t"})
+    assert card["price"] == card["area"] == card["bedrooms"] == grounding.NOT_AVAILABLE
+
+
+def test_listing_html_is_escaped():
+    assert "<script>" not in grounding.display_fields({"title": "<script>alert(1)</script>"})["title"]
+
+
+def test_model_reply_cannot_invent_property_numbers():
+    assert grounding.strip_ungrounded_numbers("لقيتلك شقة بـ 30 ألف في التجمع", "عايز شقة في التجمع") \
+        == grounding.NEUTRAL_REPLY
+    ok = "تمام، هدورلك على شقة 3 اوض بميزانية 30 ألف"
+    assert grounding.strip_ungrounded_numbers(ok, "عايز 3 اوض ب 30 الف") == ok
+    assert grounding.strip_ungrounded_numbers("أهلاً بيك! قولي بتدور على إيه؟", "") == "أهلاً بيك! قولي بتدور على إيه؟"
+
+
+# ---------- Poisoned listings ----------
+from backend.guardrails.listing_guard import check_listing  # noqa: E402
+
+
+def test_poisoned_listings_flagged_and_real_ones_pass():
+    poisoned = _rows("poisoned_listings.jsonl")
+    assert len(poisoned) == 5 and all(check_listing(p) for p in poisoned)
+    import pandas as pd
+    real = pd.read_csv(ROOT / "data" / "final_merged_dataset.csv").to_dict(orient="records")
+    assert not any(check_listing(r) for r in real)
+
+
+def test_search_node_drops_poisoned_listings(monkeypatch):
+    from backend.agents import matching_node
+    poisoned = _rows("poisoned_listings.jsonl")
+    fake = {"total_found": 2, "used_fallback": False, "properties": [REC, poisoned[0]]}
+    monkeypatch.setattr(matching_node.Property_matching_service, "search_properties", lambda *a, **k: fake)
+    out = matching_node.match_properties_node({"customer_reqs": {"location": "Hyde Park"},
+                                               "macro_intent": "search_by_reqs"})
+    assert [p.property_id for p in out["top_properties"]] == ["PROP_1001"] and out["total_found"] == 1
