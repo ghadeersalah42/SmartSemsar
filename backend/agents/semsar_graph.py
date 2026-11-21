@@ -15,11 +15,9 @@ from backend.agents.furniture_node import furniture_node
 from backend.agents.routing_node import routing_node ##
 from backend.agents.staging_3d_node import staging_3d_node
 
+
 builder = StateGraph(AgentState)
-
-
 builder.add_node("supervisor_router", supervisor_router_node)
-
 
 builder.add_node("detect_micro_intent", detect_intent_node)
 builder.add_node("input_extraction", input_node)
@@ -29,8 +27,6 @@ builder.add_node("sketch_to_svg", sketch_to_svg_node)
 builder.add_node("staging_3d", staging_3d_node)
 builder.add_node("routing", routing_node)
 builder.add_node("furniture", furniture_node)
-
-
 
 builder.add_edge(START, "supervisor_router")
 
@@ -103,7 +99,19 @@ builder.add_edge("input_extraction", "match_properties")
 builder.add_edge("match_properties", END)
 
 builder.add_edge("select_property", "staging_3d")
-builder.add_edge("staging_3d", END)
+builder.add_edge("staging_3d", "routing")
+
+builder.add_conditional_edges(
+    "routing",
+    lambda state: state.get("next_step"),
+    {
+        "furniture": "furniture",
+        "retry": "staging_3d",
+        "error": END,
+    },
+)
+builder.add_edge("furniture", END)
+
 
 
 memory = MemorySaver()

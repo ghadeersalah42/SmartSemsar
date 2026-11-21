@@ -2,6 +2,7 @@ import streamlit as st
 from langgraph.types import Command
 import os
 from dotenv import load_dotenv, find_dotenv
+
 import sys
 import uuid
 import time
@@ -17,6 +18,7 @@ from services.telegram_service import (send_property_report, send_telegram_messa
                                        find_chat_by_username, is_telegram_configured)
 from services.property_service import calculate_installments
 from services.google_calendar_service import create_viewing_event
+
 import datetime
 
 from backend.guardrails.input_guard import check_input
@@ -474,9 +476,18 @@ def render_chat_flow():
                         "user_text": user_query,
                     }
 
-                for event in the_Orchestrator.stream(execution_input, config=config):
-                    pass
+                from langchain_core.tracers.context import collect_runs
 
+                with collect_runs() as cb:
+                    for event in the_Orchestrator.stream(execution_input, config=config):
+                        pass
+                    
+                    # طباعة رابط الـ Trace في التيرمنال فوراً
+                    if cb.traced_runs:
+                        for run in cb.traced_runs:
+                            # استخدام الرابط العام المباشر لمنصة LangSmith مع الـ Run ID
+                            trace_url = f"https://smith.langchain.com/runs/{run.id}"
+                            print(f"🔗 LangSmith Trace Link: {trace_url}")
                 updated_state = the_Orchestrator.get_state(config)
                 if updated_state.tasks and any(task.interrupts for task in updated_state.tasks):
                     interrupt_payload = updated_state.tasks[0].interrupts[0].value

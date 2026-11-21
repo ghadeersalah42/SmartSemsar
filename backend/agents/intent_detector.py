@@ -102,6 +102,15 @@ intent_prompt = """
             IMPORTANT RULES:
 
                 - Focus on the customer's PRIMARY intent.
+                - CRITICAL DISTINCTION (new_search vs modify_search):
+                  * If the customer uses modification/change words or comparatives (e.g., "غير", "خلي", "خليها", "عدل", "قلل", "زود", "بدل", "أرخص", "أكبر", "أصغر", "لا مش عايز", "khali", "ghayar", "zawed", "ar5as"), ALWAYS classify as `modify_search`, EVEN IF no prior conversation is shown.
+                  * Only use `new_search` when starting a fresh search (e.g., "بدور على", "عايز شقة", "ابحث عن", "3ayez sha2a", "badawar").
+
+                - CRITICAL DISTINCTION (property_inquiry vs general_question vs unknown):
+                  * `property_inquiry`: Any question about a specific property's location proximity, rooms, price, area, or features (e.g., "هي قريبة من...", "كام أوضة", "سعرها كام", "فيها أسانسير").
+                  * `general_question`: Questions ONLY about the platform/company itself (commission, payment plans, how 3D staging works, coverage areas).
+                  * `unknown`: Greetings ("هلا والله", "sabah el kheir"), mic checks ("تست تست"), filler ("ok tamam"), or off-topic chat.
+                  
                 - Do not confuse positive feedback with a request for alternatives.
                 - If the customer says they like a property BUT requests a change,
                 prefer modify_search.
