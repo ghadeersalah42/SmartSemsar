@@ -44,20 +44,53 @@ def main():
     print("\n".join(md))
 
     if os.getenv("LANGSMITH_API_KEY") or os.getenv("LANGCHAIN_API_KEY"):
-        from langsmith import Client, traceable
-        from langsmith.anonymizer import create_anonymizer
-        project = "SmartSemsar-privacy-demo"
-        plain, masked = Client(), Client(anonymizer=create_anonymizer(_mask_with_path))
-
-        def step(inputs):
-            return SAMPLE_TRACE["outputs"]
-
-        traceable(name="before-masking", client=plain, project_name=project)(step)(SAMPLE_TRACE["inputs"])
-        traceable(name="after-masking", client=masked, project_name=project)(step)(SAMPLE_TRACE["inputs"])
-        plain.flush(), masked.flush()
-        print(f"\nSent two traces to LangSmith project '{project}'.")
+        send_to_langsmith()
     else:
         print("\nLANGSMITH_API_KEY not set: wrote the before/after file only.")
+
+
+def send_to_langsmith():
+    import time
+    import uuid
+    from langsmith import Client, traceable, tracing_context
+    from langsmith.anonymizer import create_anonymizer
+    project = "SmartSemsar-privacy-demo"
+    plain, masked = Client(), Client(anonymizer=create_anonymizer(_mask_with_path))
+
+    def step(inputs):
+        return SAMPLE_TRACE["outputs"]
+
+    ids = {"before-masking": uuid.uuid4(), "after-masking": uuid.uuid4()}
+    # traceable مبيبعتش حاجة غير لو التتبع شغال (LANGSMITH_TRACING=true)، فبنشغله هنا بنفسنا
+    with tracing_context(enabled=True, project_name=project):
+        for (name, run_id), client in zip(ids.items(), (plain, masked)):
+            traceable(name=name, client=client, project_name=project)(step)(
+                SAMPLE_TRACE["inputs"], langsmith_extra={"run_id": run_id})
+    plain.flush()
+    masked.flush()
+
+    # منقولش "اتبعت" غير لما LangSmith نفسه يأكد إنه استلم الاتنين
+    found, last_error = {}, None
+    for _ in range(15):
+        for name, run_id in ids.items():
+            if name not in found:
+                try:
+                    found[name] = plain.read_run(run_id).inputs
+                except Exception as e:   # لسه موصلش، أو المفتاح/السيرفر غلط
+                    last_error = e
+        if len(found) == len(ids):
+            break
+        time.sleep(2)
+
+    if len(found) == len(ids):
+        print(f"\nLangSmith confirmed both traces in project '{project}':")
+        for name, inputs in found.items():
+            print(f"  {name}: user_query = {inputs.get('inputs', inputs).get('user_query')}")
+    else:
+        print(f"\nCould NOT confirm the traces in LangSmith (got {sorted(found) or 'none'}).")
+        print(f"Last error: {type(last_error).__name__}: {str(last_error)[:300]}")
+        print("Check the API key, and set LANGSMITH_ENDPOINT if your account is on the EU server.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
