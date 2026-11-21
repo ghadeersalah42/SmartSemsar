@@ -147,10 +147,11 @@ VALID_INTENTS : Set[str] = {
 }
 
 
+from backend.agents.structured_llm import structured_llm
 llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
 # llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
 # llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
-structured_micro_llm = llm.with_structured_output(IntentDetection)
+structured_micro_llm = structured_llm(IntentDetection)   # فيه fallback لو الـ tool call رجع فاضي
 # structured_intent_llm = llm.with_structured_output(IntentDetection)
 
 intent_chain = (

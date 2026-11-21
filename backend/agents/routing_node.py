@@ -18,6 +18,7 @@ from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 from backend.guardrails.actions import strip_unconfirmed_claims
 from backend.guardrails.grounding import strip_ungrounded_numbers
+from backend.agents.structured_llm import structured_llm
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]      # SmartSemsar/ (فيه .env)، مش backend/agents
 load_dotenv(PROJECT_ROOT / ".env")
@@ -54,8 +55,7 @@ def get_structured_orchestrator():
     """الموديل بيتعمل أول ما يتطلب مش وقت الـ import، فالملف بيتحمل حتى لو GROQ_API_KEY مش موجود (التستات مثلاً)"""
     global _structured_orchestrator
     if _structured_orchestrator is None:
-        llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
-        _structured_orchestrator = llm.with_structured_output(MacroIntentClassifier)
+        _structured_orchestrator = structured_llm(MacroIntentClassifier)   # فيه fallback لو الـ tool call رجع فاضي
     return _structured_orchestrator
 
 ORCHESTRATOR_PROMPT = """

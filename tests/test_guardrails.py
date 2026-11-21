@@ -275,3 +275,25 @@ def test_search_node_drops_poisoned_listings(monkeypatch):
     out = matching_node.match_properties_node({"customer_reqs": {"location": "Hyde Park"},
                                                "macro_intent": "search_by_reqs"})
     assert [p.property_id for p in out["top_properties"]] == ["PROP_1001"] and out["total_found"] == 1
+
+
+def test_structured_llm_falls_back_when_tool_call_is_empty(monkeypatch):
+    """Groq tool_use_failed (الموديل مرجعش tool call) ميوقعش الشات: بنجرب json_schema"""
+    from langchain_core.runnables import RunnableLambda
+    from langchain_groq import ChatGroq
+    from backend.agents import structured_llm as sl
+
+    monkeypatch.setenv("GROQ_API_KEY", "test-key")
+    calls = []
+
+    def fake_with_structured_output(self, schema, method="function_calling", **kw):
+        def run(_):
+            calls.append(method)
+            if method == "function_calling":
+                raise RuntimeError("Error code: 400 - tool_use_failed")
+            return "ok"
+        return RunnableLambda(run)
+
+    monkeypatch.setattr(ChatGroq, "with_structured_output", fake_with_structured_output)
+    assert sl.structured_llm(dict).invoke("اعرض كل الشقق") == "ok"
+    assert calls == ["function_calling", "json_schema"]
