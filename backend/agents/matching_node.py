@@ -103,7 +103,7 @@ def select_property_node(state: AgentState) -> dict:
     user_choice = interrupt({
         "type": "property_selection",
         "message": "إليك أفضل العقارات المطابقة لطلباتك، يرجى اختيار العقار المناسب:",
-        "properties": top_props  # أول 5 شقق
+        "properties": top_props  
     })
     # لو اليوزر اختار من الواجهة، الـ user_choice هيرجع فيه الـ property_id (أو الـ ID المختار)
     selected_id = user_choice.get("property_id") if isinstance(user_choice, dict) else user_choice
