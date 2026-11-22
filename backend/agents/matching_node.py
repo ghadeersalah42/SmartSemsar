@@ -29,14 +29,15 @@ def match_properties_node(state: AgentState)-> Dict[str, Any]:
         
     all_prop=""
     property_objects = []
+    deals = Property_matching_service.available_deal_types()     # إيجار / تمليك حسب الداتا
 
     if macro_intent=="general_browse":
         all_prop="general_browse"
-    elif getattr(requirements, "deal_type", None) == "buy":
-        # كل الشقق اللي في الداتا إيجار (مفيش عمود بيع ولا إعلانات تمليك)، فطلب التمليك ملوش نتايج
-        print("No sale listings in the dataset (all rentals)")
+    elif getattr(requirements, "deal_type", None) == "buy" and "buy" not in deals:
+        # مفيش إعلانات تمليك في الداتا، فطلب التمليك ملوش نتايج
+        print("No sale listings in the dataset")
         return {"top_properties": [], "total_found": 0, "used_fallback": False,
-                "current_stage": "no_sale_listings"}
+                "available_deal_types": deals, "current_stage": "no_sale_listings"}
 
     # if not requirements:
     #     return{
@@ -75,6 +76,7 @@ def match_properties_node(state: AgentState)-> Dict[str, Any]:
         "top_properties": property_objects,
         "total_found": results["total_found"],
         "used_fallback": results["used_fallback"],
+        "available_deal_types": deals,
         "current_stage": "property_results_displayed"
     }
 

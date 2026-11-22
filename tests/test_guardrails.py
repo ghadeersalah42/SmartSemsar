@@ -363,9 +363,55 @@ def test_deal_type_is_never_assumed(monkeypatch):
     assert len(asked) == 2 and req.deal_type == "unknown"     # مش "rent" من عندنا
 
 
-def test_results_reply_says_listings_are_rentals_when_deal_unknown():
+def test_results_reply_note_follows_the_data():
+    """الملحوظة بتتبني من available_deal_types اللي خدمة البحث بترجعها، مش مكتوبة ثابتة"""
     from frontend.views.chat_view import results_reply
-    reqs = CustomerRequirements(location="التجمع")
-    assert "إيجار" in results_reply({"top_properties": [object()], "customer_reqs": reqs})
-    assert "إيجار" not in results_reply({"top_properties": [object()],
-                                         "customer_reqs": CustomerRequirements(deal_type="rent")})
+    unknown = CustomerRequirements(location="التجمع")
+    reply = lambda deals, req=unknown: results_reply({"top_properties": [object()], "customer_reqs": req,
+                                                     "available_deal_types": deals})
+    assert "كل الشقق المتاحة عندنا حالياً إيجار" in reply(["rent"])
+    assert "كل الشقق المتاحة عندنا حالياً تمليك" in reply(["buy"])
+    assert "إيجار وتمليك" in reply(["rent", "buy"])
+    assert "ملحوظة" not in reply(["rent"], CustomerRequirements(deal_type="rent"))   # العميل قال: مفيش داعي
+    assert "ملحوظة" not in reply([])                                                   # الداتا مقالتش: منقولش حاجة
+
+
+def test_available_deal_types_come_from_the_data(tmp_path):
+    import pandas as pd
+    from backend.services.MatchingFeature import PropertyMatchingService
+    svc = PropertyMatchingService.__new__(PropertyMatchingService)
+    svc.df = pd.read_csv("data/final_merged_dataset.csv")
+    assert svc.available_deal_types() == ["rent"]                 # الداتا الحالية: مفيش عمود، والسعر إيجار شهري
+    svc.df = svc.df.assign(deal_type=["buy" if i % 2 else "rent" for i in range(len(svc.df))])
+    assert svc.available_deal_types() == ["buy", "rent"]
+    svc.df = svc.df.assign(deal_type="buy")
+    assert svc.available_deal_types() == ["buy"]
+
+
+def test_buy_search_uses_the_data(monkeypatch):
+    from backend.agents import matching_node
+    svc = matching_node.Property_matching_service
+    monkeypatch.setattr(svc, "search_properties", lambda *a, **k: {"properties": [], "total_found": 0, "used_fallback": False})
+    monkeypatch.setattr(svc, "available_deal_types", lambda: ["rent"])
+    out = matching_node.match_properties_node({"customer_reqs": {"deal_type": "buy"}, "macro_intent": "search_by_reqs"})
+    assert out["current_stage"] == "no_sale_listings"
+    monkeypatch.setattr(svc, "available_deal_types", lambda: ["buy", "rent"])
+    out = matching_node.match_properties_node({"customer_reqs": {"deal_type": "buy"}, "macro_intent": "search_by_reqs"})
+    assert out["current_stage"] == "property_results_displayed" and out["available_deal_types"] == ["buy", "rent"]
+
+
+def test_70_6_area_guess_is_dropped_too():
+    from backend.guardrails.clarify import drop_guesses, find_unclear
+    req = CustomerRequirements(area_sqm=70, budget_max=6_000_000, deal_type="buy")      # تخمين الموديل لـ "70 6"
+    req = drop_guesses(req, find_unclear("عايز شقة 70 6", req))
+    assert req.area_sqm is None and req.budget_max is None
+    kept = drop_guesses(CustomerRequirements(area_sqm=120, budget_max=6_000_000),
+                        find_unclear("شقة 120 متر وميزانيتي 70 6", None))
+    assert kept.area_sqm == 120                                                         # المساحة اللي قالها بوضوح بتفضل
+
+
+def test_client_text_in_logs_is_masked(capsys):
+    from backend.guardrails.pii import safe_print
+    safe_print("Analyzing text: 'اسمي أحمد ورقمي 01012345678'")
+    out = capsys.readouterr().out
+    assert "01012345678" not in out and "أحمد" not in out

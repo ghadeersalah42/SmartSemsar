@@ -125,18 +125,27 @@ def open_property_3d(orchestrator, config, property_id):
         pass
 
 
+DEAL_NOTES = {  # الملحوظة بتتبني من اللي في الداتا (available_deal_types من خدمة البحث)
+    ("rent",): "وكل الشقق المتاحة عندنا حالياً إيجار.",
+    ("buy",): "وكل الشقق المتاحة عندنا حالياً تمليك.",
+    ("buy", "rent"): "والنتايج فيها شقق إيجار وتمليك.",
+}
+
+
 def results_reply(values):
     """رد البوت بعد البحث بدل "تم تنفيذ الطلب بنجاح": عدد النتايج، أو ليه مفيش"""
     if values.get("macro_intent") == "general_browse":
         return "دي كل الشقق المتاحة عندنا 👇 دوس «معاينة ثلاثية الأبعاد» على اللي تعجبك."
     found = values.get("top_properties") or []
     reqs = values.get("customer_reqs")
+    deals = sorted(values.get("available_deal_types") or [])          # إيجار / تمليك حسب الداتا
     if found:
         reply = f"لقيتلك {len(found)} شقق مطابقة لطلبك 👇 دوس «معاينة ثلاثية الأبعاد» على اللي تعجبك."
-        if getattr(reqs, "deal_type", None) in (None, "unknown"):   # مقالش إيجار ولا تمليك: مخمناش، بس بنوضح المتاح
-            reply += "\nملحوظة: مقولتليش إيجار ولا تمليك، وكل الشقق المتاحة عندنا حالياً إيجار."
+        note = DEAL_NOTES.get(tuple(deals))
+        if note and getattr(reqs, "deal_type", None) in (None, "unknown"):   # مقالش إيجار ولا تمليك: مخمناش، بس بنوضح المتاح
+            reply += "\nملحوظة: مقولتليش إيجار ولا تمليك، " + note
         return reply
-    if getattr(reqs, "deal_type", None) == "buy":
+    if getattr(reqs, "deal_type", None) == "buy" and deals == ["rent"]:
         return "حالياً كل الشقق المتاحة عندنا إيجار بس، مفيش شقق تمليك. تحب أدورلك على إيجار بنفس المواصفات؟"
     asked = []
     if getattr(reqs, "location", None):

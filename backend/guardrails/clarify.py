@@ -61,6 +61,12 @@ def drop_guesses(req: CustomerRequirements, unclear: dict[str, str]) -> Customer
     for field, reason in unclear.items():
         if field in ("budget_min", "budget_max") and reason.startswith("ambiguous:"):
             req.budget_min = req.budget_max = None
+            # "70 6": لو الموديل خد 70 على إنها المساحة، دي تخمين برضه، فبتتشال لحد ما العميل يوضح
+            pair = {float(n) for n in reason.partition(":")[2].split() if n.replace(".", "", 1).isdigit()}
+            if req.area_sqm is not None and float(req.area_sqm) in pair:
+                req.area_sqm = None
+                if "area_sqm" not in req.missing_fields:
+                    req.missing_fields.append("area_sqm")
         elif hasattr(req, field):
             setattr(req, field, None)
         if field not in req.missing_fields:

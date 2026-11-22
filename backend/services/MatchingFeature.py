@@ -275,6 +275,15 @@ class PropertyMatchingService:
         self._reranker: Optional[CrossEncoder] = None
         print("---final---")
 
+    def available_deal_types(self) -> List[str]:
+        """إيجار ولا تمليك حسب الداتا نفسها: عمود deal_type (rent / buy) لو موجود.
+        الداتا الحالية مفيهاش العمود ده، والسعر فيها إيجار شهري، فكلها إيجار."""
+        if "deal_type" in self.df.columns:
+            found = {str(v).strip().lower() for v in self.df["deal_type"].dropna()} & {"rent", "buy"}
+            if found:
+                return sorted(found)
+        return ["rent"]
+
     def _ensure_bm25(self):
         if self._bm25 is None:
             tokenized_docs = [doc.lower().split() for doc in self._enriched_docs]

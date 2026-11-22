@@ -19,6 +19,7 @@ from pathlib import Path
 from backend.guardrails.actions import strip_unconfirmed_claims
 from backend.guardrails.grounding import strip_ungrounded_numbers
 from backend.agents.structured_llm import structured_llm
+from backend.guardrails.pii import safe_print
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]      # SmartSemsar/ (فيه .env)، مش backend/agents
 load_dotenv(PROJECT_ROOT / ".env")
@@ -204,7 +205,7 @@ def supervisor_router_node(state: AgentState) -> dict:
     result.suggested_reply = strip_ungrounded_numbers(result.suggested_reply, user_query)
 
     print(f"🎯 Detected Path: {result.macro_intent}")
-    print(f"💡 Reason: {result.reasoning}")
+    safe_print(f"💡 Reason: {result.reasoning}")
     
     if result.macro_intent == "search_by_reqs":
         return {

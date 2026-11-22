@@ -174,6 +174,7 @@ class AgentState(TypedDict):
     top_properties: Optional[List[PropertyItem]]
     used_fallback: Optional[bool]
     total_found: Optional[int]
+    available_deal_types: Optional[List[str]]     # إيجار / تمليك حسب الداتا، للرد على العميل
 
     selected_property_id: Optional[str]
     selected_property: Optional[PropertyItem]
