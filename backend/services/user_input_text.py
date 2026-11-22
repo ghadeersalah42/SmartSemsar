@@ -7,6 +7,7 @@ Before running:
   2) Install Ollama from https://ollama.com/download  then run:  ollama pull qwen2.5
 """
 import json
+import re
 from typing import Optional, Literal
 
 from dotenv import main
@@ -104,8 +105,14 @@ JSON object matching this exact schema, no prose, no markdown fences:
 Rules:
 - Never invent values. If a field is not mentioned, set it to null and add its name to missing_fields.
 - Numbers must be plain numbers (no currency symbols, no commas).
-- Budgets are full Egyptian pounds: "5 مليون" / "5 million" -> 5000000, "800 ألف" / "800k" -> 800000.
-- A single budget figure ("بميزانية 5 مليون", "up to 5 million") is budget_max only; set budget_min only for a range or an explicit minimum.
+- Budgets are full Egyptian pounds:
+  * "5 مليون" / "5 million" / "5m" -> 5000000
+  * "800 ألف" / "800k" / "800 alf" -> 800000
+  * "8 آلاف" / "تمن آلاف" / "8 alf" -> 8000 (be careful with zeros: "ألف" = 1,000, NOT 10,000).
+- Price per square meter ("سعر المتر", "المتر بـ", "el metr", "per m2", "price per m"):
+  * If both a price per m² and area_sqm are present (or inferable), compute total budget = price_per_m2 * area_sqm and put it in budget_max.
+  * When a price per m² is given for buying (e.g. "20 ألف" or "30 ألف" للمتر), deal_type is typically "buy" unless "إيجار/rent" is explicitly stated.
+- A single budget figure ("بميزانية 5 مليون", "في حدود 8 آلاف", "up to 5 million") is budget_max only; set budget_min only for a range or an explicit minimum.
 - Keep the "location" and "notes" values in their original language as stated by the customer.
 - Respond in JSON only.
 - Use "notes" ONLY for extra customer requirements that do not fit any other field (for example: near schools, quiet area, high floor).
@@ -151,6 +158,39 @@ def _llm_json(messages) -> str:
     return response["message"]["content"]
 
 
+_PPM_NUM = r"(\d{1,3}(?:,\d{3})+|\d+(?:\.\d+)?)"
+_PPM_UNIT = r"\s*(مليون|ملايين|million|ألف|الف|آلاف|الاف|alf|k)?"
+# الرقم لازم يكون جنب "المتر" بالظبط، مش أي رقم في الكلام ("مقدم 500 ألف" مش سعر متر)
+_PPM_BEFORE = re.compile(r"(?:سعر\s*المتر|المتر|el\s*met(?:e)?r|price\s*per\s*(?:m2|m²|sqm|meter|metre|m)|per\s*(?:m2|m²|sqm|meter|metre))"
+                         r"\s*(?:بـ|ب|b|=|:|ب\s)?\s*" + _PPM_NUM + _PPM_UNIT)
+_PPM_AFTER = re.compile(_PPM_NUM + _PPM_UNIT + r"\s*(?:لل?متر|el\s*met(?:e)?r|/\s*m2|/\s*m²|per\s*(?:m2|m²|sqm|meter|metre|m)\b)")
+_PPM_SCALE = {"مليون": 1_000_000, "ملايين": 1_000_000, "million": 1_000_000,
+              "ألف": 1_000, "الف": 1_000, "آلاف": 1_000, "الاف": 1_000, "alf": 1_000, "k": 1_000}
+
+
+def price_per_meter(text: str) -> Optional[float]:
+    """سعر المتر من كلام العميل ("المتر بـ 20 ألف"، "20 ألف للمتر"، "20k per m2")، أو None لو مفيش"""
+    t = (text or "").translate(str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234567890123456789")).lower()
+    for pattern in (_PPM_BEFORE, _PPM_AFTER):
+        m = pattern.search(t)
+        if m:
+            value = float(m.group(1).replace(",", "")) * _PPM_SCALE.get(m.group(2) or "", 1)
+            return value if value > 0 else None
+    return None
+
+
+def apply_price_per_meter(parsed: dict, text: str) -> dict:
+    """لو الموديل طلّع المساحة ومحسبش الميزانية، والعميل قال سعر المتر: الميزانية = سعر المتر × المساحة.
+    بتشتغل على رد الموديل قبل الـ schema، فالناتج بيتشيك على الحدود المنطقية زي أي قيمة."""
+    if parsed.get("budget_max") is None and parsed.get("budget_min") is None and parsed.get("area_sqm"):
+        unit_price = price_per_meter(text)
+        if unit_price:
+            parsed["budget_max"] = float(parsed["area_sqm"]) * unit_price
+            if parsed.get("deal_type") in (None, "unknown"):
+                parsed["deal_type"] = "buy"
+    return parsed
+
+
 def extract_requirements(call_transcript=None, raw_text=None) -> CustomerRequirements:
     raw_content = _llm_json([
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -164,6 +204,8 @@ def extract_requirements(call_transcript=None, raw_text=None) -> CustomerRequire
 
     if not isinstance(parsed.get("unclear_fields", {}), dict):
         parsed.pop("unclear_fields")
+    # سعر المتر: الحسبة قبل الـ schema، عشان الميزانية اللي بتطلع منها تتشيك على الحدود المنطقية هي كمان
+    apply_price_per_meter(parsed, f"{call_transcript or ''} {raw_text or ''}")
     req = CustomerRequirements(**parsed)      # الـ schema بيشيل أي قيمة برّه الحدود المنطقية (unclear_fields)
 
     fields = ["location", "budget_min", "budget_max", "area_sqm",

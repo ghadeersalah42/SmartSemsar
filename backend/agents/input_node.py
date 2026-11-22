@@ -34,6 +34,24 @@ def has_requirements(req) -> bool:
 ASK_SPECS = ("تمام 👌 اكتبلي مواصفات الشقة اللي بتدور عليها: المنطقة، الميزانية، عدد الغرف، "
              "والمساحة لو تحب. وكمان عايزها إيجار ولا تمليك؟")
 ASK_SPECS_AGAIN = "مش واضحلي المواصفات، ممكن تكتبلي المنطقة أو الميزانية أو عدد الغرف؟"
+ASK_DEAL = "تمام 👌 وعايز الشقة إيجار ولا تمليك؟"
+ASK_DEAL_AGAIN = "معلش مش متأكد فهمت 🙏 تقصد إيجار ولا تمليك؟"
+
+
+def ask_deal_type(req, text: Optional[str]):
+    """Ask, don't guess: بنسأل إيجار ولا تمليك، ولو الرد مش مفهوم بنسأل مرة كمان.
+    لو لسه مش واضح بيفضل unknown (مش بنحط إيجار من عندنا): البحث بيعرض كل الشقق، والرد بيقول إنها كلها إيجار."""
+    for question in (ASK_DEAL, ASK_DEAL_AGAIN):
+        answer = interrupt(question)
+        answer = answer.strip() if isinstance(answer, str) else ""
+        if not answer:
+            continue
+        text = f"{text} - {answer}" if text else answer
+        deal = deal_type_from(answer) or extract_requirements(raw_text=answer).deal_type
+        if deal in ("rent", "buy"):
+            req.deal_type = deal
+            break
+    return req, text
 
 
 def deal_type_from(text: str) -> Optional[str]:
@@ -110,12 +128,7 @@ def input_node(state: AgentState) -> Dict[str, Any]:
 
         # والشقق مبتطلعش غير لما نعرف هو عايزها إيجار ولا تمليك
         if req is not None and req.deal_type in (None, "unknown"):
-            answer = interrupt("تمام 👌 وعايز الشقة إيجار ولا تمليك؟")
-            answer = answer.strip() if isinstance(answer, str) else ""
-            req.deal_type = deal_type_from(answer) or extract_requirements(raw_text=answer).deal_type
-            if req.deal_type in (None, "unknown"):
-                req.deal_type = "rent"          # رد مش مفهوم: كل الشقق عندنا إيجار، فنعرضها
-            resumed_text = f"{resumed_text} - {answer}" if resumed_text else answer
+            req, resumed_text = ask_deal_type(req, resumed_text)
             req = revalidate(req)                       # ميزانية الإيجار غير التمليك
             resumed_text, req = clarify_requirements(resumed_text, req, check_text=False)
 

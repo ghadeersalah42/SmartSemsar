@@ -297,3 +297,75 @@ def test_structured_llm_falls_back_when_tool_call_is_empty(monkeypatch):
     monkeypatch.setattr(ChatGroq, "with_structured_output", fake_with_structured_output)
     assert sl.structured_llm(dict).invoke("اعرض كل الشقق") == "ok"
     assert calls == ["function_calling", "json_schema"]
+
+
+# ---- Requirement 1 extraction rules (main, PR #17) merged with the guardrails ----
+
+def _extract_with(monkeypatch, model_reply):
+    """extract_requirements الحقيقي، والموديل متبدل برد ثابت"""
+    from backend.services import user_input_text as uit
+    monkeypatch.setattr(uit, "_llm_json", lambda messages: json.dumps(model_reply))
+    return uit.extract_requirements
+
+
+@pytest.mark.parametrize("text, price", [
+    ("عايز شقة 100 متر، مقدم 500 ألف والمتر بـ 20 ألف", 20_000),     # الرقم اللي جنب "المتر"، مش أول رقم
+    ("شقة 120 متر سعر المتر 25 ألف", 25_000),
+    ("ميزانيتي على أساس 18 ألف للمتر", 18_000),
+    ("el metr b 30 alf", 30_000),
+    ("around 15k per m2", 15_000),
+    ("المتر بـ ٢٢ ألف", 22_000),
+    ("عايز شقة 100 متر و500 ألف مقدم", None),                         # مفيش سعر متر
+])
+def test_price_per_meter_takes_the_number_next_to_meter(text, price):
+    from backend.services.user_input_text import price_per_meter
+    assert price_per_meter(text) == price
+
+
+def test_price_per_meter_budget_ignores_down_payment(monkeypatch):
+    extract = _extract_with(monkeypatch, {"area_sqm": 100, "budget_max": None, "deal_type": "unknown"})
+    req = extract(raw_text="عايز شقة 100 متر، مقدم 500 ألف والمتر بـ 20 ألف")
+    assert req.budget_max == 2_000_000                    # مش 50 مليون
+
+
+def test_price_per_meter_budget_is_checked_by_schema(monkeypatch):
+    extract = _extract_with(monkeypatch, {"area_sqm": 2000, "budget_max": None, "deal_type": "unknown"})
+    req = extract(raw_text="عايز شقة 2000 متر والمتر بـ 1 مليون")
+    assert req.budget_max is None and "budget_max" in req.unclear_fields     # 2 مليار برّه الحدود: البوت بيسأل
+
+
+def test_prompt_does_not_guess_70_6():
+    from backend.services.user_input_text import SYSTEM_PROMPT
+    assert "budget_max = 6000000" not in SYSTEM_PROMPT and "Ask, don't guess" in SYSTEM_PROMPT
+
+
+def _run_deal(monkeypatch, answers, extracted_deal="unknown"):
+    from backend.agents import input_node
+    asked = []
+
+    def fake_interrupt(question):
+        asked.append(question)
+        return answers.pop(0)
+
+    monkeypatch.setattr(input_node, "interrupt", fake_interrupt)
+    monkeypatch.setattr(input_node, "extract_requirements",
+                        lambda call_transcript=None, raw_text=None: CustomerRequirements(deal_type=extracted_deal))
+    return asked, input_node.ask_deal_type(CustomerRequirements(location="التجمع"), "شقة في التجمع")
+
+
+def test_deal_type_unclear_answer_is_asked_again(monkeypatch):
+    asked, (req, text) = _run_deal(monkeypatch, ["مش عارف", "ايجار"])
+    assert len(asked) == 2 and req.deal_type == "rent" and "ايجار" in text
+
+
+def test_deal_type_is_never_assumed(monkeypatch):
+    asked, (req, _) = _run_deal(monkeypatch, ["مش عارف", "اي حاجة"])
+    assert len(asked) == 2 and req.deal_type == "unknown"     # مش "rent" من عندنا
+
+
+def test_results_reply_says_listings_are_rentals_when_deal_unknown():
+    from frontend.views.chat_view import results_reply
+    reqs = CustomerRequirements(location="التجمع")
+    assert "إيجار" in results_reply({"top_properties": [object()], "customer_reqs": reqs})
+    assert "إيجار" not in results_reply({"top_properties": [object()],
+                                         "customer_reqs": CustomerRequirements(deal_type="rent")})
