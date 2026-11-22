@@ -26,6 +26,7 @@ token.json
 token.json
 *token*.json
 credentials.json
+eval_intent_extraction_report.json
 .env
 
 data_pipeline
