@@ -104,8 +104,16 @@ JSON object matching this exact schema, no prose, no markdown fences:
 Rules:
 - Never invent values. If a field is not mentioned, set it to null and add its name to missing_fields.
 - Numbers must be plain numbers (no currency symbols, no commas).
-- Budgets are full Egyptian pounds: "5 مليون" / "5 million" -> 5000000, "800 ألف" / "800k" -> 800000.
-- A single budget figure ("بميزانية 5 مليون", "up to 5 million") is budget_max only; set budget_min only for a range or an explicit minimum.
+- Budgets are full Egyptian pounds:
+  * "5 مليون" / "5 million" / "5m" -> 5000000
+  * "800 ألف" / "800k" / "800 alf" -> 800000
+  * "8 آلاف" / "تمن آلاف" / "8 alf" -> 8000 (be careful with zeros: "ألف" = 1,000, NOT 10,000).
+- Price per square meter ("سعر المتر", "المتر بـ", "el metr", "per m2", "price per m"):
+  * If both a price per m² and area_sqm are present (or inferable), compute total budget = price_per_m2 * area_sqm and put it in budget_max.
+  * When a price per m² is given for buying (e.g. "20 ألف" or "30 ألف" للمتر), deal_type is typically "buy" unless "إيجار/rent" is explicitly stated.
+- Spoken two-number shorthand like "70 6" in Egyptian real-estate context:
+  * If one number is a typical area (e.g. 70 sqm) and the following standalone small number (e.g. 6) is a budget in millions, set area_sqm = 70, budget_max = 6000000, and deal_type = "buy" if not rent.
+- A single budget figure ("بميزانية 5 مليون", "في حدود 8 آلاف", "up to 5 million") is budget_max only; set budget_min only for a range or an explicit minimum.
 - Keep the "location" and "notes" values in their original language as stated by the customer.
 - Respond in JSON only.
 - Use "notes" ONLY for extra customer requirements that do not fit any other field (for example: near schools, quiet area, high floor).
@@ -161,6 +169,26 @@ def extract_requirements(call_transcript=None, raw_text=None) -> CustomerRequire
         parsed = json.loads(cleaned)
 
     req = CustomerRequirements(**parsed)
+    import re
+    text_blob = f"{call_transcript or ''} {raw_text or ''}".lower()
+    # معالجة سعر المتر لو الموديل لم يحسب الميزانية الكلية
+    if req.budget_max is None and req.budget_min is None and req.area_sqm:
+        has_meter_price = any(
+            k in text_blob
+            for k in ["سعر المتر", "المتر ب", "el metr", "metr b", "per m", "price per"]
+        )
+        if has_meter_price:
+            m_alf = re.search(r"(?:بـ?|b|ميزيدش عن|عن)?\s*(\d+(?:\.\d+)?)\s*(?:ألف|الف|alf|k)\b", text_blob)
+            m_mill = re.search(r"(?:بـ?|b|ميزيدش عن|عن)?\s*(\d+(?:\.\d+)?)\s*(?:مليون|million|m)\b", text_blob)
+            unit_price = None
+            if m_mill:
+                unit_price = float(m_mill.group(1)) * 1_000_000
+            elif m_alf:
+                unit_price = float(m_alf.group(1)) * 1_000
+            if unit_price and unit_price > 0:
+                req.budget_max = float(req.area_sqm) * unit_price
+                if req.deal_type in (None, "unknown"):
+                    req.deal_type = "buy"
 
     fields = ["location", "budget_min", "budget_max", "area_sqm",
               "bedrooms", "property_type", "purpose", "deal_type", "notes"]
