@@ -1,6 +1,7 @@
 from langchain_groq import ChatGroq
 from pydantic import BaseModel, Field
 from backend.schema.state import AgentState, PropertyItem
+from backend.guardrails.pii import safe_print
 
 import json
 import re
@@ -102,6 +103,15 @@ intent_prompt = """
             IMPORTANT RULES:
 
                 - Focus on the customer's PRIMARY intent.
+                - CRITICAL DISTINCTION (new_search vs modify_search):
+                  * If the customer uses modification/change words or comparatives (e.g., "غير", "خلي", "خليها", "عدل", "قلل", "زود", "بدل", "أرخص", "أكبر", "أصغر", "لا مش عايز", "khali", "ghayar", "zawed", "ar5as"), ALWAYS classify as `modify_search`, EVEN IF no prior conversation is shown.
+                  * Only use `new_search` when starting a fresh search (e.g., "بدور على", "عايز شقة", "ابحث عن", "3ayez sha2a", "badawar").
+
+                - CRITICAL DISTINCTION (property_inquiry vs general_question vs unknown):
+                  * `property_inquiry`: Any question about a specific property's location proximity, rooms, price, area, or features (e.g., "هي قريبة من...", "كام أوضة", "سعرها كام", "فيها أسانسير").
+                  * `general_question`: Questions ONLY about the platform/company itself (commission, payment plans, how 3D staging works, coverage areas).
+                  * `unknown`: Greetings ("هلا والله", "sabah el kheir"), mic checks ("تست تست"), filler ("ok tamam"), or off-topic chat.
+                  
                 - Do not confuse positive feedback with a request for alternatives.
                 - If the customer says they like a property BUT requests a change,
                 prefer modify_search.
@@ -138,10 +148,11 @@ VALID_INTENTS : Set[str] = {
 }
 
 
+from backend.agents.structured_llm import structured_llm
 llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
 # llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
 # llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
-structured_micro_llm = llm.with_structured_output(IntentDetection)
+structured_micro_llm = structured_llm(IntentDetection)   # فيه fallback لو الـ tool call رجع فاضي
 # structured_intent_llm = llm.with_structured_output(IntentDetection)
 
 intent_chain = (
@@ -225,11 +236,11 @@ def detect_intent_node(state: AgentState) -> Dict[str, Any]:
             "intent_reason": "No query provided"
         }
     
-    print(f"\n💬 [Micro Intent Node] Analyzing text: '{user_query}'")
+    safe_print(f"\n💬 [Micro Intent Node] Analyzing text: '{user_query}'")   # Privacy: الاسم والرقم بيتخفوا
     intent_res = detect_intent(user_query)
-    
+
     print(f"🎯 Detected Intent: {intent_res['intent']} (Confidence: {intent_res['confidence']})")
-    print(f"💡 Reason: {intent_res['reason']}")
+    safe_print(f"💡 Reason: {intent_res['reason']}")
     
     return {
         "micro_intent": intent_res["intent"],

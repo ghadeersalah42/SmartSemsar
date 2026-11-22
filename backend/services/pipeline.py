@@ -26,6 +26,8 @@ from typing import Any, Optional
 import numpy as np
 from pydantic import BaseModel, Field
 
+from backend.guardrails.pii import safe_print  # Privacy: names and phone numbers masked in logs
+
 try:
     from dotenv import load_dotenv
 except ImportError:  # pragma: no cover - optional if python-dotenv is not installed yet
@@ -682,7 +684,7 @@ def transcribe(wav_path: Path | str, device: str, whisper_model: Optional[Any] =
             continue
 
         seg_idx = len(result) + 1
-        print(f"{seg_idx:02d}. [{start_s:.2f}s -> {end_s:.2f}s] {original}")
+        safe_print(f"{seg_idx:02d}. [{start_s:.2f}s -> {end_s:.2f}s] {original}")
         result.append({
             "segment_id": seg_idx,
             "start": start_s,
@@ -986,7 +988,7 @@ def build_conversation(
     print("FINAL CONVERSATION")
     print("=" * 60)
     for t in conversation:
-        print(f"[{t['start']:.2f}s -> {t['end']:.2f}s] {t['speaker']}: {t['text']}")
+        safe_print(f"[{t['start']:.2f}s -> {t['end']:.2f}s] {t['speaker']}: {t['text']}")
     return conversation
 
 
@@ -1574,7 +1576,7 @@ def extract_customer_profile(conversation):
     ])
 
     text = "\n".join(f"{t['speaker']}: {t['text']}" for t in conversation)
-    print(text)
+    safe_print(text)
     return (prompt | structured_llm).invoke({"conversation": text})
 
 

@@ -28,19 +28,16 @@ def format_location(row):
     """
     parts = []
     
-    # 1. المجمع السكني (Compound) إن وجد
+
     if pd.notna(row.get('compound')) and str(row.get('compound')).strip():
         parts.append(str(row['compound']).strip())
         
-    # 2. الحي / المنطقة (District) إن وجد
     if pd.notna(row.get('district')) and str(row.get('district')).strip():
         parts.append(str(row['district']).strip())
         
-    # 3. المدينة (City)
     if pd.notna(row.get('city')) and str(row.get('city')).strip():
         parts.append(str(row['city']).strip())
         
-    # 4. المحافظة (region / Governorate)
     region_val = row.get('region') if pd.notna(row.get('region')) else row.get('Governorate')
     if pd.notna(region_val) and str(region_val).strip():
         parts.append(str(region_val).strip())

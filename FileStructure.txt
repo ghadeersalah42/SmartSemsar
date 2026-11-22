@@ -20,7 +20,7 @@ smartsemsar/
 │   │   ├── groq_service.py          # 🟢 العضو 1: Whisper + Llama 3.3
 │   │   ├── db_service.py            # 🔵 العضو 2: SQLite & CLIP Vector Search
 │   │   ├── colab_service.py         # 🟡 العضو 3: ngrok API Client للـ 3D
-│   │   └── closing_service.py       # 🟣 العضو 5: WhatsApp & Calendar Links
+│   │   └── closing_service.py       # 🟣 العضو 5: Telegram & Calendar Links
 │   │
 │   └── agents/                      # [عقد خريطة LangGraph والـ Routing Logic]
 │       ├── intake_node.py           # 🟢 العضو 1: Node تحويل Input لـ JSON

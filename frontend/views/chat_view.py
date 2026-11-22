@@ -2,6 +2,7 @@ import streamlit as st
 from langgraph.types import Command
 import os
 from dotenv import load_dotenv, find_dotenv
+
 import sys
 import uuid
 import time
@@ -17,9 +18,16 @@ from services.telegram_service import (send_property_report, send_telegram_messa
                                        find_chat_by_username, is_telegram_configured)
 from services.property_service import calculate_installments
 from services.google_calendar_service import create_viewing_event
+
 import datetime
 
+from backend.guardrails.input_guard import check_input
+from backend.guardrails.pii import register_name, get_logger
+from backend.guardrails.actions import action_reply
+from backend.guardrails.grounding import DEPOSIT_MONTHS, display_fields, facts, rent_details_text, report_info
+
 load_dotenv(find_dotenv())
+log = get_logger("smartsemsar.chat")       # أي سطر هنا بيتخفي منه التليفونات والأسامي
 
 # --- صفحة الفرش بعفش المستخدم (Furniture_multi_photo_edit.py) ---
 import socket
@@ -51,7 +59,7 @@ MODELS_DIR = Path(__file__).resolve().parents[2] / "data" / "models"
 MODELS_PORT = int(os.environ.get("SMARTSEMSAR_MODELS_PORT", "7862"))
 VOICE_DIR = Path(__file__).resolve().parents[2] / "data" / "raw_calls"     # تسجيلات المستخدم من الشات
 DOWN_PAYMENT_PERCENT = 15      # مقدم التمليك (من سعر الشقة)؛ الباقي بيتقسط على المدة اللي العميل يختارها
-DEPOSIT_MONTHS = 2             # تأمين الإيجار: إيجار شهرين مقدم، بيرجع آخر مدة العقد لو مفيش تلفيات
+# DEPOSIT_MONTHS (تأمين الإيجار: إيجار شهرين مقدم) في backend/guardrails/grounding.py، نفس الرقم اللي الـ check بيستخدمه
 VOICE_DIR.mkdir(parents=True, exist_ok=True)
 
 
@@ -117,15 +125,27 @@ def open_property_3d(orchestrator, config, property_id):
         pass
 
 
+DEAL_NOTES = {  # الملحوظة بتتبني من اللي في الداتا (available_deal_types من خدمة البحث)
+    ("rent",): "وكل الشقق المتاحة عندنا حالياً إيجار.",
+    ("buy",): "وكل الشقق المتاحة عندنا حالياً تمليك.",
+    ("buy", "rent"): "والنتايج فيها شقق إيجار وتمليك.",
+}
+
+
 def results_reply(values):
     """رد البوت بعد البحث بدل "تم تنفيذ الطلب بنجاح": عدد النتايج، أو ليه مفيش"""
     if values.get("macro_intent") == "general_browse":
         return "دي كل الشقق المتاحة عندنا 👇 دوس «معاينة ثلاثية الأبعاد» على اللي تعجبك."
     found = values.get("top_properties") or []
-    if found:
-        return f"لقيتلك {len(found)} شقق مطابقة لطلبك 👇 دوس «معاينة ثلاثية الأبعاد» على اللي تعجبك."
     reqs = values.get("customer_reqs")
-    if getattr(reqs, "deal_type", None) == "buy":
+    deals = sorted(values.get("available_deal_types") or [])          # إيجار / تمليك حسب الداتا
+    if found:
+        reply = f"لقيتلك {len(found)} شقق مطابقة لطلبك 👇 دوس «معاينة ثلاثية الأبعاد» على اللي تعجبك."
+        note = DEAL_NOTES.get(tuple(deals))
+        if note and getattr(reqs, "deal_type", None) in (None, "unknown"):   # مقالش إيجار ولا تمليك: مخمناش، بس بنوضح المتاح
+            reply += "\nملحوظة: مقولتليش إيجار ولا تمليك، " + note
+        return reply
+    if getattr(reqs, "deal_type", None) == "buy" and deals == ["rent"]:
         return "حالياً كل الشقق المتاحة عندنا إيجار بس، مفيش شقق تمليك. تحب أدورلك على إيجار بنفس المواصفات؟"
     asked = []
     if getattr(reqs, "location", None):
@@ -179,18 +199,19 @@ def render_telegram_link():
             st.error(f"❌ {res.get('error')}")
 
 
+def back_from_checkout_button():
+    st.markdown("---")
+    if st.button("العودة إلى المعاينة ثلاثية الأبعاد 3D", type="secondary"):
+        st.session_state.show_checkout_page = False
+        st.rerun()
+
+
 def render_payment_details(price, is_rent, prop_info):
     """إيجار: الإيجار الشهري، التأمين (DEPOSIT_MONTHS شهور من الإيجار)، أول دفعة وإجمالي السنة.
     تمليك: المقدم DOWN_PAYMENT_PERCENT من السعر، والعميل بيختار يقسط الباقي على كام شهر"""
     if is_rent:
         st.markdown("### 🔑 تفاصيل الإيجار")
-        months = DEPOSIT_MONTHS
-        st.markdown(f"""
-        - **الإيجار الشهري:** EGP {price:,.0f}
-        - **التأمين (إيجار شهرين مقدم):** EGP {price * months:,.0f}، ويُسترد هذا المبلغ في نهاية مدة العقد في حال عدم وجود أي تلفيات.
-        - **أول دفعة عند الاستلام (التأمين فقط):** EGP {price * months:,.0f}
-        - **إجمالي الإيجار في السنة:** EGP {price * 12:,.0f}
-        """)
+        st.markdown(rent_details_text(price, DEPOSIT_MONTHS))
         st.caption("الأرقام تقديرية؛ التأمين ومواعيد الدفع بتتحدد نهائي في العقد مع المالك.")
         return
 
@@ -232,9 +253,8 @@ def send_report_to_telegram(prop_info):
         customer_name=st.session_state.get("customer_name") or "Valued Customer",
         installment_plan=st.session_state.get("installment_plan") if prop_info.get("deal_type") == "buy" else None,
         booking_data=st.session_state.get("booking_data"))
-    if res.get("success"):
-        return True, "✅ تم إرسال التقرير لتليجرام بنجاح!"
-    return False, f"❌ تعذر إرسال التقرير: {res.get('error')}"
+    # الرسالة من نتيجة الأداة بس: "اتبعت" مبتطلعش غير لو تليجرام رجّع success
+    return res.get("success") is True, action_reply("telegram_report", res)
 
 
 def render_chat_flow():
@@ -449,6 +469,15 @@ def render_chat_flow():
         st.session_state.messages.append({"role": "user", "content": user_query})
         st.session_state.show_checkout_page = False
 
+        # Guardrail: هجوم أو طلب بيانات عميل تاني أو كلام برّه العقارات بيترد عليه من غير ما يوصل للجراف.
+        # وقت ما البوت مستني رد على سؤال ("إيجار ولا تمليك؟")، الردود القصيرة بتعدي على القواعد بس
+        awaiting_answer = bool(current_state.tasks and any(task.interrupts for task in current_state.tasks))
+        guard = check_input(user_query, use_llm=not awaiting_answer and os.getenv("SMARTSEMSAR_LLM_GUARD", "1") == "1")
+        if guard.blocked:
+            log.info("guard blocked message (%s): %s", guard.category, user_query)
+            st.session_state.messages.append({"role": "assistant", "content": guard.reply})
+            st.rerun()
+
         with st.spinner("جاري المعالجة والبحث..."):
             try:
                 if current_state.tasks and any(task.interrupts for task in current_state.tasks):
@@ -461,9 +490,18 @@ def render_chat_flow():
                         "user_text": user_query,
                     }
 
-                for event in the_Orchestrator.stream(execution_input, config=config):
-                    pass
+                from langchain_core.tracers.context import collect_runs
 
+                with collect_runs() as cb:
+                    for event in the_Orchestrator.stream(execution_input, config=config):
+                        pass
+                    
+                    # طباعة رابط الـ Trace في التيرمنال فوراً
+                    if cb.traced_runs:
+                        for run in cb.traced_runs:
+                            # استخدام الرابط العام المباشر لمنصة LangSmith مع الـ Run ID
+                            trace_url = f"https://smith.langchain.com/runs/{run.id}"
+                            print(f"🔗 LangSmith Trace Link: {trace_url}")
                 updated_state = the_Orchestrator.get_state(config)
                 if updated_state.tasks and any(task.interrupts for task in updated_state.tasks):
                     interrupt_payload = updated_state.tasks[0].interrupts[0].value
@@ -527,11 +565,13 @@ def render_chat_flow():
                 current_prop = p
                 break
         
-        p_title = prop_field(current_prop, 'title', default='عقار فاخر')
-        p_price = prop_field(current_prop, 'price', default=2500000)
-        p_location = prop_field(current_prop, 'location', default='القاهرة الجديدة')
-        p_bedrooms = prop_field(current_prop, 'pf_bedrooms', 'bedrooms', default=3)
-        p_area = prop_field(current_prop, 'pf_area_sqm', 'area_sqm', default=180)
+        # Grounded replies: كل قيمة من سجل الشقة. مفيش قيم افتراضية مخترعة: لو الشقة مش لاقيينها منعرضش كارت
+        if current_prop is None:
+            st.warning("⚠️ مش لاقي بيانات الشقة دي. ارجع للنتايج واختار شقة تانية.")
+            back_from_checkout_button()
+            return
+        card = display_fields(current_prop)
+        p_price = facts(current_prop)["price"]
 
         # إيجار ولا تمليك: زي ما العميل قال؛ ولو مقالش، إيجار (كل الشقق اللي في الداتا إيجار)
         deal_type = getattr(graph_values.get("customer_reqs"), "deal_type", None)
@@ -548,15 +588,17 @@ def render_chat_flow():
                 margin-bottom: 24px;
                 box-shadow: 0 4px 15px rgba(180, 150, 100, 0.05);
             ">
-                <h3 style="color: #aa771c; margin-top:0;">{p_title} (#{propID})</h3>
-                <p><b>الموقع:</b> {p_location} &nbsp;|&nbsp; <b>المساحة:</b> {p_area} متر مربع &nbsp;|&nbsp; <b>عدد الغرف:</b> {p_bedrooms}</p>
-                <h4 style="color: #2c2c2c;">{price_label}: EGP {p_price:,.0f}</h4>
+                <h3 style="color: #aa771c; margin-top:0;">{card['title']} (#{card['id']})</h3>
+                <p><b>الموقع:</b> {card['location']} &nbsp;|&nbsp; <b>المساحة:</b> {card['area']} متر مربع &nbsp;|&nbsp; <b>عدد الغرف:</b> {card['bedrooms']}</p>
+                <h4 style="color: #2c2c2c;">{price_label}: {card['price']}</h4>
             </div>
         """, unsafe_allow_html=True)
 
-        prop_info = {"id": str(propID), "title": p_title, "price": p_price, "location": p_location,
-                     "area_sqm": p_area, "bedrooms": p_bedrooms, "deal_type": "rent" if is_rent else "buy",
-                     "deposit_months": DEPOSIT_MONTHS}
+        if p_price is None:
+            st.warning("⚠️ سعر الشقة دي مش موجود في البيانات، فمش هنقدر نحسب الدفعات أو نبعت تقرير.")
+            back_from_checkout_button()
+            return
+        prop_info = report_info(current_prop, is_rent, DEPOSIT_MONTHS)
 
         # ---- ربط تليجرام: المستخدم بيفتح البوت ويدوس Start، وإحنا بناخد الـ chat id من تليجرام نفسه ----
         render_telegram_link()
@@ -592,6 +634,7 @@ def render_chat_flow():
             if st.button("تأكيد الحجز والإضافة للتقويم 🚀", type="primary"):
                 if cust_name.strip():
                     st.session_state["customer_name"] = cust_name.strip()
+                register_name(cust_name)            # الاسم بيتخفي من الـ logs والـ traces
                 with st.spinner("جاري إنشاء الموعد على Google Calendar..."):
                     # استدعاء دالة الكاليندر الحقيقية
                     res = create_viewing_event(
@@ -603,8 +646,8 @@ def render_chat_flow():
                         notes=booking_notes
                     )
 
-                    if res.get("success"):
-                        st.success("✅ تم حجز الموعد بنجاح وإضافته إلى Google Calendar الخاص بك!")
+                    if res.get("success") is True:
+                        st.success(action_reply("booking", res))
                         if res.get("html_link"):
                             st.markdown(f"[🔗 عرض الموعد في تقويم جوجل]({res.get('html_link')})")
                         st.session_state["show_booking_form"] = False
@@ -622,16 +665,13 @@ def render_chat_flow():
                         st.session_state["report_sent"] = False
                         deliver_booking_report(prop_info)
                     else:
-                        st.error(f"❌ حدث خطأ أثناء الحجز: {res.get('error')}")
+                        st.error(action_reply("booking", res))
         # الإيجار: الإيجار الشهري والتأمين وأول دفعة. التمليك: مقدم ثابت والعميل بيختار مدة التقسيط
         if st.session_state.get("show_installment_plan", False):
             st.markdown("---")
             render_payment_details(p_price, is_rent, prop_info)
 
-        st.markdown("---")
-        if st.button("العودة إلى المعاينة ثلاثية الأبعاد 3D", type="secondary"):
-            st.session_state.show_checkout_page = False
-            st.rerun()
+        back_from_checkout_button()
 
     # ----------------------------------------------------
     # صفحة الفرش بعفش العميل (Furniture_multi_photo_edit.py) جوه نفس الصفحة، وزرار يرجع للمعاينة والحجز
@@ -753,11 +793,7 @@ def render_chat_flow():
         if all_props:
             for idx, prop in enumerate(all_props):
                 p_id = prop_field(prop, 'property_id', 'id', default=idx)
-                p_title = prop_field(prop, 'title', default='عقار فاخر')
-                p_price = prop_field(prop, 'price', default=0)
-                p_location = prop_field(prop, 'location', default='مصر')
-                p_bedrooms = prop_field(prop, 'pf_bedrooms', 'bedrooms', default=3)
-                p_area = prop_field(prop, 'pf_area_sqm', 'area_sqm', default=180)
+                card = display_fields(prop)        # من سجل الشقة بس، و escaped (نص الإعلان مش HTML)
 
                 st.markdown(f"""
                     <div style="
@@ -772,15 +808,15 @@ def render_chat_flow():
                         box-shadow: 0 6px 20px rgba(180, 150, 100, 0.06);
                     ">
                         <div>
-                            <div style="font-size: 0.75rem; color: #8c7b65; margin-bottom: 4px; font-weight: 600;">رقم المعرف: #{p_id}</div>
-                            <div style="font-size: 1.2rem; font-weight: 700; color: #2c2c2c; margin-bottom: 6px;">{p_title}</div>
-                            <div style="color: #6c5d47; font-size: 0.9rem; margin-bottom: 8px;">الموقع: {p_location}</div>
+                            <div style="font-size: 0.75rem; color: #8c7b65; margin-bottom: 4px; font-weight: 600;">رقم المعرف: #{card['id']}</div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: #2c2c2c; margin-bottom: 6px;">{card['title']}</div>
+                            <div style="color: #6c5d47; font-size: 0.9rem; margin-bottom: 8px;">الموقع: {card['location']}</div>
                             <div style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">
-                                عدد الغرف: {p_bedrooms} &nbsp;&nbsp;|&nbsp;&nbsp; المساحة: {p_area} متر مربع
+                                عدد الغرف: {card['bedrooms']} &nbsp;&nbsp;|&nbsp;&nbsp; المساحة: {card['area']} متر مربع
                             </div>
                         </div>
                         <div style="text-align: left;">
-                            <div style="font-size: 1.25rem; font-weight: 800; color: #aa771c; margin-bottom: 10px;">EGP {p_price:,.0f}</div>
+                            <div style="font-size: 1.25rem; font-weight: 800; color: #aa771c; margin-bottom: 10px;">{card['price']}</div>
                         </div>
                     </div>
                 """, unsafe_allow_html=True)
@@ -814,11 +850,7 @@ def render_chat_flow():
             for idx, prop in enumerate(current_page_props):
                 global_idx = start_idx + idx
                 p_id = prop_field(prop, 'property_id', 'id', default=global_idx)
-                p_title = prop_field(prop, 'title', default='عقار فاخر')
-                p_price = prop_field(prop, 'price', default=0)
-                p_location = prop_field(prop, 'location', default='مصر')
-                p_bedrooms = prop_field(prop, 'pf_bedrooms', 'bedrooms', default=3)
-                p_area = prop_field(prop, 'pf_area_sqm', 'area_sqm', default=180)
+                card = display_fields(prop)        # من سجل الشقة بس، و escaped (نص الإعلان مش HTML)
 
                 st.markdown(f"""
                     <div style="
@@ -833,15 +865,15 @@ def render_chat_flow():
                         box-shadow: 0 6px 20px rgba(180, 150, 100, 0.06);
                     ">
                         <div>
-                            <div style="font-size: 0.75rem; color: #8c7b65; margin-bottom: 4px; font-weight: 600;">رقم المعرف: #{p_id}</div>
-                            <div style="font-size: 1.2rem; font-weight: 700; color: #2c2c2c; margin-bottom: 6px;">{p_title}</div>
-                            <div style="color: #6c5d47; font-size: 0.9rem; margin-bottom: 8px;">الموقع: {p_location}</div>
+                            <div style="font-size: 0.75rem; color: #8c7b65; margin-bottom: 4px; font-weight: 600;">رقم المعرف: #{card['id']}</div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: #2c2c2c; margin-bottom: 6px;">{card['title']}</div>
+                            <div style="color: #6c5d47; font-size: 0.9rem; margin-bottom: 8px;">الموقع: {card['location']}</div>
                             <div style="font-size: 0.85rem; color: #6b7280; font-weight: 500;">
-                                عدد الغرف: {p_bedrooms} &nbsp;&nbsp;|&nbsp;&nbsp; المساحة: {p_area} متر مربع
+                                عدد الغرف: {card['bedrooms']} &nbsp;&nbsp;|&nbsp;&nbsp; المساحة: {card['area']} متر مربع
                             </div>
                         </div>
                         <div style="text-align: left;">
-                            <div style="font-size: 1.25rem; font-weight: 800; color: #aa771c; margin-bottom: 10px;">EGP {p_price:,.0f}</div>
+                            <div style="font-size: 1.25rem; font-weight: 800; color: #aa771c; margin-bottom: 10px;">{card['price']}</div>
                         </div>
                     </div>
                 """, unsafe_allow_html=True)

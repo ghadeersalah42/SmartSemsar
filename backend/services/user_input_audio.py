@@ -20,6 +20,7 @@ import torch
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from backend.schema.state import CustomerRequirements
+from backend.guardrails.pii import safe_print
 
 # ------------------------------------------------------------------ config
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -224,7 +225,7 @@ def transcribe(wav_path, device):
     print("Language probability:", round(info.language_probability, 4))
     print("Number of segments  :", len(segments))
     for i, s in enumerate(segments, start=1):
-        print(f"{i:02d}. [{s.start:.2f}s → {s.end:.2f}s] {s.text.strip()}")
+        safe_print(f"{i:02d}. [{s.start:.2f}s → {s.end:.2f}s] {s.text.strip()}")
 
     result = []
     for s in segments:
@@ -297,7 +298,7 @@ def build_conversation(transcript_segments, speaker_turns):
     print("FINAL CONVERSATION")
     print("=" * 60)
     for t in conversation:
-        print(f"[{t['start']:.2f}s → {t['end']:.2f}s] {t['speaker']}: {t['text']}")
+        safe_print(f"[{t['start']:.2f}s → {t['end']:.2f}s] {t['speaker']}: {t['text']}")
     return conversation
 
 
