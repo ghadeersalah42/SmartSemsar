@@ -453,3 +453,9 @@ def test_budget_given_means_no_question(monkeypatch):
     monkeypatch.setattr(input_node, "interrupt", lambda q: pytest.fail("asked although the budget was given"))
     req, _ = input_node.ask_budget(CustomerRequirements(budget_max=40000), "ميزانيتي 40 ألف")
     assert req.budget_max == 40000
+
+
+def test_out_of_range_question_shows_a_readable_number():
+    from backend.guardrails.clarify import clarification_question
+    q = clarification_question(CustomerRequirements(budget_max=2_000_000, deal_type="rent").unclear_fields)
+    assert "2,000,000" in q and "e+" not in q

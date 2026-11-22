@@ -59,7 +59,8 @@ class CustomerRequirements(BaseModel):
         def out_of_range(field, value, low, high):
             if value is not None and not (low <= value <= high):
                 setattr(self, field, None)
-                self.unclear_fields[field] = f"out_of_range:{value:g}"
+                shown = f"{value:,.0f}" if float(value).is_integer() else f"{value:,}"   # 2,000,000 مش 2e+06
+                self.unclear_fields[field] = f"out_of_range:{shown}"
 
         out_of_range("bedrooms", self.bedrooms, *BEDROOMS_RANGE)
         out_of_range("area_sqm", self.area_sqm, *AREA_RANGE)
