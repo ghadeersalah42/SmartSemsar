@@ -1,13 +1,16 @@
 from langgraph.graph import StateGraph, START, END
 from langgraph.checkpoint.memory import MemorySaver
 
+from backend.guardrails.pii import install_langsmith_masking
+install_langsmith_masking()      # أرقام التليفونات والأسامي بتتخفي قبل ما أي trace يتبعت لـ LangSmith
+
 from backend.schema.state import AgentState, PropertyItem
 from backend.agents.routing_node import supervisor_router_node
 from backend.agents.intent_detector import detect_intent_node
 from backend.agents.input_node import input_node
 from backend.agents.sketch_2D_to_svg_node import sketch_to_svg_node
 from backend.agents.matching_node import match_properties_node, select_property_node
-from backend.agents.final_report_node import whatsapp_report_node
+from backend.agents.final_report_node import telegram_report_node
 from backend.agents.furniture_node import furniture_node
 from backend.agents.routing_node import routing_node ##
 from backend.agents.staging_3d_node import staging_3d_node

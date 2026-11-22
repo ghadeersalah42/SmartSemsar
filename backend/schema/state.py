@@ -17,10 +17,25 @@ import operator
 
 from typing import Literal, Optional, TypedDict
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 from backend.schema.design import DesignPreferences
 
+
+# ---------- حدود منطقية للطلبات (Schema sanity ranges) ----------
+# أي قيمة برّه الحدود دي غالباً الاستخراج فهمها غلط ("ميزانيتي 5" مش 5 جنيه)، فبتتشال
+# وبتتسجل في unclear_fields، والبوت بيسأل العميل عنها بدل ما يدور بقيمة غلط.
+BEDROOMS_RANGE = (0, 10)                 # 0 = ستوديو
+AREA_RANGE = (20, 2_000)                 # متر مربع
+BUDGET_RANGES = {
+    "rent": (1_000, 1_000_000),          # إيجار شهري بالجنيه
+    "buy": (100_000, 1_000_000_000),     # سعر الشقة كله بالجنيه
+    "unknown": (1_000, 1_000_000_000),   # لسه مش عارفين إيجار ولا تمليك: الحدود الأوسع
+}
+
+
+def budget_range(deal_type: Optional[str]) -> tuple[float, float]:
+    return BUDGET_RANGES.get(deal_type or "unknown", BUDGET_RANGES["unknown"])
 
 
 class CustomerRequirements(BaseModel):
@@ -35,7 +50,27 @@ class CustomerRequirements(BaseModel):
     # style_preference: Optional[str] = Field(default=None, description="Design style e.g., Modern, Classic")
     notes: Optional[str] = Field(default=None, description="Notes from customer inputs regards the property")
     missing_fields: list[str] = Field(default_factory=list)
-    
+    # الحقول اللي اتقالت بس مش واضحة أو برّه الحدود: {"budget_max": "out_of_range:5"}
+    unclear_fields: Dict[str, str] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def enforce_sanity_ranges(self):
+        """القيم اللي مش منطقية بتتشال وبتتسجل في unclear_fields (مش بنخمن قيمة بدالها)"""
+        def out_of_range(field, value, low, high):
+            if value is not None and not (low <= value <= high):
+                setattr(self, field, None)
+                shown = f"{value:,.0f}" if float(value).is_integer() else f"{value:,}"   # 2,000,000 مش 2e+06
+                self.unclear_fields[field] = f"out_of_range:{shown}"
+
+        out_of_range("bedrooms", self.bedrooms, *BEDROOMS_RANGE)
+        out_of_range("area_sqm", self.area_sqm, *AREA_RANGE)
+        low, high = budget_range(self.deal_type)
+        out_of_range("budget_min", self.budget_min, low, high)
+        out_of_range("budget_max", self.budget_max, low, high)
+        if self.budget_min is not None and self.budget_max is not None and self.budget_min > self.budget_max:
+            self.budget_min, self.budget_max = self.budget_max, self.budget_min
+        return self
+
 class PropertyItem(BaseModel):
     """Property details from the matching agent"""
     property_id: str = Field(description="Unique ID for the property")
@@ -140,6 +175,7 @@ class AgentState(TypedDict):
     top_properties: Optional[List[PropertyItem]]
     used_fallback: Optional[bool]
     total_found: Optional[int]
+    available_deal_types: Optional[List[str]]     # إيجار / تمليك حسب الداتا، للرد على العميل
 
     selected_property_id: Optional[str]
     selected_property: Optional[PropertyItem]
@@ -153,8 +189,10 @@ class AgentState(TypedDict):
     custom_sketch_path: Optional[str]
     matching_status: Optional[str]
 
-    whatsapp_report_sent: bool
-    # user_decision: Optional[str]  # 'proceed_3d', 'furnish', 'send_whatsapp', 'stop'
+    telegram_chat_id: Optional[str]
+    booking_data: Optional[Dict[str, Any]]
+    telegram_report_sent: bool        # True بس لو send_property_report رجعت success
+    # user_decision: Optional[str]  # 'proceed_3d', 'furnish', 'send_telegram', 'stop'
     agent_response: Optional[str]
 
     # Workflow Control & Errors

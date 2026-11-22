@@ -1,6 +1,7 @@
 from langchain_groq import ChatGroq
 from pydantic import BaseModel, Field
 from backend.schema.state import AgentState, PropertyItem
+from backend.guardrails.pii import safe_print
 
 import json
 import re
@@ -147,10 +148,11 @@ VALID_INTENTS : Set[str] = {
 }
 
 
+from backend.agents.structured_llm import structured_llm
 llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
 # llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
 # llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
-structured_micro_llm = llm.with_structured_output(IntentDetection)
+structured_micro_llm = structured_llm(IntentDetection)   # فيه fallback لو الـ tool call رجع فاضي
 # structured_intent_llm = llm.with_structured_output(IntentDetection)
 
 intent_chain = (
@@ -234,11 +236,11 @@ def detect_intent_node(state: AgentState) -> Dict[str, Any]:
             "intent_reason": "No query provided"
         }
     
-    print(f"\n💬 [Micro Intent Node] Analyzing text: '{user_query}'")
+    safe_print(f"\n💬 [Micro Intent Node] Analyzing text: '{user_query}'")   # Privacy: الاسم والرقم بيتخفوا
     intent_res = detect_intent(user_query)
-    
+
     print(f"🎯 Detected Intent: {intent_res['intent']} (Confidence: {intent_res['confidence']})")
-    print(f"💡 Reason: {intent_res['reason']}")
+    safe_print(f"💡 Reason: {intent_res['reason']}")
     
     return {
         "micro_intent": intent_res["intent"],

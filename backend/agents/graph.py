@@ -73,7 +73,7 @@
 # # from agents.matching_node import match_properties_node, select_property_node
 # # from agents.staging_3d_node import staging_3d_node
 # # from agents.furniture_node import furniture_node
-# # from agents.final_report_node import whatsapp_report_node
+# # from agents.final_report_node import telegram_report_node
 
 
 # # # def route_macro_intent(state: AgentState) -> str:
@@ -127,14 +127,14 @@
 # #     decision = state.get("user_decision")
 # #     if decision == "proceed_3d":
 # #         return "staging_3d"
-# #     return "whatsapp_report"
+# #     return "telegram_report"
 
 # # def route_after_3d(state: AgentState) -> str:
 # #     """بعد معالجة الـ 3D: هل يريد إضافة أثاث أم التقرير؟"""
 # #     decision = state.get("user_decision")
 # #     if decision == "furnish":
 # #         return "furniture"
-# #     return "whatsapp_report"
+# #     return "telegram_report"
 
 
 # # # builder = StateGraph(AgentState)
@@ -197,7 +197,7 @@
 # # # builder.add_node("sketch_to_svg", sketch_to_svg_node)
 # # builder.add_node("staging_3d", staging_3d_node)
 # # builder.add_node("furniture", furniture_node)
-# # builder.add_node("whatsapp_report", whatsapp_report_node)
+# # builder.add_node("telegram_report", telegram_report_node)
 
 
 # # builder.add_conditional_edges(
@@ -205,7 +205,7 @@
 # #     route_after_selection,
 # #     {
 # #         "staging_3d": "staging_3d",
-# #         "whatsapp_report": "whatsapp_report"
+# #         "telegram_report": "telegram_report"
 # #     }
 # # )
 
@@ -229,12 +229,12 @@
 # #     route_after_3d,
 # #     {
 # #         "furniture": "furniture",
-# #         "whatsapp_report": "whatsapp_report"
+# #         "telegram_report": "telegram_report"
 # #     }
 # # )
 
-# # builder.add_edge("furniture", "whatsapp_report")
-# # builder.add_edge("whatsapp_report", END)
+# # builder.add_edge("furniture", "telegram_report")
+# # builder.add_edge("telegram_report", END)
 
 # # # Checkpointer لإدارة الجلسات والتوقف التفاعلي
 # # checkpointer = MemorySaver()

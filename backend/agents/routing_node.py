@@ -16,6 +16,10 @@ from backend.schema.state import AgentState, PropertyItem
 from typing import List, Optional
 from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
+from backend.guardrails.actions import strip_unconfirmed_claims
+from backend.guardrails.grounding import strip_ungrounded_numbers
+from backend.agents.structured_llm import structured_llm
+from backend.guardrails.pii import safe_print
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]      # SmartSemsar/ (فيه .env)، مش backend/agents
 load_dotenv(PROJECT_ROOT / ".env")
@@ -52,8 +56,7 @@ def get_structured_orchestrator():
     """الموديل بيتعمل أول ما يتطلب مش وقت الـ import، فالملف بيتحمل حتى لو GROQ_API_KEY مش موجود (التستات مثلاً)"""
     global _structured_orchestrator
     if _structured_orchestrator is None:
-        llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
-        _structured_orchestrator = llm.with_structured_output(MacroIntentClassifier)
+        _structured_orchestrator = structured_llm(MacroIntentClassifier)   # فيه fallback لو الـ tool call رجع فاضي
     return _structured_orchestrator
 
 ORCHESTRATOR_PROMPT = """
@@ -127,6 +130,8 @@ Your primary role is to classify the user's intent from their input (Text/Voice 
 3. IF `has_sketch` is True AND user mentions searching/matching -> Classify as 'sketch_based_search'.
 4. IF `has_sketch` is True AND user mentions 3D/furnishing/staging -> Classify as 'direct_sketch_staging'.
 5. Always generate `suggested_reply` in natural, polite Egyptian Arabic.
+   `suggested_reply` must NEVER say that something was booked, scheduled, confirmed or sent (Telegram or anything else): you cannot run tools, the app reports those results itself.
+   `suggested_reply` must NEVER state a price, area, number of rooms or compound of a listing: you do not see the database, the app shows those from the listing record.
 6. Always include the 4 core UI quick actions in `quick_actions`.
 
 ---
@@ -194,8 +199,13 @@ def supervisor_router_node(state: AgentState) -> dict:
 
     result = get_structured_orchestrator().invoke(formatted_prompt)
 
+    # الموديل ميقدرش يحجز ولا يبعت: أي رد بيدعي كده بيتشال (No false claims of actions)
+    result.suggested_reply = strip_unconfirmed_claims(result.suggested_reply)
+    # Grounded replies: الموديل مبيشوفش الداتابيز، فميكتبش سعر ولا مساحة ولا أوض العميل مقالهاش
+    result.suggested_reply = strip_ungrounded_numbers(result.suggested_reply, user_query)
+
     print(f"🎯 Detected Path: {result.macro_intent}")
-    print(f"💡 Reason: {result.reasoning}")
+    safe_print(f"💡 Reason: {result.reasoning}")
     
     if result.macro_intent == "search_by_reqs":
         return {
