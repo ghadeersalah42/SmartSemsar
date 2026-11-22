@@ -1,0 +1,105 @@
+{
+  "call_id": "smartsemsar_rec3",
+  "source_audio_file": "smartsemsar_rec3.mp4",
+  "audio_file": "smartsemsar_rec3_standardized.wav",
+  "whisper_model": "whisper-large-v3-turbo",
+  "asr_backend": "groq_api",
+  "language": "Arabic",
+  "language_probability": null,
+  "speaker_diarization_applied": false,
+  "diarization_note": "pyannote/speaker-diarization-community-1 is blocked by Hugging Face 403 GatedRepoError; no speaker labels fabricated.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "مكتب عقاعد. اتفضلي.",
+      "normalized_text": "مكتب عقاعد. اتفضلي.",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 2,
+      "start": 4.4,
+      "end": 6.4,
+      "text": "بدور على حاجة في الشيخ زايد.",
+      "normalized_text": "بدور علي حاجة في الشيخ زايد.",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 3,
+      "start": 7.6,
+      "end": 10.4,
+      "text": "تمام يا فندم. حضرتك شقة ولا فيلا؟",
+      "normalized_text": "تمام يا فندم. حضرتك شقة ولا فيلا؟",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 4,
+      "start": 10.8,
+      "end": 12.2,
+      "text": "شقة. تبقى غرفتين.",
+      "normalized_text": "شقة. تبقي غرفتين.",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 5,
+      "start": 13.2,
+      "end": 17.2,
+      "text": "تمام. اتنين قوض في الشيخ زايد. حضرتك ايجار ولا تمليل؟",
+      "normalized_text": "تمام. اتنين قوض في الشيخ زايد. حضرتك ايجار ولا تمليل؟",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 6,
+      "start": 17.2,
+      "end": 20.0,
+      "text": "ايجار. لو قلت ايجار؟ ايجار.",
+      "normalized_text": "ايجار. لو قلت ايجار؟ ايجار.",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 7,
+      "start": 20.0,
+      "end": 22.8,
+      "text": "اتفضلي يا فندم. حضرتك في حدود كام؟",
+      "normalized_text": "اتفضلي يا فندم. حضرتك في حدود كام؟",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 8,
+      "start": 22.8,
+      "end": 26.4,
+      "text": "25 ألف. لو قلت حوالي 25 ألف.",
+      "normalized_text": "25 الف. لو قلت حوالي 25 الف.",
+      "avg_logprob": -0.286,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 9,
+      "start": 26.4,
+      "end": 27.4,
+      "text": "ثمانية فندم",
+      "normalized_text": "ثمانية فندم",
+      "avg_logprob": -0.3415,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 10,
+      "start": 27.4,
+      "end": 31.46,
+      "text": "يبقى شقق غرفتين في الشيخ زي الإيغار حوالي 25 ألف",
+      "normalized_text": "يبقي شقق غرفتين في الشيخ زي الايغار حوالي 25 الف",
+      "avg_logprob": -0.3415,
+      "no_speech_prob": 0.0
+    }
+  ],
+  "full_transcript": "مكتب عقاعد. اتفضلي. بدور علي حاجة في الشيخ زايد. تمام يا فندم. حضرتك شقة ولا فيلا؟ شقة. تبقي غرفتين. تمام. اتنين قوض في الشيخ زايد. حضرتك ايجار ولا تمليل؟ ايجار. لو قلت ايجار؟ ايجار. اتفضلي يا فندم. حضرتك في حدود كام؟ 25 الف. لو قلت حوالي 25 الف. ثمانية فندم يبقي شقق غرفتين في الشيخ زي الايغار حوالي 25 الف",
+  "raw_full_transcript": "مكتب عقاعد. اتفضلي. بدور على حاجة في الشيخ زايد. تمام يا فندم. حضرتك شقة ولا فيلا؟ شقة. تبقى غرفتين. تمام. اتنين قوض في الشيخ زايد. حضرتك ايجار ولا تمليل؟ ايجار. لو قلت ايجار؟ ايجار. اتفضلي يا فندم. حضرتك في حدود كام؟ 25 ألف. لو قلت حوالي 25 ألف. ثمانية فندم يبقى شقق غرفتين في الشيخ زي الإيغار حوالي 25 ألف"
+}

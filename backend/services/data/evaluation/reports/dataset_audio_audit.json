@@ -1,0 +1,796 @@
+{
+  "generated_at_utc": "2026-11-21T22:28:48.373965+00:00",
+  "total_calls": 10,
+  "total_raw_duration_sec": 329.956,
+  "total_raw_duration_min": 5.499,
+  "total_standardized_duration_sec": 329.956,
+  "total_standardized_duration_min": 5.499,
+  "total_vad_speech_duration_sec": 249.787,
+  "total_vad_speech_duration_min": 4.163,
+  "calls_ranked_by_rough_snr_lowest_first": [
+    {
+      "call_id": "smartsemsar_rec9",
+      "rough_snr_estimate_db": 4.83
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "rough_snr_estimate_db": 18.41
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "rough_snr_estimate_db": 19.44
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "rough_snr_estimate_db": 19.88
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "rough_snr_estimate_db": 22.51
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "rough_snr_estimate_db": 23.84
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "rough_snr_estimate_db": 25.76
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "rough_snr_estimate_db": 31.71
+    },
+    {
+      "call_id": "smartsemsar_rec1",
+      "rough_snr_estimate_db": 32.42
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "rough_snr_estimate_db": 39.57
+    }
+  ],
+  "snr_disclaimer": "rough_snr_estimate_db is a rough VAD speech-vs-nonspeech RMS energy ratio, not a calibrated SNR measurement. Relative ranking helps identify recordings with higher background energy/noise floors.",
+  "diarization_blocker": "pyannote/speaker-diarization-community-1 returned HTTP 403 GatedRepoError with current HF_TOKEN and is absent from local cache. No diarization outputs fabricated.",
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec1.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec1_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.557,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 33.855,
+        "samples": 1492992,
+        "min_amplitude": -0.470526,
+        "max_amplitude": 0.534025,
+        "rms_energy": 0.0441,
+        "peak_amplitude": 0.534025,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec1_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec1_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 541675,
+        "duration": 33.855,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 15,
+      "vad_speech_duration_sec": 23.268,
+      "vad_speech_ratio": 0.6873,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec1_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 33.855,
+        "rms_energy": 0.044097,
+        "rms_dbfs": -27.11,
+        "peak_amplitude": 0.530457,
+        "peak_dbfs": -5.51,
+        "crest_factor_db": 21.6,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.6873,
+        "speech_rms": 0.053184,
+        "noise_floor_rms": 0.001272,
+        "rough_snr_estimate_db": 32.42,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.1388,
+        "energy_phone_band_300_3400hz_ratio": 0.8579,
+        "energy_above_3400hz_ratio": 0.0032,
+        "spectral_centroid_hz": 567.3
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 13,
+        "word_count": 59,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec1_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 17,
+        "word_count": 49,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec1_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec2.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec2_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.518,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 31.347,
+        "samples": 1382400,
+        "min_amplitude": -0.310043,
+        "max_amplitude": 0.326505,
+        "rms_energy": 0.030723,
+        "peak_amplitude": 0.326505,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec2_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec2_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 501551,
+        "duration": 31.347,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 15,
+      "vad_speech_duration_sec": 23.801,
+      "vad_speech_ratio": 0.7593,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec2_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 31.347,
+        "rms_energy": 0.030711,
+        "rms_dbfs": -30.25,
+        "peak_amplitude": 0.318329,
+        "peak_dbfs": -9.94,
+        "crest_factor_db": 20.31,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.7593,
+        "speech_rms": 0.035244,
+        "noise_floor_rms": 0.00037,
+        "rough_snr_estimate_db": 39.57,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.2024,
+        "energy_phone_band_300_3400hz_ratio": 0.7831,
+        "energy_above_3400hz_ratio": 0.0146,
+        "spectral_centroid_hz": 730.3
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 15,
+        "word_count": 56,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec2_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 20,
+        "word_count": 53,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec2_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec3.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec3_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.52,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 31.463,
+        "samples": 1387520,
+        "min_amplitude": -0.634363,
+        "max_amplitude": 0.940467,
+        "rms_energy": 0.064582,
+        "peak_amplitude": 0.940467,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec3_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec3_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 503409,
+        "duration": 31.463,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 9,
+      "vad_speech_duration_sec": 25.061,
+      "vad_speech_ratio": 0.7965,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec3_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 31.463,
+        "rms_energy": 0.064564,
+        "rms_dbfs": -23.8,
+        "peak_amplitude": 0.778442,
+        "peak_dbfs": -2.18,
+        "crest_factor_db": 21.62,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.7965,
+        "speech_rms": 0.072304,
+        "noise_floor_rms": 0.004648,
+        "rough_snr_estimate_db": 23.84,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.0362,
+        "energy_phone_band_300_3400hz_ratio": 0.9499,
+        "energy_above_3400hz_ratio": 0.0139,
+        "spectral_centroid_hz": 986.9
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 10,
+        "word_count": 60,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec3_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 15,
+        "word_count": 60,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec3_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec4.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec4_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.647,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 39.636,
+        "samples": 1747968,
+        "min_amplitude": -0.407456,
+        "max_amplitude": 0.478053,
+        "rms_energy": 0.039365,
+        "peak_amplitude": 0.478053,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec4_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec4_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 634184,
+        "duration": 39.636,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 17,
+      "vad_speech_duration_sec": 30.866,
+      "vad_speech_ratio": 0.7787,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec4_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 39.636,
+        "rms_energy": 0.039363,
+        "rms_dbfs": -28.1,
+        "peak_amplitude": 0.476776,
+        "peak_dbfs": -6.43,
+        "crest_factor_db": 21.67,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.7787,
+        "speech_rms": 0.044589,
+        "noise_floor_rms": 0.002297,
+        "rough_snr_estimate_db": 25.76,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.1097,
+        "energy_phone_band_300_3400hz_ratio": 0.8887,
+        "energy_above_3400hz_ratio": 0.0017,
+        "spectral_centroid_hz": 555.1
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 10,
+        "word_count": 73,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec4_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 15,
+        "word_count": 69,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec4_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec5.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec5_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.488,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 29.396,
+        "samples": 1296384,
+        "min_amplitude": -0.322369,
+        "max_amplitude": 0.428613,
+        "rms_energy": 0.018494,
+        "peak_amplitude": 0.428613,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec5_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec5_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 470344,
+        "duration": 29.396,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 6,
+      "vad_speech_duration_sec": 25.32,
+      "vad_speech_ratio": 0.8613,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec5_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 29.396,
+        "rms_energy": 0.017881,
+        "rms_dbfs": -34.95,
+        "peak_amplitude": 0.314331,
+        "peak_dbfs": -10.05,
+        "crest_factor_db": 24.9,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.8613,
+        "speech_rms": 0.019244,
+        "noise_floor_rms": 0.002312,
+        "rough_snr_estimate_db": 18.41,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.2153,
+        "energy_phone_band_300_3400hz_ratio": 0.7162,
+        "energy_above_3400hz_ratio": 0.0685,
+        "spectral_centroid_hz": 1154.2
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 9,
+        "word_count": 61,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec5_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 10,
+        "word_count": 65,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec5_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec6.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec6_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.555,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 33.739,
+        "samples": 1487872,
+        "min_amplitude": -0.545748,
+        "max_amplitude": 0.849428,
+        "rms_energy": 0.051988,
+        "peak_amplitude": 0.849428,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec6_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec6_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 539818,
+        "duration": 33.739,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 12,
+      "vad_speech_duration_sec": 21.424,
+      "vad_speech_ratio": 0.635,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec6_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 33.739,
+        "rms_energy": 0.051968,
+        "rms_dbfs": -25.69,
+        "peak_amplitude": 0.841736,
+        "peak_dbfs": -1.5,
+        "crest_factor_db": 24.19,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.635,
+        "speech_rms": 0.065111,
+        "noise_floor_rms": 0.004876,
+        "rough_snr_estimate_db": 22.51,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.0343,
+        "energy_phone_band_300_3400hz_ratio": 0.9565,
+        "energy_above_3400hz_ratio": 0.0092,
+        "spectral_centroid_hz": 980.6
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 24,
+        "word_count": 54,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec6_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 20,
+        "word_count": 46,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec6_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec7.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec7_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.496,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 29.931,
+        "samples": 1319936,
+        "min_amplitude": -0.778474,
+        "max_amplitude": 0.887237,
+        "rms_energy": 0.057199,
+        "peak_amplitude": 0.887237,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec7_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec7_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 478889,
+        "duration": 29.931,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 12,
+      "vad_speech_duration_sec": 23.453,
+      "vad_speech_ratio": 0.7836,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec7_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 29.931,
+        "rms_energy": 0.057196,
+        "rms_dbfs": -24.85,
+        "peak_amplitude": 0.886658,
+        "peak_dbfs": -1.04,
+        "crest_factor_db": 23.81,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.7836,
+        "speech_rms": 0.064608,
+        "noise_floor_rms": 0.001679,
+        "rough_snr_estimate_db": 31.71,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.0375,
+        "energy_phone_band_300_3400hz_ratio": 0.9577,
+        "energy_above_3400hz_ratio": 0.0048,
+        "spectral_centroid_hz": 761.2
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 10,
+        "word_count": 56,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec7_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 5,
+        "word_count": 12,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec7_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec8.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec8_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.418,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 24.892,
+        "samples": 1097728,
+        "min_amplitude": -0.331343,
+        "max_amplitude": 0.39495,
+        "rms_energy": 0.02632,
+        "peak_amplitude": 0.39495,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec8_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec8_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 398269,
+        "duration": 24.892,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 12,
+      "vad_speech_duration_sec": 20.494,
+      "vad_speech_ratio": 0.8233,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec8_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 24.892,
+        "rms_energy": 0.026275,
+        "rms_dbfs": -31.61,
+        "peak_amplitude": 0.38089,
+        "peak_dbfs": -8.38,
+        "crest_factor_db": 23.23,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.8233,
+        "speech_rms": 0.028926,
+        "noise_floor_rms": 0.002932,
+        "rough_snr_estimate_db": 19.88,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.1842,
+        "energy_phone_band_300_3400hz_ratio": 0.7903,
+        "energy_above_3400hz_ratio": 0.0255,
+        "spectral_centroid_hz": 870.9
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 10,
+        "word_count": 49,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec8_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 14,
+        "word_count": 43,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec8_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec9.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec9_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.533,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 32.345,
+        "samples": 1426432,
+        "min_amplitude": -0.436803,
+        "max_amplitude": 0.431859,
+        "rms_energy": 0.051665,
+        "peak_amplitude": 0.436803,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec9_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec9_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 517527,
+        "duration": 32.345,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 12,
+      "vad_speech_duration_sec": 24.336,
+      "vad_speech_ratio": 0.7524,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec9_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 32.345,
+        "rms_energy": 0.05165,
+        "rms_dbfs": -25.74,
+        "peak_amplitude": 0.429749,
+        "peak_dbfs": -7.34,
+        "crest_factor_db": 18.4,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.7524,
+        "speech_rms": 0.056563,
+        "noise_floor_rms": 0.032445,
+        "rough_snr_estimate_db": 4.83,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.2797,
+        "energy_phone_band_300_3400hz_ratio": 0.7162,
+        "energy_above_3400hz_ratio": 0.004,
+        "spectral_centroid_hz": 664.9
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 15,
+        "word_count": 51,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec9_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 11,
+        "word_count": 52,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec9_transcript.json"
+      },
+      "status": "SUCCESS"
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "audio_origin": "provided_dataset_recording",
+      "is_simulated": false,
+      "errors": [],
+      "source_audio_file": "smartsemsar_rec10.mp4",
+      "standardized_wav": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec10_standardized.wav",
+      "raw_audio_info": {
+        "format": ".mp4",
+        "size_mb": 0.705,
+        "sample_rate": 44100,
+        "channels": 1,
+        "duration": 43.352,
+        "samples": 1911808,
+        "min_amplitude": -0.290117,
+        "max_amplitude": 0.414116,
+        "rms_energy": 0.028468,
+        "peak_amplitude": 0.414116,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "clipping_status": "No clipping"
+      },
+      "standardized_wav_info": {
+        "file": "smartsemsar_rec10_standardized.wav",
+        "path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\processed_audio\\smartsemsar_rec10_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "frames": 693627,
+        "duration": 43.352,
+        "subtype": "PCM_16"
+      },
+      "vad_num_segments": 19,
+      "vad_speech_duration_sec": 31.764,
+      "vad_speech_ratio": 0.7327,
+      "audio_quality": {
+        "audio_file": "smartsemsar_rec10_standardized.wav",
+        "sample_rate": 16000,
+        "channels": 1,
+        "duration_sec": 43.352,
+        "rms_energy": 0.028462,
+        "rms_dbfs": -30.91,
+        "peak_amplitude": 0.408691,
+        "peak_dbfs": -7.77,
+        "crest_factor_db": 23.14,
+        "clipped_samples": 0,
+        "clipping_ratio": 0.0,
+        "speech_ratio": 0.7327,
+        "speech_rms": 0.033182,
+        "noise_floor_rms": 0.003538,
+        "rough_snr_estimate_db": 19.44,
+        "snr_is_rough_estimate": true,
+        "snr_estimation_method": "rough_vad_speech_vs_nonspeech_rms_ratio",
+        "snr_disclaimer": "Rough estimate derived from VAD speech vs. non-speech RMS energy ratio; not a calibrated or reliable measured SNR."
+      },
+      "spectral_profile": {
+        "energy_below_300hz_ratio": 0.2757,
+        "energy_phone_band_300_3400hz_ratio": 0.7177,
+        "energy_above_3400hz_ratio": 0.0066,
+        "spectral_centroid_hz": 557.4
+      },
+      "groq_whisper_large_v3_turbo": {
+        "status": "SUCCESS",
+        "num_segments": 22,
+        "word_count": 77,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec10_transcript.json"
+      },
+      "faster_whisper_small": {
+        "status": "SUCCESS",
+        "num_segments": 17,
+        "word_count": 77,
+        "transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\machine_transcripts\\faster_whisper_small\\smartsemsar_rec10_transcript.json"
+      },
+      "status": "SUCCESS"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "_is_template": true,
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec1",
+  "status": "pending",
+  "language": "ar",
+  "annotator": null,
+  "reference_transcript": "",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "speaker_id": "SPK_1",
+      "role": null,
+      "text": ""
+    }
+  ]
+}

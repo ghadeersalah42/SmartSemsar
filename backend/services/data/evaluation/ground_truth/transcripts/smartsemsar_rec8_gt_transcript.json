@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec8",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "manual_human_transcript_with_waveform_timestamps",
+  "provenance": "Preserves user's manual human transcript (pilot/rec8_human_transcript.json) verbatim; enriched with millisecond waveform timestamps from user-provided annotation file. Final clipped EOF word 'شكراً [Unclear]' at 24.270-24.890s noted in metadata.",
+  "reference_transcript": "اتفضلي حضرتك بتدوري على حاجة إيجار في منطقة معينة. آه بدور علي إيجار في مصر الجديدة. تمام مصر الجديدة كام أوضة يا فندم والميزانية اللي في بالك؟ غرفتين والميزانية؟ خمستاشر ألف خمستاشر ألف تمام يا فندم خلاص بنتكلم على شقة غرفتين في مصر الجديدة إيجار بميزانية حوالي خمستاشر ألف",
+  "segments": [
+    {
+      "start": 0.32,
+      "end": 4.84,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "اتفضلي حضرتك بتدوري على حاجة إيجار في منطقة معينة.",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 5.2,
+      "end": 7.61,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "آه بدور علي إيجار في مصر الجديدة.",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 8.89,
+      "end": 10.64,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام مصر الجديدة كام أوضة يا فندم والميزانية اللي في بالك؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 11.37,
+      "end": 12.66,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "غرفتين",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.41,
+      "end": 14.78,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "والميزانية؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 15.15,
+      "end": 15.82,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "خمستاشر ألف",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 17.08,
+      "end": 23.67,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "خمستاشر ألف تمام يا فندم خلاص بنتكلم على شقة غرفتين في مصر الجديدة إيجار بميزانية حوالي خمستاشر ألف",
+      "boundary": "silence_edge"
+    }
+  ]
+}

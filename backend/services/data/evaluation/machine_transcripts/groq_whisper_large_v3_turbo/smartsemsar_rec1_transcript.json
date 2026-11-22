@@ -1,0 +1,132 @@
+{
+  "call_id": "smartsemsar_rec1",
+  "source_audio_file": "smartsemsar_rec1.mp4",
+  "audio_file": "smartsemsar_rec1_standardized.wav",
+  "whisper_model": "whisper-large-v3-turbo",
+  "asr_backend": "groq_api",
+  "language": "Arabic",
+  "language_probability": null,
+  "speaker_diarization_applied": false,
+  "diarization_note": "pyannote/speaker-diarization-community-1 is blocked by Hugging Face 403 GatedRepoError; no speaker labels fabricated.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "في التجمع الخامس",
+      "normalized_text": "في التجمع الخامس",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "text": "عايزة اتجار ولا تمليك؟",
+      "normalized_text": "عايزة اتجار ولا تمليك؟",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 3,
+      "start": 4.0,
+      "end": 6.0,
+      "text": "اتجار؟ لا تمليك",
+      "normalized_text": "اتجار؟ لا تمليك",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 4,
+      "start": 6.0,
+      "end": 9.0,
+      "text": "تمليك؟ طب ميزانيتك كم؟",
+      "normalized_text": "تمليك؟ طب ميزانيتك كم؟",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 5,
+      "start": 9.0,
+      "end": 12.0,
+      "text": "حوالي 4 مليون",
+      "normalized_text": "حوالي 4 مليون",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 6,
+      "start": 12.0,
+      "end": 15.0,
+      "text": "4 مليون في التجمع؟ أي كم غرفة؟",
+      "normalized_text": "4 مليون في التجمع؟ اي كم غرفة؟",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 7,
+      "start": 15.0,
+      "end": 18.0,
+      "text": "3 غرفة يا فن، مش صغية",
+      "normalized_text": "3 غرفة يا فن، مش صغية",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 8,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "مسحيتها كم؟",
+      "normalized_text": "مسحيتها كم؟",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 9,
+      "start": 20.0,
+      "end": 22.0,
+      "text": "3 غرفة يا فن؟",
+      "normalized_text": "3 غرفة يا فن؟",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 10,
+      "start": 22.0,
+      "end": 24.0,
+      "text": "المساحة يا عام المساحة",
+      "normalized_text": "المساحة يا عام المساحة",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 11,
+      "start": 24.0,
+      "end": 28.0,
+      "text": "ما عرفش المساحة بالزبط يا فن، بس 3 قوض",
+      "normalized_text": "ما عرفش المساحة بالزبط يا فن، بس 3 قوض",
+      "avg_logprob": -0.2223,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 12,
+      "start": 28.0,
+      "end": 32.14,
+      "text": "وفي التكمع الخامس والميزانية حوادي أربعة مديون",
+      "normalized_text": "وفي التكمع الخامس والميزانية حوادي اربعة مديون",
+      "avg_logprob": -0.2883,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 13,
+      "start": 32.14,
+      "end": 33.86,
+      "text": "طيب جميل جداً",
+      "normalized_text": "طيب جميل جدا",
+      "avg_logprob": -0.2883,
+      "no_speech_prob": 0.0
+    }
+  ],
+  "full_transcript": "في التجمع الخامس عايزة اتجار ولا تمليك؟ اتجار؟ لا تمليك تمليك؟ طب ميزانيتك كم؟ حوالي 4 مليون 4 مليون في التجمع؟ اي كم غرفة؟ 3 غرفة يا فن، مش صغية مسحيتها كم؟ 3 غرفة يا فن؟ المساحة يا عام المساحة ما عرفش المساحة بالزبط يا فن، بس 3 قوض وفي التكمع الخامس والميزانية حوادي اربعة مديون طيب جميل جدا",
+  "raw_full_transcript": "في التجمع الخامس عايزة اتجار ولا تمليك؟ اتجار؟ لا تمليك تمليك؟ طب ميزانيتك كم؟ حوالي 4 مليون 4 مليون في التجمع؟ أي كم غرفة؟ 3 غرفة يا فن، مش صغية مسحيتها كم؟ 3 غرفة يا فن؟ المساحة يا عام المساحة ما عرفش المساحة بالزبط يا فن، بس 3 قوض وفي التكمع الخامس والميزانية حوادي أربعة مديون طيب جميل جداً"
+}

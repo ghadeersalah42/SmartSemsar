@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec4",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "الخير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه؟ أنا بدور على شقة في التجمع الخامس تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟ ثلاث غرف، مش عايزة أصغر ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟ إيجار، بفضّل يعني عشرين ألف تمام، في حدود كم مثلاً؟ حدود عشرين ألف طيب، شقة إيجار في التجمع الخامس ثلاث غرف، ميزانية حوالي 20 ألف صح تمام، شكراً لاتصال حضرتك يا فندم",
+  "segments": [
+    {
+      "start": 0.01,
+      "end": 2.52,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "[Unclear] الخير يا فندم، مع حضرتك مكتب عقارات",
+      "boundary": "silence_edge",
+      "review_note": "أول كلمة مش واضحة (يمكن \"مساء\")"
+    },
+    {
+      "start": 2.77,
+      "end": 3.45,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "كنت بتدوري عليه؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 4.07,
+      "end": 6.38,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "أنا بدور على شقة في التجمع الخامس",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 7.75,
+      "end": 10.45,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟",
+      "boundary": "silence_edge",
+      "review_note": "فيه وقفات 8.280–8.710 و9.310–9.730"
+    },
+    {
+      "start": 10.91,
+      "end": 13.3,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "ثلاث غرف، مش عايزة أصغر",
+      "boundary": "approx_speaker_change",
+      "review_note": "الموديل كتبها \"أصغير\""
+    },
+    {
+      "start": 13.3,
+      "end": 18.31,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟",
+      "boundary": "approx_speaker_change",
+      "review_note": "فيه وقفات جوه الجملة (14.180–14.880، 15.140–15.460، 15.740–16.280)"
+    },
+    {
+      "start": 19.12,
+      "end": 22.93,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "إيجار، بفضّل يعني عشرين ألف",
+      "boundary": "silence_edge",
+      "review_note": "فيه وقفات 20.370–20.810 و22.170–22.390"
+    },
+    {
+      "start": 24.58,
+      "end": 26.02,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام، في حدود كم مثلاً؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 26.59,
+      "end": 27.57,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "حدود عشرين ألف",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 28.91,
+      "end": 31.27,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "طيب، شقة إيجار في التجمع الخامس",
+      "boundary": "silence_edge",
+      "review_note": "فيه وقفة 29.900–30.170"
+    },
+    {
+      "start": 31.91,
+      "end": 34.52,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "ثلاث غرف، ميزانية حوالي 20 ألف [Unclear]",
+      "boundary": "silence_edge",
+      "review_note": "الكلمة الأخيرة الموديل كتبها \"ساعة\" — مش واضحة"
+    },
+    {
+      "start": 34.89,
+      "end": 35.1,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "صح",
+      "boundary": "silence_edge",
+      "review_note": "مقطع قصير جداً؛ نسبته للعميل ثقتها منخفضة"
+    },
+    {
+      "start": 36.36,
+      "end": 39.57,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام، شكراً لاتصال حضرتك يا فندم [Unclear]",
+      "boundary": "silence_edge",
+      "review_note": "الكلمة الأخيرة مش واضحة (الموديل كتبها \"أسجلت\")"
+    }
+  ]
+}

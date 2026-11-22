@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec2",
+  "status": "ready",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "allowed_roles": [
+    "broker",
+    "client"
+  ],
+  "notes": "Canonical reference speaker IDs: SPK_1=client, SPK_2=broker.",
+  "speaker_roles": {
+    "SPK_1": "client",
+    "SPK_2": "broker"
+  },
+  "pipeline_speaker_to_reference_speaker": {}
+}

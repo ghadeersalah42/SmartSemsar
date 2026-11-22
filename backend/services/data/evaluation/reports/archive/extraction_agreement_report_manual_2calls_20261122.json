@@ -1,0 +1,560 @@
+{
+  "generated_at_utc": "2026-11-22T01:09:20.883621+00:00",
+  "evaluation_scope": "manual_human_transcripts_only",
+  "status": "EVALUATED",
+  "extraction_configuration": {
+    "extractor_function": "backend.services.user_input_text.extract_requirements",
+    "output_schema": "backend.schema.state.CustomerRequirements",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0,
+    "response_format": "json_object",
+    "prompt_source": "backend.services.user_input_text.SYSTEM_PROMPT",
+    "prompt_char_length": 1888,
+    "input_formatting": "Identical 'Role: text' dialogue lines with consecutive same-role turns merged",
+    "compared_fields": [
+      "location",
+      "budget_min",
+      "budget_max",
+      "area_sqm",
+      "bedrooms",
+      "property_type",
+      "purpose",
+      "deal_type",
+      "notes"
+    ]
+  },
+  "metric_definitions": {
+    "denominator_H": "Total human-reference requirements present (non-null, non-empty, non-'unknown') across evaluated fields; fields absent in both extractions ('both_absent') are excluded.",
+    "denominator_M": "Total machine-extracted requirements present (non-null, non-empty, non-'unknown').",
+    "requirement_match_rate_pct": "(exact_matches + semantic_matches) / H * 100",
+    "exact_match_rate_pct": "exact_matches / H * 100",
+    "semantic_match_rate_pct": "semantic_matches / H * 100",
+    "missing_requirement_rate_pct": "missing_requirements / H * 100",
+    "extra_requirement_rate_vs_human_pct": "extra_requirements / H * 100",
+    "extra_requirement_rate_vs_machine_pct": "extra_requirements / M * 100",
+    "conflicting_value_rate_pct": "conflicting_values / H * 100"
+  },
+  "previous_report_preserved_at": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\reports\\archive\\extraction_agreement_report_legacy_groq_20261121.json",
+  "total_target_calls": 2,
+  "evaluated_calls": 2,
+  "error_calls": 0,
+  "excluded_non_manual_calls": [
+    {
+      "call_id": "smartsemsar_rec2",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reason": "Excluded from manual human-transcript agreement evaluation (not manually transcribed from scratch)."
+    }
+  ],
+  "overall_summary": {
+    "total_human_requirements": 10,
+    "total_machine_requirements": 8,
+    "matched_requirements": 7,
+    "exact_matches": 7,
+    "semantic_matches": 0,
+    "missing_requirements": 2,
+    "extra_requirements": 0,
+    "conflicting_values": 1,
+    "both_absent_fields_excluded": 8,
+    "requirement_match_rate_pct": 70.0,
+    "exact_match_rate_pct": 70.0,
+    "semantic_match_rate_pct": 0.0,
+    "missing_requirement_rate_pct": 20.0,
+    "extra_requirement_rate_vs_human_pct": 0.0,
+    "extra_requirement_rate_vs_machine_pct": 0.0,
+    "conflicting_value_rate_pct": 10.0
+  },
+  "per_field_summary": {
+    "location": {
+      "total_human_requirements": 2,
+      "total_machine_requirements": 2,
+      "matched_requirements": 2,
+      "exact_matches": 2,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "budget_min": {
+      "total_human_requirements": 0,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 2,
+      "requirement_match_rate_pct": null,
+      "exact_match_rate_pct": null,
+      "semantic_match_rate_pct": null,
+      "missing_requirement_rate_pct": null,
+      "extra_requirement_rate_vs_human_pct": null,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": null
+    },
+    "budget_max": {
+      "total_human_requirements": 2,
+      "total_machine_requirements": 2,
+      "matched_requirements": 2,
+      "exact_matches": 2,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "area_sqm": {
+      "total_human_requirements": 0,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 2,
+      "requirement_match_rate_pct": null,
+      "exact_match_rate_pct": null,
+      "semantic_match_rate_pct": null,
+      "missing_requirement_rate_pct": null,
+      "extra_requirement_rate_vs_human_pct": null,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": null
+    },
+    "bedrooms": {
+      "total_human_requirements": 2,
+      "total_machine_requirements": 2,
+      "matched_requirements": 2,
+      "exact_matches": 2,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "property_type": {
+      "total_human_requirements": 2,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 2,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 0.0,
+      "exact_match_rate_pct": 0.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 100.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "purpose": {
+      "total_human_requirements": 0,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 2,
+      "requirement_match_rate_pct": null,
+      "exact_match_rate_pct": null,
+      "semantic_match_rate_pct": null,
+      "missing_requirement_rate_pct": null,
+      "extra_requirement_rate_vs_human_pct": null,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": null
+    },
+    "deal_type": {
+      "total_human_requirements": 2,
+      "total_machine_requirements": 2,
+      "matched_requirements": 1,
+      "exact_matches": 1,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 1,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 50.0,
+      "exact_match_rate_pct": 50.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 50.0
+    },
+    "notes": {
+      "total_human_requirements": 0,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 2,
+      "requirement_match_rate_pct": null,
+      "exact_match_rate_pct": null,
+      "semantic_match_rate_pct": null,
+      "missing_requirement_rate_pct": null,
+      "extra_requirement_rate_vs_human_pct": null,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": null
+    }
+  },
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "status": "EVALUATED",
+      "human_annotation_source": "manual_human_transcript_with_waveform_timestamps",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec1_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec1_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec1_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Client: عايز شقة في التجمع الخامس\nBroker: عايزها إيجار ولا تمليك؟\nClient: إيجار لا تمليك لو سمحت\nBroker: تمليك، طب ميزانيتك كام؟\nClient: حوالي 4 مليون\nBroker: 4 مليون في التجمع كام غرفة؟\nClient: 3 غرف يا فندم مش صغيرة\nBroker: مساحتها كام؟\nClient: 3 غرف يا فندم\nBroker: المساحة يا عم المساحة\nClient: معرفش المساحة بالظبط يا فندم بس 3 غرف وفي التجمع الخامس والميزانية حوالي 4 مليون\nBroker: طيب جميل جدا",
+      "formatted_machine_input": "Client: في التجمع الخامس\nBroker: عايز اتجار ولا تمليك؟\nClient: اتجار لا تمليك\nBroker: تمليك؟ طب بميزانيتك كم؟\nClient: حوالي 4 مليون\nBroker: 4 مليون في التجمع؟ أي كم غرفة؟\nClient: 3 غرفة يا فن، مش صغية\nBroker: مسحيتها كم؟\nClient: 3 غرفة يا فن\nBroker: المساحة يا عام المساحة\nClient: ما عرفش المساحة بالظبط يا فن، بس 3 قوض وفي التجمع الخامس والميزانية حوالي 4 مليون\nBroker: طب جميل جداً",
+      "human_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 4,
+          "matched_requirements": 3,
+          "exact_matches": 3,
+          "semantic_matches": 0,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 1,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 60.0,
+          "exact_match_rate_pct": 60.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 20.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "التجمع الخامس",
+            "machine_value": "التجمع الخامس",
+            "human_canonical": "fifth_settlement",
+            "machine_canonical": "fifth_settlement",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 4000000.0,
+            "machine_value": 4000000.0,
+            "human_canonical": 4000000.0,
+            "machine_canonical": 4000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 3,
+            "machine_value": 3,
+            "human_canonical": 3,
+            "machine_canonical": 3,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "unknown",
+            "human_canonical": "apartment",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "rent",
+            "human_canonical": "buy",
+            "machine_canonical": "rent",
+            "category": "conflicting_value",
+            "matched": false
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "status": "EVALUATED",
+      "human_annotation_source": "manual_human_transcript_with_waveform_timestamps",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec8_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec8_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec8_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "client",
+        "SPEAKER_01": "broker"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: اتفضلي حضرتك بتدوري على حاجة إيجار في منطقة معينة.\nClient: آه بدور علي إيجار في مصر الجديدة.\nBroker: تمام مصر الجديدة كام أوضة يا فندم والميزانية اللي في بالك؟\nClient: غرفتين\nBroker: والميزانية؟\nClient: خمستاشر ألف\nBroker: خمستاشر ألف تمام يا فندم خلاص بنتكلم على شقة غرفتين في مصر الجديدة إيجار بميزانية حوالي خمستاشر ألف",
+      "formatted_machine_input": "Broker: اتفضلي حضرتك بتدوري على حاجة ايجار في منطقة معينة\nClient: اه بدور على ايجار مصر الجديدة\nBroker: تمام مصر الجديدة كم قوضة يا فندم تقريبا؟\nClient: غرفتين\nBroker: والميزانية اللي في بالك؟ الغرفتين والميزانية؟\nClient: 15000\nBroker: 15000 تمام يا فندم حلو سيناتكلم على شقة غرفتين في مصر الجديدة ايجار بميزانية حوالي 15000 شكراً لاتصال",
+      "human_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 4,
+          "matched_requirements": 4,
+          "exact_matches": 4,
+          "semantic_matches": 0,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 80.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "مصر الجديدة",
+            "machine_value": "مصر الجديدة",
+            "human_canonical": "heliopolis",
+            "machine_canonical": "heliopolis",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 15000.0,
+            "machine_value": 15000.0,
+            "human_canonical": 15000.0,
+            "machine_canonical": 15000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 2,
+            "machine_value": 2,
+            "human_canonical": 2,
+            "machine_canonical": 2,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "unknown",
+            "human_canonical": "apartment",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "rent",
+            "machine_value": "rent",
+            "human_canonical": "rent",
+            "machine_canonical": "rent",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    }
+  ]
+}

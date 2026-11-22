@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec10",
+  "status": "ready",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "num_speakers": 2,
+  "turns": [
+    {
+      "start": 0.01,
+      "end": 9.4,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 9.4,
+      "end": 12.97,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 14.03,
+      "end": 17.43,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 18.43,
+      "end": 20.24,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 21.17,
+      "end": 21.98,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 22.3,
+      "end": 23.83,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 24.84,
+      "end": 25.41,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 26.24,
+      "end": 29.73,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 29.95,
+      "end": 30.86,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 31.66,
+      "end": 32.73,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 33.88,
+      "end": 34.65,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 35.0,
+      "end": 38.59,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 38.96,
+      "end": 40.8,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 41.2,
+      "end": 42.87,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    }
+  ]
+}

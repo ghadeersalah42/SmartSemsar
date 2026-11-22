@@ -1,0 +1,118 @@
+{
+  "call_id": "smartsemsar_rec3",
+  "source_audio_file": "smartsemsar_rec3.mp4",
+  "audio_file": "smartsemsar_rec3_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "تتبعك قاعدة اتفضل",
+      "normalized_text": "تتبعك قاعدة اتفضل"
+    },
+    {
+      "segment_id": 2,
+      "start": 4.44,
+      "end": 6.44,
+      "text": "ايه بضوار على حاجة في الشيخ زايد",
+      "normalized_text": "ايه بضوار علي حاجة في الشيخ زايد"
+    },
+    {
+      "segment_id": 3,
+      "start": 7.6,
+      "end": 10.6,
+      "text": "تمانية فندم حضرتك شقا وانا فلّا",
+      "normalized_text": "تمانية فندم حضرتك شقا وانا فلا"
+    },
+    {
+      "segment_id": 4,
+      "start": 10.6,
+      "end": 12.6,
+      "text": "شقا تبقى غرفتين",
+      "normalized_text": "شقا تبقي غرفتين"
+    },
+    {
+      "segment_id": 5,
+      "start": 13.1,
+      "end": 15.6,
+      "text": "تمام اكنين قوض في الشيخ زايد",
+      "normalized_text": "تمام اكنين قوض في الشيخ زايد"
+    },
+    {
+      "segment_id": 6,
+      "start": 15.6,
+      "end": 17.6,
+      "text": "حضرتك ايجار وانا تمديك",
+      "normalized_text": "حضرتك ايجار وانا تمديك"
+    },
+    {
+      "segment_id": 7,
+      "start": 17.6,
+      "end": 18.1,
+      "text": "ايجار",
+      "normalized_text": "ايجار"
+    },
+    {
+      "segment_id": 8,
+      "start": 18.1,
+      "end": 19.1,
+      "text": "لو قلت ايجار",
+      "normalized_text": "لو قلت ايجار"
+    },
+    {
+      "segment_id": 9,
+      "start": 19.1,
+      "end": 21.1,
+      "text": "ايجار اتفضل يا فندم",
+      "normalized_text": "ايجار اتفضل يا فندم"
+    },
+    {
+      "segment_id": 10,
+      "start": 21.1,
+      "end": 23.1,
+      "text": "حضرتك في حدود كام",
+      "normalized_text": "حضرتك في حدود كام"
+    },
+    {
+      "segment_id": 11,
+      "start": 23.1,
+      "end": 25.1,
+      "text": "او قلت حوالي",
+      "normalized_text": "او قلت حوالي"
+    },
+    {
+      "segment_id": 12,
+      "start": 25.1,
+      "end": 26.6,
+      "text": "خمسة وعشين الف",
+      "normalized_text": "خمسة وعشين الف"
+    },
+    {
+      "segment_id": 13,
+      "start": 26.6,
+      "end": 27.6,
+      "text": "تمانية فندم",
+      "normalized_text": "تمانية فندم"
+    },
+    {
+      "segment_id": 14,
+      "start": 27.6,
+      "end": 29.6,
+      "text": "اتبع شقا غرفتين في الشيخ زايد ايجار",
+      "normalized_text": "اتبع شقا غرفتين في الشيخ زايد ايجار"
+    },
+    {
+      "segment_id": 15,
+      "start": 29.6,
+      "end": 31.6,
+      "text": "حوالي خمسة وعشين الف",
+      "normalized_text": "حوالي خمسة وعشين الف"
+    }
+  ],
+  "full_transcript": "تتبعك قاعدة اتفضل ايه بضوار علي حاجة في الشيخ زايد تمانية فندم حضرتك شقا وانا فلا شقا تبقي غرفتين تمام اكنين قوض في الشيخ زايد حضرتك ايجار وانا تمديك ايجار لو قلت ايجار ايجار اتفضل يا فندم حضرتك في حدود كام او قلت حوالي خمسة وعشين الف تمانية فندم اتبع شقا غرفتين في الشيخ زايد ايجار حوالي خمسة وعشين الف"
+}

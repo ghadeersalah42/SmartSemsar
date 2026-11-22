@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec6",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "مكتب عقارات اتفضلي، كنت بتدوري عليه؟ بدور على شقة في مدينة نصر يا فندم أربع غرف كم أوضة؟ أربعة تمام، حضرتك أربعة؟ ماشي تمليك ولا إيجار؟ والميزانية؟ إيجار إيجار، والميزانية تقريباً في حدود كام؟ 8000 8000، تمام يا فندم شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه شكراً",
+  "segments": [
+    {
+      "start": 0.04,
+      "end": 0.81,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "مكتب عقارات",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 1.36,
+      "end": 2.86,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "اتفضلي، كنت بتدوري عليه؟",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 2.86,
+      "end": 5.56,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "بدور على شقة في مدينة نصر",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 5.56,
+      "end": 6.04,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "[Unclear] يا فندم",
+      "boundary": "approx_speaker_change",
+      "review_note": "التمريرات بتسمع أول كلمة \"8\"/\"ثمانية\"، وغالباً هي \"تمام\""
+    },
+    {
+      "start": 7.23,
+      "end": 8.15,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "أربع غرف",
+      "boundary": "approx_speaker_change",
+      "review_note": "الصوتين ستات؛ نسبة المقطع ده للعميل ثقتها منخفضة"
+    },
+    {
+      "start": 8.15,
+      "end": 8.9,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "كم أوضة؟",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 9.26,
+      "end": 9.76,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "أربعة",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 9.76,
+      "end": 10.9,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام، حضرتك [Unclear]",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 11.45,
+      "end": 11.92,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "أربعة؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 12.59,
+      "end": 13.04,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "ماشي",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.33,
+      "end": 16.16,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمليك ولا إيجار؟ والميزانية؟",
+      "boundary": "approx_speaker_change",
+      "review_note": "فيه وقفة 14.500–15.060"
+    },
+    {
+      "start": 16.16,
+      "end": 16.62,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "إيجار",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 17.99,
+      "end": 20.2,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "إيجار، والميزانية تقريباً في حدود كام؟",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 20.2,
+      "end": 20.86,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "8000",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 22.91,
+      "end": 24.36,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "8000، تمام يا فندم",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 24.8,
+      "end": 29.14,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 31.27,
+      "end": 33.35,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "شكراً [Unclear]",
+      "boundary": "silence_edge"
+    }
+  ]
+}

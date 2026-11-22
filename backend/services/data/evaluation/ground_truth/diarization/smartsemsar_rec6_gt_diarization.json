@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec6",
+  "status": "ready",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "num_speakers": 2,
+  "turns": [
+    {
+      "start": 0.04,
+      "end": 0.81,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 1.36,
+      "end": 2.86,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 2.86,
+      "end": 5.56,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 5.56,
+      "end": 6.04,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 7.23,
+      "end": 8.15,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 8.15,
+      "end": 8.9,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 9.26,
+      "end": 9.76,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 9.76,
+      "end": 10.9,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 11.45,
+      "end": 11.92,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 12.59,
+      "end": 13.04,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.33,
+      "end": 16.16,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 16.16,
+      "end": 16.62,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 17.99,
+      "end": 20.2,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 20.2,
+      "end": 20.86,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 22.91,
+      "end": 24.36,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 24.8,
+      "end": 29.14,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 31.27,
+      "end": 33.35,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    }
+  ]
+}

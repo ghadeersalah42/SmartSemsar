@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec7",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "يا فندم، اتفضل أنا محتاج فيلا في 6 أكتوبر تمام يا فندم، كم غرف تقريباً؟ 4 غرف طيب، شراء ولا إيجار؟ شراء طبعاً تمام، والميزانية في حدود كم؟ 8 مليون جنيه، 10 مليون جنيه تمام يا فندم، خلاص، فيلا 4 غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه شكراً لاتصال حضرتك",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.48,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "[Unclear] يا فندم، اتفضل",
+      "boundary": "silence_edge",
+      "review_note": "التسجيل بيبدأ والكلام شغال"
+    },
+    {
+      "start": 2.51,
+      "end": 4.22,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "أنا محتاج فيلا في 6 أكتوبر",
+      "boundary": "silence_edge",
+      "review_note": "تمريرة 1 كتبتها \"أحتاج\"؛ نافذة السياق بتسمعها \"محتاج\""
+    },
+    {
+      "start": 5.77,
+      "end": 8.57,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم، كم غرف تقريباً؟",
+      "boundary": "approx_speaker_change",
+      "review_note": "فيه وقفة 6.870–7.170"
+    },
+    {
+      "start": 8.57,
+      "end": 9.24,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "4 غرف",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 10.47,
+      "end": 13.42,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "طيب، شراء ولا إيجار؟",
+      "boundary": "silence_edge",
+      "review_note": "تمريرة 1 كتبتها \"أم\"؛ التانية \"ولا\""
+    },
+    {
+      "start": 13.82,
+      "end": 14.57,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "شراء طبعاً",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 15.69,
+      "end": 17.62,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام، والميزانية في حدود كم؟",
+      "boundary": "approx_speaker_change",
+      "review_note": "فيه وقفة 16.130–16.420"
+    },
+    {
+      "start": 17.62,
+      "end": 20.13,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "8 مليون جنيه، 10 مليون جنيه",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 21.28,
+      "end": 28.5,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم، خلاص، فيلا 4 غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 28.85,
+      "end": 29.93,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "شكراً لاتصال حضر[تك]",
+      "boundary": "silence_edge",
+      "review_note": "الكلام مقطوع عند آخر الملف"
+    }
+  ]
+}

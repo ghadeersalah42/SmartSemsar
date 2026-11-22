@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec10",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البجت أو الميزانية اللي في بالك؟ عايزة حاجة تمليك، معايا ميزانية 6 مليون 6 مليون، طيب، كم غرفة في حضرتك؟ إيه؟ بتقول إيه؟ كم غرفة؟ كم غرفة؟ ثلاث غرف ثلاث غرف طب، في منطقة معينة في مصر في بالك؟ أكتوبر مثلاً الشيخ زايد زايد، حاضر ثلاث غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم؟ شكراً لاتصال حضرتك",
+  "segments": [
+    {
+      "start": 0.01,
+      "end": 9.4,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "[Unclear] مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البجت أو الميزانية اللي في بالك؟",
+      "boundary": "approx_speaker_change",
+      "review_note": "أول كلمة مش واضحة؛ فيه وقفة 1.650–2.170"
+    },
+    {
+      "start": 9.4,
+      "end": 12.97,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "عايزة حاجة تمليك، معايا ميزانية 6 مليون",
+      "boundary": "approx_speaker_change",
+      "review_note": "فيه وقفة 11.050–11.420"
+    },
+    {
+      "start": 14.03,
+      "end": 17.43,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "6 مليون، طيب، كم غرفة في [Unclear] حضرتك؟",
+      "boundary": "silence_edge",
+      "review_note": "فيه وقفات 14.740–15.540"
+    },
+    {
+      "start": 18.43,
+      "end": 20.24,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "إيه؟ بتقول إيه؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 21.17,
+      "end": 21.98,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "كم غرفة؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 22.3,
+      "end": 23.83,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "كم غرفة؟ ثلاث غرف",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 24.84,
+      "end": 25.41,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "ثلاث غرف",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 26.24,
+      "end": 29.73,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "طب، في منطقة معينة في مصر في بالك؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 29.95,
+      "end": 30.86,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "أكتوبر مثلاً",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 31.66,
+      "end": 32.73,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "الشيخ زايد",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 33.88,
+      "end": 34.65,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "زايد، حاضر",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 35.0,
+      "end": 38.59,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "ثلاث غرف تمليك في زايد أو أكتوبر",
+      "boundary": "silence_edge",
+      "review_note": "فيه وقفة 36.650–37.260"
+    },
+    {
+      "start": 38.96,
+      "end": 40.8,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "والميزانية بحدود ستة مليون",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 41.2,
+      "end": 42.87,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم؟ شكراً لاتصال حضرتك",
+      "boundary": "silence_edge"
+    }
+  ]
+}

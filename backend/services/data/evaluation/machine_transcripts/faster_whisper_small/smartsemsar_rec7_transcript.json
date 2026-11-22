@@ -1,0 +1,48 @@
+{
+  "call_id": "smartsemsar_rec7",
+  "source_audio_file": "smartsemsar_rec7.mp4",
+  "audio_file": "smartsemsar_rec7_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "اتفضل",
+      "normalized_text": "اتفضل"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "text": "انا محتاج باللافس اتكتوبر",
+      "normalized_text": "انا محتاج باللافس اتكتوبر"
+    },
+    {
+      "segment_id": 3,
+      "start": 8.0,
+      "end": 10.0,
+      "text": "اربع غرف",
+      "normalized_text": "اربع غرف"
+    },
+    {
+      "segment_id": 4,
+      "start": 14.0,
+      "end": 16.0,
+      "text": "شرع طبع",
+      "normalized_text": "شرع طبع"
+    },
+    {
+      "segment_id": 5,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "اتمنى مليون جنيتي",
+      "normalized_text": "اتمني مليون جنيتي"
+    }
+  ],
+  "full_transcript": "اتفضل انا محتاج باللافس اتكتوبر اربع غرف شرع طبع اتمني مليون جنيتي"
+}

@@ -1,0 +1,150 @@
+{
+  "call_id": "smartsemsar_rec9",
+  "source_audio_file": "smartsemsar_rec9.mp4",
+  "audio_file": "smartsemsar_rec9_standardized.wav",
+  "whisper_model": "whisper-large-v3-turbo",
+  "asr_backend": "groq_api",
+  "language": "Arabic",
+  "language_probability": null,
+  "speaker_diarization_applied": false,
+  "diarization_note": "pyannote/speaker-diarization-community-1 is blocked by Hugging Face 403 GatedRepoError; no speaker labels fabricated.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 4.0,
+      "text": "تحتاج المساعدة في العطارات؟",
+      "normalized_text": "تحتاج المساعدة في العطارات؟",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 2,
+      "start": 4.0,
+      "end": 8.0,
+      "text": "او انا محتاجة شقة في 6 اكتوبر",
+      "normalized_text": "او انا محتاجة شقة في 6 اكتوبر",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 3,
+      "start": 8.0,
+      "end": 11.0,
+      "text": "تمام شقة في اكتوبر",
+      "normalized_text": "تمام شقة في اكتوبر",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 4,
+      "start": 11.0,
+      "end": 13.0,
+      "text": "تمليك صح؟",
+      "normalized_text": "تمليك صح؟",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 5,
+      "start": 13.0,
+      "end": 14.0,
+      "text": "او",
+      "normalized_text": "او",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 6,
+      "start": 14.0,
+      "end": 15.0,
+      "text": "بيب",
+      "normalized_text": "بيب",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 7,
+      "start": 15.0,
+      "end": 16.0,
+      "text": "كم غرفة تقريبا؟",
+      "normalized_text": "كم غرفة تقريبا؟",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 8,
+      "start": 16.0,
+      "end": 18.0,
+      "text": "ايه 3 غرف",
+      "normalized_text": "ايه 3 غرف",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 9,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "3 غرف حلو",
+      "normalized_text": "3 غرف حلو",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 10,
+      "start": 20.0,
+      "end": 21.0,
+      "text": "والميزانية؟",
+      "normalized_text": "والميزانية؟",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 11,
+      "start": 21.0,
+      "end": 23.0,
+      "text": "5 مليون جنيه",
+      "normalized_text": "5 مليون جنيه",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 12,
+      "start": 23.0,
+      "end": 25.0,
+      "text": "حوالي 5 مليون جنيه",
+      "normalized_text": "حوالي 5 مليون جنيه",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 13,
+      "start": 25.0,
+      "end": 27.0,
+      "text": "تمام يا فندم",
+      "normalized_text": "تمام يا فندم",
+      "avg_logprob": -0.2814,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 14,
+      "start": 27.0,
+      "end": 30.2,
+      "text": "شقة ثلاث غرف تمنيت في أكتوبر حوالي 5 مليون",
+      "normalized_text": "شقة ثلاث غرف تمنيت في اكتوبر حوالي 5 مليون",
+      "avg_logprob": -0.2608,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 15,
+      "start": 30.2,
+      "end": 32.14,
+      "text": "شكراً لإتصال حضرتك",
+      "normalized_text": "شكرا لاتصال حضرتك",
+      "avg_logprob": -0.2608,
+      "no_speech_prob": 0.0
+    }
+  ],
+  "full_transcript": "تحتاج المساعدة في العطارات؟ او انا محتاجة شقة في 6 اكتوبر تمام شقة في اكتوبر تمليك صح؟ او بيب كم غرفة تقريبا؟ ايه 3 غرف 3 غرف حلو والميزانية؟ 5 مليون جنيه حوالي 5 مليون جنيه تمام يا فندم شقة ثلاث غرف تمنيت في اكتوبر حوالي 5 مليون شكرا لاتصال حضرتك",
+  "raw_full_transcript": "تحتاج المساعدة في العطارات؟ او انا محتاجة شقة في 6 اكتوبر تمام شقة في اكتوبر تمليك صح؟ او بيب كم غرفة تقريبا؟ ايه 3 غرف 3 غرف حلو والميزانية؟ 5 مليون جنيه حوالي 5 مليون جنيه تمام يا فندم شقة ثلاث غرف تمنيت في أكتوبر حوالي 5 مليون شكراً لإتصال حضرتك"
+}

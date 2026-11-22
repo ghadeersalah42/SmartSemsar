@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec5",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "الخير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على فيلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر ممكن أعرف ميزانيتك في حدود كام تقريباً عشان أظبطلك اختيارات مناسبة؟ 12 مليون تمام يا فندم، فيلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون هشوفلك شوية اختيارات مناسبة، ممكن أحددلك ميعاد للزيارة أو أبعتلك التفاصيل على الواتساب؟",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.4,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "[Unclear] الخير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على فيلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر",
+      "boundary": "silence_edge",
+      "review_note": "أول كلمة مش واضحة (\"مرحباً\"/\"صباح\")"
+    },
+    {
+      "start": 8.72,
+      "end": 12.6,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "ممكن أعرف ميزانيتك في حدود كام تقريباً عشان أظبطلك اختيارات مناسبة؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.08,
+      "end": 13.92,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "12 مليون",
+      "boundary": "silence_edge",
+      "review_note": "ده الكلام الوحيد اللي العميل قاله في التسجيل"
+    },
+    {
+      "start": 15.41,
+      "end": 20.72,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم، فيلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 21.14,
+      "end": 27.99,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "هشوفلك شوية اختيارات مناسبة، ممكن أحددلك ميعاد للزيارة أو أبعتلك التفاصيل على الواتساب؟",
+      "boundary": "silence_edge",
+      "review_note": "مفيش رد من العميل لحد آخر الملف"
+    }
+  ]
+}

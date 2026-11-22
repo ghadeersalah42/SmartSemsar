@@ -1,0 +1,17 @@
+{
+  "_is_template": true,
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec1",
+  "status": "pending",
+  "annotator": null,
+  "allowed_roles": [
+    "broker",
+    "client"
+  ],
+  "notes": "Assign each canonical reference speaker_id (matching gt_transcript and gt_diarization, e.g., SPK_1 and SPK_2) to 'broker' or 'client' after listening to the call. Never infer roles from pyannote neutral IDs (SPEAKER_00/SPEAKER_01). Optionally populate pipeline_speaker_to_reference_speaker if mapping directly to pipeline clusters; otherwise evaluation aligns speakers objectively using DER timestamp overlap.",
+  "speaker_roles": {
+    "SPK_1": null,
+    "SPK_2": null
+  },
+  "pipeline_speaker_to_reference_speaker": {}
+}

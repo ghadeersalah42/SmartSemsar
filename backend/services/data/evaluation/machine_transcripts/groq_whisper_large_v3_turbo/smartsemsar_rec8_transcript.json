@@ -1,0 +1,105 @@
+{
+  "call_id": "smartsemsar_rec8",
+  "source_audio_file": "smartsemsar_rec8.mp4",
+  "audio_file": "smartsemsar_rec8_standardized.wav",
+  "whisper_model": "whisper-large-v3-turbo",
+  "asr_backend": "groq_api",
+  "language": "Arabic",
+  "language_probability": null,
+  "speaker_diarization_applied": false,
+  "diarization_note": "pyannote/speaker-diarization-community-1 is blocked by Hugging Face 403 GatedRepoError; no speaker labels fabricated.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 5.0,
+      "text": "اتفضلي حضرتك بالدوري على حاجة ايجار في منطقة معينة",
+      "normalized_text": "اتفضلي حضرتك بالدوري علي حاجة ايجار في منطقة معينة",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 2,
+      "start": 5.0,
+      "end": 8.0,
+      "text": "اه بدور على ايجار مصر الجديدة",
+      "normalized_text": "اه بدور علي ايجار مصر الجديدة",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 3,
+      "start": 8.0,
+      "end": 11.0,
+      "text": "تمام مصر الجديدة كم قوضة يا فندم تقريبا؟",
+      "normalized_text": "تمام مصر الجديدة كم قوضة يا فندم تقريبا؟",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 4,
+      "start": 11.0,
+      "end": 12.0,
+      "text": "غرفتين",
+      "normalized_text": "غرفتين",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 5,
+      "start": 12.0,
+      "end": 13.0,
+      "text": "والميزانية اللي في بالك؟",
+      "normalized_text": "والميزانية اللي في بالك؟",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 6,
+      "start": 13.0,
+      "end": 15.0,
+      "text": "الغرفتين والميزانية؟",
+      "normalized_text": "الغرفتين والميزانية؟",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 7,
+      "start": 15.0,
+      "end": 16.0,
+      "text": "15000",
+      "normalized_text": "15000",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 8,
+      "start": 16.0,
+      "end": 18.0,
+      "text": "15000",
+      "normalized_text": "15000",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 9,
+      "start": 18.0,
+      "end": 24.0,
+      "text": "تمام يا فندم حلو سنتحدث عن اشياء غرفتين في مصر الجديدة ايجار بالميزانية حوالي 15000",
+      "normalized_text": "تمام يا فندم حلو سنتحدث عن اشياء غرفتين في مصر الجديدة ايجار بالميزانية حوالي 15000",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 10,
+      "start": 24.0,
+      "end": 24.9,
+      "text": "شكراً لاتصالكم",
+      "normalized_text": "شكرا لاتصالكم",
+      "avg_logprob": -0.2645,
+      "no_speech_prob": 0.0
+    }
+  ],
+  "full_transcript": "اتفضلي حضرتك بالدوري علي حاجة ايجار في منطقة معينة اه بدور علي ايجار مصر الجديدة تمام مصر الجديدة كم قوضة يا فندم تقريبا؟ غرفتين والميزانية اللي في بالك؟ الغرفتين والميزانية؟ 15000 15000 تمام يا فندم حلو سنتحدث عن اشياء غرفتين في مصر الجديدة ايجار بالميزانية حوالي 15000 شكرا لاتصالكم",
+  "raw_full_transcript": "اتفضلي حضرتك بالدوري على حاجة ايجار في منطقة معينة اه بدور على ايجار مصر الجديدة تمام مصر الجديدة كم قوضة يا فندم تقريبا؟ غرفتين والميزانية اللي في بالك؟ الغرفتين والميزانية؟ 15000 15000 تمام يا فندم حلو سنتحدث عن اشياء غرفتين في مصر الجديدة ايجار بالميزانية حوالي 15000 شكراً لاتصالكم"
+}

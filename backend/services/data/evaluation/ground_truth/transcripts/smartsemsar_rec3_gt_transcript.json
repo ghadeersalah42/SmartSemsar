@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec3",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "مكتب عقارات، اتفضل آه، بدور على حاجة في الشيخ زايد تمام يا فندم، حضرتك شقة ولا فيلا؟ شقة، تبقى غرفتين تمام، اتنين أوض في الشيخ زايد، حضرتك إيجار ولا تمليك؟ إيجار. لو قلت إيجار إيجار. اتفضل يا فندم، حضرتك في حدود كام؟ لو قلت حوالي خمسة وعشرين ألف تمام يا فندم يبقى شقة غرفتين في الشيخ زايد إيجار حوالي خمسة وعشرين ألف",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 2.47,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "مكتب عقارات، اتفضل",
+      "boundary": "silence_edge",
+      "review_note": "التسجيل بيبدأ والكلام شغال؛ جت من نافذة السياق بس (التمريرات التانية مطلعتش حاجة مفهومة)"
+    },
+    {
+      "start": 4.45,
+      "end": 6.38,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "آه، بدور على حاجة في الشيخ زايد",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 7.52,
+      "end": 10.2,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم، حضرتك شقة ولا فيلا؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 10.86,
+      "end": 12.02,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "شقة، تبقى غرفتين",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.15,
+      "end": 14.3,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام، اتنين أوض",
+      "boundary": "silence_edge",
+      "review_note": "ثقة متوسطة"
+    },
+    {
+      "start": 14.57,
+      "end": 17.1,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "في الشيخ زايد، حضرتك إيجار ولا تمليك؟",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 17.1,
+      "end": 18.79,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "إيجار. لو قلت إيجار",
+      "boundary": "approx_speaker_change",
+      "review_note": "الصوتين الاتنين ستات، فالفصل بين المتكلمين اتعمل من المعنى والتوقيت"
+    },
+    {
+      "start": 19.49,
+      "end": 22.63,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "إيجار. اتفضل يا فندم، حضرتك في حدود كام؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 23.14,
+      "end": 24.51,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "لو قلت حوالي",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 25.1,
+      "end": 26.22,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "خمسة وعشرين ألف",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 26.44,
+      "end": 27.26,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 27.51,
+      "end": 31.46,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "يبقى شقة غرفتين في الشيخ زايد إيجار حوالي خمسة وعشرين ألف",
+      "boundary": "silence_edge",
+      "review_note": "الكلام مستمر لحد آخر الملف"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "call_id": "smartsemsar_rec1",
+  "source_audio_file": "smartsemsar_rec1.mp4",
+  "audio_file": "smartsemsar_rec1_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "في التجمع الخيمس",
+      "normalized_text": "في التجمع الخيمس"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "text": "أريد أن أقرأ أو أمليك؟",
+      "normalized_text": "اريد ان اقرا او امليك؟"
+    },
+    {
+      "segment_id": 3,
+      "start": 4.0,
+      "end": 6.0,
+      "text": "أقرأ لا أمليك",
+      "normalized_text": "اقرا لا امليك"
+    },
+    {
+      "segment_id": 4,
+      "start": 6.0,
+      "end": 8.0,
+      "text": "تمليك؟",
+      "normalized_text": "تمليك؟"
+    },
+    {
+      "segment_id": 5,
+      "start": 8.0,
+      "end": 10.0,
+      "text": "بمزانية أكام",
+      "normalized_text": "بمزانية اكام"
+    },
+    {
+      "segment_id": 6,
+      "start": 10.0,
+      "end": 12.0,
+      "text": "حوالي 4 مليون",
+      "normalized_text": "حوالي 4 مليون"
+    },
+    {
+      "segment_id": 7,
+      "start": 12.0,
+      "end": 14.0,
+      "text": "4 مليون في التجمع",
+      "normalized_text": "4 مليون في التجمع"
+    },
+    {
+      "segment_id": 8,
+      "start": 14.0,
+      "end": 16.0,
+      "text": "أي كام غرفة؟",
+      "normalized_text": "اي كام غرفة؟"
+    },
+    {
+      "segment_id": 9,
+      "start": 16.0,
+      "end": 18.0,
+      "text": "3 غرفة أكام",
+      "normalized_text": "3 غرفة اكام"
+    },
+    {
+      "segment_id": 10,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "مش صغية",
+      "normalized_text": "مش صغية"
+    },
+    {
+      "segment_id": 11,
+      "start": 20.0,
+      "end": 22.0,
+      "text": "3 غرفة أكام",
+      "normalized_text": "3 غرفة اكام"
+    },
+    {
+      "segment_id": 12,
+      "start": 22.0,
+      "end": 24.0,
+      "text": "مزيحة يا مزيح",
+      "normalized_text": "مزيحة يا مزيح"
+    },
+    {
+      "segment_id": 13,
+      "start": 24.0,
+      "end": 26.0,
+      "text": "معرفش المساحة بالضبط أكام",
+      "normalized_text": "معرفش المساحة بالضبط اكام"
+    },
+    {
+      "segment_id": 14,
+      "start": 26.0,
+      "end": 28.0,
+      "text": "3 غرفة",
+      "normalized_text": "3 غرفة"
+    },
+    {
+      "segment_id": 15,
+      "start": 28.0,
+      "end": 30.0,
+      "text": "وفي التجمع الخيمس",
+      "normalized_text": "وفي التجمع الخيمس"
+    },
+    {
+      "segment_id": 16,
+      "start": 30.0,
+      "end": 32.0,
+      "text": "ومزانية حوالي 4 مليون",
+      "normalized_text": "ومزانية حوالي 4 مليون"
+    },
+    {
+      "segment_id": 17,
+      "start": 32.0,
+      "end": 34.0,
+      "text": "أمليك؟",
+      "normalized_text": "امليك؟"
+    }
+  ],
+  "full_transcript": "في التجمع الخيمس اريد ان اقرا او امليك؟ اقرا لا امليك تمليك؟ بمزانية اكام حوالي 4 مليون 4 مليون في التجمع اي كام غرفة؟ 3 غرفة اكام مش صغية 3 غرفة اكام مزيحة يا مزيح معرفش المساحة بالضبط اكام 3 غرفة وفي التجمع الخيمس ومزانية حوالي 4 مليون امليك؟"
+}

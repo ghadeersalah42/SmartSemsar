@@ -1,0 +1,132 @@
+{
+  "call_id": "smartsemsar_rec10",
+  "source_audio_file": "smartsemsar_rec10.mp4",
+  "audio_file": "smartsemsar_rec10_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "كم مع حضرتك مكتب عكروت؟",
+      "normalized_text": "كم مع حضرتك مكتب عكروت؟"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 6.5,
+      "text": "كنت حب بعرف من حضرتك بالدورة على بيغورف ولا تمليك",
+      "normalized_text": "كنت حب بعرف من حضرتك بالدورة علي بيغورف ولا تمليك"
+    },
+    {
+      "segment_id": 3,
+      "start": 6.5,
+      "end": 9.5,
+      "text": "وهي البجت أو المزانية اللي تبالك",
+      "normalized_text": "وهي البجت او المزانية اللي تبالك"
+    },
+    {
+      "segment_id": 4,
+      "start": 9.5,
+      "end": 13.0,
+      "text": "عايزة حاجة تمليك مع اي مزانية ستة مليون",
+      "normalized_text": "عايزة حاجة تمليك مع اي مزانية ستة مليون"
+    },
+    {
+      "segment_id": 5,
+      "start": 14.0,
+      "end": 15.0,
+      "text": "ستة مليون",
+      "normalized_text": "ستة مليون"
+    },
+    {
+      "segment_id": 6,
+      "start": 15.0,
+      "end": 18.0,
+      "text": "طيب كم غرفة فزين حضرتك",
+      "normalized_text": "طيب كم غرفة فزين حضرتك"
+    },
+    {
+      "segment_id": 7,
+      "start": 19.0,
+      "end": 21.0,
+      "text": "اي بتوليك؟",
+      "normalized_text": "اي بتوليك؟"
+    },
+    {
+      "segment_id": 8,
+      "start": 21.0,
+      "end": 22.5,
+      "text": "كم غرفة",
+      "normalized_text": "كم غرفة"
+    },
+    {
+      "segment_id": 9,
+      "start": 22.5,
+      "end": 24.5,
+      "text": "تم غرفة تلات غرف",
+      "normalized_text": "تم غرفة تلات غرف"
+    },
+    {
+      "segment_id": 10,
+      "start": 24.5,
+      "end": 26.0,
+      "text": "تلات غرف",
+      "normalized_text": "تلات غرف"
+    },
+    {
+      "segment_id": 11,
+      "start": 26.0,
+      "end": 30.0,
+      "text": "طيب في منطقة معيانة في مصف بالك",
+      "normalized_text": "طيب في منطقة معيانة في مصف بالك"
+    },
+    {
+      "segment_id": 12,
+      "start": 30.0,
+      "end": 31.0,
+      "text": "اكتوبر مثلا",
+      "normalized_text": "اكتوبر مثلا"
+    },
+    {
+      "segment_id": 13,
+      "start": 31.0,
+      "end": 33.0,
+      "text": "وشيخ زييد شيخ زييد",
+      "normalized_text": "وشيخ زييد شيخ زييد"
+    },
+    {
+      "segment_id": 14,
+      "start": 34.0,
+      "end": 35.0,
+      "text": "زييد حاجة",
+      "normalized_text": "زييد حاجة"
+    },
+    {
+      "segment_id": 15,
+      "start": 35.0,
+      "end": 39.0,
+      "text": "تلات غرف تمليك في زييد او اكتوبر",
+      "normalized_text": "تلات غرف تمليك في زييد او اكتوبر"
+    },
+    {
+      "segment_id": 16,
+      "start": 39.0,
+      "end": 41.0,
+      "text": "والمزانية بحضور ستة مليون",
+      "normalized_text": "والمزانية بحضور ستة مليون"
+    },
+    {
+      "segment_id": 17,
+      "start": 41.0,
+      "end": 43.0,
+      "text": "امام مفندم شكرا لتصال حضرتك",
+      "normalized_text": "امام مفندم شكرا لتصال حضرتك"
+    }
+  ],
+  "full_transcript": "كم مع حضرتك مكتب عكروت؟ كنت حب بعرف من حضرتك بالدورة علي بيغورف ولا تمليك وهي البجت او المزانية اللي تبالك عايزة حاجة تمليك مع اي مزانية ستة مليون ستة مليون طيب كم غرفة فزين حضرتك اي بتوليك؟ كم غرفة تم غرفة تلات غرف تلات غرف طيب في منطقة معيانة في مصف بالك اكتوبر مثلا وشيخ زييد شيخ زييد زييد حاجة تلات غرف تمليك في زييد او اكتوبر والمزانية بحضور ستة مليون امام مفندم شكرا لتصال حضرتك"
+}

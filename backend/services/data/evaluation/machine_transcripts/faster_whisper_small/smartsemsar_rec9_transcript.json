@@ -1,0 +1,90 @@
+{
+  "call_id": "smartsemsar_rec9",
+  "source_audio_file": "smartsemsar_rec9.mp4",
+  "audio_file": "smartsemsar_rec9_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 4.6,
+      "text": "اتفضل اي فندم. احتاجه مساعدة فيه بالزبط في العطارات.",
+      "normalized_text": "اتفضل اي فندم. احتاجه مساعدة فيه بالزبط في العطارات."
+    },
+    {
+      "segment_id": 2,
+      "start": 4.6,
+      "end": 11.0,
+      "text": "او انا محتاجه شقه في 6 اكتوبر بطمعين شقه في اكتوبر.",
+      "normalized_text": "او انا محتاجه شقه في 6 اكتوبر بطمعين شقه في اكتوبر."
+    },
+    {
+      "segment_id": 3,
+      "start": 11.0,
+      "end": 13.0,
+      "text": "طمعينك صح؟",
+      "normalized_text": "طمعينك صح؟"
+    },
+    {
+      "segment_id": 4,
+      "start": 13.0,
+      "end": 14.0,
+      "text": "او.",
+      "normalized_text": "او."
+    },
+    {
+      "segment_id": 5,
+      "start": 14.0,
+      "end": 17.0,
+      "text": "طيب. كام مغرفة تقريبا.",
+      "normalized_text": "طيب. كام مغرفة تقريبا."
+    },
+    {
+      "segment_id": 6,
+      "start": 17.0,
+      "end": 19.0,
+      "text": "ايه 3 غرف.",
+      "normalized_text": "ايه 3 غرف."
+    },
+    {
+      "segment_id": 7,
+      "start": 19.0,
+      "end": 22.0,
+      "text": "3 غرف حلو. والمزنية؟",
+      "normalized_text": "3 غرف حلو. والمزنية؟"
+    },
+    {
+      "segment_id": 8,
+      "start": 22.0,
+      "end": 24.0,
+      "text": "5 مليون جني.",
+      "normalized_text": "5 مليون جني."
+    },
+    {
+      "segment_id": 9,
+      "start": 24.0,
+      "end": 26.0,
+      "text": "حوانك 5 مليون جني.",
+      "normalized_text": "حوانك 5 مليون جني."
+    },
+    {
+      "segment_id": 10,
+      "start": 27.0,
+      "end": 30.0,
+      "text": "شقه 3 غرف 8 اكتوبر حوالي 5 مليون.",
+      "normalized_text": "شقه 3 غرف 8 اكتوبر حوالي 5 مليون."
+    },
+    {
+      "segment_id": 11,
+      "start": 30.0,
+      "end": 32.0,
+      "text": "شكرا لاتصال حضرتك.",
+      "normalized_text": "شكرا لاتصال حضرتك."
+    }
+  ],
+  "full_transcript": "اتفضل اي فندم. احتاجه مساعدة فيه بالزبط في العطارات. او انا محتاجه شقه في 6 اكتوبر بطمعين شقه في اكتوبر. طمعينك صح؟ او. طيب. كام مغرفة تقريبا. ايه 3 غرف. 3 غرف حلو. والمزنية؟ 5 مليون جني. حوانك 5 مليون جني. شقه 3 غرف 8 اكتوبر حوالي 5 مليون. شكرا لاتصال حضرتك."
+}

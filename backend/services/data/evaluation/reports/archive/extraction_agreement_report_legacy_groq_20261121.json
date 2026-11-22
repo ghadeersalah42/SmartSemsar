@@ -1,0 +1,1941 @@
+{
+  "generated_at_utc": "2026-11-21T22:54:28.556601+00:00",
+  "status": "EVALUATED",
+  "extractor": "backend.services.user_input_text.extract_requirements (CustomerRequirements schema)",
+  "total_calls": 10,
+  "evaluated_calls": 10,
+  "pending_ground_truth_calls": 0,
+  "error_calls": 0,
+  "compared_fields": [
+    "location",
+    "budget_min",
+    "budget_max",
+    "area_sqm",
+    "bedrooms",
+    "property_type",
+    "purpose",
+    "deal_type"
+  ],
+  "primary_whisper_large_v3_turbo_summary": {
+    "overall_matched_fields": 70,
+    "overall_total_fields": 80,
+    "overall_agreement_pct": 87.5,
+    "substantive_matched_fields": 42,
+    "substantive_total_fields": 52,
+    "substantive_agreement_pct": 80.77,
+    "per_field": {
+      "location": {
+        "matched": 9,
+        "total": 10,
+        "agreement_pct": 90.0,
+        "substantive_matched": 9,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 90.0
+      },
+      "budget_min": {
+        "matched": 10,
+        "total": 10,
+        "agreement_pct": 100.0,
+        "substantive_matched": 1,
+        "substantive_total": 1,
+        "substantive_agreement_pct": 100.0
+      },
+      "budget_max": {
+        "matched": 9,
+        "total": 10,
+        "agreement_pct": 90.0,
+        "substantive_matched": 9,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 90.0
+      },
+      "area_sqm": {
+        "matched": 10,
+        "total": 10,
+        "agreement_pct": 100.0,
+        "substantive_matched": 1,
+        "substantive_total": 1,
+        "substantive_agreement_pct": 100.0
+      },
+      "bedrooms": {
+        "matched": 10,
+        "total": 10,
+        "agreement_pct": 100.0,
+        "substantive_matched": 10,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 100.0
+      },
+      "property_type": {
+        "matched": 5,
+        "total": 10,
+        "agreement_pct": 50.0,
+        "substantive_matched": 4,
+        "substantive_total": 9,
+        "substantive_agreement_pct": 44.44
+      },
+      "purpose": {
+        "matched": 9,
+        "total": 10,
+        "agreement_pct": 90.0,
+        "substantive_matched": 0,
+        "substantive_total": 1,
+        "substantive_agreement_pct": 0.0
+      },
+      "deal_type": {
+        "matched": 8,
+        "total": 10,
+        "agreement_pct": 80.0,
+        "substantive_matched": 8,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 80.0
+      }
+    }
+  },
+  "local_faster_whisper_small_summary": {
+    "overall_matched_fields": 59,
+    "overall_total_fields": 80,
+    "overall_agreement_pct": 73.75,
+    "substantive_matched_fields": 29,
+    "substantive_total_fields": 50,
+    "substantive_agreement_pct": 58.0,
+    "per_field": {
+      "location": {
+        "matched": 4,
+        "total": 10,
+        "agreement_pct": 40.0,
+        "substantive_matched": 4,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 40.0
+      },
+      "budget_min": {
+        "matched": 9,
+        "total": 10,
+        "agreement_pct": 90.0,
+        "substantive_matched": 0,
+        "substantive_total": 1,
+        "substantive_agreement_pct": 0.0
+      },
+      "budget_max": {
+        "matched": 7,
+        "total": 10,
+        "agreement_pct": 70.0,
+        "substantive_matched": 7,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 70.0
+      },
+      "area_sqm": {
+        "matched": 10,
+        "total": 10,
+        "agreement_pct": 100.0,
+        "substantive_matched": 1,
+        "substantive_total": 1,
+        "substantive_agreement_pct": 100.0
+      },
+      "bedrooms": {
+        "matched": 9,
+        "total": 10,
+        "agreement_pct": 90.0,
+        "substantive_matched": 9,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 90.0
+      },
+      "property_type": {
+        "matched": 4,
+        "total": 10,
+        "agreement_pct": 40.0,
+        "substantive_matched": 2,
+        "substantive_total": 8,
+        "substantive_agreement_pct": 25.0
+      },
+      "purpose": {
+        "matched": 10,
+        "total": 10,
+        "agreement_pct": 100.0,
+        "substantive_matched": 0,
+        "substantive_total": 0,
+        "substantive_agreement_pct": null
+      },
+      "deal_type": {
+        "matched": 6,
+        "total": 10,
+        "agreement_pct": 60.0,
+        "substantive_matched": 6,
+        "substantive_total": 10,
+        "substantive_agreement_pct": 60.0
+      }
+    }
+  },
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "living",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 5,
+        "overall_agreement_rate": 0.625,
+        "overall_agreement_pct": 62.5,
+        "substantive_fields_compared": 6,
+        "substantive_matched": 3,
+        "substantive_agreement_rate": 0.5,
+        "substantive_agreement_pct": 50.0,
+        "per_field": {
+          "location": {
+            "machine": "التجمع الخامس",
+            "human": "التجمع الخامس",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 4000000.0,
+            "human": 4000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "apartment",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "living",
+            "human": "unknown",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "rent",
+            "match": false,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "في التجمع الخيمس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 5,
+        "overall_agreement_rate": 0.625,
+        "overall_agreement_pct": 62.5,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 2,
+        "substantive_agreement_rate": 0.4,
+        "substantive_agreement_pct": 40.0,
+        "per_field": {
+          "location": {
+            "machine": "في التجمع الخيمس",
+            "human": "التجمع الخامس",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 4000000.0,
+            "human": 4000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "apartment",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "rent",
+            "match": false,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "العاصمة الإدارية",
+        "budget_min": null,
+        "budget_max": 2500000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "العاصمة الإدارية",
+        "budget_min": null,
+        "budget_max": 2500000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.8,
+        "substantive_agreement_pct": 80.0,
+        "per_field": {
+          "location": {
+            "machine": "العاصمة الإدارية",
+            "human": "العاصمة الإدارية",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 2500000.0,
+            "human": 2500000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "unknown",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "buy",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "العصمة القدرية",
+        "budget_min": null,
+        "budget_max": 2500000.0,
+        "area_sqm": null,
+        "bedrooms": null,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": "مش شقة ثلاث غرف",
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "bedrooms",
+          "property_type",
+          "purpose"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 6,
+        "overall_agreement_rate": 0.75,
+        "overall_agreement_pct": 75.0,
+        "substantive_fields_compared": 4,
+        "substantive_matched": 2,
+        "substantive_agreement_rate": 0.5,
+        "substantive_agreement_pct": 50.0,
+        "per_field": {
+          "location": {
+            "machine": "العصمة القدرية",
+            "human": "العاصمة الإدارية",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 2500000.0,
+            "human": 2500000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": null,
+            "human": 3,
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "buy",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 25000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 25000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 8,
+        "overall_agreement_rate": 1.0,
+        "overall_agreement_pct": 100.0,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 5,
+        "substantive_agreement_rate": 1.0,
+        "substantive_agreement_pct": 100.0,
+        "per_field": {
+          "location": {
+            "machine": "الشيخ زايد",
+            "human": "الشيخ زايد",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 25000.0,
+            "human": 25000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 2,
+            "human": 2,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "apartment",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 52000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 6,
+        "overall_agreement_rate": 0.75,
+        "overall_agreement_pct": 75.0,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 3,
+        "substantive_agreement_rate": 0.6,
+        "substantive_agreement_pct": 60.0,
+        "per_field": {
+          "location": {
+            "machine": "الشيخ زايد",
+            "human": "الشيخ زايد",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 52000.0,
+            "human": 25000.0,
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 2,
+            "human": 2,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "apartment",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 20000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 20000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 8,
+        "overall_agreement_rate": 1.0,
+        "overall_agreement_pct": 100.0,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 5,
+        "substantive_agreement_rate": 1.0,
+        "substantive_agreement_pct": 100.0,
+        "per_field": {
+          "location": {
+            "machine": "التجمع الخامس",
+            "human": "التجمع الخامس",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 20000.0,
+            "human": 20000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "apartment",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "افتجام والخيمس",
+        "budget_min": null,
+        "budget_max": 20000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 6,
+        "overall_agreement_rate": 0.75,
+        "overall_agreement_pct": 75.0,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 3,
+        "substantive_agreement_rate": 0.6,
+        "substantive_agreement_pct": 60.0,
+        "per_field": {
+          "location": {
+            "machine": "افتجام والخيمس",
+            "human": "التجمع الخامس",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 20000.0,
+            "human": 20000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "apartment",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "التجمع",
+        "budget_min": null,
+        "budget_max": 12000000.0,
+        "area_sqm": 180.0,
+        "bedrooms": 5,
+        "property_type": "villa",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "التجمع",
+        "budget_min": null,
+        "budget_max": 12000000.0,
+        "area_sqm": 180.0,
+        "bedrooms": 5,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 6,
+        "overall_agreement_rate": 0.75,
+        "overall_agreement_pct": 75.0,
+        "substantive_fields_compared": 6,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.6667,
+        "substantive_agreement_pct": 66.67,
+        "per_field": {
+          "location": {
+            "machine": "التجمع",
+            "human": "التجمع",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 12000000.0,
+            "human": 12000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": 180.0,
+            "human": 180.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "bedrooms": {
+            "machine": 5,
+            "human": 5,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "villa",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "buy",
+            "match": false,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "التجمع",
+        "budget_min": null,
+        "budget_max": 12000000.0,
+        "area_sqm": 180.0,
+        "bedrooms": 5,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "unknown",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "property_type",
+          "purpose",
+          "deal_type",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 6,
+        "overall_agreement_rate": 0.75,
+        "overall_agreement_pct": 75.0,
+        "substantive_fields_compared": 6,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.6667,
+        "substantive_agreement_pct": 66.67,
+        "per_field": {
+          "location": {
+            "machine": "التجمع",
+            "human": "التجمع",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 12000000.0,
+            "human": 12000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": 180.0,
+            "human": 180.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "bedrooms": {
+            "machine": 5,
+            "human": 5,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "villa",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "unknown",
+            "human": "buy",
+            "match": false,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "مدينة نصر",
+        "budget_min": null,
+        "budget_max": 8000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "مدينة نصر",
+        "budget_min": null,
+        "budget_max": 10000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.8,
+        "substantive_agreement_pct": 80.0,
+        "per_field": {
+          "location": {
+            "machine": "مدينة نصر",
+            "human": "مدينة نصر",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 10000.0,
+            "human": 8000.0,
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 4,
+            "human": 4,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "apartment",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "مدينة نصر",
+        "budget_min": null,
+        "budget_max": 8000000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.8,
+        "substantive_agreement_pct": 80.0,
+        "per_field": {
+          "location": {
+            "machine": "مدينة نصر",
+            "human": "مدينة نصر",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 8000000.0,
+            "human": 8000.0,
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 4,
+            "human": 4,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "apartment",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "6 أكتوبر",
+        "budget_min": 8000000.0,
+        "budget_max": 10000000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "villa",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "6 أكتوبر",
+        "budget_min": 8000000.0,
+        "budget_max": 10000000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 6,
+        "substantive_matched": 5,
+        "substantive_agreement_rate": 0.8333,
+        "substantive_agreement_pct": 83.33,
+        "per_field": {
+          "location": {
+            "machine": "6 أكتوبر",
+            "human": "6 أكتوبر",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": 8000000.0,
+            "human": 8000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_max": {
+            "machine": 10000000.0,
+            "human": 10000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 4,
+            "human": 4,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "villa",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "buy",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "أكتوبر",
+        "budget_min": null,
+        "budget_max": 1000000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "unknown",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "deal_type",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 3,
+        "overall_agreement_rate": 0.375,
+        "overall_agreement_pct": 37.5,
+        "substantive_fields_compared": 6,
+        "substantive_matched": 1,
+        "substantive_agreement_rate": 0.1667,
+        "substantive_agreement_pct": 16.67,
+        "per_field": {
+          "location": {
+            "machine": "أكتوبر",
+            "human": "6 أكتوبر",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": 8000000.0,
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_max": {
+            "machine": 1000000.0,
+            "human": 10000000.0,
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 4,
+            "human": 4,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "villa",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "unknown",
+            "human": "buy",
+            "match": false,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.8,
+        "substantive_agreement_pct": 80.0,
+        "per_field": {
+          "location": {
+            "machine": "مصر الجديدة",
+            "human": "مصر الجديدة",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 15000.0,
+            "human": 15000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 2,
+            "human": 2,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "apartment",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 4,
+        "substantive_agreement_rate": 0.8,
+        "substantive_agreement_pct": 80.0,
+        "per_field": {
+          "location": {
+            "machine": "مصر الجديدة",
+            "human": "مصر الجديدة",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 15000.0,
+            "human": 15000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 2,
+            "human": 2,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "apartment",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "rent",
+            "human": "rent",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "6 أكتوبر",
+        "budget_min": null,
+        "budget_max": 5000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "6 أكتوبر",
+        "budget_min": null,
+        "budget_max": 5000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 8,
+        "overall_agreement_rate": 1.0,
+        "overall_agreement_pct": 100.0,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 5,
+        "substantive_agreement_rate": 1.0,
+        "substantive_agreement_pct": 100.0,
+        "per_field": {
+          "location": {
+            "machine": "6 أكتوبر",
+            "human": "6 أكتوبر",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 5000000.0,
+            "human": 5000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "apartment",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "buy",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "8 أكتوبر",
+        "budget_min": null,
+        "budget_max": 5000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "unknown",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "deal_type",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 6,
+        "overall_agreement_rate": 0.75,
+        "overall_agreement_pct": 75.0,
+        "substantive_fields_compared": 5,
+        "substantive_matched": 3,
+        "substantive_agreement_rate": 0.6,
+        "substantive_agreement_pct": 60.0,
+        "per_field": {
+          "location": {
+            "machine": "8 أكتوبر",
+            "human": "6 أكتوبر",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 5000000.0,
+            "human": 5000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "apartment",
+            "human": "apartment",
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "unknown",
+            "human": "buy",
+            "match": false,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "status": "EVALUATED",
+      "primary_asr_model": "whisper-large-v3-turbo",
+      "human_extraction": {
+        "location": "أكتوبر, الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 6000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_machine_extraction": {
+        "location": "الشيخ زايد أو أكتوبر",
+        "budget_min": null,
+        "budget_max": 6000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "primary_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 4,
+        "substantive_matched": 3,
+        "substantive_agreement_rate": 0.75,
+        "substantive_agreement_pct": 75.0,
+        "per_field": {
+          "location": {
+            "machine": "الشيخ زايد أو أكتوبر",
+            "human": "أكتوبر, الشيخ زايد",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 6000000.0,
+            "human": 6000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "buy",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      },
+      "small_machine_extraction": {
+        "location": "شيخ زييد أو أكتوبر",
+        "budget_min": null,
+        "budget_max": 6000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "small_comparison": {
+        "fields_compared": 8,
+        "matched_all_fields": 7,
+        "overall_agreement_rate": 0.875,
+        "overall_agreement_pct": 87.5,
+        "substantive_fields_compared": 4,
+        "substantive_matched": 3,
+        "substantive_agreement_rate": 0.75,
+        "substantive_agreement_pct": 75.0,
+        "per_field": {
+          "location": {
+            "machine": "شيخ زييد أو أكتوبر",
+            "human": "أكتوبر, الشيخ زايد",
+            "match": false,
+            "both_empty_or_unknown": false
+          },
+          "budget_min": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "budget_max": {
+            "machine": 6000000.0,
+            "human": 6000000.0,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "area_sqm": {
+            "machine": null,
+            "human": null,
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "bedrooms": {
+            "machine": 3,
+            "human": 3,
+            "match": true,
+            "both_empty_or_unknown": false
+          },
+          "property_type": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "purpose": {
+            "machine": "unknown",
+            "human": "unknown",
+            "match": true,
+            "both_empty_or_unknown": true
+          },
+          "deal_type": {
+            "machine": "buy",
+            "human": "buy",
+            "match": true,
+            "both_empty_or_unknown": false
+          }
+        }
+      }
+    }
+  ]
+}

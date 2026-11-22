@@ -1,0 +1,142 @@
+{
+  "generated_at_utc": "2026-11-22T00:22:13.131335+00:00",
+  "status": "EVALUATED",
+  "total_calls": 10,
+  "evaluated_calls": 10,
+  "pending_calls": 0,
+  "pending_role_prediction_calls": 0,
+  "missing_pipeline_output_calls": 0,
+  "error_calls": 0,
+  "macro_role_accuracy": 0.9,
+  "micro_role_accuracy": 0.9,
+  "corpus_role_totals": {
+    "macro_role_accuracy": 0.9,
+    "micro_role_accuracy": 0.9,
+    "total_items": 20,
+    "total_evaluated_items": 20,
+    "total_correct": 18
+  },
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "status": "EVALUATED",
+      "role_accuracy": 0.0,
+      "evaluated_only_accuracy": 0.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 0,
+      "mismatches": [
+        {
+          "id": "SPEAKER_00",
+          "reference": "client",
+          "predicted": "broker"
+        },
+        {
+          "id": "SPEAKER_01",
+          "reference": "broker",
+          "predicted": "client"
+        }
+      ]
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "status": "EVALUATED",
+      "role_accuracy": 1.0,
+      "evaluated_only_accuracy": 1.0,
+      "total_items": 2,
+      "evaluated_items": 2,
+      "unassigned_items": 0,
+      "correct": 2,
+      "mismatches": []
+    }
+  ]
+}

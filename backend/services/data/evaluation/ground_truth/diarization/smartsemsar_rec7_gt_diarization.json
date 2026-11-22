@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec7",
+  "status": "ready",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "num_speakers": 2,
+  "turns": [
+    {
+      "start": 0.0,
+      "end": 1.48,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 2.51,
+      "end": 4.22,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 5.77,
+      "end": 8.57,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 8.57,
+      "end": 9.24,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 10.47,
+      "end": 13.42,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.82,
+      "end": 14.57,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 15.69,
+      "end": 17.62,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 17.62,
+      "end": 20.13,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 21.28,
+      "end": 28.5,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 28.85,
+      "end": 29.93,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    }
+  ]
+}

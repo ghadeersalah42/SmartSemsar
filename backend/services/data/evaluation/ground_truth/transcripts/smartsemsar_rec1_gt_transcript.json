@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec1",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "manual_human_transcript_with_waveform_timestamps",
+  "provenance": "Preserves user's manual human transcript (pilot/rec1_human_transcript.json & prior rec1 GT) verbatim; updated turn boundaries to millisecond waveform timestamps.",
+  "reference_transcript": "عايز شقة في التجمع الخامس عايزها إيجار ولا تمليك؟ إيجار لا تمليك لو سمحت تمليك، طب ميزانيتك كام؟ حوالي 4 مليون 4 مليون في التجمع كام غرفة؟ 3 غرف يا فندم مش صغيرة مساحتها كام؟ 3 غرف يا فندم المساحة يا عم المساحة معرفش المساحة بالظبط يا فندم بس 3 غرف وفي التجمع الخامس والميزانية حوالي 4 مليون طيب جميل جدا",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 1.16,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "عايز شقة في التجمع الخامس",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 1.97,
+      "end": 3.46,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "عايزها إيجار ولا تمليك؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 4.55,
+      "end": 6.45,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "إيجار لا تمليك لو سمحت",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 6.45,
+      "end": 8.6,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمليك، طب ميزانيتك كام؟",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 9.84,
+      "end": 11.3,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "حوالي 4 مليون",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 12.14,
+      "end": 14.42,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "4 مليون في التجمع كام غرفة؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 15.62,
+      "end": 17.48,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "3 غرف يا فندم مش صغيرة",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 18.26,
+      "end": 19.06,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "مساحتها كام؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 20.22,
+      "end": 21.0,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "3 غرف يا فندم",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 22.02,
+      "end": 23.21,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "المساحة يا عم المساحة",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 24.67,
+      "end": 32.08,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "معرفش المساحة بالظبط يا فندم بس 3 غرف وفي التجمع الخامس والميزانية حوالي 4 مليون",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 32.37,
+      "end": 33.25,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "طيب جميل جدا",
+      "boundary": "silence_edge"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec9",
+  "status": "ready",
+  "language": "ar",
+  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "reference_transcript": "اتفضلي يا فندم، محتاجة مساعدة في إيه بالظبط في العقارات؟ أو، أنا محتاجة شقة في 6 أكتوبر تمام، شقة في أكتوبر تمليك تمليك، صح؟ آه طيب، كم غرفة تقريباً؟ إيه، تلت غرف تلت غرف، حلو، والميزانية؟ آه، خمسة مليون جنيه حوالي خمسة مليون جنيه تمام يا فندم، شقة ثلاث غرف تمليك في أكتوبر حوالي خمسة مليون شكراً لاتصال حضرتك",
+  "segments": [
+    {
+      "start": 0.28,
+      "end": 4.16,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "اتفضلي يا فندم، محتاجة مساعدة في إيه بالظبط في العقارات؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 4.71,
+      "end": 7.57,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "أو، أنا محتاجة شقة في 6 أكتوبر",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 8.54,
+      "end": 9.9,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام، شقة في أكتوبر",
+      "boundary": "approx_speaker_change",
+      "review_note": "ثقة منخفضة — التمريرات مختلفة"
+    },
+    {
+      "start": 9.9,
+      "end": 10.44,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "تمليك",
+      "boundary": "approx_speaker_change"
+    },
+    {
+      "start": 11.62,
+      "end": 12.94,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمليك، صح؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 12.98,
+      "end": 13.38,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "آه",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 14.1,
+      "end": 16.36,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "طيب، كم غرفة تقريباً؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 16.46,
+      "end": 17.88,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "إيه، تلت غرف",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 18.74,
+      "end": 21.04,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تلت غرف، حلو، والميزانية؟",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 21.18,
+      "end": 22.78,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "آه، خمسة مليون جنيه",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 23.64,
+      "end": 25.48,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "text": "حوالي خمسة مليون جنيه",
+      "boundary": "silence_edge",
+      "review_note": "نسبته للعميل ثقتها منخفضة"
+    },
+    {
+      "start": 25.56,
+      "end": 30.08,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "تمام يا فندم، شقة ثلاث غرف تمليك في أكتوبر حوالي خمسة مليون",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 30.2,
+      "end": 32.04,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "text": "شكراً لاتصال حضرتك",
+      "boundary": "silence_edge"
+    }
+  ]
+}

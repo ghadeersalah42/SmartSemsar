@@ -1,0 +1,105 @@
+{
+  "description": "Evaluation manifest tracking ground-truth readiness for the 10 SmartSemsar real-estate phone calls. rec1 & rec8 preserve user manual human transcripts with waveform timestamps; rec2..rec7, rec9..rec10 were imported from user-provided multi-pass Whisper large-v3 + waveform files.",
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec1.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec1_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec1_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec1_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "manual_human_transcript_with_waveform_timestamps",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec2.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec2_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec2_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec2_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec3.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec3_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec3_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec3_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec4.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec4_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec4_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec4_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec5.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec5_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec5_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec5_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec6.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec6_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec6_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec6_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec7.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec7_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec7_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec7_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec8.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec8_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec8_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec8_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "manual_human_transcript_with_waveform_timestamps",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec9.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec9_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec9_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec9_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "raw_audio": "backend/services/data/raw_calls/smartsemsar_rec10.mp4",
+      "ground_truth_transcript": "backend/services/data/evaluation/ground_truth/transcripts/smartsemsar_rec10_gt_transcript.json",
+      "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec10_gt_diarization.json",
+      "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec10_gt_roles.json",
+      "ground_truth_ready": true,
+      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "status": "ready"
+    }
+  ]
+}

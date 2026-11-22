@@ -1,0 +1,153 @@
+{
+  "call_id": "smartsemsar_rec2",
+  "source_audio_file": "smartsemsar_rec2.mp4",
+  "audio_file": "smartsemsar_rec2_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.8,
+      "text": "كنت حاب بأعرف أين مواصفات اللي فتمافك",
+      "normalized_text": "كنت حاب باعرف اين مواصفات اللي فتمافك"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.8,
+      "end": 3.8,
+      "text": "محتاجة...",
+      "normalized_text": "محتاجة..."
+    },
+    {
+      "segment_id": 3,
+      "start": 3.8,
+      "end": 4.8,
+      "text": "عادة الغرف",
+      "normalized_text": "عادة الغرف"
+    },
+    {
+      "segment_id": 4,
+      "start": 4.8,
+      "end": 5.8,
+      "text": "فطالي",
+      "normalized_text": "فطالي"
+    },
+    {
+      "segment_id": 5,
+      "start": 5.8,
+      "end": 7.8,
+      "text": "محتاجة حاجة في العصمة القدرية",
+      "normalized_text": "محتاجة حاجة في العصمة القدرية"
+    },
+    {
+      "segment_id": 6,
+      "start": 8.5,
+      "end": 9.0,
+      "text": "تمام",
+      "normalized_text": "تمام"
+    },
+    {
+      "segment_id": 7,
+      "start": 9.0,
+      "end": 10.0,
+      "text": "العصمة القدرية",
+      "normalized_text": "العصمة القدرية"
+    },
+    {
+      "segment_id": 8,
+      "start": 10.0,
+      "end": 11.2,
+      "text": "كام غرفة تقريبا",
+      "normalized_text": "كام غرفة تقريبا"
+    },
+    {
+      "segment_id": 9,
+      "start": 11.2,
+      "end": 12.0,
+      "text": "إجار",
+      "normalized_text": "اجار"
+    },
+    {
+      "segment_id": 10,
+      "start": 12.0,
+      "end": 13.0,
+      "text": "ولا تمليك",
+      "normalized_text": "ولا تمليك"
+    },
+    {
+      "segment_id": 11,
+      "start": 13.0,
+      "end": 15.0,
+      "text": "والمزانية فحدود كام",
+      "normalized_text": "والمزانية فحدود كام"
+    },
+    {
+      "segment_id": 12,
+      "start": 17.0,
+      "end": 18.0,
+      "text": "ثلاث قول",
+      "normalized_text": "ثلاث قول"
+    },
+    {
+      "segment_id": 13,
+      "start": 19.0,
+      "end": 20.0,
+      "text": "تمليك",
+      "normalized_text": "تمليك"
+    },
+    {
+      "segment_id": 14,
+      "start": 21.0,
+      "end": 22.0,
+      "text": "تمليك",
+      "normalized_text": "تمليك"
+    },
+    {
+      "segment_id": 15,
+      "start": 22.0,
+      "end": 23.0,
+      "text": "اتنين ونص مليون",
+      "normalized_text": "اتنين ونص مليون"
+    },
+    {
+      "segment_id": 16,
+      "start": 24.0,
+      "end": 25.0,
+      "text": "مش شقة ثلاث غرف",
+      "normalized_text": "مش شقة ثلاث غرف"
+    },
+    {
+      "segment_id": 17,
+      "start": 25.0,
+      "end": 27.0,
+      "text": "تمليك في العصمة القدرية",
+      "normalized_text": "تمليك في العصمة القدرية"
+    },
+    {
+      "segment_id": 18,
+      "start": 27.0,
+      "end": 29.0,
+      "text": "حوالي اتنين ونص مليون جني",
+      "normalized_text": "حوالي اتنين ونص مليون جني"
+    },
+    {
+      "segment_id": 19,
+      "start": 29.0,
+      "end": 30.0,
+      "text": "شكرا لاتسالح حبيتك",
+      "normalized_text": "شكرا لاتسالح حبيتك"
+    },
+    {
+      "segment_id": 20,
+      "start": 30.0,
+      "end": 31.0,
+      "text": "فأمان اللي",
+      "normalized_text": "فامان اللي"
+    }
+  ],
+  "full_transcript": "كنت حاب باعرف اين مواصفات اللي فتمافك محتاجة... عادة الغرف فطالي محتاجة حاجة في العصمة القدرية تمام العصمة القدرية كام غرفة تقريبا اجار ولا تمليك والمزانية فحدود كام ثلاث قول تمليك تمليك اتنين ونص مليون مش شقة ثلاث غرف تمليك في العصمة القدرية حوالي اتنين ونص مليون جني شكرا لاتسالح حبيتك فامان اللي"
+}

@@ -1,0 +1,153 @@
+{
+  "call_id": "smartsemsar_rec6",
+  "source_audio_file": "smartsemsar_rec6.mp4",
+  "audio_file": "smartsemsar_rec6_standardized.wav",
+  "whisper_model": "faster-whisper-small",
+  "asr_backend": "faster_whisper_local_cpu_int8",
+  "language": "ar",
+  "language_probability": 1.0,
+  "speaker_diarization_applied": false,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 3.04,
+      "text": "مكتب عقورات اتفضليك وتبدو علي علي",
+      "normalized_text": "مكتب عقورات اتفضليك وتبدو علي علي"
+    },
+    {
+      "segment_id": 2,
+      "start": 3.04,
+      "end": 3.8,
+      "text": "بدور على شئ",
+      "normalized_text": "بدور علي شئ"
+    },
+    {
+      "segment_id": 3,
+      "start": 3.8,
+      "end": 5.36,
+      "text": "افتع مدينة نصر",
+      "normalized_text": "افتع مدينة نصر"
+    },
+    {
+      "segment_id": 4,
+      "start": 5.36,
+      "end": 6.08,
+      "text": "ثمانية فندم",
+      "normalized_text": "ثمانية فندم"
+    },
+    {
+      "segment_id": 5,
+      "start": 7.2,
+      "end": 8.28,
+      "text": "اربع غرف",
+      "normalized_text": "اربع غرف"
+    },
+    {
+      "segment_id": 6,
+      "start": 8.28,
+      "end": 9.2,
+      "text": "كم قوضة",
+      "normalized_text": "كم قوضة"
+    },
+    {
+      "segment_id": 7,
+      "start": 9.2,
+      "end": 9.76,
+      "text": "اربع",
+      "normalized_text": "اربع"
+    },
+    {
+      "segment_id": 8,
+      "start": 9.76,
+      "end": 12.52,
+      "text": "تمام حدرتك اربع",
+      "normalized_text": "تمام حدرتك اربع"
+    },
+    {
+      "segment_id": 9,
+      "start": 12.52,
+      "end": 13.36,
+      "text": "مش",
+      "normalized_text": "مش"
+    },
+    {
+      "segment_id": 10,
+      "start": 13.36,
+      "end": 15.04,
+      "text": "تمليك ولا اغار",
+      "normalized_text": "تمليك ولا اغار"
+    },
+    {
+      "segment_id": 11,
+      "start": 15.04,
+      "end": 15.92,
+      "text": "والمزانية",
+      "normalized_text": "والمزانية"
+    },
+    {
+      "segment_id": 12,
+      "start": 15.92,
+      "end": 16.76,
+      "text": "اغار",
+      "normalized_text": "اغار"
+    },
+    {
+      "segment_id": 13,
+      "start": 17.96,
+      "end": 18.6,
+      "text": "اغار",
+      "normalized_text": "اغار"
+    },
+    {
+      "segment_id": 14,
+      "start": 18.6,
+      "end": 19.72,
+      "text": "والمزانية تقريباً",
+      "normalized_text": "والمزانية تقريبا"
+    },
+    {
+      "segment_id": 15,
+      "start": 19.72,
+      "end": 20.88,
+      "text": "تمانتلاف",
+      "normalized_text": "تمانتلاف"
+    },
+    {
+      "segment_id": 16,
+      "start": 22.88,
+      "end": 23.6,
+      "text": "تمانتلاف",
+      "normalized_text": "تمانتلاف"
+    },
+    {
+      "segment_id": 17,
+      "start": 23.6,
+      "end": 24.8,
+      "text": "ثمانية فندم",
+      "normalized_text": "ثمانية فندم"
+    },
+    {
+      "segment_id": 18,
+      "start": 24.8,
+      "end": 25.88,
+      "text": "شعاء اربع غرف",
+      "normalized_text": "شعاء اربع غرف"
+    },
+    {
+      "segment_id": 19,
+      "start": 25.88,
+      "end": 26.8,
+      "text": "في مدينة نصر",
+      "normalized_text": "في مدينة نصر"
+    },
+    {
+      "segment_id": 20,
+      "start": 26.8,
+      "end": 29.2,
+      "text": "اغار بمزانية تحوالي تمانتلاف جني",
+      "normalized_text": "اغار بمزانية تحوالي تمانتلاف جني"
+    }
+  ],
+  "full_transcript": "مكتب عقورات اتفضليك وتبدو علي علي بدور علي شئ افتع مدينة نصر ثمانية فندم اربع غرف كم قوضة اربع تمام حدرتك اربع مش تمليك ولا اغار والمزانية اغار اغار والمزانية تقريبا تمانتلاف تمانتلاف ثمانية فندم شعاء اربع غرف في مدينة نصر اغار بمزانية تحوالي تمانتلاف جني"
+}

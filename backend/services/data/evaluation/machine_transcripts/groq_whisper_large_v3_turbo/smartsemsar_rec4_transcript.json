@@ -1,0 +1,105 @@
+{
+  "call_id": "smartsemsar_rec4",
+  "source_audio_file": "smartsemsar_rec4.mp4",
+  "audio_file": "smartsemsar_rec4_standardized.wav",
+  "whisper_model": "whisper-large-v3-turbo",
+  "asr_backend": "groq_api",
+  "language": "Arabic",
+  "language_probability": null,
+  "speaker_diarization_applied": false,
+  "diarization_note": "pyannote/speaker-diarization-community-1 is blocked by Hugging Face 403 GatedRepoError; no speaker labels fabricated.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 3.84,
+      "text": "سأل خير يا فندم مع حضرتك مكتب عكرات كنت بتدوري عليهم",
+      "normalized_text": "سال خير يا فندم مع حضرتك مكتب عكرات كنت بتدوري عليهم",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 2,
+      "start": 3.84,
+      "end": 6.72,
+      "text": "أنا بدوري على شقة في التجامعة الخامس",
+      "normalized_text": "انا بدوري علي شقة في التجامعة الخامس",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 3,
+      "start": 6.72,
+      "end": 10.96,
+      "text": "تمام يا فندم التجامعة الخامس كم قوضة تقريبا؟",
+      "normalized_text": "تمام يا فندم التجامعة الخامس كم قوضة تقريبا؟",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 4,
+      "start": 10.96,
+      "end": 13.38,
+      "text": "ثلاث غرف مش حيزا صغيرة",
+      "normalized_text": "ثلاث غرف مش حيزا صغيرة",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 5,
+      "start": 13.38,
+      "end": 19.16,
+      "text": "ماشي ثلاثة؟ آه طيب ده إيجار ولا تمليك؟",
+      "normalized_text": "ماشي ثلاثة؟ اه طيب ده ايجار ولا تمليك؟",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 6,
+      "start": 19.16,
+      "end": 23.0,
+      "text": "إيجار بفضل يعني 20 ألف",
+      "normalized_text": "ايجار بفضل يعني 20 الف",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 7,
+      "start": 23.0,
+      "end": 26.0,
+      "text": "تمام في حدود كم مثلا؟",
+      "normalized_text": "تمام في حدود كم مثلا؟",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 8,
+      "start": 26.0,
+      "end": 27.66,
+      "text": "حدود 20 ألف",
+      "normalized_text": "حدود 20 الف",
+      "avg_logprob": -0.3007,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 9,
+      "start": 27.66,
+      "end": 34.26,
+      "text": "طيب شقة ايجار في تجمع الخامس تلات غرف مزينية حوالي اشين الف",
+      "normalized_text": "طيب شقة ايجار في تجمع الخامس تلات غرف مزينية حوالي اشين الف",
+      "avg_logprob": -0.1858,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 10,
+      "start": 34.26,
+      "end": 39.64,
+      "text": "ساعة. ساعة. تمام. شكرا لاتصال حضرتك يا خندم. اسجلت",
+      "normalized_text": "ساعة. ساعة. تمام. شكرا لاتصال حضرتك يا خندم. اسجلت",
+      "avg_logprob": -0.1858,
+      "no_speech_prob": 0.0
+    }
+  ],
+  "full_transcript": "سال خير يا فندم مع حضرتك مكتب عكرات كنت بتدوري عليهم انا بدوري علي شقة في التجامعة الخامس تمام يا فندم التجامعة الخامس كم قوضة تقريبا؟ ثلاث غرف مش حيزا صغيرة ماشي ثلاثة؟ اه طيب ده ايجار ولا تمليك؟ ايجار بفضل يعني 20 الف تمام في حدود كم مثلا؟ حدود 20 الف طيب شقة ايجار في تجمع الخامس تلات غرف مزينية حوالي اشين الف ساعة. ساعة. تمام. شكرا لاتصال حضرتك يا خندم. اسجلت",
+  "raw_full_transcript": "سأل خير يا فندم مع حضرتك مكتب عكرات كنت بتدوري عليهم أنا بدوري على شقة في التجامعة الخامس تمام يا فندم التجامعة الخامس كم قوضة تقريبا؟ ثلاث غرف مش حيزا صغيرة ماشي ثلاثة؟ آه طيب ده إيجار ولا تمليك؟ إيجار بفضل يعني 20 ألف تمام في حدود كم مثلا؟ حدود 20 ألف طيب شقة ايجار في تجمع الخامس تلات غرف مزينية حوالي اشين الف ساعة. ساعة. تمام. شكرا لاتصال حضرتك يا خندم. اسجلت"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec8",
+  "status": "ready",
+  "annotator": "manual_human_transcript_with_waveform_timestamps",
+  "provenance": "Preserves user's manual human transcript (pilot/rec8_human_transcript.json) verbatim; enriched with millisecond waveform timestamps from user-provided annotation file. Final clipped EOF word 'شكراً [Unclear]' at 24.270-24.890s noted in metadata.",
+  "allowed_roles": [
+    "broker",
+    "client"
+  ],
+  "notes": "Canonical reference speaker IDs: SPK_1=client, SPK_2=broker.",
+  "speaker_roles": {
+    "SPK_1": "client",
+    "SPK_2": "broker"
+  },
+  "pipeline_speaker_to_reference_speaker": {}
+}

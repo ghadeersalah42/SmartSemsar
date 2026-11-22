@@ -1,0 +1,105 @@
+{
+  "call_id": "smartsemsar_rec7",
+  "source_audio_file": "smartsemsar_rec7.mp4",
+  "audio_file": "smartsemsar_rec7_standardized.wav",
+  "whisper_model": "whisper-large-v3-turbo",
+  "asr_backend": "groq_api",
+  "language": "Arabic",
+  "language_probability": null,
+  "speaker_diarization_applied": false,
+  "diarization_note": "pyannote/speaker-diarization-community-1 is blocked by Hugging Face 403 GatedRepoError; no speaker labels fabricated.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "كيف يا فندم؟ اتفضل",
+      "normalized_text": "كيف يا فندم؟ اتفضل",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 5.0,
+      "text": "أنا محتاج بيلا في 6 أكتوبر",
+      "normalized_text": "انا محتاج بيلا في 6 اكتوبر",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 3,
+      "start": 5.0,
+      "end": 8.0,
+      "text": "تمام يا فندم كم غرفه تقريبا؟",
+      "normalized_text": "تمام يا فندم كم غرفه تقريبا؟",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 4,
+      "start": 8.0,
+      "end": 10.0,
+      "text": "أربع غرف",
+      "normalized_text": "اربع غرف",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 5,
+      "start": 10.0,
+      "end": 13.0,
+      "text": "طيب شراء ولا إيجار؟",
+      "normalized_text": "طيب شراء ولا ايجار؟",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 6,
+      "start": 13.0,
+      "end": 15.0,
+      "text": "شراء طبعا",
+      "normalized_text": "شراء طبعا",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 7,
+      "start": 15.0,
+      "end": 18.0,
+      "text": "تمام والميزانية في حدود كم؟",
+      "normalized_text": "تمام والميزانية في حدود كم؟",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 8,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "8 مليون جنيه 10 مليون جنيه كم؟",
+      "normalized_text": "8 مليون جنيه 10 مليون جنيه كم؟",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 9,
+      "start": 20.0,
+      "end": 28.0,
+      "text": "تمام يا فندم خلاص بيلا أربع غرف في أكتوبر تمليك ميزانية من 8 ل 10 مليون جنيه",
+      "normalized_text": "تمام يا فندم خلاص بيلا اربع غرف في اكتوبر تمليك ميزانية من 8 ل 10 مليون جنيه",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    },
+    {
+      "segment_id": 10,
+      "start": 28.0,
+      "end": 29.94,
+      "text": "شكراً لاتصار حضرتك",
+      "normalized_text": "شكرا لاتصار حضرتك",
+      "avg_logprob": -0.2163,
+      "no_speech_prob": 0.0
+    }
+  ],
+  "full_transcript": "كيف يا فندم؟ اتفضل انا محتاج بيلا في 6 اكتوبر تمام يا فندم كم غرفه تقريبا؟ اربع غرف طيب شراء ولا ايجار؟ شراء طبعا تمام والميزانية في حدود كم؟ 8 مليون جنيه 10 مليون جنيه كم؟ تمام يا فندم خلاص بيلا اربع غرف في اكتوبر تمليك ميزانية من 8 ل 10 مليون جنيه شكرا لاتصار حضرتك",
+  "raw_full_transcript": "كيف يا فندم؟ اتفضل أنا محتاج بيلا في 6 أكتوبر تمام يا فندم كم غرفه تقريبا؟ أربع غرف طيب شراء ولا إيجار؟ شراء طبعا تمام والميزانية في حدود كم؟ 8 مليون جنيه 10 مليون جنيه كم؟ تمام يا فندم خلاص بيلا أربع غرف في أكتوبر تمليك ميزانية من 8 ل 10 مليون جنيه شكراً لاتصار حضرتك"
+}

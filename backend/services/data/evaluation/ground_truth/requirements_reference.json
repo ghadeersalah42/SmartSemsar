@@ -1,0 +1,154 @@
+{
+  "smartsemsar_rec1": {
+    "requirements_customer_only": {
+      "location": "التجمع الخامس",
+      "property_type": "Not Specified",
+      "rooms": 3,
+      "transaction_type": "Sale",
+      "budget": 4000000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "العميل قال \"إيجار\" وبعدين رجع وقال \"لا، تمليك\" → اتاخد آخر رأي: تمليك (Sale).",
+      "العميل ماقالش شقة ولا فيلا → Property Type = Not Specified.",
+      "العميل قال صراحة \"ماعرفش المساحة بالظبط\" → Area = Not Specified."
+    ]
+  },
+  "smartsemsar_rec2": {
+    "requirements_customer_only": {
+      "location": "العاصمة الإدارية",
+      "property_type": "Not Specified",
+      "rooms": 3,
+      "transaction_type": "Sale",
+      "budget": 2500000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "العميل قال \"محتاجة حاجة\" من غير ما يحدد شقة ولا فيلا. كلمة \"شقة\" قالها السمسار بس في الملخص → Not Specified.",
+      "مقطع العميل 18.810–19.840 مش مفهوم ومش داخل في الاستخراج."
+    ]
+  },
+  "smartsemsar_rec3": {
+    "requirements_customer_only": {
+      "location": "الشيخ زايد",
+      "property_type": "Apartment",
+      "rooms": 2,
+      "transaction_type": "Rent",
+      "budget": 25000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "الميزانية شهري (إيجار)؛ العميل ماقالش \"في الشهر\" صراحة."
+    ]
+  },
+  "smartsemsar_rec4": {
+    "requirements_customer_only": {
+      "location": "التجمع الخامس",
+      "property_type": "Apartment",
+      "rooms": 3,
+      "transaction_type": "Rent",
+      "budget": 20000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "\"مش عايزة أصغر\" من 3 غرف → اتسجلت rooms = 3 (الحد الأدنى)."
+    ]
+  },
+  "smartsemsar_rec5": {
+    "requirements_customer_only": {
+      "location": "Not Specified",
+      "property_type": "Not Specified",
+      "rooms": null,
+      "transaction_type": "Not Specified",
+      "budget": 12000000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "مهم: العميل قال الميزانية بس (12 مليون).",
+      "اللي قاله السمسار ومش متأكد من العميل في التسجيل ده: فيلا، تمليك، التجمع، 5 غرف، حوالي 180 متر."
+    ]
+  },
+  "smartsemsar_rec6": {
+    "requirements_customer_only": {
+      "location": "مدينة نصر",
+      "property_type": "Apartment",
+      "rooms": 4,
+      "transaction_type": "Rent",
+      "budget": 8000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "عدد الغرف (4) العميل قاله بوضوح: \"أربعة\" (9.260–9.760)."
+    ]
+  },
+  "smartsemsar_rec7": {
+    "requirements_customer_only": {
+      "location": "6 أكتوبر",
+      "property_type": "Villa",
+      "rooms": 4,
+      "transaction_type": "Sale",
+      "budget": {
+        "min": 8000000,
+        "max": 10000000
+      },
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "الميزانية مدى: 8 إلى 10 مليون جنيه.",
+      "\"شراء\" = Sale."
+    ]
+  },
+  "smartsemsar_rec8": {
+    "requirements_customer_only": {
+      "location": "مصر الجديدة",
+      "property_type": "Not Specified",
+      "rooms": 2,
+      "transaction_type": "Rent",
+      "budget": 15000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "العميل قال \"بدور على إيجار\" من غير ما يقول شقة. كلمة \"شقة\" قالها السمسار بس في الملخص → Not Specified."
+    ]
+  },
+  "smartsemsar_rec9": {
+    "requirements_customer_only": {
+      "location": "6 أكتوبر",
+      "property_type": "Apartment",
+      "rooms": 3,
+      "transaction_type": "Sale",
+      "budget": 5000000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "التسجيل فيه ضوضاء خلفية مستمرة (أرضية الضوضاء حوالي −28 dB)، فالتوقيتات من توقيت الكلمات (±0.2 ث)."
+    ]
+  },
+  "smartsemsar_rec10": {
+    "requirements_customer_only": {
+      "location": [
+        "أكتوبر",
+        "الشيخ زايد"
+      ],
+      "property_type": "Not Specified",
+      "rooms": 3,
+      "transaction_type": "Sale",
+      "budget": 6000000,
+      "currency": "EGP",
+      "area_sqm": null
+    },
+    "requirements_notes": [
+      "العميل ذكر منطقتين (\"أكتوبر مثلاً\" و\"الشيخ زايد\") → اتسجلوا الاتنين.",
+      "العميل قال \"عايزة حاجة\" من غير ما يحدد النوع → Not Specified."
+    ]
+  }
+}

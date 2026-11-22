@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "call_id": "smartsemsar_rec8",
+  "status": "ready",
+  "annotator": "manual_human_transcript_with_waveform_timestamps",
+  "provenance": "Preserves user's manual human transcript (pilot/rec8_human_transcript.json) verbatim; enriched with millisecond waveform timestamps from user-provided annotation file. Final clipped EOF word 'شكراً [Unclear]' at 24.270-24.890s noted in metadata.",
+  "num_speakers": 2,
+  "turns": [
+    {
+      "start": 0.32,
+      "end": 4.84,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 5.2,
+      "end": 7.61,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 8.89,
+      "end": 10.64,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 11.37,
+      "end": 12.66,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 13.41,
+      "end": 14.78,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 15.15,
+      "end": 15.82,
+      "speaker_id": "SPK_1",
+      "role": "client",
+      "boundary": "silence_edge"
+    },
+    {
+      "start": 17.08,
+      "end": 23.67,
+      "speaker_id": "SPK_2",
+      "role": "broker",
+      "boundary": "silence_edge"
+    }
+  ]
+}
