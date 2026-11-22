@@ -95,6 +95,28 @@ def clarify_requirements(text: str, req: Optional[CustomerRequirements], check_t
     return text, req
 
 
+ASK_BUDGET = "تمام 👌 ميزانيتك في حدود كام؟"
+
+
+def ask_budget(req: Optional[CustomerRequirements], text: Optional[str]):
+    """Ask, don't guess (missing): لو العميل مقالش ميزانية خالص، بنسأل سؤال واحد.
+    لو رد برقم بنعيد الاستخراج بالرد؛ ولو مردّش برقم ("مش فارقة") بندوّر من غير ميزانية زي ما كان."""
+    if req is None or req.budget_max is not None or req.budget_min is not None:
+        return req, text
+    answer = interrupt(ASK_BUDGET)
+    answer = answer.strip() if isinstance(answer, str) else ""
+    if not answer or not _HAS_NUMBER.search(answer):
+        return req, text
+    text = with_clarification(text or "", answer)
+    new_req = extract_requirements(call_transcript=None, raw_text=text)
+    if new_req.deal_type in (None, "unknown"):
+        new_req.deal_type = req.deal_type
+    unclear = find_unclear(answer, new_req)          # الرد نفسه مش واضح ("70 6") أو مش منطقي: منخمنش
+    if unclear:
+        new_req = drop_guesses(new_req, unclear)
+    return new_req, text
+
+
 def revalidate(req: Optional[CustomerRequirements]) -> Optional[CustomerRequirements]:
     """بعد ما نعرف إيجار ولا تمليك، حدود الميزانية بتتغير: نعدي على الـ schema تاني"""
     return CustomerRequirements(**req.model_dump()) if req is not None else None
@@ -123,8 +145,15 @@ def input_node(state: AgentState) -> Dict[str, Any]:
             resumed_text = user_response.strip() if isinstance(user_response, str) else None
             req = extract_requirements(call_transcript=None, raw_text=resumed_text) if resumed_text else None
 
+        # الميزانية اتقالت بس مش واضحة؟ ده سؤال clarify، مش سؤال "ميزانيتك كام"
+        budget_said = req is not None and bool(set(find_unclear(resumed_text or "", req)) & {"budget_min", "budget_max"})
+
         # فيه حاجة مش واضحة ("70 6") أو مش منطقية؟ نسأل سؤال واحد بدل ما نخمن
         resumed_text, req = clarify_requirements(resumed_text, req)
+
+        # الميزانية ناقصة خالص؟ سؤال واحد، ولو مردّش برقم بندوّر من غير ميزانية
+        if not budget_said:
+            req, resumed_text = ask_budget(req, resumed_text)
 
         # والشقق مبتطلعش غير لما نعرف هو عايزها إيجار ولا تمليك
         if req is not None and req.deal_type in (None, "unknown"):

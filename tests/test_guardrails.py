@@ -415,3 +415,41 @@ def test_client_text_in_logs_is_masked(capsys):
     safe_print("Analyzing text: 'اسمي أحمد ورقمي 01012345678'")
     out = capsys.readouterr().out
     assert "01012345678" not in out and "أحمد" not in out
+
+
+def _run_budget(monkeypatch, answer, extracted):
+    from backend.agents import input_node
+    asked = []
+
+    def fake_interrupt(question):
+        asked.append(question)
+        return answer
+
+    monkeypatch.setattr(input_node, "interrupt", fake_interrupt)
+    monkeypatch.setattr(input_node, "extract_requirements", lambda call_transcript=None, raw_text=None: extracted)
+    first = CustomerRequirements(location="التجمع", bedrooms=3, deal_type="rent")
+    return asked, input_node.ask_budget(first, "عايز شقة 3 اوض في التجمع ايجار")
+
+
+def test_missing_budget_gets_one_question(monkeypatch):
+    asked, (req, text) = _run_budget(monkeypatch, "30 ألف",
+                                     CustomerRequirements(location="التجمع", bedrooms=3, budget_max=30000, deal_type="rent"))
+    assert len(asked) == 1 and req.budget_max == 30000 and "توضيح العميل: 30 ألف" in text
+
+
+def test_budget_answer_without_number_searches_without_budget(monkeypatch):
+    asked, (req, _) = _run_budget(monkeypatch, "مش فارقة", None)
+    assert len(asked) == 1 and req.budget_max is None and req.location == "التجمع"
+
+
+def test_unclear_budget_answer_is_not_guessed(monkeypatch):
+    asked, (req, _) = _run_budget(monkeypatch, "70 6",
+                                  CustomerRequirements(location="التجمع", budget_max=706000, deal_type="rent"))
+    assert len(asked) == 1 and req.budget_max is None                     # سؤال واحد بس، ومفيش تخمين
+
+
+def test_budget_given_means_no_question(monkeypatch):
+    from backend.agents import input_node
+    monkeypatch.setattr(input_node, "interrupt", lambda q: pytest.fail("asked although the budget was given"))
+    req, _ = input_node.ask_budget(CustomerRequirements(budget_max=40000), "ميزانيتي 40 ألف")
+    assert req.budget_max == 40000
