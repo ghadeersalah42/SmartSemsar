@@ -1,0 +1,123 @@
+{
+  "call_id": "smartsemsar_rec2",
+  "source_audio_file": "smartsemsar_rec2.mp4",
+  "audio_file": "smartsemsar_rec2_standardized.wav",
+  "whisper_model": "large-v3-turbo",
+  "language": "ar",
+  "language_probability": 1.0,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.5,
+      "text": "كنت حابب اعرف ايه المواصفات اللي في دمائك",
+      "normalized_text": "كنت حابب اعرف ايه المواصفات اللي في دمائك"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.5,
+      "end": 3.5,
+      "text": "محتاجة",
+      "normalized_text": "محتاجة"
+    },
+    {
+      "segment_id": 3,
+      "start": 3.5,
+      "end": 4.26,
+      "text": "عدد الغرف",
+      "normalized_text": "عدد الغرف"
+    },
+    {
+      "segment_id": 4,
+      "start": 4.26,
+      "end": 7.62,
+      "text": "محتاجة حاجة في العاصمة الادارية",
+      "normalized_text": "محتاجة حاجة في العاصمة الادارية"
+    },
+    {
+      "segment_id": 5,
+      "start": 7.62,
+      "end": 10.0,
+      "text": "تمام العاصمة الادارية",
+      "normalized_text": "تمام العاصمة الادارية"
+    },
+    {
+      "segment_id": 6,
+      "start": 10.0,
+      "end": 12.0,
+      "text": "كام غرفة تقريبا ايجار",
+      "normalized_text": "كام غرفة تقريبا ايجار"
+    },
+    {
+      "segment_id": 7,
+      "start": 12.0,
+      "end": 13.8,
+      "text": "ولا تمليك والميزانية",
+      "normalized_text": "ولا تمليك والميزانية"
+    },
+    {
+      "segment_id": 8,
+      "start": 13.8,
+      "end": 14.54,
+      "text": "في حدود كام",
+      "normalized_text": "في حدود كام"
+    },
+    {
+      "segment_id": 9,
+      "start": 14.54,
+      "end": 17.72,
+      "text": "3 اوض",
+      "normalized_text": "3 اوض"
+    },
+    {
+      "segment_id": 10,
+      "start": 17.72,
+      "end": 19.54,
+      "text": "تمليك",
+      "normalized_text": "تمليك"
+    },
+    {
+      "segment_id": 11,
+      "start": 19.54,
+      "end": 21.26,
+      "text": "تمليك",
+      "normalized_text": "تمليك"
+    },
+    {
+      "segment_id": 12,
+      "start": 21.26,
+      "end": 22.64,
+      "text": "2.5 مليون",
+      "normalized_text": "2.5 مليون"
+    },
+    {
+      "segment_id": 13,
+      "start": 22.64,
+      "end": 26.5,
+      "text": "ماشي شقة 3 غرف تمليك في العاصمة الادارية",
+      "normalized_text": "ماشي شقة 3 غرف تمليك في العاصمة الادارية"
+    },
+    {
+      "segment_id": 14,
+      "start": 26.5,
+      "end": 28.72,
+      "text": "حوالي 2.5 مليون جنيه",
+      "normalized_text": "حوالي 2.5 مليون جنيه"
+    },
+    {
+      "segment_id": 15,
+      "start": 28.72,
+      "end": 30.34,
+      "text": "شكرا لاتصال حضرتك",
+      "normalized_text": "شكرا لاتصال حضرتك"
+    },
+    {
+      "segment_id": 16,
+      "start": 30.34,
+      "end": 31.08,
+      "text": "في امان الله",
+      "normalized_text": "في امان الله"
+    }
+  ],
+  "full_transcript": "كنت حابب اعرف ايه المواصفات اللي في دمائك محتاجة عدد الغرف محتاجة حاجة في العاصمة الادارية تمام العاصمة الادارية كام غرفة تقريبا ايجار ولا تمليك والميزانية في حدود كام 3 اوض تمليك تمليك 2.5 مليون ماشي شقة 3 غرف تمليك في العاصمة الادارية حوالي 2.5 مليون جنيه شكرا لاتصال حضرتك في امان الله"
+}

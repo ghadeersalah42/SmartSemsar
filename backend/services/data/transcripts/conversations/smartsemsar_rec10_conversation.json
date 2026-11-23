@@ -1,0 +1,426 @@
+{
+  "call_id": "smartsemsar_rec10",
+  "source_audio_file": "smartsemsar_rec10.mp4",
+  "audio_file": "smartsemsar_rec10_standardized.wav",
+  "language": "ar",
+  "duration": 43.352,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 01 greets with office language, asks qualifying questions (location, budget, rooms), repeats summary and thanks the caller, typical broker behavior. Speaker 00 answers with preferences (buy, budget, rooms, area), typical client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.772,
+      "overlap_ratio": 0.886,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "أقدم مع حضرتك مكتب عكرات",
+      "text": "اقدم مع حضرتك مكتب عكرات",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.927,
+      "overlap_ratio": 0.9635,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "كنت أحبب أعرف من حضرتك",
+      "text": "كنت احبب اعرف من حضرتك",
+      "role": "broker"
+    },
+    {
+      "turn_id": 3,
+      "start": 4.0,
+      "end": 6.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.0,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "بالدواري على بيجار",
+      "text": "بالدواري علي بيجار",
+      "role": "broker"
+    },
+    {
+      "turn_id": 4,
+      "start": 6.0,
+      "end": 8.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.0,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "أو تمليك وإيه البجت أو الميزانية",
+      "text": "او تمليك وايه البجت او الميزانية",
+      "role": "broker"
+    },
+    {
+      "turn_id": 5,
+      "start": 8.0,
+      "end": 10.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.127,
+      "overlap_ratio": 0.5635,
+      "speaker_dominance": 0.6451,
+      "is_ambiguous": true,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_ambiguous_multi_speaker",
+      "raw_text": "اللي تبالك",
+      "text": "اللي تبالك",
+      "role": "broker"
+    },
+    {
+      "turn_id": 6,
+      "start": 10.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.0,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "عايزة حاجة تمليك",
+      "text": "عايزة حاجة تمليك",
+      "role": "client"
+    },
+    {
+      "turn_id": 7,
+      "start": 12.0,
+      "end": 14.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.923,
+      "overlap_ratio": 0.4615,
+      "speaker_dominance": 0.9193,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "معي ميزانية ستة مليون",
+      "text": "معي ميزانية ستة مليون",
+      "role": "client"
+    },
+    {
+      "turn_id": 8,
+      "start": 14.0,
+      "end": 16.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.0,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ستة مليون",
+      "text": "ستة مليون",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 16.0,
+      "end": 18.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.581,
+      "overlap_ratio": 0.7905,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "طيب كم غرفة",
+      "text": "طيب كم غرفة",
+      "role": "broker"
+    },
+    {
+      "turn_id": 10,
+      "start": 18.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.574,
+      "overlap_ratio": 0.287,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "كم غرفة",
+      "text": "كم غرفة",
+      "role": "client"
+    },
+    {
+      "turn_id": 11,
+      "start": 20.0,
+      "end": 22.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.909,
+      "overlap_ratio": 0.4545,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "كم غرفة",
+      "text": "كم غرفة",
+      "role": "broker"
+    },
+    {
+      "turn_id": 12,
+      "start": 22.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.417,
+      "overlap_ratio": 0.7085,
+      "speaker_dominance": 0.9752,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "كم غرفة ثلاث غرف",
+      "text": "كم غرفة ثلاث غرف",
+      "role": "client"
+    },
+    {
+      "turn_id": 13,
+      "start": 24.0,
+      "end": 26.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.86,
+      "overlap_ratio": 0.43,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ثلاث غرف",
+      "text": "ثلاث غرف",
+      "role": "broker"
+    },
+    {
+      "turn_id": 14,
+      "start": 26.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.863,
+      "overlap_ratio": 0.9315,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "طب في منطقة معينة",
+      "text": "طب في منطقة معينة",
+      "role": "broker"
+    },
+    {
+      "turn_id": 15,
+      "start": 28.0,
+      "end": 30.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.613,
+      "overlap_ratio": 0.8065,
+      "speaker_dominance": 0.98,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "في مصر في بلك",
+      "text": "في مصر في بلك",
+      "role": "broker"
+    },
+    {
+      "turn_id": 16,
+      "start": 30.0,
+      "end": 32.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.207,
+      "overlap_ratio": 0.6035,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "أكتوبر مثلا",
+      "text": "اكتوبر مثلا",
+      "role": "client"
+    },
+    {
+      "turn_id": 17,
+      "start": 32.0,
+      "end": 34.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.718,
+      "overlap_ratio": 0.359,
+      "speaker_dominance": 0.8417,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "الشيخ زايد",
+      "text": "الشيخ زايد",
+      "role": "client"
+    },
+    {
+      "turn_id": 18,
+      "start": 34.0,
+      "end": 36.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.628,
+      "overlap_ratio": 0.814,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "زايد بحضل",
+      "text": "زايد بحضل",
+      "role": "broker"
+    },
+    {
+      "turn_id": 19,
+      "start": 36.0,
+      "end": 38.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.612,
+      "overlap_ratio": 0.806,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "طلب غرف تمليك في زايد أو أكتوبر",
+      "text": "طلب غرف تمليك في زايد او اكتوبر",
+      "role": "broker"
+    },
+    {
+      "turn_id": 20,
+      "start": 38.0,
+      "end": 40.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.764,
+      "overlap_ratio": 0.882,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "والميزانية بحدود ستة مليون",
+      "text": "والميزانية بحدود ستة مليون",
+      "role": "broker"
+    },
+    {
+      "turn_id": 21,
+      "start": 40.0,
+      "end": 42.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.932,
+      "overlap_ratio": 0.966,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم",
+      "text": "تمام يا فندم",
+      "role": "broker"
+    },
+    {
+      "turn_id": 22,
+      "start": 42.0,
+      "end": 43.352,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.877,
+      "overlap_ratio": 0.6487,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "شكرا أن تصار حضرتك",
+      "text": "شكرا ان تصار حضرتك",
+      "role": "broker"
+    }
+  ]
+}
