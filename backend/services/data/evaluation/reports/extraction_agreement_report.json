@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-22T01:18:44.707244+00:00",
+  "generated_at_utc": "2026-11-23T20:32:58.545119+00:00",
   "evaluation_scope": "all_10_manifest_calls_with_provenance_breakdown",
   "status": "EVALUATED",
   "extraction_configuration": {
@@ -10,7 +10,7 @@
     "temperature": 0,
     "response_format": "json_object",
     "prompt_source": "backend.services.user_input_text.SYSTEM_PROMPT",
-    "prompt_char_length": 1888,
+    "prompt_char_length": 2802,
     "input_formatting": "Identical 'Role: text' dialogue lines with consecutive same-role turns merged",
     "compared_fields": [
       "location",
@@ -35,28 +35,28 @@
     "extra_requirement_rate_vs_machine_pct": "extra_requirements / M * 100",
     "conflicting_value_rate_pct": "conflicting_values / H * 100"
   },
-  "previous_report_preserved_at": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\reports\\archive\\extraction_agreement_report_legacy_groq_20261121.json",
+  "previous_report_preserved_at": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\reports\\archive\\extraction_agreement_report_legacy_groq_20261121.json",
   "total_target_calls": 10,
   "evaluated_calls": 10,
   "error_calls": 0,
   "excluded_non_manual_calls": [],
   "overall_summary": {
     "total_human_requirements": 51,
-    "total_machine_requirements": 46,
+    "total_machine_requirements": 45,
     "matched_requirements": 43,
-    "exact_matches": 39,
-    "semantic_matches": 4,
-    "missing_requirements": 6,
+    "exact_matches": 40,
+    "semantic_matches": 3,
+    "missing_requirements": 7,
     "extra_requirements": 1,
-    "conflicting_values": 2,
+    "conflicting_values": 1,
     "both_absent_fields_excluded": 38,
     "requirement_match_rate_pct": 84.31,
-    "exact_match_rate_pct": 76.47,
-    "semantic_match_rate_pct": 7.84,
-    "missing_requirement_rate_pct": 11.76,
+    "exact_match_rate_pct": 78.43,
+    "semantic_match_rate_pct": 5.88,
+    "missing_requirement_rate_pct": 13.73,
     "extra_requirement_rate_vs_human_pct": 1.96,
-    "extra_requirement_rate_vs_machine_pct": 2.17,
-    "conflicting_value_rate_pct": 3.92
+    "extra_requirement_rate_vs_machine_pct": 2.22,
+    "conflicting_value_rate_pct": 1.96
   },
   "provenance_subgroup_summary": {
     "manual_human_transcripts": {
@@ -65,22 +65,22 @@
         "smartsemsar_rec8"
       ],
       "num_calls": 2,
-      "total_human_requirements": 10,
-      "total_machine_requirements": 8,
-      "matched_requirements": 7,
-      "exact_matches": 7,
+      "total_human_requirements": 9,
+      "total_machine_requirements": 9,
+      "matched_requirements": 8,
+      "exact_matches": 8,
       "semantic_matches": 0,
-      "missing_requirements": 2,
-      "extra_requirements": 0,
-      "conflicting_values": 1,
+      "missing_requirements": 1,
+      "extra_requirements": 1,
+      "conflicting_values": 0,
       "both_absent_fields_excluded": 8,
-      "requirement_match_rate_pct": 70.0,
-      "exact_match_rate_pct": 70.0,
+      "requirement_match_rate_pct": 88.89,
+      "exact_match_rate_pct": 88.89,
       "semantic_match_rate_pct": 0.0,
-      "missing_requirement_rate_pct": 20.0,
-      "extra_requirement_rate_vs_human_pct": 0.0,
-      "extra_requirement_rate_vs_machine_pct": 0.0,
-      "conflicting_value_rate_pct": 10.0
+      "missing_requirement_rate_pct": 11.11,
+      "extra_requirement_rate_vs_human_pct": 11.11,
+      "extra_requirement_rate_vs_machine_pct": 11.11,
+      "conflicting_value_rate_pct": 0.0
     },
     "user_provided_multipass_reference": {
       "call_ids": [
@@ -94,22 +94,22 @@
         "smartsemsar_rec10"
       ],
       "num_calls": 8,
-      "total_human_requirements": 41,
-      "total_machine_requirements": 38,
-      "matched_requirements": 36,
+      "total_human_requirements": 42,
+      "total_machine_requirements": 36,
+      "matched_requirements": 35,
       "exact_matches": 32,
-      "semantic_matches": 4,
-      "missing_requirements": 4,
-      "extra_requirements": 1,
+      "semantic_matches": 3,
+      "missing_requirements": 6,
+      "extra_requirements": 0,
       "conflicting_values": 1,
       "both_absent_fields_excluded": 30,
-      "requirement_match_rate_pct": 87.8,
-      "exact_match_rate_pct": 78.05,
-      "semantic_match_rate_pct": 9.76,
-      "missing_requirement_rate_pct": 9.76,
-      "extra_requirement_rate_vs_human_pct": 2.44,
-      "extra_requirement_rate_vs_machine_pct": 2.63,
-      "conflicting_value_rate_pct": 2.44
+      "requirement_match_rate_pct": 83.33,
+      "exact_match_rate_pct": 76.19,
+      "semantic_match_rate_pct": 7.14,
+      "missing_requirement_rate_pct": 14.29,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 2.38
     }
   },
   "per_field_summary": {
@@ -117,15 +117,15 @@
       "total_human_requirements": 10,
       "total_machine_requirements": 10,
       "matched_requirements": 9,
-      "exact_matches": 5,
-      "semantic_matches": 4,
+      "exact_matches": 6,
+      "semantic_matches": 3,
       "missing_requirements": 0,
       "extra_requirements": 0,
       "conflicting_values": 1,
       "both_absent_fields_excluded": 0,
       "requirement_match_rate_pct": 90.0,
-      "exact_match_rate_pct": 50.0,
-      "semantic_match_rate_pct": 40.0,
+      "exact_match_rate_pct": 60.0,
+      "semantic_match_rate_pct": 30.0,
       "missing_requirement_rate_pct": 0.0,
       "extra_requirement_rate_vs_human_pct": 0.0,
       "extra_requirement_rate_vs_machine_pct": 0.0,
@@ -133,36 +133,36 @@
     },
     "budget_min": {
       "total_human_requirements": 1,
-      "total_machine_requirements": 2,
+      "total_machine_requirements": 1,
       "matched_requirements": 1,
       "exact_matches": 1,
       "semantic_matches": 0,
       "missing_requirements": 0,
-      "extra_requirements": 1,
+      "extra_requirements": 0,
       "conflicting_values": 0,
-      "both_absent_fields_excluded": 8,
+      "both_absent_fields_excluded": 9,
       "requirement_match_rate_pct": 100.0,
       "exact_match_rate_pct": 100.0,
       "semantic_match_rate_pct": 0.0,
       "missing_requirement_rate_pct": 0.0,
-      "extra_requirement_rate_vs_human_pct": 100.0,
-      "extra_requirement_rate_vs_machine_pct": 50.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
       "conflicting_value_rate_pct": 0.0
     },
     "budget_max": {
       "total_human_requirements": 10,
-      "total_machine_requirements": 10,
-      "matched_requirements": 10,
-      "exact_matches": 10,
+      "total_machine_requirements": 9,
+      "matched_requirements": 9,
+      "exact_matches": 9,
       "semantic_matches": 0,
-      "missing_requirements": 0,
+      "missing_requirements": 1,
       "extra_requirements": 0,
       "conflicting_values": 0,
       "both_absent_fields_excluded": 0,
-      "requirement_match_rate_pct": 100.0,
-      "exact_match_rate_pct": 100.0,
+      "requirement_match_rate_pct": 90.0,
+      "exact_match_rate_pct": 90.0,
       "semantic_match_rate_pct": 0.0,
-      "missing_requirement_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 10.0,
       "extra_requirement_rate_vs_human_pct": 0.0,
       "extra_requirement_rate_vs_machine_pct": 0.0,
       "conflicting_value_rate_pct": 0.0
@@ -205,57 +205,57 @@
     },
     "property_type": {
       "total_human_requirements": 9,
-      "total_machine_requirements": 4,
-      "matched_requirements": 4,
-      "exact_matches": 4,
+      "total_machine_requirements": 6,
+      "matched_requirements": 6,
+      "exact_matches": 6,
       "semantic_matches": 0,
-      "missing_requirements": 5,
+      "missing_requirements": 3,
       "extra_requirements": 0,
       "conflicting_values": 0,
       "both_absent_fields_excluded": 1,
-      "requirement_match_rate_pct": 44.44,
-      "exact_match_rate_pct": 44.44,
+      "requirement_match_rate_pct": 66.67,
+      "exact_match_rate_pct": 66.67,
       "semantic_match_rate_pct": 0.0,
-      "missing_requirement_rate_pct": 55.56,
+      "missing_requirement_rate_pct": 33.33,
       "extra_requirement_rate_vs_human_pct": 0.0,
       "extra_requirement_rate_vs_machine_pct": 0.0,
       "conflicting_value_rate_pct": 0.0
     },
     "purpose": {
-      "total_human_requirements": 0,
+      "total_human_requirements": 1,
       "total_machine_requirements": 0,
       "matched_requirements": 0,
       "exact_matches": 0,
       "semantic_matches": 0,
-      "missing_requirements": 0,
-      "extra_requirements": 0,
-      "conflicting_values": 0,
-      "both_absent_fields_excluded": 10,
-      "requirement_match_rate_pct": null,
-      "exact_match_rate_pct": null,
-      "semantic_match_rate_pct": null,
-      "missing_requirement_rate_pct": null,
-      "extra_requirement_rate_vs_human_pct": null,
-      "extra_requirement_rate_vs_machine_pct": null,
-      "conflicting_value_rate_pct": null
-    },
-    "deal_type": {
-      "total_human_requirements": 10,
-      "total_machine_requirements": 9,
-      "matched_requirements": 8,
-      "exact_matches": 8,
-      "semantic_matches": 0,
       "missing_requirements": 1,
       "extra_requirements": 0,
-      "conflicting_values": 1,
-      "both_absent_fields_excluded": 0,
-      "requirement_match_rate_pct": 80.0,
-      "exact_match_rate_pct": 80.0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 9,
+      "requirement_match_rate_pct": 0.0,
+      "exact_match_rate_pct": 0.0,
       "semantic_match_rate_pct": 0.0,
-      "missing_requirement_rate_pct": 10.0,
+      "missing_requirement_rate_pct": 100.0,
       "extra_requirement_rate_vs_human_pct": 0.0,
-      "extra_requirement_rate_vs_machine_pct": 0.0,
-      "conflicting_value_rate_pct": 10.0
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "deal_type": {
+      "total_human_requirements": 9,
+      "total_machine_requirements": 8,
+      "matched_requirements": 7,
+      "exact_matches": 7,
+      "semantic_matches": 0,
+      "missing_requirements": 2,
+      "extra_requirements": 1,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 77.78,
+      "exact_match_rate_pct": 77.78,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 22.22,
+      "extra_requirement_rate_vs_human_pct": 11.11,
+      "extra_requirement_rate_vs_machine_pct": 12.5,
+      "conflicting_value_rate_pct": 0.0
     },
     "notes": {
       "total_human_requirements": 0,
@@ -282,9 +282,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "manual_human_transcripts",
       "human_annotation_source": "manual_human_transcript_with_waveform_timestamps",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec1_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec1_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec1_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec1_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec1_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec1_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -302,14 +302,16 @@
         "bedrooms": 3,
         "property_type": "apartment",
         "purpose": "unknown",
-        "deal_type": "buy",
+        "deal_type": "unknown",
         "notes": null,
         "missing_fields": [
           "budget_min",
           "area_sqm",
           "purpose",
+          "deal_type",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "التجمع الخامس",
@@ -319,7 +321,7 @@
         "bedrooms": 3,
         "property_type": "unknown",
         "purpose": "unknown",
-        "deal_type": "rent",
+        "deal_type": "buy",
         "notes": null,
         "missing_fields": [
           "budget_min",
@@ -327,26 +329,27 @@
           "property_type",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
-          "total_human_requirements": 5,
+          "total_human_requirements": 4,
           "total_machine_requirements": 4,
           "matched_requirements": 3,
           "exact_matches": 3,
           "semantic_matches": 0,
           "missing_requirements": 1,
-          "extra_requirements": 0,
-          "conflicting_values": 1,
+          "extra_requirements": 1,
+          "conflicting_values": 0,
           "both_absent_fields_excluded": 4,
-          "requirement_match_rate_pct": 60.0,
-          "exact_match_rate_pct": 60.0,
+          "requirement_match_rate_pct": 75.0,
+          "exact_match_rate_pct": 75.0,
           "semantic_match_rate_pct": 0.0,
-          "missing_requirement_rate_pct": 20.0,
-          "extra_requirement_rate_vs_human_pct": 0.0,
-          "extra_requirement_rate_vs_machine_pct": 0.0,
-          "conflicting_value_rate_pct": 20.0
+          "missing_requirement_rate_pct": 25.0,
+          "extra_requirement_rate_vs_human_pct": 25.0,
+          "extra_requirement_rate_vs_machine_pct": 25.0,
+          "conflicting_value_rate_pct": 0.0
         },
         "per_field": {
           "location": {
@@ -406,11 +409,11 @@
             "matched": false
           },
           "deal_type": {
-            "human_value": "buy",
-            "machine_value": "rent",
-            "human_canonical": "buy",
-            "machine_canonical": "rent",
-            "category": "conflicting_value",
+            "human_value": "unknown",
+            "machine_value": "buy",
+            "human_canonical": null,
+            "machine_canonical": "buy",
+            "category": "extra_requirement",
             "matched": false
           },
           "notes": {
@@ -429,9 +432,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec2_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec2_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec2_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec2_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec2_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec2_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -456,7 +459,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "العاصمة الادارية",
@@ -464,33 +468,33 @@
         "budget_max": 2500000.0,
         "area_sqm": null,
         "bedrooms": 3,
-        "property_type": "unknown",
+        "property_type": "apartment",
         "purpose": "unknown",
         "deal_type": "buy",
         "notes": null,
         "missing_fields": [
           "budget_min",
           "area_sqm",
-          "property_type",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
           "total_human_requirements": 5,
-          "total_machine_requirements": 4,
-          "matched_requirements": 4,
-          "exact_matches": 3,
+          "total_machine_requirements": 5,
+          "matched_requirements": 5,
+          "exact_matches": 4,
           "semantic_matches": 1,
-          "missing_requirements": 1,
+          "missing_requirements": 0,
           "extra_requirements": 0,
           "conflicting_values": 0,
           "both_absent_fields_excluded": 4,
-          "requirement_match_rate_pct": 80.0,
-          "exact_match_rate_pct": 60.0,
+          "requirement_match_rate_pct": 100.0,
+          "exact_match_rate_pct": 80.0,
           "semantic_match_rate_pct": 20.0,
-          "missing_requirement_rate_pct": 20.0,
+          "missing_requirement_rate_pct": 0.0,
           "extra_requirement_rate_vs_human_pct": 0.0,
           "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 0.0
@@ -538,11 +542,11 @@
           },
           "property_type": {
             "human_value": "apartment",
-            "machine_value": "unknown",
+            "machine_value": "apartment",
             "human_canonical": "apartment",
-            "machine_canonical": null,
-            "category": "missing_requirement",
-            "matched": false
+            "machine_canonical": "apartment",
+            "category": "exact_match",
+            "matched": true
           },
           "purpose": {
             "human_value": "unknown",
@@ -576,9 +580,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec3_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec3_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec3_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec3_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec3_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec3_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -603,7 +607,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "الشيخ زايد",
@@ -620,7 +625,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
@@ -722,9 +728,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec4_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec4_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec4_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec4_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec4_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec4_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -749,12 +755,13 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "التجامعة الخامس",
-        "budget_min": 10000.0,
-        "budget_max": 20000.0,
+        "budget_min": null,
+        "budget_max": null,
         "area_sqm": null,
         "bedrooms": 3,
         "property_type": "apartment",
@@ -762,28 +769,31 @@
         "deal_type": "rent",
         "notes": null,
         "missing_fields": [
+          "budget_min",
+          "budget_max",
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
           "total_human_requirements": 5,
-          "total_machine_requirements": 6,
-          "matched_requirements": 4,
-          "exact_matches": 4,
+          "total_machine_requirements": 4,
+          "matched_requirements": 3,
+          "exact_matches": 3,
           "semantic_matches": 0,
-          "missing_requirements": 0,
-          "extra_requirements": 1,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
           "conflicting_values": 1,
-          "both_absent_fields_excluded": 3,
-          "requirement_match_rate_pct": 80.0,
-          "exact_match_rate_pct": 80.0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 60.0,
+          "exact_match_rate_pct": 60.0,
           "semantic_match_rate_pct": 0.0,
-          "missing_requirement_rate_pct": 0.0,
-          "extra_requirement_rate_vs_human_pct": 20.0,
-          "extra_requirement_rate_vs_machine_pct": 16.67,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 20.0
         },
         "per_field": {
@@ -797,19 +807,19 @@
           },
           "budget_min": {
             "human_value": null,
-            "machine_value": 10000.0,
+            "machine_value": null,
             "human_canonical": null,
-            "machine_canonical": 10000.0,
-            "category": "extra_requirement",
+            "machine_canonical": null,
+            "category": "both_absent",
             "matched": false
           },
           "budget_max": {
             "human_value": 20000.0,
-            "machine_value": 20000.0,
+            "machine_value": null,
             "human_canonical": 20000.0,
-            "machine_canonical": 20000.0,
-            "category": "exact_match",
-            "matched": true
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
           },
           "area_sqm": {
             "human_value": null,
@@ -867,9 +877,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec5_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec5_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec5_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec5_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec5_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec5_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -886,14 +896,14 @@
         "area_sqm": 180.0,
         "bedrooms": 5,
         "property_type": "villa",
-        "purpose": "unknown",
+        "purpose": "living",
         "deal_type": "buy",
         "notes": null,
         "missing_fields": [
           "budget_min",
-          "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "التجمع",
@@ -903,30 +913,32 @@
         "bedrooms": 5,
         "property_type": "unknown",
         "purpose": "unknown",
-        "deal_type": "buy",
+        "deal_type": "unknown",
         "notes": null,
         "missing_fields": [
           "budget_min",
           "property_type",
           "purpose",
+          "deal_type",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
-          "total_human_requirements": 6,
-          "total_machine_requirements": 5,
-          "matched_requirements": 5,
-          "exact_matches": 5,
+          "total_human_requirements": 7,
+          "total_machine_requirements": 4,
+          "matched_requirements": 4,
+          "exact_matches": 4,
           "semantic_matches": 0,
-          "missing_requirements": 1,
+          "missing_requirements": 3,
           "extra_requirements": 0,
           "conflicting_values": 0,
-          "both_absent_fields_excluded": 3,
-          "requirement_match_rate_pct": 83.33,
-          "exact_match_rate_pct": 83.33,
+          "both_absent_fields_excluded": 2,
+          "requirement_match_rate_pct": 57.14,
+          "exact_match_rate_pct": 57.14,
           "semantic_match_rate_pct": 0.0,
-          "missing_requirement_rate_pct": 16.67,
+          "missing_requirement_rate_pct": 42.86,
           "extra_requirement_rate_vs_human_pct": 0.0,
           "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 0.0
@@ -981,20 +993,20 @@
             "matched": false
           },
           "purpose": {
-            "human_value": "unknown",
+            "human_value": "living",
             "machine_value": "unknown",
-            "human_canonical": null,
+            "human_canonical": "living",
             "machine_canonical": null,
-            "category": "both_absent",
+            "category": "missing_requirement",
             "matched": false
           },
           "deal_type": {
             "human_value": "buy",
-            "machine_value": "buy",
+            "machine_value": "unknown",
             "human_canonical": "buy",
-            "machine_canonical": "buy",
-            "category": "exact_match",
-            "matched": true
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
           },
           "notes": {
             "human_value": null,
@@ -1012,9 +1024,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec6_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec6_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec6_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec6_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec6_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec6_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -1039,7 +1051,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "مدينة نصر",
@@ -1056,7 +1069,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
@@ -1158,9 +1172,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec7_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec7_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec7_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec7_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec7_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec7_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -1184,7 +1198,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "6 اكتوبر",
@@ -1201,7 +1216,8 @@
           "property_type",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
@@ -1303,9 +1319,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "manual_human_transcripts",
       "human_annotation_source": "manual_human_transcript_with_waveform_timestamps",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec8_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec8_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec8_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec8_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec8_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec8_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -1330,7 +1346,8 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "مصر الجديدة",
@@ -1338,33 +1355,33 @@
         "budget_max": 15000.0,
         "area_sqm": null,
         "bedrooms": 2,
-        "property_type": "unknown",
+        "property_type": "apartment",
         "purpose": "unknown",
         "deal_type": "rent",
         "notes": null,
         "missing_fields": [
           "budget_min",
           "area_sqm",
-          "property_type",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
           "total_human_requirements": 5,
-          "total_machine_requirements": 4,
-          "matched_requirements": 4,
-          "exact_matches": 4,
+          "total_machine_requirements": 5,
+          "matched_requirements": 5,
+          "exact_matches": 5,
           "semantic_matches": 0,
-          "missing_requirements": 1,
+          "missing_requirements": 0,
           "extra_requirements": 0,
           "conflicting_values": 0,
           "both_absent_fields_excluded": 4,
-          "requirement_match_rate_pct": 80.0,
-          "exact_match_rate_pct": 80.0,
+          "requirement_match_rate_pct": 100.0,
+          "exact_match_rate_pct": 100.0,
           "semantic_match_rate_pct": 0.0,
-          "missing_requirement_rate_pct": 20.0,
+          "missing_requirement_rate_pct": 0.0,
           "extra_requirement_rate_vs_human_pct": 0.0,
           "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 0.0
@@ -1412,11 +1429,11 @@
           },
           "property_type": {
             "human_value": "apartment",
-            "machine_value": "unknown",
+            "machine_value": "apartment",
             "human_canonical": "apartment",
-            "machine_canonical": null,
-            "category": "missing_requirement",
-            "matched": false
+            "machine_canonical": "apartment",
+            "category": "exact_match",
+            "matched": true
           },
           "purpose": {
             "human_value": "unknown",
@@ -1450,9 +1467,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec9_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec9_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec9_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec9_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec9_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec9_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -1477,10 +1494,11 @@
           "area_sqm",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
-        "location": "6 اكتوبر",
+        "location": "6 أكتوبر",
         "budget_min": null,
         "budget_max": 5000000.0,
         "area_sqm": null,
@@ -1495,22 +1513,23 @@
           "purpose",
           "deal_type",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {
           "total_human_requirements": 5,
           "total_machine_requirements": 4,
           "matched_requirements": 4,
-          "exact_matches": 3,
-          "semantic_matches": 1,
+          "exact_matches": 4,
+          "semantic_matches": 0,
           "missing_requirements": 1,
           "extra_requirements": 0,
           "conflicting_values": 0,
           "both_absent_fields_excluded": 4,
           "requirement_match_rate_pct": 80.0,
-          "exact_match_rate_pct": 60.0,
-          "semantic_match_rate_pct": 20.0,
+          "exact_match_rate_pct": 80.0,
+          "semantic_match_rate_pct": 0.0,
           "missing_requirement_rate_pct": 20.0,
           "extra_requirement_rate_vs_human_pct": 0.0,
           "extra_requirement_rate_vs_machine_pct": 0.0,
@@ -1519,10 +1538,10 @@
         "per_field": {
           "location": {
             "human_value": "6 أكتوبر",
-            "machine_value": "6 اكتوبر",
+            "machine_value": "6 أكتوبر",
             "human_canonical": "sixth_of_october",
             "machine_canonical": "sixth_of_october",
-            "category": "semantic_match",
+            "category": "exact_match",
             "matched": true
           },
           "budget_min": {
@@ -1597,9 +1616,9 @@
       "status": "EVALUATED",
       "reference_provenance_group": "user_provided_multipass_reference",
       "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec10_gt_transcript.json",
-      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec10_transcript.json",
-      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec10_conversation.json",
+      "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec10_gt_transcript.json",
+      "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec10_transcript.json",
+      "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec10_conversation.json",
       "machine_asr_model": "large-v3-turbo",
       "machine_asr_backend": "local_faster_whisper",
       "machine_speaker_role_mapping": {
@@ -1625,7 +1644,8 @@
           "property_type",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "machine_extraction": {
         "location": "أكتوبر مثلا الشيخ زايد",
@@ -1643,7 +1663,8 @@
           "property_type",
           "purpose",
           "notes"
-        ]
+        ],
+        "unclear_fields": {}
       },
       "comparison": {
         "metrics": {

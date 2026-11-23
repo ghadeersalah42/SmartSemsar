@@ -1,0 +1,1744 @@
+{
+  "generated_at_utc": "2026-11-22T01:18:44.707244+00:00",
+  "evaluation_scope": "all_10_manifest_calls_with_provenance_breakdown",
+  "status": "EVALUATED",
+  "extraction_configuration": {
+    "extractor_function": "backend.services.user_input_text.extract_requirements",
+    "output_schema": "backend.schema.state.CustomerRequirements",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0,
+    "response_format": "json_object",
+    "prompt_source": "backend.services.user_input_text.SYSTEM_PROMPT",
+    "prompt_char_length": 1888,
+    "input_formatting": "Identical 'Role: text' dialogue lines with consecutive same-role turns merged",
+    "compared_fields": [
+      "location",
+      "budget_min",
+      "budget_max",
+      "area_sqm",
+      "bedrooms",
+      "property_type",
+      "purpose",
+      "deal_type",
+      "notes"
+    ]
+  },
+  "metric_definitions": {
+    "denominator_H": "Total human-reference requirements present (non-null, non-empty, non-'unknown') across evaluated fields; fields absent in both extractions ('both_absent') are excluded.",
+    "denominator_M": "Total machine-extracted requirements present (non-null, non-empty, non-'unknown').",
+    "requirement_match_rate_pct": "(exact_matches + semantic_matches) / H * 100",
+    "exact_match_rate_pct": "exact_matches / H * 100",
+    "semantic_match_rate_pct": "semantic_matches / H * 100",
+    "missing_requirement_rate_pct": "missing_requirements / H * 100",
+    "extra_requirement_rate_vs_human_pct": "extra_requirements / H * 100",
+    "extra_requirement_rate_vs_machine_pct": "extra_requirements / M * 100",
+    "conflicting_value_rate_pct": "conflicting_values / H * 100"
+  },
+  "previous_report_preserved_at": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\reports\\archive\\extraction_agreement_report_legacy_groq_20261121.json",
+  "total_target_calls": 10,
+  "evaluated_calls": 10,
+  "error_calls": 0,
+  "excluded_non_manual_calls": [],
+  "overall_summary": {
+    "total_human_requirements": 51,
+    "total_machine_requirements": 46,
+    "matched_requirements": 43,
+    "exact_matches": 39,
+    "semantic_matches": 4,
+    "missing_requirements": 6,
+    "extra_requirements": 1,
+    "conflicting_values": 2,
+    "both_absent_fields_excluded": 38,
+    "requirement_match_rate_pct": 84.31,
+    "exact_match_rate_pct": 76.47,
+    "semantic_match_rate_pct": 7.84,
+    "missing_requirement_rate_pct": 11.76,
+    "extra_requirement_rate_vs_human_pct": 1.96,
+    "extra_requirement_rate_vs_machine_pct": 2.17,
+    "conflicting_value_rate_pct": 3.92
+  },
+  "provenance_subgroup_summary": {
+    "manual_human_transcripts": {
+      "call_ids": [
+        "smartsemsar_rec1",
+        "smartsemsar_rec8"
+      ],
+      "num_calls": 2,
+      "total_human_requirements": 10,
+      "total_machine_requirements": 8,
+      "matched_requirements": 7,
+      "exact_matches": 7,
+      "semantic_matches": 0,
+      "missing_requirements": 2,
+      "extra_requirements": 0,
+      "conflicting_values": 1,
+      "both_absent_fields_excluded": 8,
+      "requirement_match_rate_pct": 70.0,
+      "exact_match_rate_pct": 70.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 20.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 10.0
+    },
+    "user_provided_multipass_reference": {
+      "call_ids": [
+        "smartsemsar_rec2",
+        "smartsemsar_rec3",
+        "smartsemsar_rec4",
+        "smartsemsar_rec5",
+        "smartsemsar_rec6",
+        "smartsemsar_rec7",
+        "smartsemsar_rec9",
+        "smartsemsar_rec10"
+      ],
+      "num_calls": 8,
+      "total_human_requirements": 41,
+      "total_machine_requirements": 38,
+      "matched_requirements": 36,
+      "exact_matches": 32,
+      "semantic_matches": 4,
+      "missing_requirements": 4,
+      "extra_requirements": 1,
+      "conflicting_values": 1,
+      "both_absent_fields_excluded": 30,
+      "requirement_match_rate_pct": 87.8,
+      "exact_match_rate_pct": 78.05,
+      "semantic_match_rate_pct": 9.76,
+      "missing_requirement_rate_pct": 9.76,
+      "extra_requirement_rate_vs_human_pct": 2.44,
+      "extra_requirement_rate_vs_machine_pct": 2.63,
+      "conflicting_value_rate_pct": 2.44
+    }
+  },
+  "per_field_summary": {
+    "location": {
+      "total_human_requirements": 10,
+      "total_machine_requirements": 10,
+      "matched_requirements": 9,
+      "exact_matches": 5,
+      "semantic_matches": 4,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 1,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 90.0,
+      "exact_match_rate_pct": 50.0,
+      "semantic_match_rate_pct": 40.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 10.0
+    },
+    "budget_min": {
+      "total_human_requirements": 1,
+      "total_machine_requirements": 2,
+      "matched_requirements": 1,
+      "exact_matches": 1,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 1,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 8,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 100.0,
+      "extra_requirement_rate_vs_machine_pct": 50.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "budget_max": {
+      "total_human_requirements": 10,
+      "total_machine_requirements": 10,
+      "matched_requirements": 10,
+      "exact_matches": 10,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "area_sqm": {
+      "total_human_requirements": 1,
+      "total_machine_requirements": 1,
+      "matched_requirements": 1,
+      "exact_matches": 1,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 9,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "bedrooms": {
+      "total_human_requirements": 10,
+      "total_machine_requirements": 10,
+      "matched_requirements": 10,
+      "exact_matches": 10,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 100.0,
+      "exact_match_rate_pct": 100.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 0.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "property_type": {
+      "total_human_requirements": 9,
+      "total_machine_requirements": 4,
+      "matched_requirements": 4,
+      "exact_matches": 4,
+      "semantic_matches": 0,
+      "missing_requirements": 5,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 1,
+      "requirement_match_rate_pct": 44.44,
+      "exact_match_rate_pct": 44.44,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 55.56,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 0.0
+    },
+    "purpose": {
+      "total_human_requirements": 0,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 10,
+      "requirement_match_rate_pct": null,
+      "exact_match_rate_pct": null,
+      "semantic_match_rate_pct": null,
+      "missing_requirement_rate_pct": null,
+      "extra_requirement_rate_vs_human_pct": null,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": null
+    },
+    "deal_type": {
+      "total_human_requirements": 10,
+      "total_machine_requirements": 9,
+      "matched_requirements": 8,
+      "exact_matches": 8,
+      "semantic_matches": 0,
+      "missing_requirements": 1,
+      "extra_requirements": 0,
+      "conflicting_values": 1,
+      "both_absent_fields_excluded": 0,
+      "requirement_match_rate_pct": 80.0,
+      "exact_match_rate_pct": 80.0,
+      "semantic_match_rate_pct": 0.0,
+      "missing_requirement_rate_pct": 10.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
+      "conflicting_value_rate_pct": 10.0
+    },
+    "notes": {
+      "total_human_requirements": 0,
+      "total_machine_requirements": 0,
+      "matched_requirements": 0,
+      "exact_matches": 0,
+      "semantic_matches": 0,
+      "missing_requirements": 0,
+      "extra_requirements": 0,
+      "conflicting_values": 0,
+      "both_absent_fields_excluded": 10,
+      "requirement_match_rate_pct": null,
+      "exact_match_rate_pct": null,
+      "semantic_match_rate_pct": null,
+      "missing_requirement_rate_pct": null,
+      "extra_requirement_rate_vs_human_pct": null,
+      "extra_requirement_rate_vs_machine_pct": null,
+      "conflicting_value_rate_pct": null
+    }
+  },
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "status": "EVALUATED",
+      "reference_provenance_group": "manual_human_transcripts",
+      "human_annotation_source": "manual_human_transcript_with_waveform_timestamps",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec1_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec1_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec1_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Client: عايز شقة في التجمع الخامس\nBroker: عايزها إيجار ولا تمليك؟\nClient: إيجار لا تمليك لو سمحت\nBroker: تمليك، طب ميزانيتك كام؟\nClient: حوالي 4 مليون\nBroker: 4 مليون في التجمع كام غرفة؟\nClient: 3 غرف يا فندم مش صغيرة\nBroker: مساحتها كام؟\nClient: 3 غرف يا فندم\nBroker: المساحة يا عم المساحة\nClient: معرفش المساحة بالظبط يا فندم بس 3 غرف وفي التجمع الخامس والميزانية حوالي 4 مليون\nBroker: طيب جميل جدا",
+      "formatted_machine_input": "Client: في التجمع الخامس\nBroker: عايز اتجار ولا تمليك؟\nClient: اتجار لا تمليك\nBroker: تمليك؟ طب بميزانيتك كم؟\nClient: حوالي 4 مليون\nBroker: 4 مليون في التجمع؟ أي كم غرفة؟\nClient: 3 غرفة يا فن، مش صغية\nBroker: مسحيتها كم؟\nClient: 3 غرفة يا فن\nBroker: المساحة يا عام المساحة\nClient: ما عرفش المساحة بالظبط يا فن، بس 3 قوض وفي التجمع الخامس والميزانية حوالي 4 مليون\nBroker: طب جميل جداً",
+      "human_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 4000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 4,
+          "matched_requirements": 3,
+          "exact_matches": 3,
+          "semantic_matches": 0,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 1,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 60.0,
+          "exact_match_rate_pct": 60.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 20.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "التجمع الخامس",
+            "machine_value": "التجمع الخامس",
+            "human_canonical": "fifth_settlement",
+            "machine_canonical": "fifth_settlement",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 4000000.0,
+            "machine_value": 4000000.0,
+            "human_canonical": 4000000.0,
+            "machine_canonical": 4000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 3,
+            "machine_value": 3,
+            "human_canonical": 3,
+            "machine_canonical": 3,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "unknown",
+            "human_canonical": "apartment",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "rent",
+            "human_canonical": "buy",
+            "machine_canonical": "rent",
+            "category": "conflicting_value",
+            "matched": false
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec2_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec2_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec2_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: كنت حابب أعرف إيه المواصفات اللي في [Unclear]، منطقة، عدد الغرف\nClient: محتاجة حاجة في العاصمة الإدارية\nBroker: تمام، العاصمة الإدارية، كم غرفة تقريباً؟ إيجار ولا تمليك؟ والميزانية في حدود كام؟\nClient: امم ثلاث أوض [Unclear] تمليك اتنين ونص مليون\nBroker: ماشي، شقة 3 غرف تمليك في العاصمة الإدارية حوالي 2.5 مليون جنيه شكراً لاتصال حضرتك، في أمان الله",
+      "formatted_machine_input": "Broker: كنت حابب اعرف ايه المواصفات اللي في دمائك\nClient: محتاجة\nBroker: عدد الغرف\nClient: محتاجة حاجة في العاصمة الادارية\nBroker: تمام العاصمة الادارية كام غرفة تقريبا ايجار ولا تمليك والميزانية في حدود كام\nClient: 3 اوض تمليك\nBroker: تمليك\nClient: 2.5 مليون\nBroker: ماشي شقة 3 غرف تمليك في العاصمة الادارية حوالي 2.5 مليون جنيه شكرا لاتصال حضرتك في امان الله",
+      "human_extraction": {
+        "location": "العاصمة الإدارية",
+        "budget_min": null,
+        "budget_max": 2500000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "العاصمة الادارية",
+        "budget_min": null,
+        "budget_max": 2500000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 4,
+          "matched_requirements": 4,
+          "exact_matches": 3,
+          "semantic_matches": 1,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 60.0,
+          "semantic_match_rate_pct": 20.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "العاصمة الإدارية",
+            "machine_value": "العاصمة الادارية",
+            "human_canonical": "new_administrative_capital",
+            "machine_canonical": "new_administrative_capital",
+            "category": "semantic_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 2500000.0,
+            "machine_value": 2500000.0,
+            "human_canonical": 2500000.0,
+            "machine_canonical": 2500000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 3,
+            "machine_value": 3,
+            "human_canonical": 3,
+            "machine_canonical": 3,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "unknown",
+            "human_canonical": "apartment",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "buy",
+            "human_canonical": "buy",
+            "machine_canonical": "buy",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec3_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec3_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec3_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "client",
+        "SPEAKER_01": "broker"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: مكتب عقارات، اتفضل\nClient: آه، بدور على حاجة في الشيخ زايد\nBroker: تمام يا فندم، حضرتك شقة ولا فيلا؟\nClient: شقة، تبقى غرفتين\nBroker: تمام، اتنين أوض في الشيخ زايد، حضرتك إيجار ولا تمليك؟\nClient: إيجار. لو قلت إيجار\nBroker: إيجار. اتفضل يا فندم، حضرتك في حدود كام؟\nClient: لو قلت حوالي خمسة وعشرين ألف\nBroker: تمام يا فندم يبقى شقة غرفتين في الشيخ زايد إيجار حوالي خمسة وعشرين ألف",
+      "formatted_machine_input": "Broker: مكتب عقاعد. اتفضلي.\nClient: بدور على حاجة في الشيخ زايد.\nBroker: تمام يا فندم. حضرتك شقة ولا فيلا؟\nClient: شقة. تبقى غرفتين.\nBroker: تمام. اتنين قوض في الشيخ زايد. حضرتك إيجار ولا تمليل؟ إيجار. لو قلت إيجار؟ إيجار. اتفضلي يا فندم. حضرتك في حدود كام؟\nClient: 25 ألف. لو قلت حوالي..\nBroker: 25 ألف. تمام يا فندم. يبقى شقة غرفتين في الشيخ زايد إيجار. حوالي 25 ألف.",
+      "human_extraction": {
+        "location": "الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 25000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 25000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 5,
+          "matched_requirements": 5,
+          "exact_matches": 5,
+          "semantic_matches": 0,
+          "missing_requirements": 0,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 100.0,
+          "exact_match_rate_pct": 100.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 0.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "الشيخ زايد",
+            "machine_value": "الشيخ زايد",
+            "human_canonical": "sheikh_zayed",
+            "machine_canonical": "sheikh_zayed",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 25000.0,
+            "machine_value": 25000.0,
+            "human_canonical": 25000.0,
+            "machine_canonical": 25000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 2,
+            "machine_value": 2,
+            "human_canonical": 2,
+            "machine_canonical": 2,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "apartment",
+            "human_canonical": "apartment",
+            "machine_canonical": "apartment",
+            "category": "exact_match",
+            "matched": true
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "rent",
+            "machine_value": "rent",
+            "human_canonical": "rent",
+            "machine_canonical": "rent",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec4_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec4_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec4_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: [Unclear] الخير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه؟\nClient: أنا بدور على شقة في التجمع الخامس\nBroker: تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟\nClient: ثلاث غرف، مش عايزة أصغر\nBroker: ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟\nClient: إيجار، بفضّل يعني عشرين ألف\nBroker: تمام، في حدود كم مثلاً؟\nClient: حدود عشرين ألف\nBroker: طيب، شقة إيجار في التجمع الخامس ثلاث غرف، ميزانية حوالي 20 ألف [Unclear]\nClient: صح\nBroker: تمام، شكراً لاتصال حضرتك يا فندم [Unclear]",
+      "formatted_machine_input": "Broker: سأل خير يا فندم مع حضرتك مكتب عقراط كنت بتدوري عليهم\nClient: انا بدور على شقة في التجامعة الخامس\nBroker: تمام يا فندم التجامعة الخامس كم اوضة تقريبا؟\nClient: ثلاث غرف مش هايزة صغيرة\nBroker: ماشي ثلاثة او طيب ده ايجار ولا تمليك؟\nClient: ايجار بفضل يعني عشرين الف\nBroker: تمام في حدود كم مسلا؟\nClient: حدود عشر الف\nBroker: طيب شقة ايجار في التجامعة الخامس تلاث غرف ميزينية حوالي عشرين الف ساعة ساعة تمام شكرا لاتصال حضرتك يا فندم اسجلتك",
+      "human_extraction": {
+        "location": "التجمع الخامس",
+        "budget_min": null,
+        "budget_max": 20000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "التجامعة الخامس",
+        "budget_min": 10000.0,
+        "budget_max": 20000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 6,
+          "matched_requirements": 4,
+          "exact_matches": 4,
+          "semantic_matches": 0,
+          "missing_requirements": 0,
+          "extra_requirements": 1,
+          "conflicting_values": 1,
+          "both_absent_fields_excluded": 3,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 80.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 0.0,
+          "extra_requirement_rate_vs_human_pct": 20.0,
+          "extra_requirement_rate_vs_machine_pct": 16.67,
+          "conflicting_value_rate_pct": 20.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "التجمع الخامس",
+            "machine_value": "التجامعة الخامس",
+            "human_canonical": "fifth_settlement",
+            "machine_canonical": "التجامعه الخامس",
+            "category": "conflicting_value",
+            "matched": false
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": 10000.0,
+            "human_canonical": null,
+            "machine_canonical": 10000.0,
+            "category": "extra_requirement",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 20000.0,
+            "machine_value": 20000.0,
+            "human_canonical": 20000.0,
+            "machine_canonical": 20000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 3,
+            "machine_value": 3,
+            "human_canonical": 3,
+            "machine_canonical": 3,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "apartment",
+            "human_canonical": "apartment",
+            "machine_canonical": "apartment",
+            "category": "exact_match",
+            "matched": true
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "rent",
+            "machine_value": "rent",
+            "human_canonical": "rent",
+            "machine_canonical": "rent",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec5_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec5_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec5_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: [Unclear] الخير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على فيلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر ممكن أعرف ميزانيتك في حدود كام تقريباً عشان أظبطلك اختيارات مناسبة؟\nClient: 12 مليون\nBroker: تمام يا فندم، فيلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون هشوفلك شوية اختيارات مناسبة، ممكن أحددلك ميعاد للزيارة أو أبعتلك التفاصيل على الواتساب؟",
+      "formatted_machine_input": "Client: نحن خير يا فندم مع حضرتك مكتب عقارات لو حضرتك بتدوري على بلا تمليك في التجمع خمس غرف ومساحتها حوالي 180 متر ممكن اعرف ميزانيتك محدود كم تقريبا عشان ازبطلك اختيارات مناسبة 12 مليون\nBroker: تمام يا فندم بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون هاشوفلك شوية اختيارات مناسبة ممكن احددلك المعادل زيارة او ابعتلك التفاصيل على الواتساب",
+      "human_extraction": {
+        "location": "التجمع",
+        "budget_min": null,
+        "budget_max": 12000000.0,
+        "area_sqm": 180.0,
+        "bedrooms": 5,
+        "property_type": "villa",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "التجمع",
+        "budget_min": null,
+        "budget_max": 12000000.0,
+        "area_sqm": 180.0,
+        "bedrooms": 5,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 6,
+          "total_machine_requirements": 5,
+          "matched_requirements": 5,
+          "exact_matches": 5,
+          "semantic_matches": 0,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 3,
+          "requirement_match_rate_pct": 83.33,
+          "exact_match_rate_pct": 83.33,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 16.67,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "التجمع",
+            "machine_value": "التجمع",
+            "human_canonical": "new_cairo_tagamoa",
+            "machine_canonical": "new_cairo_tagamoa",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 12000000.0,
+            "machine_value": 12000000.0,
+            "human_canonical": 12000000.0,
+            "machine_canonical": 12000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": 180.0,
+            "machine_value": 180.0,
+            "human_canonical": 180.0,
+            "machine_canonical": 180.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "bedrooms": {
+            "human_value": 5,
+            "machine_value": 5,
+            "human_canonical": 5,
+            "machine_canonical": 5,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "villa",
+            "machine_value": "unknown",
+            "human_canonical": "villa",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "buy",
+            "human_canonical": "buy",
+            "machine_canonical": "buy",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec6_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec6_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec6_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: مكتب عقارات اتفضلي، كنت بتدوري عليه؟\nClient: بدور على شقة في مدينة نصر\nBroker: [Unclear] يا فندم\nClient: أربع غرف\nBroker: كم أوضة؟\nClient: أربعة\nBroker: تمام، حضرتك [Unclear] أربعة؟ ماشي تمليك ولا إيجار؟ والميزانية؟\nClient: إيجار\nBroker: إيجار، والميزانية تقريباً في حدود كام؟\nClient: 8000\nBroker: 8000، تمام يا فندم شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه شكراً [Unclear]",
+      "formatted_machine_input": "Client: مكتب عقارات اتفضالي كنت بتدوري علي بدور على شقة اف مدينة نصر تمام يا فندم اربع غرف كام قوضة اربع تمام حضرتك اربع مش دمليك ولا ايجار\nBroker: والميزانية\nClient: ايجار\nBroker: ايجار والميزانية تقريبا تمام تلاف تمام تلاف تمام يا فندم شقة اربع غرف في مدينة نصر ايجار بميزانية حوالي تمن تلاف جنيه",
+      "human_extraction": {
+        "location": "مدينة نصر",
+        "budget_min": null,
+        "budget_max": 8000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "مدينة نصر",
+        "budget_min": null,
+        "budget_max": 8000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 5,
+          "matched_requirements": 5,
+          "exact_matches": 5,
+          "semantic_matches": 0,
+          "missing_requirements": 0,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 100.0,
+          "exact_match_rate_pct": 100.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 0.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "مدينة نصر",
+            "machine_value": "مدينة نصر",
+            "human_canonical": "nasr_city",
+            "machine_canonical": "nasr_city",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 8000.0,
+            "machine_value": 8000.0,
+            "human_canonical": 8000.0,
+            "machine_canonical": 8000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 4,
+            "machine_value": 4,
+            "human_canonical": 4,
+            "machine_canonical": 4,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "apartment",
+            "human_canonical": "apartment",
+            "machine_canonical": "apartment",
+            "category": "exact_match",
+            "matched": true
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "rent",
+            "machine_value": "rent",
+            "human_canonical": "rent",
+            "machine_canonical": "rent",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec7_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec7_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec7_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: [Unclear] يا فندم، اتفضل\nClient: أنا محتاج فيلا في 6 أكتوبر\nBroker: تمام يا فندم، كم غرف تقريباً؟\nClient: 4 غرف\nBroker: طيب، شراء ولا إيجار؟\nClient: شراء طبعاً\nBroker: تمام، والميزانية في حدود كم؟\nClient: 8 مليون جنيه، 10 مليون جنيه\nBroker: تمام يا فندم، خلاص، فيلا 4 غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه شكراً لاتصال حضر[تك]",
+      "formatted_machine_input": "Client: كيف يا فندم؟ اتفضل انا محتاج بيلا في 6 اكتوبر\nBroker: تمام يا فندم كام غرفه تقريبا؟\nClient: 4 غرف\nBroker: طيب شراء ولا ايجار؟\nClient: شراء طبعا\nBroker: تمام والميزانية في حدود كم؟\nClient: 8 مليون جنيه 10 مليون جنيه كم؟\nBroker: تمام يا فندم خلاص بيلا 4 غرف في اكتوبر تمليك ميزانية من 8 ل 10 مليون جنيه شكرا لاتصار حضرت",
+      "human_extraction": {
+        "location": "6 أكتوبر",
+        "budget_min": 8000000.0,
+        "budget_max": 10000000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "villa",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "6 اكتوبر",
+        "budget_min": 8000000.0,
+        "budget_max": 10000000.0,
+        "area_sqm": null,
+        "bedrooms": 4,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 6,
+          "total_machine_requirements": 5,
+          "matched_requirements": 5,
+          "exact_matches": 4,
+          "semantic_matches": 1,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 3,
+          "requirement_match_rate_pct": 83.33,
+          "exact_match_rate_pct": 66.67,
+          "semantic_match_rate_pct": 16.67,
+          "missing_requirement_rate_pct": 16.67,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "6 أكتوبر",
+            "machine_value": "6 اكتوبر",
+            "human_canonical": "sixth_of_october",
+            "machine_canonical": "sixth_of_october",
+            "category": "semantic_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": 8000000.0,
+            "machine_value": 8000000.0,
+            "human_canonical": 8000000.0,
+            "machine_canonical": 8000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_max": {
+            "human_value": 10000000.0,
+            "machine_value": 10000000.0,
+            "human_canonical": 10000000.0,
+            "machine_canonical": 10000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 4,
+            "machine_value": 4,
+            "human_canonical": 4,
+            "machine_canonical": 4,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "villa",
+            "machine_value": "unknown",
+            "human_canonical": "villa",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "buy",
+            "human_canonical": "buy",
+            "machine_canonical": "buy",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "status": "EVALUATED",
+      "reference_provenance_group": "manual_human_transcripts",
+      "human_annotation_source": "manual_human_transcript_with_waveform_timestamps",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec8_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec8_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec8_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "client",
+        "SPEAKER_01": "broker"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: اتفضلي حضرتك بتدوري على حاجة إيجار في منطقة معينة.\nClient: آه بدور علي إيجار في مصر الجديدة.\nBroker: تمام مصر الجديدة كام أوضة يا فندم والميزانية اللي في بالك؟\nClient: غرفتين\nBroker: والميزانية؟\nClient: خمستاشر ألف\nBroker: خمستاشر ألف تمام يا فندم خلاص بنتكلم على شقة غرفتين في مصر الجديدة إيجار بميزانية حوالي خمستاشر ألف",
+      "formatted_machine_input": "Broker: اتفضلي حضرتك بتدوري على حاجة ايجار في منطقة معينة\nClient: اه بدور على ايجار مصر الجديدة\nBroker: تمام مصر الجديدة كم قوضة يا فندم تقريبا؟\nClient: غرفتين\nBroker: والميزانية اللي في بالك؟ الغرفتين والميزانية؟\nClient: 15000\nBroker: 15000 تمام يا فندم حلو سيناتكلم على شقة غرفتين في مصر الجديدة ايجار بميزانية حوالي 15000 شكراً لاتصال",
+      "human_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "مصر الجديدة",
+        "budget_min": null,
+        "budget_max": 15000.0,
+        "area_sqm": null,
+        "bedrooms": 2,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "rent",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 4,
+          "matched_requirements": 4,
+          "exact_matches": 4,
+          "semantic_matches": 0,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 80.0,
+          "semantic_match_rate_pct": 0.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "مصر الجديدة",
+            "machine_value": "مصر الجديدة",
+            "human_canonical": "heliopolis",
+            "machine_canonical": "heliopolis",
+            "category": "exact_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 15000.0,
+            "machine_value": 15000.0,
+            "human_canonical": 15000.0,
+            "machine_canonical": 15000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 2,
+            "machine_value": 2,
+            "human_canonical": 2,
+            "machine_canonical": 2,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "unknown",
+            "human_canonical": "apartment",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "rent",
+            "machine_value": "rent",
+            "human_canonical": "rent",
+            "machine_canonical": "rent",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec9_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec9_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec9_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "broker",
+        "SPEAKER_01": "client"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: اتفضلي يا فندم، محتاجة مساعدة في إيه بالظبط في العقارات؟\nClient: أو، أنا محتاجة شقة في 6 أكتوبر\nBroker: تمام، شقة في أكتوبر\nClient: تمليك\nBroker: تمليك، صح؟\nClient: آه\nBroker: طيب، كم غرفة تقريباً؟\nClient: إيه، تلت غرف\nBroker: تلت غرف، حلو، والميزانية؟\nClient: آه، خمسة مليون جنيه حوالي خمسة مليون جنيه\nBroker: تمام يا فندم، شقة ثلاث غرف تمليك في أكتوبر حوالي خمسة مليون شكراً لاتصال حضرتك",
+      "formatted_machine_input": "Broker: تحتاج المساعدة بالضبط في العطارات\nClient: او انا محتاجة شقة في 6 اكتوبر\nBroker: تمام شقة في 6 اكتوبر تمليئك صح؟ او كم غرفة تقريبا والميزانية؟\nClient: اي تلات غرف\nBroker: تلات غرف حلو والميزانية؟\nClient: خمسة مليون جنيه\nBroker: حوالي خمسة مليون جنيه تمام يا فندم شقة تلات غرف تمليئ في اكتوبر حوالي خمسة مليون جنيه شكرا لاتصال حضرتك",
+      "human_extraction": {
+        "location": "6 أكتوبر",
+        "budget_min": null,
+        "budget_max": 5000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "6 اكتوبر",
+        "budget_min": null,
+        "budget_max": 5000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "apartment",
+        "purpose": "unknown",
+        "deal_type": "unknown",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "purpose",
+          "deal_type",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 5,
+          "total_machine_requirements": 4,
+          "matched_requirements": 4,
+          "exact_matches": 3,
+          "semantic_matches": 1,
+          "missing_requirements": 1,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 60.0,
+          "semantic_match_rate_pct": 20.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "6 أكتوبر",
+            "machine_value": "6 اكتوبر",
+            "human_canonical": "sixth_of_october",
+            "machine_canonical": "sixth_of_october",
+            "category": "semantic_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 5000000.0,
+            "machine_value": 5000000.0,
+            "human_canonical": 5000000.0,
+            "machine_canonical": 5000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 3,
+            "machine_value": 3,
+            "human_canonical": 3,
+            "machine_canonical": 3,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "apartment",
+            "machine_value": "apartment",
+            "human_canonical": "apartment",
+            "machine_canonical": "apartment",
+            "category": "exact_match",
+            "matched": true
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "unknown",
+            "human_canonical": "buy",
+            "machine_canonical": null,
+            "category": "missing_requirement",
+            "matched": false
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "status": "EVALUATED",
+      "reference_provenance_group": "user_provided_multipass_reference",
+      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "human_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec10_gt_transcript.json",
+      "machine_transcript_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\smartsemsar_rec10_transcript.json",
+      "machine_conversation_path": "C:\\Users\\96650\\Desktop\\SmartSemsar\\SmartSemsar\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec10_conversation.json",
+      "machine_asr_model": "large-v3-turbo",
+      "machine_asr_backend": "local_faster_whisper",
+      "machine_speaker_role_mapping": {
+        "SPEAKER_00": "client",
+        "SPEAKER_01": "broker"
+      },
+      "machine_input_format": "conversation_with_predicted_roles",
+      "formatted_human_input": "Broker: [Unclear] مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البجت أو الميزانية اللي في بالك؟\nClient: عايزة حاجة تمليك، معايا ميزانية 6 مليون\nBroker: 6 مليون، طيب، كم غرفة في [Unclear] حضرتك؟\nClient: إيه؟ بتقول إيه؟\nBroker: كم غرفة؟\nClient: كم غرفة؟ ثلاث غرف\nBroker: ثلاث غرف طب، في منطقة معينة في مصر في بالك؟\nClient: أكتوبر مثلاً الشيخ زايد\nBroker: زايد، حاضر ثلاث غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم؟ شكراً لاتصال حضرتك",
+      "formatted_machine_input": "Broker: أقدم مع حضرتك مكتب عكرات كنت أحبب أعرف من حضرتك بالدواري على بيجار أو تمليك وإيه البجت أو الميزانية اللي تبالك\nClient: عايزة حاجة تمليك معي ميزانية ستة مليون\nBroker: ستة مليون طيب كم غرفة\nClient: كم غرفة\nBroker: كم غرفة\nClient: كم غرفة ثلاث غرف\nBroker: ثلاث غرف طب في منطقة معينة في مصر في بلك\nClient: أكتوبر مثلا الشيخ زايد\nBroker: زايد بحضل طلب غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم شكرا أن تصار حضرتك",
+      "human_extraction": {
+        "location": "أكتوبر مثلاً الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 6000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "machine_extraction": {
+        "location": "أكتوبر مثلا الشيخ زايد",
+        "budget_min": null,
+        "budget_max": 6000000.0,
+        "area_sqm": null,
+        "bedrooms": 3,
+        "property_type": "unknown",
+        "purpose": "unknown",
+        "deal_type": "buy",
+        "notes": null,
+        "missing_fields": [
+          "budget_min",
+          "area_sqm",
+          "property_type",
+          "purpose",
+          "notes"
+        ]
+      },
+      "comparison": {
+        "metrics": {
+          "total_human_requirements": 4,
+          "total_machine_requirements": 4,
+          "matched_requirements": 4,
+          "exact_matches": 3,
+          "semantic_matches": 1,
+          "missing_requirements": 0,
+          "extra_requirements": 0,
+          "conflicting_values": 0,
+          "both_absent_fields_excluded": 5,
+          "requirement_match_rate_pct": 100.0,
+          "exact_match_rate_pct": 75.0,
+          "semantic_match_rate_pct": 25.0,
+          "missing_requirement_rate_pct": 0.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
+          "conflicting_value_rate_pct": 0.0
+        },
+        "per_field": {
+          "location": {
+            "human_value": "أكتوبر مثلاً الشيخ زايد",
+            "machine_value": "أكتوبر مثلا الشيخ زايد",
+            "human_canonical": "اكتوبر مثلا الشيخ زايد",
+            "machine_canonical": "اكتوبر مثلا الشيخ زايد",
+            "category": "semantic_match",
+            "matched": true
+          },
+          "budget_min": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "budget_max": {
+            "human_value": 6000000.0,
+            "machine_value": 6000000.0,
+            "human_canonical": 6000000.0,
+            "machine_canonical": 6000000.0,
+            "category": "exact_match",
+            "matched": true
+          },
+          "area_sqm": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "bedrooms": {
+            "human_value": 3,
+            "machine_value": 3,
+            "human_canonical": 3,
+            "machine_canonical": 3,
+            "category": "exact_match",
+            "matched": true
+          },
+          "property_type": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "purpose": {
+            "human_value": "unknown",
+            "machine_value": "unknown",
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          },
+          "deal_type": {
+            "human_value": "buy",
+            "machine_value": "buy",
+            "human_canonical": "buy",
+            "machine_canonical": "buy",
+            "category": "exact_match",
+            "matched": true
+          },
+          "notes": {
+            "human_value": null,
+            "machine_value": null,
+            "human_canonical": null,
+            "machine_canonical": null,
+            "category": "both_absent",
+            "matched": false
+          }
+        }
+      }
+    }
+  ]
+}
