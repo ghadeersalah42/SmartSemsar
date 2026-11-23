@@ -1,0 +1,207 @@
+{
+  "call_id": "smartsemsar_rec8",
+  "source_audio_file": "smartsemsar_rec8.mp4",
+  "audio_file": "smartsemsar_rec8_standardized.wav",
+  "language": "ar",
+  "duration": 24.892,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 greets with \"اتفضلي حضرتك\" and asks qualifying questions about location, rooms, and budget, then summarizes and thanks the caller, matching broker behavior. SPEAKER_00 provides answers to those questions, matching client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 5.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 4.759,
+      "overlap_ratio": 0.9518,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "اتفضلي حضرتك بتدوري على حاجة ايجار في منطقة معينة",
+      "text": "اتفضلي حضرتك بتدوري علي حاجة ايجار في منطقة معينة",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 5.0,
+      "end": 8.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.531,
+      "overlap_ratio": 0.8437,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "اه بدور على ايجار مصر الجديدة",
+      "text": "اه بدور علي ايجار مصر الجديدة",
+      "role": "client"
+    },
+    {
+      "turn_id": 3,
+      "start": 8.0,
+      "end": 11.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.228,
+      "overlap_ratio": 0.7427,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام مصر الجديدة كم قوضة يا فندم تقريبا؟",
+      "text": "تمام مصر الجديدة كم قوضة يا فندم تقريبا؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 4,
+      "start": 11.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.646,
+      "overlap_ratio": 0.646,
+      "speaker_dominance": 0.646,
+      "is_ambiguous": true,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_ambiguous_multi_speaker",
+      "raw_text": "غرفتين",
+      "text": "غرفتين",
+      "role": "client"
+    },
+    {
+      "turn_id": 5,
+      "start": 12.0,
+      "end": 13.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.607,
+      "overlap_ratio": 0.607,
+      "speaker_dominance": 0.754,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "والميزانية اللي في بالك؟",
+      "text": "والميزانية اللي في بالك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 6,
+      "start": 13.0,
+      "end": 15.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.485,
+      "overlap_ratio": 0.7425,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "الغرفتين والميزانية؟",
+      "text": "الغرفتين والميزانية؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 7,
+      "start": 15.0,
+      "end": 16.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.81,
+      "overlap_ratio": 0.81,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "15000",
+      "text": "15000",
+      "role": "client"
+    },
+    {
+      "turn_id": 8,
+      "start": 16.0,
+      "end": 18.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.776,
+      "overlap_ratio": 0.388,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "15000",
+      "text": "15000",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 18.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 5.535,
+      "overlap_ratio": 0.9225,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم حلو سيناتكلم على شقة غرفتين في مصر الجديدة ايجار بميزانية حوالي 15000",
+      "text": "تمام يا فندم حلو سيناتكلم علي شقة غرفتين في مصر الجديدة ايجار بميزانية حوالي 15000",
+      "role": "broker"
+    },
+    {
+      "turn_id": 10,
+      "start": 24.0,
+      "end": 24.892,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.713,
+      "overlap_ratio": 0.7993,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "شكراً لاتصال",
+      "text": "شكرا لاتصال",
+      "role": "broker"
+    }
+  ]
+}
