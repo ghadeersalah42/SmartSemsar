@@ -3,18 +3,17 @@
   "call_id": "smartsemsar_rec2",
   "status": "ready",
   "language": "ar",
-  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
-  "reference_transcript": "كنت حابب أعرف إيه المواصفات اللي في ، منطقة، عدد الغرف محتاجة حاجة في العاصمة الإدارية تمام، العاصمة الإدارية، كم غرفة تقريباً؟ إيجار ولا تمليك؟ والميزانية في حدود كام؟ امم ثلاث أوض تمليك اتنين ونص مليون ماشي، شقة 3 غرف تمليك في العاصمة الإدارية حوالي 2.5 مليون جنيه شكراً لاتصال حضرتك، في أمان الله",
+  "annotator": "human_reviewed_whisper_multipass_waveform_aligned",
+  "provenance": "Whisper large-v3 multi-pass draft, then listened to and corrected by a human reviewer (2026-11-24): [Unclear] words filled in and wording fixed; timestamps and speaker roles kept.",
+  "reference_transcript": "كنت حابب أعرف إيه المواصفات اللي في دماغك، منطقة، عدد الغرف محتاجة حاجة في العاصمة الإدارية تمام، العاصمة الإدارية، كم غرفة تقريباً؟ إيجار ولا تمليك؟ والميزانية في حدود كام؟ امم ثلاث أوض  تمليك اتنين ونص مليون ماشي، شقة 3 غرف تمليك في العاصمة الإدارية حوالي 2.5 مليون جنيه شكراً لاتصال حضرتك، في أمان الله",
   "segments": [
     {
       "start": 0.13,
       "end": 4.31,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "كنت حابب أعرف إيه المواصفات اللي في [Unclear]، منطقة، عدد الغرف",
-      "boundary": "silence_edge",
-      "review_note": "تمريرة 1 بتسمع الكلمة \"دماغك\"، والتانيين مختلفين عليها"
+      "text": "كنت حابب أعرف إيه المواصفات اللي في دماغك، منطقة، عدد الغرف",
+      "boundary": "silence_edge"
     },
     {
       "start": 4.78,

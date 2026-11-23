@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-23T20:32:58.545119+00:00",
+  "generated_at_utc": "2026-11-23T23:47:37.380091+00:00",
   "evaluation_scope": "all_10_manifest_calls_with_provenance_breakdown",
   "status": "EVALUATED",
   "extraction_configuration": {
@@ -41,22 +41,22 @@
   "error_calls": 0,
   "excluded_non_manual_calls": [],
   "overall_summary": {
-    "total_human_requirements": 51,
+    "total_human_requirements": 52,
     "total_machine_requirements": 45,
-    "matched_requirements": 43,
-    "exact_matches": 40,
+    "matched_requirements": 44,
+    "exact_matches": 41,
     "semantic_matches": 3,
     "missing_requirements": 7,
-    "extra_requirements": 1,
+    "extra_requirements": 0,
     "conflicting_values": 1,
     "both_absent_fields_excluded": 38,
-    "requirement_match_rate_pct": 84.31,
-    "exact_match_rate_pct": 78.43,
-    "semantic_match_rate_pct": 5.88,
-    "missing_requirement_rate_pct": 13.73,
-    "extra_requirement_rate_vs_human_pct": 1.96,
-    "extra_requirement_rate_vs_machine_pct": 2.22,
-    "conflicting_value_rate_pct": 1.96
+    "requirement_match_rate_pct": 84.62,
+    "exact_match_rate_pct": 78.85,
+    "semantic_match_rate_pct": 5.77,
+    "missing_requirement_rate_pct": 13.46,
+    "extra_requirement_rate_vs_human_pct": 0.0,
+    "extra_requirement_rate_vs_machine_pct": 0.0,
+    "conflicting_value_rate_pct": 1.92
   },
   "provenance_subgroup_summary": {
     "manual_human_transcripts": {
@@ -65,24 +65,24 @@
         "smartsemsar_rec8"
       ],
       "num_calls": 2,
-      "total_human_requirements": 9,
+      "total_human_requirements": 10,
       "total_machine_requirements": 9,
-      "matched_requirements": 8,
-      "exact_matches": 8,
+      "matched_requirements": 9,
+      "exact_matches": 9,
       "semantic_matches": 0,
       "missing_requirements": 1,
-      "extra_requirements": 1,
+      "extra_requirements": 0,
       "conflicting_values": 0,
       "both_absent_fields_excluded": 8,
-      "requirement_match_rate_pct": 88.89,
-      "exact_match_rate_pct": 88.89,
+      "requirement_match_rate_pct": 90.0,
+      "exact_match_rate_pct": 90.0,
       "semantic_match_rate_pct": 0.0,
-      "missing_requirement_rate_pct": 11.11,
-      "extra_requirement_rate_vs_human_pct": 11.11,
-      "extra_requirement_rate_vs_machine_pct": 11.11,
+      "missing_requirement_rate_pct": 10.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
       "conflicting_value_rate_pct": 0.0
     },
-    "user_provided_multipass_reference": {
+    "human_reviewed_multipass_reference": {
       "call_ids": [
         "smartsemsar_rec2",
         "smartsemsar_rec3",
@@ -240,21 +240,21 @@
       "conflicting_value_rate_pct": 0.0
     },
     "deal_type": {
-      "total_human_requirements": 9,
+      "total_human_requirements": 10,
       "total_machine_requirements": 8,
-      "matched_requirements": 7,
-      "exact_matches": 7,
+      "matched_requirements": 8,
+      "exact_matches": 8,
       "semantic_matches": 0,
       "missing_requirements": 2,
-      "extra_requirements": 1,
+      "extra_requirements": 0,
       "conflicting_values": 0,
       "both_absent_fields_excluded": 0,
-      "requirement_match_rate_pct": 77.78,
-      "exact_match_rate_pct": 77.78,
+      "requirement_match_rate_pct": 80.0,
+      "exact_match_rate_pct": 80.0,
       "semantic_match_rate_pct": 0.0,
-      "missing_requirement_rate_pct": 22.22,
-      "extra_requirement_rate_vs_human_pct": 11.11,
-      "extra_requirement_rate_vs_machine_pct": 12.5,
+      "missing_requirement_rate_pct": 20.0,
+      "extra_requirement_rate_vs_human_pct": 0.0,
+      "extra_requirement_rate_vs_machine_pct": 0.0,
       "conflicting_value_rate_pct": 0.0
     },
     "notes": {
@@ -302,13 +302,12 @@
         "bedrooms": 3,
         "property_type": "apartment",
         "purpose": "unknown",
-        "deal_type": "unknown",
+        "deal_type": "buy",
         "notes": null,
         "missing_fields": [
           "budget_min",
           "area_sqm",
           "purpose",
-          "deal_type",
           "notes"
         ],
         "unclear_fields": {}
@@ -334,21 +333,21 @@
       },
       "comparison": {
         "metrics": {
-          "total_human_requirements": 4,
+          "total_human_requirements": 5,
           "total_machine_requirements": 4,
-          "matched_requirements": 3,
-          "exact_matches": 3,
+          "matched_requirements": 4,
+          "exact_matches": 4,
           "semantic_matches": 0,
           "missing_requirements": 1,
-          "extra_requirements": 1,
+          "extra_requirements": 0,
           "conflicting_values": 0,
           "both_absent_fields_excluded": 4,
-          "requirement_match_rate_pct": 75.0,
-          "exact_match_rate_pct": 75.0,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 80.0,
           "semantic_match_rate_pct": 0.0,
-          "missing_requirement_rate_pct": 25.0,
-          "extra_requirement_rate_vs_human_pct": 25.0,
-          "extra_requirement_rate_vs_machine_pct": 25.0,
+          "missing_requirement_rate_pct": 20.0,
+          "extra_requirement_rate_vs_human_pct": 0.0,
+          "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 0.0
         },
         "per_field": {
@@ -409,12 +408,12 @@
             "matched": false
           },
           "deal_type": {
-            "human_value": "unknown",
+            "human_value": "buy",
             "machine_value": "buy",
-            "human_canonical": null,
+            "human_canonical": "buy",
             "machine_canonical": "buy",
-            "category": "extra_requirement",
-            "matched": false
+            "category": "exact_match",
+            "matched": true
           },
           "notes": {
             "human_value": null,
@@ -430,8 +429,8 @@
     {
       "call_id": "smartsemsar_rec2",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec2_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec2_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec2_conversation.json",
@@ -442,7 +441,7 @@
         "SPEAKER_01": "client"
       },
       "machine_input_format": "conversation_with_predicted_roles",
-      "formatted_human_input": "Broker: كنت حابب أعرف إيه المواصفات اللي في [Unclear]، منطقة، عدد الغرف\nClient: محتاجة حاجة في العاصمة الإدارية\nBroker: تمام، العاصمة الإدارية، كم غرفة تقريباً؟ إيجار ولا تمليك؟ والميزانية في حدود كام؟\nClient: امم ثلاث أوض [Unclear] تمليك اتنين ونص مليون\nBroker: ماشي، شقة 3 غرف تمليك في العاصمة الإدارية حوالي 2.5 مليون جنيه شكراً لاتصال حضرتك، في أمان الله",
+      "formatted_human_input": "Broker: كنت حابب أعرف إيه المواصفات اللي في دماغك، منطقة، عدد الغرف\nClient: محتاجة حاجة في العاصمة الإدارية\nBroker: تمام، العاصمة الإدارية، كم غرفة تقريباً؟ إيجار ولا تمليك؟ والميزانية في حدود كام؟\nClient: امم ثلاث أوض [Unclear] تمليك اتنين ونص مليون\nBroker: ماشي، شقة 3 غرف تمليك في العاصمة الإدارية حوالي 2.5 مليون جنيه شكراً لاتصال حضرتك، في أمان الله",
       "formatted_machine_input": "Broker: كنت حابب اعرف ايه المواصفات اللي في دمائك\nClient: محتاجة\nBroker: عدد الغرف\nClient: محتاجة حاجة في العاصمة الادارية\nBroker: تمام العاصمة الادارية كام غرفة تقريبا ايجار ولا تمليك والميزانية في حدود كام\nClient: 3 اوض تمليك\nBroker: تمليك\nClient: 2.5 مليون\nBroker: ماشي شقة 3 غرف تمليك في العاصمة الادارية حوالي 2.5 مليون جنيه شكرا لاتصال حضرتك في امان الله",
       "human_extraction": {
         "location": "العاصمة الإدارية",
@@ -578,8 +577,8 @@
     {
       "call_id": "smartsemsar_rec3",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec3_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec3_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec3_conversation.json",
@@ -726,8 +725,8 @@
     {
       "call_id": "smartsemsar_rec4",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec4_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec4_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec4_conversation.json",
@@ -738,7 +737,7 @@
         "SPEAKER_01": "client"
       },
       "machine_input_format": "conversation_with_predicted_roles",
-      "formatted_human_input": "Broker: [Unclear] الخير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه؟\nClient: أنا بدور على شقة في التجمع الخامس\nBroker: تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟\nClient: ثلاث غرف، مش عايزة أصغر\nBroker: ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟\nClient: إيجار، بفضّل يعني عشرين ألف\nBroker: تمام، في حدود كم مثلاً؟\nClient: حدود عشرين ألف\nBroker: طيب، شقة إيجار في التجمع الخامس ثلاث غرف، ميزانية حوالي 20 ألف [Unclear]\nClient: صح\nBroker: تمام، شكراً لاتصال حضرتك يا فندم [Unclear]",
+      "formatted_human_input": "Broker: مساء الخير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه؟\nClient: أنا بدور على شقة في التجمع الخامس\nBroker: تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟\nClient: ثلاث غرف، مش عايزاها صغيره\nBroker: ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟\nClient: إيجار، بفضّل يعني عشرين ألف\nBroker: تمام، في حدود كم مثلاً؟\nClient: حدود عشرين ألف\nBroker: طيب، شقة إيجار في التجمع الخامس ثلاث غرف، ميزانية حوالي 20 ألف\nClient: صح\nBroker: تمام، شكراً لاتصال حضرتك يا فندم هسجل",
       "formatted_machine_input": "Broker: سأل خير يا فندم مع حضرتك مكتب عقراط كنت بتدوري عليهم\nClient: انا بدور على شقة في التجامعة الخامس\nBroker: تمام يا فندم التجامعة الخامس كم اوضة تقريبا؟\nClient: ثلاث غرف مش هايزة صغيرة\nBroker: ماشي ثلاثة او طيب ده ايجار ولا تمليك؟\nClient: ايجار بفضل يعني عشرين الف\nBroker: تمام في حدود كم مسلا؟\nClient: حدود عشر الف\nBroker: طيب شقة ايجار في التجامعة الخامس تلاث غرف ميزينية حوالي عشرين الف ساعة ساعة تمام شكرا لاتصال حضرتك يا فندم اسجلتك",
       "human_extraction": {
         "location": "التجمع الخامس",
@@ -875,8 +874,8 @@
     {
       "call_id": "smartsemsar_rec5",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec5_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec5_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec5_conversation.json",
@@ -887,7 +886,7 @@
         "SPEAKER_01": "client"
       },
       "machine_input_format": "conversation_with_predicted_roles",
-      "formatted_human_input": "Broker: [Unclear] الخير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على فيلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر ممكن أعرف ميزانيتك في حدود كام تقريباً عشان أظبطلك اختيارات مناسبة؟\nClient: 12 مليون\nBroker: تمام يا فندم، فيلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون هشوفلك شوية اختيارات مناسبة، ممكن أحددلك ميعاد للزيارة أو أبعتلك التفاصيل على الواتساب؟",
+      "formatted_human_input": "Broker: صباح الخير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على فيلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر ممكن أعرف ميزانيتك في حدود كام تقريباً عشان أظبطلك اختيارات مناسبة؟\nClient: 12 مليون\nBroker: تمام يا فندم، فيلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون هشوفلك شوية اختيارات مناسبة، ممكن أحددلك ميعاد للزيارة أو أبعتلك التفاصيل على الواتساب؟",
       "formatted_machine_input": "Client: نحن خير يا فندم مع حضرتك مكتب عقارات لو حضرتك بتدوري على بلا تمليك في التجمع خمس غرف ومساحتها حوالي 180 متر ممكن اعرف ميزانيتك محدود كم تقريبا عشان ازبطلك اختيارات مناسبة 12 مليون\nBroker: تمام يا فندم بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون هاشوفلك شوية اختيارات مناسبة ممكن احددلك المعادل زيارة او ابعتلك التفاصيل على الواتساب",
       "human_extraction": {
         "location": "التجمع",
@@ -896,11 +895,12 @@
         "area_sqm": 180.0,
         "bedrooms": 5,
         "property_type": "villa",
-        "purpose": "living",
+        "purpose": "unknown",
         "deal_type": "buy",
         "notes": null,
         "missing_fields": [
           "budget_min",
+          "purpose",
           "notes"
         ],
         "unclear_fields": {}
@@ -926,19 +926,19 @@
       },
       "comparison": {
         "metrics": {
-          "total_human_requirements": 7,
+          "total_human_requirements": 6,
           "total_machine_requirements": 4,
           "matched_requirements": 4,
           "exact_matches": 4,
           "semantic_matches": 0,
-          "missing_requirements": 3,
+          "missing_requirements": 2,
           "extra_requirements": 0,
           "conflicting_values": 0,
-          "both_absent_fields_excluded": 2,
-          "requirement_match_rate_pct": 57.14,
-          "exact_match_rate_pct": 57.14,
+          "both_absent_fields_excluded": 3,
+          "requirement_match_rate_pct": 66.67,
+          "exact_match_rate_pct": 66.67,
           "semantic_match_rate_pct": 0.0,
-          "missing_requirement_rate_pct": 42.86,
+          "missing_requirement_rate_pct": 33.33,
           "extra_requirement_rate_vs_human_pct": 0.0,
           "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 0.0
@@ -993,11 +993,11 @@
             "matched": false
           },
           "purpose": {
-            "human_value": "living",
+            "human_value": "unknown",
             "machine_value": "unknown",
-            "human_canonical": "living",
+            "human_canonical": null,
             "machine_canonical": null,
-            "category": "missing_requirement",
+            "category": "both_absent",
             "matched": false
           },
           "deal_type": {
@@ -1022,8 +1022,8 @@
     {
       "call_id": "smartsemsar_rec6",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec6_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec6_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec6_conversation.json",
@@ -1034,7 +1034,7 @@
         "SPEAKER_01": "client"
       },
       "machine_input_format": "conversation_with_predicted_roles",
-      "formatted_human_input": "Broker: مكتب عقارات اتفضلي، كنت بتدوري عليه؟\nClient: بدور على شقة في مدينة نصر\nBroker: [Unclear] يا فندم\nClient: أربع غرف\nBroker: كم أوضة؟\nClient: أربعة\nBroker: تمام، حضرتك [Unclear] أربعة؟ ماشي تمليك ولا إيجار؟ والميزانية؟\nClient: إيجار\nBroker: إيجار، والميزانية تقريباً في حدود كام؟\nClient: 8000\nBroker: 8000، تمام يا فندم شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه شكراً [Unclear]",
+      "formatted_human_input": "Broker: مكتب عقارات اتفضلي، كنت بتدوري عليه؟\nClient: بدور على شقة في مدينة نصر\nBroker: تمام يا فندم\nClient: أربع غرف\nBroker: كم أوضة؟\nClient: أربعة\nBroker: تمام، حضرتك أربعة؟ ماشي تمليك ولا إيجار؟ والميزانية؟\nClient: إيجار\nBroker: إيجار، والميزانية تقريباً في حدود كام؟\nClient: 8000\nBroker: 8000، تمام يا فندم شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه شكراً",
       "formatted_machine_input": "Client: مكتب عقارات اتفضالي كنت بتدوري علي بدور على شقة اف مدينة نصر تمام يا فندم اربع غرف كام قوضة اربع تمام حضرتك اربع مش دمليك ولا ايجار\nBroker: والميزانية\nClient: ايجار\nBroker: ايجار والميزانية تقريبا تمام تلاف تمام تلاف تمام يا فندم شقة اربع غرف في مدينة نصر ايجار بميزانية حوالي تمن تلاف جنيه",
       "human_extraction": {
         "location": "مدينة نصر",
@@ -1170,8 +1170,8 @@
     {
       "call_id": "smartsemsar_rec7",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec7_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec7_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec7_conversation.json",
@@ -1182,7 +1182,7 @@
         "SPEAKER_01": "client"
       },
       "machine_input_format": "conversation_with_predicted_roles",
-      "formatted_human_input": "Broker: [Unclear] يا فندم، اتفضل\nClient: أنا محتاج فيلا في 6 أكتوبر\nBroker: تمام يا فندم، كم غرف تقريباً؟\nClient: 4 غرف\nBroker: طيب، شراء ولا إيجار؟\nClient: شراء طبعاً\nBroker: تمام، والميزانية في حدود كم؟\nClient: 8 مليون جنيه، 10 مليون جنيه\nBroker: تمام يا فندم، خلاص، فيلا 4 غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه شكراً لاتصال حضر[تك]",
+      "formatted_human_input": "Broker: مساء الخير يا فندم، اتفضل\nClient: أنا محتاج فيلا في 6 أكتوبر\nBroker: تمام يا فندم، كم غرف تقريباً؟\nClient: 4 غرف\nBroker: طيب، شراء ولا إيجار؟\nClient: شراء طبعاً\nBroker: تمام، والميزانية في حدود كم؟\nClient: 8 مليون جنيه، 10 مليون جنيه\nBroker: تمام يا فندم، خلاص، فيلا 4 غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه شكراً لاتصال حضرتك",
       "formatted_machine_input": "Client: كيف يا فندم؟ اتفضل انا محتاج بيلا في 6 اكتوبر\nBroker: تمام يا فندم كام غرفه تقريبا؟\nClient: 4 غرف\nBroker: طيب شراء ولا ايجار؟\nClient: شراء طبعا\nBroker: تمام والميزانية في حدود كم؟\nClient: 8 مليون جنيه 10 مليون جنيه كم؟\nBroker: تمام يا فندم خلاص بيلا 4 غرف في اكتوبر تمليك ميزانية من 8 ل 10 مليون جنيه شكرا لاتصار حضرت",
       "human_extraction": {
         "location": "6 أكتوبر",
@@ -1465,8 +1465,8 @@
     {
       "call_id": "smartsemsar_rec9",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec9_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec9_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec9_conversation.json",
@@ -1614,8 +1614,8 @@
     {
       "call_id": "smartsemsar_rec10",
       "status": "EVALUATED",
-      "reference_provenance_group": "user_provided_multipass_reference",
-      "human_annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "reference_provenance_group": "human_reviewed_multipass_reference",
+      "human_annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "human_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\evaluation\\ground_truth\\transcripts\\smartsemsar_rec10_gt_transcript.json",
       "machine_transcript_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\smartsemsar_rec10_transcript.json",
       "machine_conversation_path": "D:\\Ghadeer_Salah\\SmartSemsar\\SmartSemsar_Speech\\backend\\services\\data\\transcripts\\conversations\\smartsemsar_rec10_conversation.json",
@@ -1626,7 +1626,7 @@
         "SPEAKER_01": "broker"
       },
       "machine_input_format": "conversation_with_predicted_roles",
-      "formatted_human_input": "Broker: [Unclear] مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البجت أو الميزانية اللي في بالك؟\nClient: عايزة حاجة تمليك، معايا ميزانية 6 مليون\nBroker: 6 مليون، طيب، كم غرفة في [Unclear] حضرتك؟\nClient: إيه؟ بتقول إيه؟\nBroker: كم غرفة؟\nClient: كم غرفة؟ ثلاث غرف\nBroker: ثلاث غرف طب، في منطقة معينة في مصر في بالك؟\nClient: أكتوبر مثلاً الشيخ زايد\nBroker: زايد، حاضر ثلاث غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم؟ شكراً لاتصال حضرتك",
+      "formatted_human_input": "Broker: مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البادجت أو الميزانية اللي في بالك؟\nClient: عايزة حاجة تمليك، معايا ميزانية 6 مليون\nBroker: 6 مليون، طيب، كم غرفة في ذهن حضرتك؟\nClient: إيه؟ بتقول إيه؟\nBroker: كم غرفة؟\nClient: كم غرفة؟ ثلاث غرف\nBroker: ثلاث غرف طب، في منطقة معينة في مصر في بالك؟\nClient: أكتوبر مثلاً الشيخ زايد\nBroker: زايد، حاضر ثلاث غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم؟ شكراً لاتصال حضرتك",
       "formatted_machine_input": "Broker: أقدم مع حضرتك مكتب عكرات كنت أحبب أعرف من حضرتك بالدواري على بيجار أو تمليك وإيه البجت أو الميزانية اللي تبالك\nClient: عايزة حاجة تمليك معي ميزانية ستة مليون\nBroker: ستة مليون طيب كم غرفة\nClient: كم غرفة\nBroker: كم غرفة\nClient: كم غرفة ثلاث غرف\nBroker: ثلاث غرف طب في منطقة معينة في مصر في بلك\nClient: أكتوبر مثلا الشيخ زايد\nBroker: زايد بحضل طلب غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم شكرا أن تصار حضرتك",
       "human_extraction": {
         "location": "أكتوبر مثلاً الشيخ زايد",
@@ -1635,14 +1635,13 @@
         "area_sqm": null,
         "bedrooms": 3,
         "property_type": "unknown",
-        "purpose": "unknown",
+        "purpose": "living",
         "deal_type": "buy",
         "notes": null,
         "missing_fields": [
           "budget_min",
           "area_sqm",
           "property_type",
-          "purpose",
           "notes"
         ],
         "unclear_fields": {}
@@ -1668,19 +1667,19 @@
       },
       "comparison": {
         "metrics": {
-          "total_human_requirements": 4,
+          "total_human_requirements": 5,
           "total_machine_requirements": 4,
           "matched_requirements": 4,
           "exact_matches": 3,
           "semantic_matches": 1,
-          "missing_requirements": 0,
+          "missing_requirements": 1,
           "extra_requirements": 0,
           "conflicting_values": 0,
-          "both_absent_fields_excluded": 5,
-          "requirement_match_rate_pct": 100.0,
-          "exact_match_rate_pct": 75.0,
-          "semantic_match_rate_pct": 25.0,
-          "missing_requirement_rate_pct": 0.0,
+          "both_absent_fields_excluded": 4,
+          "requirement_match_rate_pct": 80.0,
+          "exact_match_rate_pct": 60.0,
+          "semantic_match_rate_pct": 20.0,
+          "missing_requirement_rate_pct": 20.0,
           "extra_requirement_rate_vs_human_pct": 0.0,
           "extra_requirement_rate_vs_machine_pct": 0.0,
           "conflicting_value_rate_pct": 0.0
@@ -1735,11 +1734,11 @@
             "matched": false
           },
           "purpose": {
-            "human_value": "unknown",
+            "human_value": "living",
             "machine_value": "unknown",
-            "human_canonical": null,
+            "human_canonical": "living",
             "machine_canonical": null,
-            "category": "both_absent",
+            "category": "missing_requirement",
             "matched": false
           },
           "deal_type": {

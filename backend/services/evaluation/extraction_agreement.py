@@ -37,6 +37,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
 from typing import Any, Optional
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -71,6 +72,8 @@ from backend.services.user_input_text import (  # noqa: E402
 )
 
 MANUAL_HUMAN_ANNOTATION_SOURCE = "manual_human_transcript_with_waveform_timestamps"
+# Whisper drafts that a person listened to and corrected (rec2-rec7, rec9-rec10)
+HUMAN_REVIEWED_ANNOTATION_SOURCE = "human_reviewed_whisper_multipass_waveform_aligned"
 
 COMPARED_FIELDS = [
     "location",
@@ -445,6 +448,7 @@ def run_extraction_agreement(
     call_ids: Optional[list[str]] = None,
     *,
     manual_human_only: bool = True,
+    pause_s: float = 0.0,
     gt_dir: Path = GT_DIR,
     transcript_dir: Path = TRANSCRIPT_DIR,
     conversation_dir: Path = CONVERSATION_DIR,
@@ -483,10 +487,12 @@ def run_extraction_agreement(
     subgroup_counts: dict[str, dict[str, int]] = {
         "manual_human_transcripts": {k: 0 for k in overall_counts},
         "user_provided_multipass_reference": {k: 0 for k in overall_counts},
+        "human_reviewed_multipass_reference": {k: 0 for k in overall_counts},
     }
     subgroup_call_ids: dict[str, list[str]] = {
         "manual_human_transcripts": [],
         "user_provided_multipass_reference": [],
+        "human_reviewed_multipass_reference": [],
     }
     field_counts = {
         f: {k: 0 for k in overall_counts}
@@ -531,8 +537,10 @@ def run_extraction_agreement(
             human_input = format_human_transcript(gt_payload)
             machine_input, machine_format_mode = format_machine_conversation(conv_payload, tr_payload)
 
+            time.sleep(pause_s)   # Groq free tier: 8000 tokens/min, so keep every call on Groq (no Ollama fallback)
             print(f"[{cid}] Running extract_requirements() on HUMAN transcript...", flush=True)
             human_req = extract_requirements(call_transcript=human_input, raw_text=None).model_dump()
+            time.sleep(pause_s)
             print(f"[{cid}] Running extract_requirements() on MACHINE transcript ({tr_payload.get('whisper_model')})...", flush=True)
             machine_req = extract_requirements(call_transcript=machine_input, raw_text=None).model_dump()
 
@@ -545,6 +553,8 @@ def run_extraction_agreement(
             subgroup_key = (
                 "manual_human_transcripts"
                 if annot_src == MANUAL_HUMAN_ANNOTATION_SOURCE
+                else "human_reviewed_multipass_reference"
+                if annot_src == HUMAN_REVIEWED_ANNOTATION_SOURCE
                 else "user_provided_multipass_reference"
             )
             subgroup_call_ids[subgroup_key].append(cid)
@@ -619,7 +629,7 @@ def run_extraction_agreement(
                 "num_calls": len(subgroup_call_ids[k]),
                 **summarize_counts(subgroup_counts[k]),
             }
-            for k in ("manual_human_transcripts", "user_provided_multipass_reference")
+            for k in ("manual_human_transcripts", "human_reviewed_multipass_reference", "user_provided_multipass_reference")
             if subgroup_call_ids[k]
         },
         "per_field_summary": {f: summarize_counts(field_counts[f]) for f in COMPARED_FIELDS},
@@ -645,11 +655,18 @@ def main(argv: Optional[list[str]] = None) -> int:
         action="store_true",
         help="Include all manifest calls instead of restricting to manually prepared human transcripts.",
     )
+    parser.add_argument(
+        "--pause",
+        type=float,
+        default=0.0,
+        help="Seconds to wait before each LLM call, to stay under the Groq tokens-per-minute limit (e.g. 25).",
+    )
     args = parser.parse_args(argv)
 
     report = run_extraction_agreement(
         call_ids=args.calls,
         manual_human_only=not args.all_manifest_calls,
+        pause_s=args.pause,
     )
     print(json.dumps({
         "status": report["status"],

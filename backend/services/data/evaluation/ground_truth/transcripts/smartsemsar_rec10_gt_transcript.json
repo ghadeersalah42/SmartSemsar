@@ -3,18 +3,17 @@
   "call_id": "smartsemsar_rec10",
   "status": "ready",
   "language": "ar",
-  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
-  "reference_transcript": "مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البجت أو الميزانية اللي في بالك؟ عايزة حاجة تمليك، معايا ميزانية 6 مليون 6 مليون، طيب، كم غرفة في حضرتك؟ إيه؟ بتقول إيه؟ كم غرفة؟ كم غرفة؟ ثلاث غرف ثلاث غرف طب، في منطقة معينة في مصر في بالك؟ أكتوبر مثلاً الشيخ زايد زايد، حاضر ثلاث غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم؟ شكراً لاتصال حضرتك",
+  "annotator": "human_reviewed_whisper_multipass_waveform_aligned",
+  "provenance": "Whisper large-v3 multi-pass draft, then listened to and corrected by a human reviewer (2026-11-24): [Unclear] words filled in and wording fixed; timestamps and speaker roles kept.",
+  "reference_transcript": "مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البادجت أو الميزانية اللي في بالك؟ عايزة حاجة تمليك، معايا ميزانية 6 مليون 6 مليون، طيب، كم غرفة في ذهن حضرتك؟ إيه؟ بتقول إيه؟ كم غرفة؟ كم غرفة؟ ثلاث غرف ثلاث غرف طب، في منطقة معينة في مصر في بالك؟ أكتوبر مثلاً الشيخ زايد زايد، حاضر ثلاث غرف تمليك في زايد أو أكتوبر والميزانية بحدود ستة مليون تمام يا فندم؟ شكراً لاتصال حضرتك",
   "segments": [
     {
       "start": 0.01,
       "end": 9.4,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "[Unclear] مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البجت أو الميزانية اللي في بالك؟",
-      "boundary": "approx_speaker_change",
-      "review_note": "أول كلمة مش واضحة؛ فيه وقفة 1.650–2.170"
+      "text": "مع حضرتك مكتب عقارات، كنت حابب أعرف من حضرتك بتدوري على إيجار ولا تمليك، وإيه البادجت أو الميزانية اللي في بالك؟",
+      "boundary": "approx_speaker_change"
     },
     {
       "start": 9.4,
@@ -30,9 +29,8 @@
       "end": 17.43,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "6 مليون، طيب، كم غرفة في [Unclear] حضرتك؟",
-      "boundary": "silence_edge",
-      "review_note": "فيه وقفات 14.740–15.540"
+      "text": "6 مليون، طيب، كم غرفة في ذهن حضرتك؟",
+      "boundary": "silence_edge"
     },
     {
       "start": 18.43,

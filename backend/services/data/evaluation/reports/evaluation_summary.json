@@ -23,10 +23,10 @@
     "pending_calls": 0,
     "missing_pipeline_output_calls": 0,
     "error_calls": 0,
-    "macro_wer": 0.380781,
-    "micro_wer": 0.382943,
-    "macro_cer": 0.164952,
-    "micro_cer": 0.164165
+    "macro_wer": 0.378984,
+    "micro_wer": 0.381818,
+    "macro_cer": 0.163923,
+    "micro_cer": 0.163098
   },
   "der": {
     "status": "EVALUATED",

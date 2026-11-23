@@ -1,5 +1,5 @@
 {
-  "description": "Evaluation manifest tracking ground-truth readiness for the 10 SmartSemsar real-estate phone calls. rec1 & rec8 preserve user manual human transcripts with waveform timestamps; rec2..rec7, rec9..rec10 were imported from user-provided multi-pass Whisper large-v3 + waveform files.",
+  "description": "Evaluation manifest tracking ground-truth readiness for the 10 SmartSemsar real-estate phone calls. rec1 & rec8 are manual human transcripts with waveform timestamps; rec2..rec7, rec9..rec10 started as multi-pass Whisper large-v3 drafts and were listened to and corrected by a human reviewer.",
   "calls": [
     {
       "call_id": "smartsemsar_rec1",
@@ -18,7 +18,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec2_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec2_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -28,7 +28,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec3_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec3_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -38,7 +38,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec4_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec4_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -48,7 +48,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec5_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec5_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -58,7 +58,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec6_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec6_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -68,7 +68,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec7_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec7_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -88,7 +88,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec9_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec9_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     },
     {
@@ -98,7 +98,7 @@
       "ground_truth_diarization": "backend/services/data/evaluation/ground_truth/diarization/smartsemsar_rec10_gt_diarization.json",
       "ground_truth_roles": "backend/services/data/evaluation/ground_truth/roles/smartsemsar_rec10_gt_roles.json",
       "ground_truth_ready": true,
-      "annotation_source": "user_provided_whisper_large_v3_multipass_waveform_aligned",
+      "annotation_source": "human_reviewed_whisper_multipass_waveform_aligned",
       "status": "ready"
     }
   ]

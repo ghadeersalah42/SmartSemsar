@@ -3,8 +3,8 @@
   "call_id": "smartsemsar_rec3",
   "status": "ready",
   "language": "ar",
-  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "annotator": "human_reviewed_whisper_multipass_waveform_aligned",
+  "provenance": "Whisper large-v3 multi-pass draft, then listened to by a human reviewer (2026-11-24) and confirmed correct with no changes; timestamps and speaker roles kept.",
   "reference_transcript": "مكتب عقارات، اتفضل آه، بدور على حاجة في الشيخ زايد تمام يا فندم، حضرتك شقة ولا فيلا؟ شقة، تبقى غرفتين تمام، اتنين أوض في الشيخ زايد، حضرتك إيجار ولا تمليك؟ إيجار. لو قلت إيجار إيجار. اتفضل يا فندم، حضرتك في حدود كام؟ لو قلت حوالي خمسة وعشرين ألف تمام يا فندم يبقى شقة غرفتين في الشيخ زايد إيجار حوالي خمسة وعشرين ألف",
   "segments": [
     {

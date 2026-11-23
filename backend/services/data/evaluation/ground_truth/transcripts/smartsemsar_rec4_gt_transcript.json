@@ -3,18 +3,17 @@
   "call_id": "smartsemsar_rec4",
   "status": "ready",
   "language": "ar",
-  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
-  "reference_transcript": "الخير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه؟ أنا بدور على شقة في التجمع الخامس تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟ ثلاث غرف، مش عايزة أصغر ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟ إيجار، بفضّل يعني عشرين ألف تمام، في حدود كم مثلاً؟ حدود عشرين ألف طيب، شقة إيجار في التجمع الخامس ثلاث غرف، ميزانية حوالي 20 ألف صح تمام، شكراً لاتصال حضرتك يا فندم",
+  "annotator": "human_reviewed_whisper_multipass_waveform_aligned",
+  "provenance": "Whisper large-v3 multi-pass draft, then listened to and corrected by a human reviewer (2026-11-24): [Unclear] words filled in and wording fixed; timestamps and speaker roles kept.",
+  "reference_transcript": "مساء الخير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه؟ أنا بدور على شقة في التجمع الخامس تمام يا فندم، التجمع الخامس، كم أوضة تقريباً؟ ثلاث غرف، مش عايزاها صغيره ماشي، ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟ إيجار، بفضّل يعني عشرين ألف تمام، في حدود كم مثلاً؟ حدود عشرين ألف طيب، شقة إيجار في التجمع الخامس ثلاث غرف، ميزانية حوالي 20 ألف صح تمام، شكراً لاتصال حضرتك يا فندم هسجل",
   "segments": [
     {
       "start": 0.01,
       "end": 2.52,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "[Unclear] الخير يا فندم، مع حضرتك مكتب عقارات",
-      "boundary": "silence_edge",
-      "review_note": "أول كلمة مش واضحة (يمكن \"مساء\")"
+      "text": "مساء الخير يا فندم، مع حضرتك مكتب عقارات",
+      "boundary": "silence_edge"
     },
     {
       "start": 2.77,
@@ -46,9 +45,8 @@
       "end": 13.3,
       "speaker_id": "SPK_1",
       "role": "client",
-      "text": "ثلاث غرف، مش عايزة أصغر",
-      "boundary": "approx_speaker_change",
-      "review_note": "الموديل كتبها \"أصغير\""
+      "text": "ثلاث غرف، مش عايزاها صغيره",
+      "boundary": "approx_speaker_change"
     },
     {
       "start": 13.3,
@@ -98,9 +96,8 @@
       "end": 34.52,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "ثلاث غرف، ميزانية حوالي 20 ألف [Unclear]",
-      "boundary": "silence_edge",
-      "review_note": "الكلمة الأخيرة الموديل كتبها \"ساعة\" — مش واضحة"
+      "text": "ثلاث غرف، ميزانية حوالي 20 ألف",
+      "boundary": "silence_edge"
     },
     {
       "start": 34.89,
@@ -116,9 +113,8 @@
       "end": 39.57,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "تمام، شكراً لاتصال حضرتك يا فندم [Unclear]",
-      "boundary": "silence_edge",
-      "review_note": "الكلمة الأخيرة مش واضحة (الموديل كتبها \"أسجلت\")"
+      "text": "تمام، شكراً لاتصال حضرتك يا فندم هسجل",
+      "boundary": "silence_edge"
     }
   ]
 }

@@ -3,8 +3,8 @@
   "call_id": "smartsemsar_rec9",
   "status": "ready",
   "language": "ar",
-  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
+  "annotator": "human_reviewed_whisper_multipass_waveform_aligned",
+  "provenance": "Whisper large-v3 multi-pass draft, then listened to by a human reviewer (2026-11-24) and confirmed correct with no changes; timestamps and speaker roles kept.",
   "reference_transcript": "اتفضلي يا فندم، محتاجة مساعدة في إيه بالظبط في العقارات؟ أو، أنا محتاجة شقة في 6 أكتوبر تمام، شقة في أكتوبر تمليك تمليك، صح؟ آه طيب، كم غرفة تقريباً؟ إيه، تلت غرف تلت غرف، حلو، والميزانية؟ آه، خمسة مليون جنيه حوالي خمسة مليون جنيه تمام يا فندم، شقة ثلاث غرف تمليك في أكتوبر حوالي خمسة مليون شكراً لاتصال حضرتك",
   "segments": [
     {

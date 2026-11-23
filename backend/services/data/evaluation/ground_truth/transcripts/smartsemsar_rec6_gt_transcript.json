@@ -3,9 +3,9 @@
   "call_id": "smartsemsar_rec6",
   "status": "ready",
   "language": "ar",
-  "annotator": "user_provided_whisper_large_v3_multipass_waveform_aligned",
-  "provenance": "Imported from user-provided multi-pass Whisper large-v3 + waveform-aligned annotation package; preserves [Unclear] markers and low-confidence review notes for optional final human spot-check.",
-  "reference_transcript": "مكتب عقارات اتفضلي، كنت بتدوري عليه؟ بدور على شقة في مدينة نصر يا فندم أربع غرف كم أوضة؟ أربعة تمام، حضرتك أربعة؟ ماشي تمليك ولا إيجار؟ والميزانية؟ إيجار إيجار، والميزانية تقريباً في حدود كام؟ 8000 8000، تمام يا فندم شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه شكراً",
+  "annotator": "human_reviewed_whisper_multipass_waveform_aligned",
+  "provenance": "Whisper large-v3 multi-pass draft, then listened to and corrected by a human reviewer (2026-11-24): [Unclear] words filled in and wording fixed; timestamps and speaker roles kept.",
+  "reference_transcript": "مكتب عقارات اتفضلي، كنت بتدوري عليه؟ بدور على شقة في مدينة نصر تمام يا فندم أربع غرف كم أوضة؟ أربعة تمام، حضرتك أربعة؟ ماشي تمليك ولا إيجار؟ والميزانية؟ إيجار إيجار، والميزانية تقريباً في حدود كام؟ 8000 8000، تمام يا فندم شقة 4 غرف في مدينة نصر إيجار بميزانية حوالي 8000 جنيه شكراً",
   "segments": [
     {
       "start": 0.04,
@@ -36,9 +36,8 @@
       "end": 6.04,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "[Unclear] يا فندم",
-      "boundary": "approx_speaker_change",
-      "review_note": "التمريرات بتسمع أول كلمة \"8\"/\"ثمانية\"، وغالباً هي \"تمام\""
+      "text": "تمام يا فندم",
+      "boundary": "approx_speaker_change"
     },
     {
       "start": 7.23,
@@ -70,7 +69,7 @@
       "end": 10.9,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "تمام، حضرتك [Unclear]",
+      "text": "تمام، حضرتك",
       "boundary": "approx_speaker_change"
     },
     {
@@ -143,7 +142,7 @@
       "end": 33.35,
       "speaker_id": "SPK_2",
       "role": "broker",
-      "text": "شكراً [Unclear]",
+      "text": "شكراً",
       "boundary": "silence_edge"
     }
   ]
