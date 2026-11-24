@@ -449,6 +449,7 @@ def run_extraction_agreement(
     *,
     manual_human_only: bool = True,
     pause_s: float = 0.0,
+    asr_corrections: bool = False,
     gt_dir: Path = GT_DIR,
     transcript_dir: Path = TRANSCRIPT_DIR,
     conversation_dir: Path = CONVERSATION_DIR,
@@ -536,6 +537,10 @@ def run_extraction_agreement(
 
             human_input = format_human_transcript(gt_payload)
             machine_input, machine_format_mode = format_machine_conversation(conv_payload, tr_payload)
+            corrections_applied: list[str] = []
+            if asr_corrections:   # fix known Whisper mishearings in the machine text only
+                from backend.services.asr_corrections import correct_transcript
+                machine_input, corrections_applied = correct_transcript(machine_input)
 
             time.sleep(pause_s)   # Groq free tier: 8000 tokens/min, so keep every call on Groq (no Ollama fallback)
             print(f"[{cid}] Running extract_requirements() on HUMAN transcript...", flush=True)
@@ -576,6 +581,7 @@ def run_extraction_agreement(
                 "machine_asr_backend": tr_payload.get("asr_backend", "local_faster_whisper"),
                 "machine_speaker_role_mapping": conv_payload.get("speaker_role_mapping"),
                 "machine_input_format": machine_format_mode,
+                "asr_corrections_applied": corrections_applied,
                 "formatted_human_input": human_input,
                 "formatted_machine_input": machine_input,
                 "human_extraction": human_req,
@@ -656,6 +662,11 @@ def main(argv: Optional[list[str]] = None) -> int:
         help="Include all manifest calls instead of restricting to manually prepared human transcripts.",
     )
     parser.add_argument(
+        "--asr-corrections",
+        action="store_true",
+        help="Fix known Whisper mishearings (backend/services/asr_corrections.py) in the machine transcript before extraction.",
+    )
+    parser.add_argument(
         "--pause",
         type=float,
         default=0.0,
@@ -673,6 +684,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         call_ids=args.calls,
         manual_human_only=not args.all_manifest_calls,
         pause_s=args.pause,
+        asr_corrections=args.asr_corrections,
         transcript_dir=args.transcript_dir,
         conversation_dir=args.conversation_dir,
         reports_dir=args.reports_dir,
