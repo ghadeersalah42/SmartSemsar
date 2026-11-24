@@ -1,0 +1,8 @@
+{
+  "agent_name": "customer_requirements",
+  "version": "v1.0.0",
+  "system_prompt": "Extract location, budget_max, bedrooms from Egyptian speech: {conversation}",
+  "target_model": "openai/gpt-oss-20b",
+  "output_schema": null,
+  "description": "Customer requirements extractor prompt"
+}

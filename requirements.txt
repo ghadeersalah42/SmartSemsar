@@ -51,3 +51,6 @@ google-auth-httplib2
 
 rank-bm25
 
+
+langsmith>=0.1.0
+tabulate

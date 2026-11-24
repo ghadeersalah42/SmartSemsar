@@ -1,0 +1,192 @@
+{
+  "total_runs": 50,
+  "usd_to_egp_rate": 50.0,
+  "per_stage_latency": {
+    "supervisor_router": {
+      "p50_ms": 486.69,
+      "p95_ms": 663.45,
+      "p99_ms": 822.38,
+      "ttft_p50_ms": 486.69,
+      "ttft_p95_ms": 663.45
+    },
+    "detect_micro_intent": {
+      "p50_ms": 386.85,
+      "p95_ms": 590.07,
+      "p99_ms": 693.04,
+      "ttft_p50_ms": 386.85,
+      "ttft_p95_ms": 590.07
+    },
+    "input_extraction": {
+      "p50_ms": 991.09,
+      "p95_ms": 1425.63,
+      "p99_ms": 1883.88,
+      "ttft_p50_ms": 991.09,
+      "ttft_p95_ms": 1425.63
+    },
+    "match_properties": {
+      "p50_ms": 49.42,
+      "p95_ms": 69.56,
+      "p99_ms": 71.62,
+      "ttft_p50_ms": null,
+      "ttft_p95_ms": null
+    },
+    "llm_furnisher": {
+      "p50_ms": 1793.71,
+      "p95_ms": 3666.41,
+      "p99_ms": 8850.0,
+      "ttft_p50_ms": 1524.65,
+      "ttft_p95_ms": 3116.45
+    }
+  },
+  "session_latency_before_ms": {
+    "p50": 3657.07,
+    "p95": 7098.1,
+    "p99": 10527.97
+  },
+  "session_latency_after_ms": {
+    "p50": 3273.23,
+    "p95": 6409.81,
+    "p99": 10327.39
+  },
+  "p99_explanation": {
+    "observed_p99_s": 10.53,
+    "culprit_stage": "llm_furnisher",
+    "reason": "The ~10.5s P99 tail latency is caused by the `llm_furnisher` stage when two conditions coincide: (1) the primary model (`gemini-flash-latest`) hits a 503 overload timeout (~3.2s) before failing over to Groq, and (2) the room-placement validator triggers up to MAX_ROUNDS=3 sequential LLM correction rounds."
+  },
+  "cost_analysis_egp": {
+    "avg_tokens_per_session": 3954.6,
+    "avg_cost_egp": 0.0315,
+    "p95_cost_egp": 0.03,
+    "deck_assumed_cost_egp": 5.2,
+    "difference_egp": 5.1685,
+    "savings_vs_deck_pct": 99.39,
+    "explanation": "Real token-based cost averages EGP 0.0315 per session (~3955 tokens), which is 99.39% cheaper than the deck's EGP 5.20 estimate. The deck assumed heavy frontier models (e.g. GPT-4o / Claude Sonnet) + uncached multi-agent loops, whereas Smart Semsar routes 90%+ of calls through Groq `gpt-oss-20b`/`120b` and `gemini-flash`."
+  },
+  "improvement_comparison": {
+    "router_before_separate_ms": {
+      "p50": 870.02,
+      "p95": 1268.16,
+      "ttft_p50": 486.69
+    },
+    "router_after_merged_streaming_ms": {
+      "p50": 526.02,
+      "p95": 694.88,
+      "ttft_p50": 165.85
+    },
+    "architectural_recommendation": "Streaming replies cut perceived TTFT by ~65% (from ~450ms to ~150ms). Merging `supervisor_router` + `detect_micro_intent` saves ~380-420ms (one full LLM round-trip) on the 70% of queries that take the `search_by_reqs` path. However, keeping them separate remains justifiable when `general_browse` or `sketch_based_search` skip `detect_micro_intent` entirely, avoiding extra prompt tokens on non-search paths."
+  },
+  "sample_full_session_trace": {
+    "trace_id": "a0668e3f-1ab7-4271-8d36-c3c26e6be148",
+    "session_id": "sess_001",
+    "user_query": "عايز شقة 3 غرف في التجمع الخامس ميزانيتي 5 مليون",
+    "total_cost_egp": 0.027134,
+    "total_tokens": 3541,
+    "stages": [
+      {
+        "span_id": "ef88b1ab",
+        "parent_trace_id": "a0668e3f-1ab7-4271-8d36-c3c26e6be148",
+        "session_id": "sess_001",
+        "stage_name": "supervisor_router",
+        "prompt_version": "v1.0.0",
+        "model_answered": "openai/gpt-oss-20b",
+        "latency_ms": 486.25,
+        "ttft_ms": 486.25,
+        "input_tokens": 415,
+        "output_tokens": 73,
+        "total_tokens": 488,
+        "cost_egp": 0.002651,
+        "status": "SUCCESS",
+        "error": null,
+        "tags": [
+          "supervisor_router",
+          "prompt:v1.0.0",
+          "model:openai/gpt-oss-20b"
+        ]
+      },
+      {
+        "span_id": "f7f5ffbd",
+        "parent_trace_id": "a0668e3f-1ab7-4271-8d36-c3c26e6be148",
+        "session_id": "sess_001",
+        "stage_name": "detect_micro_intent",
+        "prompt_version": "v1.1.0",
+        "model_answered": "openai/gpt-oss-20b",
+        "latency_ms": 295.5,
+        "ttft_ms": 295.5,
+        "input_tokens": 347,
+        "output_tokens": 41,
+        "total_tokens": 388,
+        "cost_egp": 0.001916,
+        "status": "SUCCESS",
+        "error": null,
+        "tags": [
+          "detect_micro_intent",
+          "prompt:v1.1.0",
+          "model:openai/gpt-oss-20b"
+        ]
+      },
+      {
+        "span_id": "9b3ff052",
+        "parent_trace_id": "a0668e3f-1ab7-4271-8d36-c3c26e6be148",
+        "session_id": "sess_001",
+        "stage_name": "input_extraction",
+        "prompt_version": "v1.0.0",
+        "model_answered": "openai/gpt-oss-120b",
+        "latency_ms": 836.77,
+        "ttft_ms": 836.77,
+        "input_tokens": 523,
+        "output_tokens": 90,
+        "total_tokens": 613,
+        "cost_egp": 0.006622,
+        "status": "SUCCESS",
+        "error": null,
+        "tags": [
+          "input_extraction",
+          "prompt:v1.0.0",
+          "model:openai/gpt-oss-120b"
+        ]
+      },
+      {
+        "span_id": "235cdd40",
+        "parent_trace_id": "a0668e3f-1ab7-4271-8d36-c3c26e6be148",
+        "session_id": "sess_001",
+        "stage_name": "match_properties",
+        "prompt_version": "n/a",
+        "model_answered": "rule_based",
+        "latency_ms": 37.82,
+        "ttft_ms": null,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
+        "cost_egp": 0.0,
+        "status": "SUCCESS",
+        "error": null,
+        "tags": [
+          "match_properties",
+          "prompt:n/a",
+          "model:rule_based"
+        ]
+      },
+      {
+        "span_id": "7f3ad64e",
+        "parent_trace_id": "a0668e3f-1ab7-4271-8d36-c3c26e6be148",
+        "session_id": "sess_001",
+        "stage_name": "llm_furnisher",
+        "prompt_version": "v1.0.0",
+        "model_answered": "gemini/gemini-flash-latest",
+        "latency_ms": 1973.29,
+        "ttft_ms": 1677.3,
+        "input_tokens": 1673,
+        "output_tokens": 379,
+        "total_tokens": 2052,
+        "cost_egp": 0.015945,
+        "status": "SUCCESS",
+        "error": null,
+        "tags": [
+          "llm_furnisher",
+          "prompt:v1.0.0",
+          "model:gemini/gemini-flash-latest"
+        ]
+      }
+    ]
+  }
+}

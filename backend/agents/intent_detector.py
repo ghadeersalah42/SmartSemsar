@@ -188,6 +188,13 @@ def normalize_arabic_text(text: str) -> str:
     
     return text.strip()
 
+try:
+    from langsmith_ops.tracer import langsmith_trace
+except Exception:
+    def langsmith_trace(*args, **kwargs):
+        return lambda fn: fn
+
+@langsmith_trace(agent_name="intent_detector", prompt_version="v1.1.0", default_model="openai/gpt-oss-20b", stage_name="detect_micro_intent")
 def detect_intent(conversation: str) -> Dict[str, Any]:
     
     normalized_text = normalize_arabic_text(conversation)

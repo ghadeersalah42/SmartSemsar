@@ -1,0 +1,6 @@
+{
+  "identifier": "smart-semsar/test_agent",
+  "commit_id": "20261102_194115",
+  "description": "v1.0.0: Unit test prompt",
+  "content": "{'agent_name': 'test_agent', 'version': 'v1.0.0', 'system_prompt': 'Test Prompt v1.0', 'target_model': 'openai/gpt-oss-20b', 'output_schema': None, 'description': 'Unit test prompt'}"
+}

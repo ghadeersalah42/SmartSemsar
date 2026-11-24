@@ -1,0 +1,6 @@
+{
+  "identifier": "smart-semsar/orchestrator_router",
+  "commit_id": "20261102_194010",
+  "description": "v1.0.0: LangGraph Supervisor orchestrator prompt",
+  "content": "{'agent_name': 'orchestrator_router', 'version': 'v1.0.0', 'system_prompt': 'You are the Orchestrator for Smart Semsar. Route input: {conversation}', 'target_model': 'openai/gpt-oss-20b', 'output_schema': None, 'description': 'LangGraph Supervisor orchestrator prompt'}"
+}

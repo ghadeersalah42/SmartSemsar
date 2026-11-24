@@ -1,0 +1,42 @@
+name: LangSmith Automated Prompt Evaluation CI/CD
+
+on:
+  push:
+    paths:
+      - 'langsmith_ops/prompts/**'
+      - 'backend/llmops/prompts/**'
+      - 'backend/agents/**'
+  pull_request:
+    paths:
+      - 'langsmith_ops/prompts/**'
+      - 'backend/llmops/prompts/**'
+      - 'backend/agents/**'
+
+jobs:
+  evaluate-prompts:
+    name: Run LangSmith Evals on Prompt Changes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install langsmith tabulate pydantic
+
+      - name: Run LangSmith Prompt Regression Testing
+        env:
+          LANGCHAIN_TRACING_V2: "true"
+          LANGCHAIN_API_KEY: ${{ secrets.LANGCHAIN_API_KEY }}
+          LANGCHAIN_PROJECT: "smart-semsar"
+          LANGCHAIN_ENDPOINT: "https://api.smith.langchain.com"
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python run_langsmith_eval.py --all

@@ -194,6 +194,18 @@ def furnish(plan: Plan, preferences: Union[DesignPreferences, dict, None] = None
             try:
                 answer = llm.chat_json(messages)
             except Exception as e:  # busy, quota, network, bad JSON: next model, else rules do the rest
+                next_name = backups[0].name if backups else "rule_placer"
+                try:
+                    from langsmith_ops.fallback_monitor import log_fallback_alert
+                    log_fallback_alert(
+                        stage_name="llm_furnisher",
+                        failed_model=llm.name,
+                        error=mask_secrets(e),
+                        next_model=next_name,
+                        session_id=staging_id,
+                    )
+                except Exception:
+                    pass
                 report.warnings.append(f"{llm.name} failed in round {round_no} "
                                        f"({type(e).__name__}: {mask_secrets(e)[:120]}).")
                 if not backups:

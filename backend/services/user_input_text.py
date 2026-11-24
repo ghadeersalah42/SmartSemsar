@@ -151,6 +151,16 @@ def _llm_json(messages) -> str:
                 messages=messages, response_format={"type": "json_object"}, temperature=0)
             return response.choices[0].message.content
         except Exception as e:
+            try:
+                from langsmith_ops.fallback_monitor import log_fallback_alert
+                log_fallback_alert(
+                    stage_name="input_extraction",
+                    failed_model=os.getenv("SMARTSEMSAR_GROQ_MODEL", "openai/gpt-oss-120b"),
+                    error=e,
+                    next_model=f"ollama/{os.getenv('SMARTSEMSAR_OLLAMA_MODEL', MODEL_NAME)}",
+                )
+            except Exception:
+                pass
             print(f"Groq extraction failed, using Ollama: {e}")
     response = ollama.chat(
         model=os.getenv("SMARTSEMSAR_OLLAMA_MODEL", MODEL_NAME),

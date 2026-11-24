@@ -1,0 +1,33 @@
+[
+  {
+    "id": "req_01",
+    "input": "عايز شقة في التجمع تلات اوض والميزانية خمسة مليون شراء",
+    "expected": {
+      "location": "التجمع الخامس",
+      "budget_max": 5000000,
+      "bedrooms": 3,
+      "property_type": "apartment",
+      "deal_type": "buy"
+    }
+  },
+  {
+    "id": "req_02",
+    "input": "بدور على فيلا في الشيخ زايد غرفتين بميزانية 3 مليون تمليك",
+    "expected": {
+      "location": "الشيخ زايد",
+      "budget_max": 3000000,
+      "bedrooms": 2,
+      "property_type": "villa",
+      "deal_type": "buy"
+    }
+  },
+  {
+    "id": "req_03",
+    "input": "شقة في التجمع خمسة مليون",
+    "expected": {
+      "location": "التجمع الخامس",
+      "budget_max": 5000000,
+      "property_type": "apartment"
+    }
+  }
+]
