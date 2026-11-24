@@ -186,12 +186,23 @@ Most extraction mismatches came from Whisper mishearing a few real-estate words,
 |---|---:|---:|---:|---:|---:|---|
 | No prompt (control, re-run on this machine) | 38.35% | 26.73% | 13 | 5 | 1 | reproduces the official 38.18% within run-to-run noise |
 | App prompt (`user_input_audio.py`) | 43.64% | 31.02% | 12 | 8 | 3 | **hallucinated foreign text on `rec2`** ("Connect Yoga! …") |
-| **Extended prompt (now the pipeline default)** | 40.83% | **27.23%** | **17** | **8** | 1 | no hallucination |
+| **Extended prompt** | 40.83% | **27.23%** | **17** | **8** | 1 | no hallucination |
 
 - **Why WER went up:** the prompt contains punctuation, so Whisper starts writing `،` `.` `؟`, and `normalize_arabic_text` keeps punctuation, so each mark counts as an error. Without punctuation the extended prompt is on par with no prompt (27.23% vs 26.73%). About 11 points of the official 38% WER are punctuation, not misheard words.
 - **Extraction (what the prompt is for):** with the human-side extraction held fixed, the extended-prompt transcripts match **46/52 (88.46%)** vs **44/52 (84.62%)** for the official transcripts; against a second human-side run, 44/52 vs 42/52. Gained: `rec4` location (`التجامعة` → `التجمع`) and budget (`عشرين`), `rec5` and `rec9` deal type (`تمليك`). Lost: `rec8` property type. `فيلا` is still misheard.
 - **Caveats:** some areas in the prompt (التجمع، 6 أكتوبر، الشيخ زايد، العاصمة الإدارية) occur in these 10 calls, so the gain may be optimistic; Groq's extraction itself varies by about ±4 points between identical runs (the human-side extraction of the same text changed between runs), which is the same size as the gain. A larger call set is needed to confirm it.
-- **Decision:** the extended list is now `pipeline.WHISPER_INITIAL_PROMPT` and is passed to `transcribe()`; set `SMARTSEMSAR_WHISPER_PROMPT=""` to turn it off. The official numbers in sections 3 and 6 were produced **before** this change and were not regenerated.
+- **Full-pipeline check (2026-11-24):** we then re-ran the whole pipeline (`batch_pipeline.py`: VAD → Whisper with the extended list → pyannote → role inference) on all 10 calls. Outputs: `experiments/vocab_prompt/full_pipeline_run/`.
+
+| Metric | Without word list (official) | With word list (full pipeline) |
+|---|---:|---:|
+| Micro WER | 38.18% | 41.49% |
+| Micro CER | 16.31% | 18.70% |
+| Micro DER | 16.11% | 16.11% (unchanged: pyannote works on the audio alone) |
+| **Role accuracy** | **90%** | **70%** (`rec6` 0%, `rec2`/`rec4`/`rec7`/`rec8` 50%; `rec5` improved to 100%) |
+| Batch QC | 10/10 passed | 8/10 (`rec4`, `rec6` FAIL: multi-speaker segments) |
+
+  **Why:** with the prompt, Whisper writes each call as 1–2 very long segments (`rec6`: one segment for the whole call, `rec4`: two). The pipeline gives each Whisper segment one speaker, so broker and client speech inside the same segment get one role. The earlier experiment did not show this because it copied roles from the official conversations instead of re-assigning them.
+- **Decision:** the word list is **off by default** (`pipeline.REAL_ESTATE_WORD_LIST`, enabled only with `SMARTSEMSAR_WHISPER_WORD_LIST=1`). The official numbers in sections 3, 4 and 6 are the pipeline without it. The list helps the key words, so it is worth revisiting once speakers are assigned per word (`word_timestamps=True`) instead of per segment.
 
 ---
 

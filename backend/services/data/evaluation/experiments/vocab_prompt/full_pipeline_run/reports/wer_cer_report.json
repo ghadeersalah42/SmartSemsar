@@ -1,0 +1,306 @@
+{
+  "generated_at_utc": "2026-11-24T12:40:15.059094+00:00",
+  "status": "EVALUATED",
+  "total_calls": 10,
+  "evaluated_calls": 10,
+  "pending_calls": 0,
+  "pending_role_prediction_calls": 0,
+  "missing_pipeline_output_calls": 0,
+  "error_calls": 0,
+  "macro_wer": 0.42038,
+  "micro_wer": 0.414876,
+  "macro_cer": 0.189307,
+  "micro_cer": 0.187028,
+  "corpus_wer_totals": {
+    "macro_wer": 0.42038,
+    "micro_wer": 0.414876,
+    "total_reference_words": 605,
+    "total_hypothesis_words": 599,
+    "total_edit_distance": 251,
+    "total_substitutions": 199,
+    "total_deletions": 29,
+    "total_insertions": 23
+  },
+  "corpus_cer_totals": {
+    "macro_cer": 0.189307,
+    "micro_cer": 0.187028,
+    "total_reference_characters": 3176,
+    "total_hypothesis_characters": 3198,
+    "total_edit_distance": 594,
+    "total_substitutions": 180,
+    "total_deletions": 196,
+    "total_insertions": 218
+  },
+  "calls": [
+    {
+      "call_id": "smartsemsar_rec1",
+      "status": "EVALUATED",
+      "wer": 0.557377,
+      "cer": 0.194079,
+      "wer_details": {
+        "wer": 0.557377,
+        "reference_words": 61,
+        "hypothesis_words": 59,
+        "edit_distance": 34,
+        "substitutions": 28,
+        "deletions": 4,
+        "insertions": 2,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.194079,
+        "reference_characters": 304,
+        "hypothesis_characters": 309,
+        "edit_distance": 59,
+        "substitutions": 16,
+        "deletions": 19,
+        "insertions": 24,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec2",
+      "status": "EVALUATED",
+      "wer": 0.444444,
+      "cer": 0.221854,
+      "wer_details": {
+        "wer": 0.444444,
+        "reference_words": 54,
+        "hypothesis_words": 59,
+        "edit_distance": 24,
+        "substitutions": 19,
+        "deletions": 0,
+        "insertions": 5,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.221854,
+        "reference_characters": 302,
+        "hypothesis_characters": 339,
+        "edit_distance": 67,
+        "substitutions": 22,
+        "deletions": 4,
+        "insertions": 41,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec3",
+      "status": "EVALUATED",
+      "wer": 0.274194,
+      "cer": 0.136076,
+      "wer_details": {
+        "wer": 0.274194,
+        "reference_words": 62,
+        "hypothesis_words": 61,
+        "edit_distance": 17,
+        "substitutions": 12,
+        "deletions": 3,
+        "insertions": 2,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.136076,
+        "reference_characters": 316,
+        "hypothesis_characters": 312,
+        "edit_distance": 43,
+        "substitutions": 7,
+        "deletions": 20,
+        "insertions": 16,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec4",
+      "status": "EVALUATED",
+      "wer": 0.277778,
+      "cer": 0.120643,
+      "wer_details": {
+        "wer": 0.277778,
+        "reference_words": 72,
+        "hypothesis_words": 73,
+        "edit_distance": 20,
+        "substitutions": 19,
+        "deletions": 0,
+        "insertions": 1,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.120643,
+        "reference_characters": 373,
+        "hypothesis_characters": 381,
+        "edit_distance": 45,
+        "substitutions": 13,
+        "deletions": 12,
+        "insertions": 20,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec5",
+      "status": "EVALUATED",
+      "wer": 0.306452,
+      "cer": 0.07781,
+      "wer_details": {
+        "wer": 0.306452,
+        "reference_words": 62,
+        "hypothesis_words": 65,
+        "edit_distance": 19,
+        "substitutions": 14,
+        "deletions": 1,
+        "insertions": 4,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.07781,
+        "reference_characters": 347,
+        "hypothesis_characters": 345,
+        "edit_distance": 27,
+        "substitutions": 11,
+        "deletions": 9,
+        "insertions": 7,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec6",
+      "status": "EVALUATED",
+      "wer": 0.596154,
+      "cer": 0.222222,
+      "wer_details": {
+        "wer": 0.596154,
+        "reference_words": 52,
+        "hypothesis_words": 51,
+        "edit_distance": 31,
+        "substitutions": 30,
+        "deletions": 1,
+        "insertions": 0,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.222222,
+        "reference_characters": 279,
+        "hypothesis_characters": 292,
+        "edit_distance": 62,
+        "substitutions": 35,
+        "deletions": 7,
+        "insertions": 20,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec7",
+      "status": "EVALUATED",
+      "wer": 0.267857,
+      "cer": 0.10989,
+      "wer_details": {
+        "wer": 0.267857,
+        "reference_words": 56,
+        "hypothesis_words": 56,
+        "edit_distance": 15,
+        "substitutions": 13,
+        "deletions": 1,
+        "insertions": 1,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.10989,
+        "reference_characters": 273,
+        "hypothesis_characters": 284,
+        "edit_distance": 30,
+        "substitutions": 5,
+        "deletions": 7,
+        "insertions": 18,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec8",
+      "status": "EVALUATED",
+      "wer": 0.530612,
+      "cer": 0.277372,
+      "wer_details": {
+        "wer": 0.530612,
+        "reference_words": 49,
+        "hypothesis_words": 52,
+        "edit_distance": 26,
+        "substitutions": 21,
+        "deletions": 1,
+        "insertions": 4,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.277372,
+        "reference_characters": 274,
+        "hypothesis_characters": 298,
+        "edit_distance": 76,
+        "substitutions": 26,
+        "deletions": 13,
+        "insertions": 37,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec9",
+      "status": "EVALUATED",
+      "wer": 0.474576,
+      "cer": 0.306189,
+      "wer_details": {
+        "wer": 0.474576,
+        "reference_words": 59,
+        "hypothesis_words": 49,
+        "edit_distance": 28,
+        "substitutions": 14,
+        "deletions": 12,
+        "insertions": 2,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.306189,
+        "reference_characters": 307,
+        "hypothesis_characters": 242,
+        "edit_distance": 94,
+        "substitutions": 15,
+        "deletions": 72,
+        "insertions": 7,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    },
+    {
+      "call_id": "smartsemsar_rec10",
+      "status": "EVALUATED",
+      "wer": 0.474359,
+      "cer": 0.226933,
+      "wer_details": {
+        "wer": 0.474359,
+        "reference_words": 78,
+        "hypothesis_words": 74,
+        "edit_distance": 37,
+        "substitutions": 29,
+        "deletions": 6,
+        "insertions": 2,
+        "normalized": true
+      },
+      "cer_details": {
+        "cer": 0.226933,
+        "reference_characters": 401,
+        "hypothesis_characters": 396,
+        "edit_distance": 91,
+        "substitutions": 30,
+        "deletions": 33,
+        "insertions": 28,
+        "normalized": true,
+        "ignore_spaces": false
+      }
+    }
+  ]
+}

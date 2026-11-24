@@ -62,16 +62,19 @@ GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GROQ_MODEL = os.environ.get("SMARTSEMSAR_GROQ_MODEL", "openai/gpt-oss-120b")
 
 WHISPER_MODEL = "large-v3-turbo"
-# Expected real-estate words for Whisper (initial_prompt). Tested on the 10 real calls
-# (evaluation/vocab_prompt_experiment.py): "تمليك" 13/17 -> 17/17 and "التجمع" 5/8 -> 8/8 heard
-# correctly, extraction agreement +2 requirements. Set SMARTSEMSAR_WHISPER_PROMPT="" to turn it off.
-WHISPER_INITIAL_PROMPT = os.environ.get(
-    "SMARTSEMSAR_WHISPER_PROMPT",
+# Expected real-estate words for Whisper (initial_prompt). OFF by default.
+# Tested on the 10 real calls (evaluation/vocab_prompt_experiment.py): it fixes "تمليك" (13/17 -> 17/17)
+# and "التجمع" (5/8 -> 8/8), but Whisper then writes each call as 1-2 very long segments, and roles are
+# assigned per segment, so in the full pipeline role accuracy fell 90% -> 70% and WER rose 38.18% -> 41.49%
+# (experiments/vocab_prompt/full_pipeline_run). Turn it on with SMARTSEMSAR_WHISPER_WORD_LIST=1 once roles
+# are assigned per word (word_timestamps) instead of per segment.
+REAL_ESTATE_WORD_LIST = (
     "مكالمة عقارية بالعامية المصرية: شقة، فيلا، دوبلكس، أوض نوم، ميزانية، مليون، متر، "
     "التجمع، نيو كايرو، قريبة من المدارس، تشطيب، تقسيط، سكن، استثمار، إيجار، تمليك، غرف، ألف، "
     "يا فندم، مكتب عقارات، التجمع الخامس، العاصمة الإدارية، 6 أكتوبر، الشيخ زايد، مصر الجديدة، "
-    "المعادي، مدينة نصر.",
-) or None
+    "المعادي، مدينة نصر."
+)
+WHISPER_INITIAL_PROMPT = REAL_ESTATE_WORD_LIST if os.environ.get("SMARTSEMSAR_WHISPER_WORD_LIST") == "1" else None
 DIARIZATION_MODEL = "pyannote/speaker-diarization-community-1"
 EXPECTED_SPEAKERS = 2
 TARGET_SAMPLE_RATE = 16000

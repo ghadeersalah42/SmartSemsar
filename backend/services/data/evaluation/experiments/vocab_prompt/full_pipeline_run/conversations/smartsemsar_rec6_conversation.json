@@ -1,0 +1,42 @@
+{
+  "call_id": "smartsemsar_rec6",
+  "source_audio_file": "smartsemsar_rec6.mp4",
+  "audio_file": "smartsemsar_rec6_standardized.wav",
+  "language": "ar",
+  "duration": 33.739,
+  "num_speakers": 1,
+  "speakers": [
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 greets with \"مكتب عقارات\" and asks qualifying questions (عدد الغرف، تمليك أو إيجار، الميزانية) and summarizes the request, which matches broker behavior. No dialogue from SPEAKER_00 is present, so its role cannot be determined."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 29.98,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 10.818,
+      "overlap_ratio": 0.3608,
+      "speaker_dominance": 0.5087,
+      "is_ambiguous": true,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_ambiguous_multi_speaker",
+      "raw_text": "مكتب عقارات، تفضلي، كنت بتدوري عليها، بدور على شقة، في مدينة نصر، تمام يا فندم، أربعة غرف، كم قوضة؟ أربعة، تمام، حضرتك، أربعة، ماشي، دمليك، ولا إجار، والميزانية؟ إجار، إجار، والميزانية تقريباً، تمام تلاف، تمام تلاف، تمام يا فندم، شقة أربعة غرف، في مدينة نصر، إجار بميزانية حوالي تمن تلاف جنيه،",
+      "text": "مكتب عقارات، تفضلي، كنت بتدوري عليها، بدور علي شقة، في مدينة نصر، تمام يا فندم، اربعة غرف، كم قوضة؟ اربعة، تمام، حضرتك، اربعة، ماشي، دمليك، ولا اجار، والميزانية؟ اجار، اجار، والميزانية تقريبا، تمام تلاف، تمام تلاف، تمام يا فندم، شقة اربعة غرف، في مدينة نصر، اجار بميزانية حوالي تمن تلاف جنيه،",
+      "role": "broker"
+    }
+  ]
+}

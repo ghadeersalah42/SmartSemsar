@@ -1,0 +1,82 @@
+{
+  "call_id": "smartsemsar_rec4",
+  "raw_duration": 39.636,
+  "processed_duration": 39.636,
+  "duration_difference": 0.0,
+  "processed_sample_rate": 16000,
+  "processed_channels": 1,
+  "sample_rate_valid": true,
+  "is_mono": true,
+  "expected_speakers": 2,
+  "expected_min_speakers": 2,
+  "expected_max_speakers": 2,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "conversation_turns": 2,
+  "empty_segments": 0,
+  "invalid_timestamps": 0,
+  "severe_invalid_timestamps": 0,
+  "minor_timestamp_overshoots": 0,
+  "invalid_diarization_timestamps": 0,
+  "severe_invalid_diarization_timestamps": 0,
+  "minor_diarization_overshoots": 0,
+  "unassigned_speaker_segments": 0,
+  "unassigned_speaker_turn_ids": [],
+  "multi_speaker_overlap_segments": 2,
+  "multi_speaker_overlap_turn_ids": [
+    1,
+    2
+  ],
+  "multi_speaker_overlap_ratio": 1.0,
+  "ambiguous_speaker_segments": 1,
+  "ambiguous_speaker_turn_ids": [
+    1
+  ],
+  "ambiguous_speaker_ratio": 0.5,
+  "word_count": 73,
+  "character_count": 381,
+  "transcription_segment_duration": 39.636,
+  "vad_speech_duration": 30.41,
+  "vad_speech_ratio": 0.7672,
+  "speech_duration": 39.636,
+  "checked_output_files": [
+    "conversation_json",
+    "diarization_json",
+    "qc_json",
+    "standardized_wav",
+    "transcript_json",
+    "vad_json"
+  ],
+  "missing_output_files": [],
+  "raw_audio_info": {
+    "format": ".mp4",
+    "size_mb": 0.647,
+    "sample_rate": 44100,
+    "channels": 1,
+    "duration": 39.636,
+    "samples": 1747968,
+    "min_amplitude": -0.407471,
+    "max_amplitude": 0.478058,
+    "rms_energy": 0.039365,
+    "peak_amplitude": 0.478058,
+    "clipped_samples": 0,
+    "clipping_ratio": 0.0,
+    "clipping_status": "No clipping"
+  },
+  "checks": {
+    "duration": "PASS",
+    "sample_rate_16khz": "PASS",
+    "mono_audio": "PASS",
+    "speakers": "PASS",
+    "empty_segments": "PASS",
+    "timestamps": "PASS",
+    "unassigned_speakers": "PASS",
+    "multi_speaker_overlap": "FAIL",
+    "transcript": "PASS",
+    "output_files": "PASS"
+  },
+  "status": "FAIL"
+}

@@ -1,0 +1,78 @@
+{
+  "call_id": "smartsemsar_rec2",
+  "source_audio_file": "smartsemsar_rec2.mp4",
+  "audio_file": "smartsemsar_rec2_standardized.wav",
+  "language": "ar",
+  "duration": 31.347,
+  "num_speakers": 1,
+  "speakers": [
+    "SPEAKER_00"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 asks qualifying questions (location, rooms, rent vs purchase, budget), summarizes the request, and ends with a closing phrase typical of a broker (شكرا لاتصال حضرتك). No other speaker is present, so this speaker is identified as the broker."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 22.84,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 9.772,
+      "overlap_ratio": 0.4278,
+      "speaker_dominance": 0.6391,
+      "is_ambiguous": true,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_ambiguous_multi_speaker",
+      "raw_text": "كنت حابب أعرف ايه المواصفات اللي في الدمائج؟ محتاجة عدد الغرف في الطريقة. محتاجة حاجة في العاصمة الإدارية. تمام. العاصمة الإدارية، كام غرفة تقريبا، إيجار، ولا تمليك، والميزانية في حدود كام؟ إهم، 3 أود، تمليك. تمام. تمليك؟ إثنين ونصف مليون.",
+      "text": "كنت حابب اعرف ايه المواصفات اللي في الدمائج؟ محتاجة عدد الغرف في الطريقة. محتاجة حاجة في العاصمة الادارية. تمام. العاصمة الادارية، كام غرفة تقريبا، ايجار، ولا تمليك، والميزانية في حدود كام؟ اهم، 3 اود، تمليك. تمام. تمليك؟ اثنين ونصف مليون.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 22.84,
+      "end": 28.72,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 4.656,
+      "overlap_ratio": 0.7918,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "مش شقة ثلاث غرف تمليك في العاصمة الإدارية حوالي اتنين ونص مليون جنيه",
+      "text": "مش شقة ثلاث غرف تمليك في العاصمة الادارية حوالي اتنين ونص مليون جنيه",
+      "role": "broker"
+    },
+    {
+      "turn_id": 3,
+      "start": 28.72,
+      "end": 31.14,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.059,
+      "overlap_ratio": 0.8508,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "شكرا لاتصال حضرتك في أمان الله",
+      "text": "شكرا لاتصال حضرتك في امان الله",
+      "role": "broker"
+    }
+  ]
+}

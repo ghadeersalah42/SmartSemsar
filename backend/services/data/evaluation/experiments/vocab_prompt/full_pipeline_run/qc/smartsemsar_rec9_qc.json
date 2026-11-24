@@ -1,0 +1,83 @@
+{
+  "call_id": "smartsemsar_rec9",
+  "raw_duration": 32.345,
+  "processed_duration": 32.345,
+  "duration_difference": 0.0,
+  "processed_sample_rate": 16000,
+  "processed_channels": 1,
+  "sample_rate_valid": true,
+  "is_mono": true,
+  "expected_speakers": 2,
+  "expected_min_speakers": 2,
+  "expected_max_speakers": 2,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "conversation_turns": 9,
+  "empty_segments": 0,
+  "invalid_timestamps": 0,
+  "severe_invalid_timestamps": 0,
+  "minor_timestamp_overshoots": 0,
+  "invalid_diarization_timestamps": 0,
+  "severe_invalid_diarization_timestamps": 0,
+  "minor_diarization_overshoots": 0,
+  "unassigned_speaker_segments": 0,
+  "unassigned_speaker_turn_ids": [],
+  "multi_speaker_overlap_segments": 3,
+  "multi_speaker_overlap_turn_ids": [
+    1,
+    2,
+    4
+  ],
+  "multi_speaker_overlap_ratio": 0.3333,
+  "ambiguous_speaker_segments": 1,
+  "ambiguous_speaker_turn_ids": [
+    2
+  ],
+  "ambiguous_speaker_ratio": 0.1111,
+  "word_count": 49,
+  "character_count": 242,
+  "transcription_segment_duration": 28.0,
+  "vad_speech_duration": 24.456,
+  "vad_speech_ratio": 0.7561,
+  "speech_duration": 28.0,
+  "checked_output_files": [
+    "conversation_json",
+    "diarization_json",
+    "qc_json",
+    "standardized_wav",
+    "transcript_json",
+    "vad_json"
+  ],
+  "missing_output_files": [],
+  "raw_audio_info": {
+    "format": ".mp4",
+    "size_mb": 0.533,
+    "sample_rate": 44100,
+    "channels": 1,
+    "duration": 32.345,
+    "samples": 1426432,
+    "min_amplitude": -0.436798,
+    "max_amplitude": 0.431854,
+    "rms_energy": 0.051665,
+    "peak_amplitude": 0.436798,
+    "clipped_samples": 0,
+    "clipping_ratio": 0.0,
+    "clipping_status": "No clipping"
+  },
+  "checks": {
+    "duration": "PASS",
+    "sample_rate_16khz": "PASS",
+    "mono_audio": "PASS",
+    "speakers": "PASS",
+    "empty_segments": "PASS",
+    "timestamps": "PASS",
+    "unassigned_speakers": "PASS",
+    "multi_speaker_overlap": "WARNING",
+    "transcript": "PASS",
+    "output_files": "PASS"
+  },
+  "status": "WARNING"
+}

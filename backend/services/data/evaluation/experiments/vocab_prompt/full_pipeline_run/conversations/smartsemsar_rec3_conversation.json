@@ -1,0 +1,245 @@
+{
+  "call_id": "smartsemsar_rec3",
+  "source_audio_file": "smartsemsar_rec3.mp4",
+  "audio_file": "smartsemsar_rec3_standardized.wav",
+  "language": "ar",
+  "duration": 31.463,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 greets with 'مكتب عقارات' and asks qualifying questions (type, rooms, rent vs purchase, budget) and summarizes, typical broker behavior. SPEAKER_00 responds with preferences, typical client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.902,
+      "overlap_ratio": 0.951,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "مكتب عقارات، اتفضلي.",
+      "text": "مكتب عقارات، اتفضلي.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 4.0,
+      "end": 6.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.514,
+      "overlap_ratio": 0.757,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "بدور على حاجة في الشيخ زايد؟",
+      "text": "بدور علي حاجة في الشيخ زايد؟",
+      "role": "client"
+    },
+    {
+      "turn_id": 3,
+      "start": 7.0,
+      "end": 10.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.46,
+      "overlap_ratio": 0.82,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم، حضرتك شقة ولا فيلا؟",
+      "text": "تمام يا فندم، حضرتك شقة ولا فيلا؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 4,
+      "start": 10.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.152,
+      "overlap_ratio": 0.576,
+      "speaker_dominance": 0.8276,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "شقة، تبقى غرفتين.",
+      "text": "شقة، تبقي غرفتين.",
+      "role": "client"
+    },
+    {
+      "turn_id": 5,
+      "start": 13.0,
+      "end": 17.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 3.857,
+      "overlap_ratio": 0.9642,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام، اتنين قوض في الشيخ زايد، حضرتك إيجار ولا تمليك؟",
+      "text": "تمام، اتنين قوض في الشيخ زايد، حضرتك ايجار ولا تمليك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 6,
+      "start": 17.0,
+      "end": 18.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.511,
+      "overlap_ratio": 0.511,
+      "speaker_dominance": 0.511,
+      "is_ambiguous": true,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_ambiguous_multi_speaker",
+      "raw_text": "إيجار.",
+      "text": "ايجار.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 7,
+      "start": 18.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.359,
+      "overlap_ratio": 0.6795,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "لو قلت إيجار؟ إيجار.",
+      "text": "لو قلت ايجار؟ ايجار.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 8,
+      "start": 20.0,
+      "end": 22.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.291,
+      "overlap_ratio": 0.6455,
+      "speaker_dominance": 0.686,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "اتفضلي يا فندم، حضرتك في حدود كام؟",
+      "text": "اتفضلي يا فندم، حضرتك في حدود كام؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 23.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.675,
+      "overlap_ratio": 0.675,
+      "speaker_dominance": 0.8262,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "25 ألف.",
+      "text": "25 الف.",
+      "role": "client"
+    },
+    {
+      "turn_id": 10,
+      "start": 24.0,
+      "end": 26.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.393,
+      "overlap_ratio": 0.6965,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "لو قلت حوالي 25 ألف.",
+      "text": "لو قلت حوالي 25 الف.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 11,
+      "start": 26.0,
+      "end": 29.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 3.0,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم، يبقى شقة غرفتين في الشيخ زايد إيجار؟",
+      "text": "تمام يا فندم، يبقي شقة غرفتين في الشيخ زايد ايجار؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 12,
+      "start": 30.0,
+      "end": 31.463,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.402,
+      "overlap_ratio": 0.9583,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "حوالي 25 ألف.",
+      "text": "حوالي 25 الف.",
+      "role": "broker"
+    }
+  ]
+}

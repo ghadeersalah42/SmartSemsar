@@ -1,0 +1,76 @@
+{
+  "call_id": "smartsemsar_rec4",
+  "source_audio_file": "smartsemsar_rec4.mp4",
+  "audio_file": "smartsemsar_rec4_standardized.wav",
+  "language": "ar",
+  "duration": 39.636,
+  "num_speakers": 1,
+  "speakers": [
+    "SPEAKER_00"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "heuristic",
+    "confidence": "high",
+    "scores": {
+      "SPEAKER_00": {
+        "broker_score": 34.4,
+        "client_score": 11.0,
+        "net_broker_score": 23.4,
+        "word_count": 73.0
+      },
+      "SPEAKER_01": {
+        "broker_score": 0.0,
+        "client_score": 0.0,
+        "net_broker_score": 0.0,
+        "word_count": 0.0
+      }
+    },
+    "reasoning": "Assigned SPEAKER_00=broker (net=23.4) vs SPEAKER_01=client (net=0.0).",
+    "llm_fallback_reason": "LLM returned only 'unassigned' roles; falling back to heuristic."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 12.723,
+      "overlap_ratio": 0.4544,
+      "speaker_dominance": 0.5557,
+      "is_ambiguous": true,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_ambiguous_multi_speaker",
+      "raw_text": "سأل خير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه. أنا بدور على شقة في التجمع الخامس. تمام يا فندم، التجمع الخامس، كم قوضة تقريبا؟ ثلاث غرف، مش عايزة صغيرة. ماشي ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟ إيجار، وبفضل يعني 20 ألف. تمام، في حدود كم مثلا؟ حدود 20 ألف.",
+      "text": "سال خير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليه. انا بدور علي شقة في التجمع الخامس. تمام يا فندم، التجمع الخامس، كم قوضة تقريبا؟ ثلاث غرف، مش عايزة صغيرة. ماشي ثلاثة؟ اه، طيب، ده ايجار ولا تمليك؟ ايجار، وبفضل يعني 20 الف. تمام، في حدود كم مثلا؟ حدود 20 الف.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 28.0,
+      "end": 39.636,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 8.456,
+      "overlap_ratio": 0.7267,
+      "speaker_dominance": 0.9616,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "طيب، شقة إيجار في التجمع الخامس، ثلاث غرف، ميزينية حوالي 20 ألف. ساعة؟ ساعة؟ تمام، شكراً لاتصال حضرتك يا فندم، أسجلتك.",
+      "text": "طيب، شقة ايجار في التجمع الخامس، ثلاث غرف، ميزينية حوالي 20 الف. ساعة؟ ساعة؟ تمام، شكرا لاتصال حضرتك يا فندم، اسجلتك.",
+      "role": "broker"
+    }
+  ]
+}

@@ -57,7 +57,7 @@ APP_PROMPT = ("مكالمة عقارية بالعامية المصرية: شقة
               "التجمع، نيو كايرو، قريبة من المدارس، تشطيب، تقسيط، سكن، استثمار.")
 EXTENDED_PROMPT = (APP_PROMPT[:-1] + "، إيجار، تمليك، غرف، ألف، يا فندم، مكتب عقارات، "
                    "التجمع الخامس، العاصمة الإدارية، 6 أكتوبر، الشيخ زايد، مصر الجديدة، المعادي، مدينة نصر.")
-# "extended" won and is now the pipeline default (pipeline.WHISPER_INITIAL_PROMPT; a test keeps them equal)
+# "extended" is pipeline.REAL_ESTATE_WORD_LIST (off by default; a test keeps them equal)
 VARIANTS = {"baseline": None, "app_prompt": APP_PROMPT, "extended": EXTENDED_PROMPT}
 
 # words whose mishearing broke extraction in the official run, and the wrong forms seen

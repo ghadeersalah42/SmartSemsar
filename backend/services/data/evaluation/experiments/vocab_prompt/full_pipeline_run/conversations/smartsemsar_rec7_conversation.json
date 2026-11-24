@@ -1,0 +1,42 @@
+{
+  "call_id": "smartsemsar_rec7",
+  "source_audio_file": "smartsemsar_rec7.mp4",
+  "audio_file": "smartsemsar_rec7_standardized.wav",
+  "language": "ar",
+  "duration": 29.931,
+  "num_speakers": 1,
+  "speakers": [
+    "SPEAKER_00"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 greets with 'يا فندم' and asks qualifying questions about rooms, purchase vs rent, and budget, then summarizes requirements and thanks the caller, all typical broker behavior. No dialogue from SPEAKER_01 is present, so its role is unassigned."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 29.931,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 16.146,
+      "overlap_ratio": 0.5394,
+      "speaker_dominance": 0.7173,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "كاير يا فندم، اتفضل. أنا محتاج بيلا في 6 أكتوبر. تمام يا فندم، كم غرفة تقريبا؟ أربع غرف. طيب، شراء ولا إيجار؟ شراء طبعا. تمام، والميزانية في حدود كم؟ 8 مليون جنيه، 10 مليون جنيه كم؟ تمام يا فندم، خلاص بيلا أربع غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه. شكراً لإتصال حضرتكم.",
+      "text": "كاير يا فندم، اتفضل. انا محتاج بيلا في 6 اكتوبر. تمام يا فندم، كم غرفة تقريبا؟ اربع غرف. طيب، شراء ولا ايجار؟ شراء طبعا. تمام، والميزانية في حدود كم؟ 8 مليون جنيه، 10 مليون جنيه كم؟ تمام يا فندم، خلاص بيلا اربع غرف في اكتوبر، تمليك، ميزانية من 8 الي 10 مليون جنيه. شكرا لاتصال حضرتكم.",
+      "role": "broker"
+    }
+  ]
+}

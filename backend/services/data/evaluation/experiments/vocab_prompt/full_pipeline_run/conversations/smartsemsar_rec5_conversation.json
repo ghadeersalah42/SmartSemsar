@@ -1,0 +1,79 @@
+{
+  "call_id": "smartsemsar_rec5",
+  "source_audio_file": "smartsemsar_rec5.mp4",
+  "audio_file": "smartsemsar_rec5_standardized.wav",
+  "language": "ar",
+  "duration": 29.396,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "medium",
+    "reasoning": "SPEAKER_01 greets as a real‑estate office and asks qualifying questions, which are clear broker cues. SPEAKER_00 replies with a summary and offers next steps, acting as the respondent to the broker's inquiry, thus treated as the client despite some broker‑like phrasing."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 13.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 12.168,
+      "overlap_ratio": 0.936,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "نحن خير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على بلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر، ممكن أعرف ميزانيتك محدود كم تقريباً عشان أزبط لك اختيارات مناسبة؟",
+      "text": "نحن خير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري علي بلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر، ممكن اعرف ميزانيتك محدود كم تقريبا عشان ازبط لك اختيارات مناسبة؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 13.0,
+      "end": 15.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.759,
+      "overlap_ratio": 0.3795,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "12 مليون",
+      "text": "12 مليون",
+      "role": "broker"
+    },
+    {
+      "turn_id": 3,
+      "start": 15.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 11.324,
+      "overlap_ratio": 0.8711,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم، بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون، هشوف لك شوية اختيارات مناسبة، ممكن أحدد لك المعادل زيارة أو أبعط لك التفاصيل على الواتساب؟",
+      "text": "تمام يا فندم، بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون، هشوف لك شوية اختيارات مناسبة، ممكن احدد لك المعادل زيارة او ابعط لك التفاصيل علي الواتساب؟",
+      "role": "client"
+    }
+  ]
+}

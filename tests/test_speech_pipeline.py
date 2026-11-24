@@ -892,7 +892,7 @@ def test_transcribe_filters_eof_hallucination_overflow():
     assert "اشتركوا في القناة" not in full_text
 
 
-def test_transcribe_passes_real_estate_word_list():
+def _capture_transcribe_kwargs():
     seen = {}
 
     class _FakeWhisper:
@@ -901,14 +901,24 @@ def test_transcribe_passes_real_estate_word_list():
             return [], types.SimpleNamespace(language="ar", language_probability=1.0, duration=10.0)
 
     pipeline.transcribe("dummy.wav", "cpu", whisper_model=_FakeWhisper())
-    prompt = seen.get("initial_prompt") or ""
+    return seen
+
+
+def test_word_list_is_off_by_default():
+    # it broke role assignment in the full pipeline (90% -> 70%), so it stays off
+    assert _capture_transcribe_kwargs().get("initial_prompt") is None
+
+
+def test_word_list_can_be_turned_on(monkeypatch):
+    monkeypatch.setattr(pipeline, "WHISPER_INITIAL_PROMPT", pipeline.REAL_ESTATE_WORD_LIST)
+    prompt = _capture_transcribe_kwargs().get("initial_prompt") or ""
     for word in ("فيلا", "تمليك", "إيجار", "التجمع الخامس"):
         assert word in prompt
 
 
 def test_pipeline_word_list_matches_the_tested_one():
     from backend.services.evaluation.vocab_prompt_experiment import EXTENDED_PROMPT
-    assert pipeline.WHISPER_INITIAL_PROMPT == EXTENDED_PROMPT
+    assert pipeline.REAL_ESTATE_WORD_LIST == EXTENDED_PROMPT
 
 
 def test_utf8_arabic_json_roundtrip(tmp_path):
