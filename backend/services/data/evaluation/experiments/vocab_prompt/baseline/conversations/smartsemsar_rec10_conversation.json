@@ -1,0 +1,224 @@
+{
+  "call_id": "smartsemsar_rec10",
+  "source_audio_file": "smartsemsar_rec10.mp4",
+  "audio_file": "smartsemsar_rec10_standardized.wav",
+  "language": "ar",
+  "duration": 43.352,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 01 greets with office language, asks qualifying questions (location, budget, rooms), repeats summary and thanks the caller, typical broker behavior. Speaker 00 answers with preferences (buy, budget, rooms, area), typical client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "أقدم مع حضرتك مكتب عكرات",
+      "text": "أقدم مع حضرتك مكتب عكرات"
+    },
+    {
+      "turn_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "كنت أحبب أعرف من حضرتك",
+      "text": "كنت أحبب أعرف من حضرتك"
+    },
+    {
+      "turn_id": 3,
+      "start": 4.0,
+      "end": 6.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "بالدواري على بيجار",
+      "text": "بالدواري على بيجار"
+    },
+    {
+      "turn_id": 4,
+      "start": 6.0,
+      "end": 8.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "أو تمليك وإيه البجت أو الميزانية",
+      "text": "أو تمليك وإيه البجت أو الميزانية"
+    },
+    {
+      "turn_id": 5,
+      "start": 8.0,
+      "end": 10.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "اللي تبالك",
+      "text": "اللي تبالك"
+    },
+    {
+      "turn_id": 6,
+      "start": 10.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "عايزة حاجة تمليك",
+      "text": "عايزة حاجة تمليك"
+    },
+    {
+      "turn_id": 7,
+      "start": 12.0,
+      "end": 14.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "معي ميزانية ستة مليون",
+      "text": "معي ميزانية ستة مليون"
+    },
+    {
+      "turn_id": 8,
+      "start": 14.0,
+      "end": 16.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "ستة مليون",
+      "text": "ستة مليون"
+    },
+    {
+      "turn_id": 9,
+      "start": 16.0,
+      "end": 18.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "طيب كم غرفة",
+      "text": "طيب كم غرفة"
+    },
+    {
+      "turn_id": 10,
+      "start": 18.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "كم غرفة",
+      "text": "كم غرفة"
+    },
+    {
+      "turn_id": 11,
+      "start": 20.0,
+      "end": 22.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "كم غرفة",
+      "text": "كم غرفة"
+    },
+    {
+      "turn_id": 12,
+      "start": 22.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "كم غرفة ثلاث غرف",
+      "text": "كم غرفة ثلاث غرف"
+    },
+    {
+      "turn_id": 13,
+      "start": 24.0,
+      "end": 26.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "ثلاث غرف",
+      "text": "ثلاث غرف"
+    },
+    {
+      "turn_id": 14,
+      "start": 26.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "طب في منطقة معينة",
+      "text": "طب في منطقة معينة"
+    },
+    {
+      "turn_id": 15,
+      "start": 28.0,
+      "end": 30.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "في مصر في بلك",
+      "text": "في مصر في بلك"
+    },
+    {
+      "turn_id": 16,
+      "start": 30.0,
+      "end": 32.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "أكتوبر مثلا",
+      "text": "أكتوبر مثلا"
+    },
+    {
+      "turn_id": 17,
+      "start": 32.0,
+      "end": 34.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "الشيخ زايد",
+      "text": "الشيخ زايد"
+    },
+    {
+      "turn_id": 18,
+      "start": 34.0,
+      "end": 36.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "زايد بحضل",
+      "text": "زايد بحضل"
+    },
+    {
+      "turn_id": 19,
+      "start": 36.0,
+      "end": 38.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "طلب غرف تمليك في زايد أو أكتوبر",
+      "text": "طلب غرف تمليك في زايد أو أكتوبر"
+    },
+    {
+      "turn_id": 20,
+      "start": 38.0,
+      "end": 40.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "والميزانية بحدود ستة مليون",
+      "text": "والميزانية بحدود ستة مليون"
+    },
+    {
+      "turn_id": 21,
+      "start": 40.0,
+      "end": 42.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "تمام يا فندم",
+      "text": "تمام يا فندم"
+    },
+    {
+      "turn_id": 22,
+      "start": 42.0,
+      "end": 43.352,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "شكرا أن تصار حضرتك",
+      "text": "شكرا أن تصار حضرتك"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

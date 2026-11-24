@@ -1,0 +1,35 @@
+{
+  "call_id": "smartsemsar_rec6",
+  "source_audio_file": "smartsemsar_rec6.mp4",
+  "audio_file": "smartsemsar_rec6_standardized.wav",
+  "language": "ar",
+  "duration": 33.739,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker_01 introduces as \"مكتب عقارات\" but then describes needs (apartment, location, rooms, rent vs buy) and uses polite address \"يا فندم\" typical of client speaking to broker. Speaker_00 asks about budget, repeats \"ايجار\", and then summarizes the requirements back (\"شقة اربع غرف في مدينة نصر ايجار بميزانية حوالي تمن تلاف جنيه\"), which matches broker behavior of confirming and closing. Hence SPEAKER_00 is broker, SPEAKER_01 is client."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 29.16,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "مكتب عقارات، تفضلي، كنت بتدوري عليها. بدور على شقة، في مدينة نصر، تمام يا فندم، أربعة غرف، كم قوضة؟ أربعة. تمام، حضرتك، أربعة، ماشي، دمليك، ولا إيجار، والميزانية؟ إيجار. إيجار، والميزانية تقريباً، تمام، تمام تلاف، تمام يا فندم، شقة أربعة غرف، في مدينة نصر، إيجار بميزانية حوالي تمن تلاف جنيه.",
+      "text": "مكتب عقارات، تفضلي، كنت بتدوري عليها. بدور على شقة، في مدينة نصر، تمام يا فندم، أربعة غرف، كم قوضة؟ أربعة. تمام، حضرتك، أربعة، ماشي، دمليك، ولا إيجار، والميزانية؟ إيجار. إيجار، والميزانية تقريباً، تمام، تمام تلاف، تمام يا فندم، شقة أربعة غرف، في مدينة نصر، إيجار بميزانية حوالي تمن تلاف جنيه."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

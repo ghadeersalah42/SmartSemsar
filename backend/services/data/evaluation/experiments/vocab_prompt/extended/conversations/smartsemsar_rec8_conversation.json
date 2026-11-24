@@ -1,0 +1,35 @@
+{
+  "call_id": "smartsemsar_rec8",
+  "source_audio_file": "smartsemsar_rec8.mp4",
+  "audio_file": "smartsemsar_rec8_standardized.wav",
+  "language": "ar",
+  "duration": 24.892,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 greets with \"اتفضلي حضرتك\" and asks qualifying questions about location, rooms, and budget, then summarizes and thanks the caller, matching broker behavior. SPEAKER_00 provides answers to those questions, matching client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 24.892,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "أتفضلي، حضرتك بتدوري على حاجة إيجار في منطقة معينة؟ أه، بدور على إيجار مصر الجديدة. تمام، مصر الجديدة، كم قوضة يا فندم تقريبا؟ غرفتين. والميزانية اللي في بالك؟ الغرفتين، والميزانية؟ 15 ألف. 15 ألف. تمام يا فندم، حلو، سنتحدث عن أشاء غرفتين في مصر الجديدة، إيجار بالميزانية حوالي 15 ألف. شكراً لاتصال.",
+      "text": "أتفضلي، حضرتك بتدوري على حاجة إيجار في منطقة معينة؟ أه، بدور على إيجار مصر الجديدة. تمام، مصر الجديدة، كم قوضة يا فندم تقريبا؟ غرفتين. والميزانية اللي في بالك؟ الغرفتين، والميزانية؟ 15 ألف. 15 ألف. تمام يا فندم، حلو، سنتحدث عن أشاء غرفتين في مصر الجديدة، إيجار بالميزانية حوالي 15 ألف. شكراً لاتصال."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

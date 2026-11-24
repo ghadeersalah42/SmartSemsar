@@ -1,0 +1,44 @@
+{
+  "call_id": "smartsemsar_rec4",
+  "source_audio_file": "smartsemsar_rec4.mp4",
+  "audio_file": "smartsemsar_rec4_standardized.wav",
+  "language": "ar",
+  "duration": 39.636,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 00 greets as a real‑estate office (\"مع حضرتك مكتب عقراط\"), asks qualifying questions about location, rooms, rent vs ownership, budget, summarizes the request and thanks the caller, which matches broker behavior. Speaker 01 responds with personal requirements (\"انا بدور علي شقة...\"), confirming the client role."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "خير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليهم؟ أنا بدوري على شقة في التجمع الخامس. تمام يا فندم، التجمع الخامس، كم قوضة تقريبا؟ ثلاث غرف، مش عايزة صغيرة. ماشي ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟ إيجار، بفضل يعني عشرين ألف. تمام، في حدود كم مثلا؟ حدود عشرين ألف.",
+      "text": "خير يا فندم، مع حضرتك مكتب عقارات كنت بتدوري عليهم؟ أنا بدوري على شقة في التجمع الخامس. تمام يا فندم، التجمع الخامس، كم قوضة تقريبا؟ ثلاث غرف، مش عايزة صغيرة. ماشي ثلاثة؟ آه، طيب، ده إيجار ولا تمليك؟ إيجار، بفضل يعني عشرين ألف. تمام، في حدود كم مثلا؟ حدود عشرين ألف."
+    },
+    {
+      "turn_id": 2,
+      "start": 28.0,
+      "end": 39.636,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "طيب، شقة إيجار في التجمع الخامس، تلات غرف، ميزانية حوالي عشرين ألف. ساعة. تمام، شكراً لاتصال حضرتك يا فندم، أسجلتك.",
+      "text": "طيب، شقة إيجار في التجمع الخامس، تلات غرف، ميزانية حوالي عشرين ألف. ساعة. تمام، شكراً لاتصال حضرتك يا فندم، أسجلتك."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

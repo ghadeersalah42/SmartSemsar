@@ -1,0 +1,107 @@
+{
+  "call_id": "smartsemsar_rec9",
+  "source_audio_file": "smartsemsar_rec9.mp4",
+  "audio_file": "smartsemsar_rec9_standardized.wav",
+  "language": "ar",
+  "duration": 32.345,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 greets, asks qualifying questions (location, rooms, budget), summarizes the request and thanks the caller, which matches broker behavior. SPEAKER_01 responds with their needs, matching client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 5.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تحتاجة مساعدة في الضبط في العقارات؟",
+      "text": "تحتاجة مساعدة في الضبط في العقارات؟"
+    },
+    {
+      "turn_id": 2,
+      "start": 5.0,
+      "end": 14.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "أنا محتاجة شقة، في 6 أكتوبر، تمليك، تمليك، تمليك، صح؟",
+      "text": "أنا محتاجة شقة، في 6 أكتوبر، تمليك، تمليك، تمليك، صح؟"
+    },
+    {
+      "turn_id": 3,
+      "start": 15.0,
+      "end": 17.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "كم غرفة تقريباً؟",
+      "text": "كم غرفة تقريباً؟"
+    },
+    {
+      "turn_id": 4,
+      "start": 17.0,
+      "end": 18.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "3 غرف",
+      "text": "3 غرف"
+    },
+    {
+      "turn_id": 5,
+      "start": 19.0,
+      "end": 21.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "3 غرف حلو، والميزانية؟",
+      "text": "3 غرف حلو، والميزانية؟"
+    },
+    {
+      "turn_id": 6,
+      "start": 22.0,
+      "end": 23.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "5 مليون جنيه",
+      "text": "5 مليون جنيه"
+    },
+    {
+      "turn_id": 7,
+      "start": 24.0,
+      "end": 26.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "حوالي 5 مليون جنيه",
+      "text": "حوالي 5 مليون جنيه"
+    },
+    {
+      "turn_id": 8,
+      "start": 26.0,
+      "end": 30.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام يا فندم، شقة 3 غرف و 80 في أكتوبر حوالي 5 مليون جنيه",
+      "text": "تمام يا فندم، شقة 3 غرف و 80 في أكتوبر حوالي 5 مليون جنيه"
+    },
+    {
+      "turn_id": 9,
+      "start": 30.0,
+      "end": 32.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "شكراً لإتصال حضرتك",
+      "text": "شكراً لإتصال حضرتك"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

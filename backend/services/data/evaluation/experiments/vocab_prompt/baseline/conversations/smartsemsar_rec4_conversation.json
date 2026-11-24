@@ -1,0 +1,125 @@
+{
+  "call_id": "smartsemsar_rec4",
+  "source_audio_file": "smartsemsar_rec4.mp4",
+  "audio_file": "smartsemsar_rec4_standardized.wav",
+  "language": "ar",
+  "duration": 39.636,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 00 greets as a real‑estate office (\"مع حضرتك مكتب عقراط\"), asks qualifying questions about location, rooms, rent vs ownership, budget, summarizes the request and thanks the caller, which matches broker behavior. Speaker 01 responds with personal requirements (\"انا بدور علي شقة...\"), confirming the client role."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 4.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "سأل خير يا فندم مع حضرتك مكتب عقراط كنت بتدوري عليهم",
+      "text": "سأل خير يا فندم مع حضرتك مكتب عقراط كنت بتدوري عليهم"
+    },
+    {
+      "turn_id": 2,
+      "start": 4.0,
+      "end": 7.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "انا بدور على شقة في التجامعة الخامس",
+      "text": "انا بدور على شقة في التجامعة الخامس"
+    },
+    {
+      "turn_id": 3,
+      "start": 7.0,
+      "end": 11.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام يا فندم التجامعة الخامس كم اوضة تقريبا؟",
+      "text": "تمام يا فندم التجامعة الخامس كم اوضة تقريبا؟"
+    },
+    {
+      "turn_id": 4,
+      "start": 11.0,
+      "end": 13.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "ثلاث غرف مش هايزة صغيرة",
+      "text": "ثلاث غرف مش هايزة صغيرة"
+    },
+    {
+      "turn_id": 5,
+      "start": 13.0,
+      "end": 19.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "ماشي ثلاثة او طيب ده ايجار ولا تمليك؟",
+      "text": "ماشي ثلاثة او طيب ده ايجار ولا تمليك؟"
+    },
+    {
+      "turn_id": 6,
+      "start": 19.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "ايجار بفضل يعني عشرين الف",
+      "text": "ايجار بفضل يعني عشرين الف"
+    },
+    {
+      "turn_id": 7,
+      "start": 24.0,
+      "end": 26.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام في حدود كم مسلا؟",
+      "text": "تمام في حدود كم مسلا؟"
+    },
+    {
+      "turn_id": 8,
+      "start": 26.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "حدود عشر الف",
+      "text": "حدود عشر الف"
+    },
+    {
+      "turn_id": 9,
+      "start": 28.0,
+      "end": 34.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "طيب شقة ايجار في التجامعة الخامس تلاث غرف ميزينية حوالي عشرين الف ساعة",
+      "text": "طيب شقة ايجار في التجامعة الخامس تلاث غرف ميزينية حوالي عشرين الف ساعة"
+    },
+    {
+      "turn_id": 10,
+      "start": 34.0,
+      "end": 35.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "ساعة",
+      "text": "ساعة"
+    },
+    {
+      "turn_id": 11,
+      "start": 35.0,
+      "end": 39.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام شكرا لاتصال حضرتك يا فندم اسجلتك",
+      "text": "تمام شكرا لاتصال حضرتك يا فندم اسجلتك"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

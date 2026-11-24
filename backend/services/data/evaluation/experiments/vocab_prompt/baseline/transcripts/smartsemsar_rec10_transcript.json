@@ -1,0 +1,166 @@
+{
+  "call_id": "smartsemsar_rec10",
+  "source_audio_file": "smartsemsar_rec10.mp4",
+  "audio_file": "smartsemsar_rec10_standardized.wav",
+  "whisper_model": "large-v3-turbo",
+  "asr_backend": "faster-whisper",
+  "language": "ar",
+  "initial_prompt": null,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "أقدم مع حضرتك مكتب عكرات",
+      "normalized_text": "اقدم مع حضرتك مكتب عكرات"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "text": "كنت أحبب أعرف من حضرتك",
+      "normalized_text": "كنت احبب اعرف من حضرتك"
+    },
+    {
+      "segment_id": 3,
+      "start": 4.0,
+      "end": 6.0,
+      "text": "بالدواري على بيجار",
+      "normalized_text": "بالدواري علي بيجار"
+    },
+    {
+      "segment_id": 4,
+      "start": 6.0,
+      "end": 8.0,
+      "text": "أو تمليك وإيه البجت أو الميزانية",
+      "normalized_text": "او تمليك وايه البجت او الميزانية"
+    },
+    {
+      "segment_id": 5,
+      "start": 8.0,
+      "end": 10.0,
+      "text": "اللي تبالك",
+      "normalized_text": "اللي تبالك"
+    },
+    {
+      "segment_id": 6,
+      "start": 10.0,
+      "end": 12.0,
+      "text": "عايزة حاجة تمليك",
+      "normalized_text": "عايزة حاجة تمليك"
+    },
+    {
+      "segment_id": 7,
+      "start": 12.0,
+      "end": 14.0,
+      "text": "معي ميزانية ستة مليون",
+      "normalized_text": "معي ميزانية ستة مليون"
+    },
+    {
+      "segment_id": 8,
+      "start": 14.0,
+      "end": 16.0,
+      "text": "ستة مليون",
+      "normalized_text": "ستة مليون"
+    },
+    {
+      "segment_id": 9,
+      "start": 16.0,
+      "end": 18.0,
+      "text": "طيب كم غرفة",
+      "normalized_text": "طيب كم غرفة"
+    },
+    {
+      "segment_id": 10,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "كم غرفة",
+      "normalized_text": "كم غرفة"
+    },
+    {
+      "segment_id": 11,
+      "start": 20.0,
+      "end": 22.0,
+      "text": "كم غرفة",
+      "normalized_text": "كم غرفة"
+    },
+    {
+      "segment_id": 12,
+      "start": 22.0,
+      "end": 24.0,
+      "text": "كم غرفة ثلاث غرف",
+      "normalized_text": "كم غرفة ثلاث غرف"
+    },
+    {
+      "segment_id": 13,
+      "start": 24.0,
+      "end": 26.0,
+      "text": "ثلاث غرف",
+      "normalized_text": "ثلاث غرف"
+    },
+    {
+      "segment_id": 14,
+      "start": 26.0,
+      "end": 28.0,
+      "text": "طب في منطقة معينة",
+      "normalized_text": "طب في منطقة معينة"
+    },
+    {
+      "segment_id": 15,
+      "start": 28.0,
+      "end": 30.0,
+      "text": "في مصر في بلك",
+      "normalized_text": "في مصر في بلك"
+    },
+    {
+      "segment_id": 16,
+      "start": 30.0,
+      "end": 32.0,
+      "text": "أكتوبر مثلا",
+      "normalized_text": "اكتوبر مثلا"
+    },
+    {
+      "segment_id": 17,
+      "start": 32.0,
+      "end": 34.0,
+      "text": "الشيخ زايد",
+      "normalized_text": "الشيخ زايد"
+    },
+    {
+      "segment_id": 18,
+      "start": 34.0,
+      "end": 36.0,
+      "text": "زايد بحضل",
+      "normalized_text": "زايد بحضل"
+    },
+    {
+      "segment_id": 19,
+      "start": 36.0,
+      "end": 38.0,
+      "text": "طلب غرف تمليك في زايد أو أكتوبر",
+      "normalized_text": "طلب غرف تمليك في زايد او اكتوبر"
+    },
+    {
+      "segment_id": 20,
+      "start": 38.0,
+      "end": 40.0,
+      "text": "والميزانية بحدود ستة مليون",
+      "normalized_text": "والميزانية بحدود ستة مليون"
+    },
+    {
+      "segment_id": 21,
+      "start": 40.0,
+      "end": 42.0,
+      "text": "تمام يا فندم",
+      "normalized_text": "تمام يا فندم"
+    },
+    {
+      "segment_id": 22,
+      "start": 42.0,
+      "end": 43.352,
+      "text": "شكرا أن تصار حضرتك",
+      "normalized_text": "شكرا ان تصار حضرتك"
+    }
+  ],
+  "full_transcript": "اقدم مع حضرتك مكتب عكرات كنت احبب اعرف من حضرتك بالدواري علي بيجار او تمليك وايه البجت او الميزانية اللي تبالك عايزة حاجة تمليك معي ميزانية ستة مليون ستة مليون طيب كم غرفة كم غرفة كم غرفة كم غرفة ثلاث غرف ثلاث غرف طب في منطقة معينة في مصر في بلك اكتوبر مثلا الشيخ زايد زايد بحضل طلب غرف تمليك في زايد او اكتوبر والميزانية بحدود ستة مليون تمام يا فندم شكرا ان تصار حضرتك"
+}

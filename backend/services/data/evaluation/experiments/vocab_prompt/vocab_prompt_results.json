@@ -1,0 +1,836 @@
+{
+  "generated_at_utc": "2026-11-24T10:57:59.750278+00:00",
+  "model": "large-v3-turbo",
+  "prompts": {
+    "baseline": null,
+    "app_prompt": "مكالمة عقارية بالعامية المصرية: شقة، فيلا، دوبلكس، أوض نوم، ميزانية، مليون، متر، التجمع، نيو كايرو، قريبة من المدارس، تشطيب، تقسيط، سكن، استثمار.",
+    "extended": "مكالمة عقارية بالعامية المصرية: شقة، فيلا، دوبلكس، أوض نوم، ميزانية، مليون، متر، التجمع، نيو كايرو، قريبة من المدارس، تشطيب، تقسيط، سكن، استثمار، إيجار، تمليك، غرف، ألف، يا فندم، مكتب عقارات، التجمع الخامس، العاصمة الإدارية، 6 أكتوبر، الشيخ زايد، مصر الجديدة، المعادي، مدينة نصر."
+  },
+  "variants": {
+    "baseline": {
+      "seconds": 214.0,
+      "macro_wer": 0.381025,
+      "micro_wer": 0.383471,
+      "macro_cer": 0.166478,
+      "micro_cer": 0.165302,
+      "key_words_total": {
+        "فيلا": {
+          "correct": 1,
+          "wrong": 4
+        },
+        "التجمع": {
+          "correct": 5,
+          "wrong": 3
+        },
+        "تمليك": {
+          "correct": 13,
+          "wrong": 3
+        },
+        "شقة": {
+          "correct": 11,
+          "wrong": 0
+        }
+      },
+      "key_words_in_reference": {
+        "فيلا": {
+          "correct": 5,
+          "wrong": 0
+        },
+        "التجمع": {
+          "correct": 8,
+          "wrong": 0
+        },
+        "تمليك": {
+          "correct": 17,
+          "wrong": 0
+        },
+        "شقة": {
+          "correct": 13,
+          "wrong": 0
+        }
+      },
+      "calls": [
+        {
+          "call_id": "smartsemsar_rec1",
+          "wer": 0.42623,
+          "cer": 0.157895,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec2",
+          "wer": 0.259259,
+          "cer": 0.099338,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 4,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 1,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec3",
+          "wer": 0.403226,
+          "cer": 0.167722,
+          "key_words": {
+            "فيلا": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 3,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec4",
+          "wer": 0.416667,
+          "cer": 0.144772,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 3
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec5",
+          "wer": 0.290323,
+          "cer": 0.080692,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 2
+            },
+            "التجمع": {
+              "correct": 2,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec6",
+          "wer": 0.423077,
+          "cer": 0.197133,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec7",
+          "wer": 0.339286,
+          "cer": 0.10989,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 2
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec8",
+          "wer": 0.367347,
+          "cer": 0.262774,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec9",
+          "wer": 0.474576,
+          "cer": 0.247557,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 3
+            },
+            "شقة": {
+              "correct": 3,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec10",
+          "wer": 0.410256,
+          "cer": 0.197007,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        }
+      ]
+    },
+    "app_prompt": {
+      "seconds": 284.3,
+      "macro_wer": 0.441939,
+      "micro_wer": 0.436364,
+      "macro_cer": 0.208365,
+      "micro_cer": 0.20529,
+      "key_words_total": {
+        "فيلا": {
+          "correct": 3,
+          "wrong": 2
+        },
+        "التجمع": {
+          "correct": 8,
+          "wrong": 0
+        },
+        "تمليك": {
+          "correct": 12,
+          "wrong": 0
+        },
+        "شقة": {
+          "correct": 11,
+          "wrong": 0
+        }
+      },
+      "key_words_in_reference": {
+        "فيلا": {
+          "correct": 5,
+          "wrong": 0
+        },
+        "التجمع": {
+          "correct": 8,
+          "wrong": 0
+        },
+        "تمليك": {
+          "correct": 17,
+          "wrong": 0
+        },
+        "شقة": {
+          "correct": 13,
+          "wrong": 0
+        }
+      },
+      "calls": [
+        {
+          "call_id": "smartsemsar_rec1",
+          "wer": 0.57377,
+          "cer": 0.1875,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec2",
+          "wer": 0.555556,
+          "cer": 0.417219,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 1,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec3",
+          "wer": 0.306452,
+          "cer": 0.14557,
+          "key_words": {
+            "فيلا": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 3,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec4",
+          "wer": 0.25,
+          "cer": 0.101877,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec5",
+          "wer": 0.306452,
+          "cer": 0.07781,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 2
+            },
+            "التجمع": {
+              "correct": 2,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec6",
+          "wer": 0.557692,
+          "cer": 0.204301,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec7",
+          "wer": 0.232143,
+          "cer": 0.106227,
+          "key_words": {
+            "فيلا": {
+              "correct": 2,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec8",
+          "wer": 0.510204,
+          "cer": 0.233577,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec9",
+          "wer": 0.627119,
+          "cer": 0.387622,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 3,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec10",
+          "wer": 0.5,
+          "cer": 0.221945,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        }
+      ]
+    },
+    "extended": {
+      "seconds": 347.5,
+      "macro_wer": 0.412973,
+      "micro_wer": 0.408264,
+      "macro_cer": 0.182684,
+      "micro_cer": 0.18073,
+      "key_words_total": {
+        "فيلا": {
+          "correct": 1,
+          "wrong": 4
+        },
+        "التجمع": {
+          "correct": 8,
+          "wrong": 0
+        },
+        "تمليك": {
+          "correct": 17,
+          "wrong": 0
+        },
+        "شقة": {
+          "correct": 10,
+          "wrong": 0
+        }
+      },
+      "key_words_in_reference": {
+        "فيلا": {
+          "correct": 5,
+          "wrong": 0
+        },
+        "التجمع": {
+          "correct": 8,
+          "wrong": 0
+        },
+        "تمليك": {
+          "correct": 17,
+          "wrong": 0
+        },
+        "شقة": {
+          "correct": 13,
+          "wrong": 0
+        }
+      },
+      "calls": [
+        {
+          "call_id": "smartsemsar_rec1",
+          "wer": 0.557377,
+          "cer": 0.194079,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec2",
+          "wer": 0.37037,
+          "cer": 0.155629,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 4,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 1,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec3",
+          "wer": 0.274194,
+          "cer": 0.136076,
+          "key_words": {
+            "فيلا": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 3,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec4",
+          "wer": 0.277778,
+          "cer": 0.120643,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec5",
+          "wer": 0.306452,
+          "cer": 0.07781,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 2
+            },
+            "التجمع": {
+              "correct": 2,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec6",
+          "wer": 0.596154,
+          "cer": 0.222222,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec7",
+          "wer": 0.267857,
+          "cer": 0.10989,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 2
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 1,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec8",
+          "wer": 0.530612,
+          "cer": 0.277372,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec9",
+          "wer": 0.474576,
+          "cer": 0.306189,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 2,
+              "wrong": 0
+            }
+          }
+        },
+        {
+          "call_id": "smartsemsar_rec10",
+          "wer": 0.474359,
+          "cer": 0.226933,
+          "key_words": {
+            "فيلا": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "التجمع": {
+              "correct": 0,
+              "wrong": 0
+            },
+            "تمليك": {
+              "correct": 3,
+              "wrong": 0
+            },
+            "شقة": {
+              "correct": 0,
+              "wrong": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

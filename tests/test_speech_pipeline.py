@@ -892,6 +892,25 @@ def test_transcribe_filters_eof_hallucination_overflow():
     assert "اشتركوا في القناة" not in full_text
 
 
+def test_transcribe_passes_real_estate_word_list():
+    seen = {}
+
+    class _FakeWhisper:
+        def transcribe(self, *_a, **kw):
+            seen.update(kw)
+            return [], types.SimpleNamespace(language="ar", language_probability=1.0, duration=10.0)
+
+    pipeline.transcribe("dummy.wav", "cpu", whisper_model=_FakeWhisper())
+    prompt = seen.get("initial_prompt") or ""
+    for word in ("فيلا", "تمليك", "إيجار", "التجمع الخامس"):
+        assert word in prompt
+
+
+def test_pipeline_word_list_matches_the_tested_one():
+    from backend.services.evaluation.vocab_prompt_experiment import EXTENDED_PROMPT
+    assert pipeline.WHISPER_INITIAL_PROMPT == EXTENDED_PROMPT
+
+
 def test_utf8_arabic_json_roundtrip(tmp_path):
     p = tmp_path / "arabic_conv.json"
     payload = {"text": "في التجمع الخامس", "speaker_role_mapping": {"SPEAKER_00": "broker"}}

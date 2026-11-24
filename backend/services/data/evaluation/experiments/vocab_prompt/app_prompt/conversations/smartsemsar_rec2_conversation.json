@@ -1,0 +1,107 @@
+{
+  "call_id": "smartsemsar_rec2",
+  "source_audio_file": "smartsemsar_rec2.mp4",
+  "audio_file": "smartsemsar_rec2_standardized.wav",
+  "language": "ar",
+  "duration": 31.347,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 00 asks qualifying questions (عدد الغرف, موقع, تمليك/إيجار, ميزانية), summarizes the request, and closes with شكرا لاتصال حضرتك, typical broker behavior. Speaker 01 provides answers to those questions, typical client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 16.54,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "كنت حابب أعرف إيه المواصفات اللي في تماعك. محتاجة Connect Yoga! ح mammalهاizer David Greener. محتاجة حاجة في العاصمة الإدارية. تمام العاصمة الإدارية كم قلت هي قلوبه объ",
+      "text": "كنت حابب أعرف إيه المواصفات اللي في تماعك. محتاجة Connect Yoga! ح mammalهاizer David Greener. محتاجة حاجة في العاصمة الإدارية. تمام العاصمة الإدارية كم قلت هي قلوبه объ"
+    },
+    {
+      "turn_id": 2,
+      "start": 16.54,
+      "end": 18.54,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "ثلاث قد",
+      "text": "ثلاث قد"
+    },
+    {
+      "turn_id": 3,
+      "start": 18.54,
+      "end": 20.54,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "تمليك",
+      "text": "تمليك"
+    },
+    {
+      "turn_id": 4,
+      "start": 20.54,
+      "end": 22.54,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "تمليك",
+      "text": "تمليك"
+    },
+    {
+      "turn_id": 5,
+      "start": 22.54,
+      "end": 24.54,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "اثنين ونصف مليون",
+      "text": "اثنين ونصف مليون"
+    },
+    {
+      "turn_id": 6,
+      "start": 24.54,
+      "end": 26.54,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "شقة ثلاث غرف تمليك في العاصمة الإدارية",
+      "text": "شقة ثلاث غرف تمليك في العاصمة الإدارية"
+    },
+    {
+      "turn_id": 7,
+      "start": 26.54,
+      "end": 28.54,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "حوالي اثنين ونصف مليون جنيه",
+      "text": "حوالي اثنين ونصف مليون جنيه"
+    },
+    {
+      "turn_id": 8,
+      "start": 28.54,
+      "end": 30.54,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "شكرا لاتصال حضرتك",
+      "text": "شكرا لاتصال حضرتك"
+    },
+    {
+      "turn_id": 9,
+      "start": 30.54,
+      "end": 31.347,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "في أمان الله",
+      "text": "في أمان الله"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

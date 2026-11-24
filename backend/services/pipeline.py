@@ -62,6 +62,16 @@ GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 GROQ_MODEL = os.environ.get("SMARTSEMSAR_GROQ_MODEL", "openai/gpt-oss-120b")
 
 WHISPER_MODEL = "large-v3-turbo"
+# Expected real-estate words for Whisper (initial_prompt). Tested on the 10 real calls
+# (evaluation/vocab_prompt_experiment.py): "تمليك" 13/17 -> 17/17 and "التجمع" 5/8 -> 8/8 heard
+# correctly, extraction agreement +2 requirements. Set SMARTSEMSAR_WHISPER_PROMPT="" to turn it off.
+WHISPER_INITIAL_PROMPT = os.environ.get(
+    "SMARTSEMSAR_WHISPER_PROMPT",
+    "مكالمة عقارية بالعامية المصرية: شقة، فيلا، دوبلكس، أوض نوم، ميزانية، مليون، متر، "
+    "التجمع، نيو كايرو، قريبة من المدارس، تشطيب، تقسيط، سكن، استثمار، إيجار، تمليك، غرف، ألف، "
+    "يا فندم، مكتب عقارات، التجمع الخامس، العاصمة الإدارية، 6 أكتوبر، الشيخ زايد، مصر الجديدة، "
+    "المعادي، مدينة نصر.",
+) or None
 DIARIZATION_MODEL = "pyannote/speaker-diarization-community-1"
 EXPECTED_SPEAKERS = 2
 TARGET_SAMPLE_RATE = 16000
@@ -643,6 +653,7 @@ def transcribe(wav_path: Path | str, device: str, whisper_model: Optional[Any] =
         task="transcribe",
         beam_size=5,
         vad_filter=False,
+        initial_prompt=WHISPER_INITIAL_PROMPT,
     )
     segments = list(segments)
     audio_duration = float(getattr(info, "duration", 0.0) or 0.0)

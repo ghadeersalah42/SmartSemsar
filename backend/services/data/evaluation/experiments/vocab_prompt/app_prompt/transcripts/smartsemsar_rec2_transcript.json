@@ -1,0 +1,75 @@
+{
+  "call_id": "smartsemsar_rec2",
+  "source_audio_file": "smartsemsar_rec2.mp4",
+  "audio_file": "smartsemsar_rec2_standardized.wav",
+  "whisper_model": "large-v3-turbo",
+  "asr_backend": "faster-whisper",
+  "language": "ar",
+  "initial_prompt": "مكالمة عقارية بالعامية المصرية: شقة، فيلا، دوبلكس، أوض نوم، ميزانية، مليون، متر، التجمع، نيو كايرو، قريبة من المدارس، تشطيب، تقسيط، سكن، استثمار.",
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 16.54,
+      "text": "كنت حابب أعرف إيه المواصفات اللي في تماعك. محتاجة Connect Yoga! ح mammalهاizer David Greener. محتاجة حاجة في العاصمة الإدارية. تمام العاصمة الإدارية كم قلت هي قلوبه объ",
+      "normalized_text": "كنت حابب اعرف ايه المواصفات اللي في تماعك. محتاجة Connect Yoga! ح mammalهاizer David Greener. محتاجة حاجة في العاصمة الادارية. تمام العاصمة الادارية كم قلت هي قلوبه объ"
+    },
+    {
+      "segment_id": 2,
+      "start": 16.54,
+      "end": 18.54,
+      "text": "ثلاث قد",
+      "normalized_text": "ثلاث قد"
+    },
+    {
+      "segment_id": 3,
+      "start": 18.54,
+      "end": 20.54,
+      "text": "تمليك",
+      "normalized_text": "تمليك"
+    },
+    {
+      "segment_id": 4,
+      "start": 20.54,
+      "end": 22.54,
+      "text": "تمليك",
+      "normalized_text": "تمليك"
+    },
+    {
+      "segment_id": 5,
+      "start": 22.54,
+      "end": 24.54,
+      "text": "اثنين ونصف مليون",
+      "normalized_text": "اثنين ونصف مليون"
+    },
+    {
+      "segment_id": 6,
+      "start": 24.54,
+      "end": 26.54,
+      "text": "شقة ثلاث غرف تمليك في العاصمة الإدارية",
+      "normalized_text": "شقة ثلاث غرف تمليك في العاصمة الادارية"
+    },
+    {
+      "segment_id": 7,
+      "start": 26.54,
+      "end": 28.54,
+      "text": "حوالي اثنين ونصف مليون جنيه",
+      "normalized_text": "حوالي اثنين ونصف مليون جنيه"
+    },
+    {
+      "segment_id": 8,
+      "start": 28.54,
+      "end": 30.54,
+      "text": "شكرا لاتصال حضرتك",
+      "normalized_text": "شكرا لاتصال حضرتك"
+    },
+    {
+      "segment_id": 9,
+      "start": 30.54,
+      "end": 31.347,
+      "text": "في أمان الله",
+      "normalized_text": "في امان الله"
+    }
+  ],
+  "full_transcript": "كنت حابب اعرف ايه المواصفات اللي في تماعك. محتاجة Connect Yoga! ح mammalهاizer David Greener. محتاجة حاجة في العاصمة الادارية. تمام العاصمة الادارية كم قلت هي قلوبه объ ثلاث قد تمليك تمليك اثنين ونصف مليون شقة ثلاث غرف تمليك في العاصمة الادارية حوالي اثنين ونصف مليون جنيه شكرا لاتصال حضرتك في امان الله"
+}

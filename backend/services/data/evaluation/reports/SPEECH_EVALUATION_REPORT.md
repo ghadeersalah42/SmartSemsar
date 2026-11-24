@@ -178,6 +178,23 @@ No prior 5 dB noise or Phone Filter (`1.10%`) scripts or logs existed in the rep
 
 ---
 
+## 6b. Whisper Vocabulary-Prompt Experiment (`initial_prompt`)
+
+Most extraction mismatches came from Whisper mishearing a few real-estate words, so we tested giving `large-v3-turbo` a list of expected words (`initial_prompt`), the same idea the app already uses in `user_input_audio.py`. Script: `backend/services/evaluation/vocab_prompt_experiment.py`; outputs: `data/evaluation/experiments/vocab_prompt/`. Only the prompt changes (same model, int8 CPU, `beam_size=5`, same 16 kHz WAVs); speaker roles are copied from the official conversations by time overlap, so diarization stays fixed.
+
+| Variant | Micro WER | WER without punctuation | `تمليك` heard right (of 17) | `التجمع` (of 8) | `فيلا` (of 5) | Notes |
+|---|---:|---:|---:|---:|---:|---|
+| No prompt (control, re-run on this machine) | 38.35% | 26.73% | 13 | 5 | 1 | reproduces the official 38.18% within run-to-run noise |
+| App prompt (`user_input_audio.py`) | 43.64% | 31.02% | 12 | 8 | 3 | **hallucinated foreign text on `rec2`** ("Connect Yoga! …") |
+| **Extended prompt (now the pipeline default)** | 40.83% | **27.23%** | **17** | **8** | 1 | no hallucination |
+
+- **Why WER went up:** the prompt contains punctuation, so Whisper starts writing `،` `.` `؟`, and `normalize_arabic_text` keeps punctuation, so each mark counts as an error. Without punctuation the extended prompt is on par with no prompt (27.23% vs 26.73%). About 11 points of the official 38% WER are punctuation, not misheard words.
+- **Extraction (what the prompt is for):** with the human-side extraction held fixed, the extended-prompt transcripts match **46/52 (88.46%)** vs **44/52 (84.62%)** for the official transcripts; against a second human-side run, 44/52 vs 42/52. Gained: `rec4` location (`التجامعة` → `التجمع`) and budget (`عشرين`), `rec5` and `rec9` deal type (`تمليك`). Lost: `rec8` property type. `فيلا` is still misheard.
+- **Caveats:** some areas in the prompt (التجمع، 6 أكتوبر، الشيخ زايد، العاصمة الإدارية) occur in these 10 calls, so the gain may be optimistic; Groq's extraction itself varies by about ±4 points between identical runs (the human-side extraction of the same text changed between runs), which is the same size as the gain. A larger call set is needed to confirm it.
+- **Decision:** the extended list is now `pipeline.WHISPER_INITIAL_PROMPT` and is passed to `transcribe()`; set `SMARTSEMSAR_WHISPER_PROMPT=""` to turn it off. The official numbers in sections 3 and 6 were produced **before** this change and were not regenerated.
+
+---
+
 ## 7. Conclusions & Remaining Limitations
 
 1. **End-to-End Evaluation Complete (10/10 Calls):** All 10 recordings passed pipeline QC (`1 PASS, 9 WARNING, 0 FAIL, 0 ERROR`) and evaluated cleanly across WER/CER (`38.18%` micro WER / `16.31%` micro CER), DER (`16.11%` micro DER at `collar = 0.25 s`), Role Accuracy (`90.00%`, 18/20 speakers), and Audio Quality with `0` validation errors.

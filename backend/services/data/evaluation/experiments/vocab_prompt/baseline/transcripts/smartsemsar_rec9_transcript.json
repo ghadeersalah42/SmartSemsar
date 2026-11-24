@@ -1,0 +1,103 @@
+{
+  "call_id": "smartsemsar_rec9",
+  "source_audio_file": "smartsemsar_rec9.mp4",
+  "audio_file": "smartsemsar_rec9_standardized.wav",
+  "whisper_model": "large-v3-turbo",
+  "asr_backend": "faster-whisper",
+  "language": "ar",
+  "initial_prompt": null,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 4.0,
+      "text": "تحتاج المساعدة بالضبط في العطارات",
+      "normalized_text": "تحتاج المساعدة بالضبط في العطارات"
+    },
+    {
+      "segment_id": 2,
+      "start": 4.0,
+      "end": 8.0,
+      "text": "او انا محتاجة شقة في 6 اكتوبر",
+      "normalized_text": "او انا محتاجة شقة في 6 اكتوبر"
+    },
+    {
+      "segment_id": 3,
+      "start": 8.0,
+      "end": 11.0,
+      "text": "تمام شقة في 6 اكتوبر",
+      "normalized_text": "تمام شقة في 6 اكتوبر"
+    },
+    {
+      "segment_id": 4,
+      "start": 11.0,
+      "end": 13.0,
+      "text": "تمليئك صح؟",
+      "normalized_text": "تمليئك صح؟"
+    },
+    {
+      "segment_id": 5,
+      "start": 13.0,
+      "end": 15.0,
+      "text": "او",
+      "normalized_text": "او"
+    },
+    {
+      "segment_id": 6,
+      "start": 15.0,
+      "end": 17.0,
+      "text": "كم غرفة تقريبا والميزانية؟",
+      "normalized_text": "كم غرفة تقريبا والميزانية؟"
+    },
+    {
+      "segment_id": 7,
+      "start": 17.0,
+      "end": 19.0,
+      "text": "اي تلات غرف",
+      "normalized_text": "اي تلات غرف"
+    },
+    {
+      "segment_id": 8,
+      "start": 19.0,
+      "end": 21.0,
+      "text": "تلات غرف حلو والميزانية؟",
+      "normalized_text": "تلات غرف حلو والميزانية؟"
+    },
+    {
+      "segment_id": 9,
+      "start": 21.0,
+      "end": 23.0,
+      "text": "خمسة مليون جنيه",
+      "normalized_text": "خمسة مليون جنيه"
+    },
+    {
+      "segment_id": 10,
+      "start": 23.0,
+      "end": 25.0,
+      "text": "حوالي خمسة مليون جنيه",
+      "normalized_text": "حوالي خمسة مليون جنيه"
+    },
+    {
+      "segment_id": 11,
+      "start": 25.0,
+      "end": 28.0,
+      "text": "تمام يا فندم شقة تلات غرف تمليئ في اكتوبر",
+      "normalized_text": "تمام يا فندم شقة تلات غرف تمليئ في اكتوبر"
+    },
+    {
+      "segment_id": 12,
+      "start": 28.0,
+      "end": 30.0,
+      "text": "حوالي خمسة مليون جنيه",
+      "normalized_text": "حوالي خمسة مليون جنيه"
+    },
+    {
+      "segment_id": 13,
+      "start": 30.0,
+      "end": 32.0,
+      "text": "شكرا لاتصال حضرتك",
+      "normalized_text": "شكرا لاتصال حضرتك"
+    }
+  ],
+  "full_transcript": "تحتاج المساعدة بالضبط في العطارات او انا محتاجة شقة في 6 اكتوبر تمام شقة في 6 اكتوبر تمليئك صح؟ او كم غرفة تقريبا والميزانية؟ اي تلات غرف تلات غرف حلو والميزانية؟ خمسة مليون جنيه حوالي خمسة مليون جنيه تمام يا فندم شقة تلات غرف تمليئ في اكتوبر حوالي خمسة مليون جنيه شكرا لاتصال حضرتك"
+}

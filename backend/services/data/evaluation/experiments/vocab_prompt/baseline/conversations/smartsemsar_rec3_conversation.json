@@ -1,0 +1,143 @@
+{
+  "call_id": "smartsemsar_rec3",
+  "source_audio_file": "smartsemsar_rec3.mp4",
+  "audio_file": "smartsemsar_rec3_standardized.wav",
+  "language": "ar",
+  "duration": 31.463,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 greets as a real‑estate office, asks qualifying questions (type, rooms, rent vs buy, budget) and summarizes the request, which matches broker behavior. SPEAKER_00 provides the customer's preferences and budget, matching client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 2,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "مكتب عقاعد. اتفضلي.",
+      "text": "مكتب عقاعد. اتفضلي."
+    },
+    {
+      "turn_id": 2,
+      "start": 4.0,
+      "end": 6.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "بدور على حاجة في الشيخ زايد.",
+      "text": "بدور على حاجة في الشيخ زايد."
+    },
+    {
+      "turn_id": 3,
+      "start": 7.0,
+      "end": 10.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "تمام يا فندم. حضرتك شقة ولا فيلا؟",
+      "text": "تمام يا فندم. حضرتك شقة ولا فيلا؟"
+    },
+    {
+      "turn_id": 4,
+      "start": 10.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "شقة. تبقى غرفتين.",
+      "text": "شقة. تبقى غرفتين."
+    },
+    {
+      "turn_id": 5,
+      "start": 13.0,
+      "end": 15.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "تمام. اتنين قوض في الشيخ زايد.",
+      "text": "تمام. اتنين قوض في الشيخ زايد."
+    },
+    {
+      "turn_id": 6,
+      "start": 15.0,
+      "end": 17.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "حضرتك إيجار ولا تمليل؟",
+      "text": "حضرتك إيجار ولا تمليل؟"
+    },
+    {
+      "turn_id": 7,
+      "start": 17.0,
+      "end": 19.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "إيجار. لو قلت إيجار؟",
+      "text": "إيجار. لو قلت إيجار؟"
+    },
+    {
+      "turn_id": 8,
+      "start": 19.0,
+      "end": 21.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "إيجار. اتفضلي يا فندم.",
+      "text": "إيجار. اتفضلي يا فندم."
+    },
+    {
+      "turn_id": 9,
+      "start": 21.0,
+      "end": 23.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "حضرتك في حدود كام؟",
+      "text": "حضرتك في حدود كام؟"
+    },
+    {
+      "turn_id": 10,
+      "start": 23.0,
+      "end": 25.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "25 ألف. لو قلت حوالي..",
+      "text": "25 ألف. لو قلت حوالي.."
+    },
+    {
+      "turn_id": 11,
+      "start": 25.0,
+      "end": 27.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "25 ألف. تمام يا فندم.",
+      "text": "25 ألف. تمام يا فندم."
+    },
+    {
+      "turn_id": 12,
+      "start": 27.0,
+      "end": 30.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "يبقى شقة غرفتين في الشيخ زايد إيجار.",
+      "text": "يبقى شقة غرفتين في الشيخ زايد إيجار."
+    },
+    {
+      "turn_id": 13,
+      "start": 30.0,
+      "end": 31.463,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "حوالي 25 ألف.",
+      "text": "حوالي 25 ألف."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

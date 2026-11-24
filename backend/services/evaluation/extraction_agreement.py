@@ -661,12 +661,21 @@ def main(argv: Optional[list[str]] = None) -> int:
         default=0.0,
         help="Seconds to wait before each LLM call, to stay under the Groq tokens-per-minute limit (e.g. 25).",
     )
+    parser.add_argument("--transcript-dir", type=Path, default=TRANSCRIPT_DIR,
+                        help="Machine transcripts folder (default: the official pipeline outputs).")
+    parser.add_argument("--conversation-dir", type=Path, default=CONVERSATION_DIR,
+                        help="Machine conversations folder (default: the official pipeline outputs).")
+    parser.add_argument("--reports-dir", type=Path, default=REPORTS_DIR,
+                        help="Where extraction_agreement_report.json is written (use another folder for experiments).")
     args = parser.parse_args(argv)
 
     report = run_extraction_agreement(
         call_ids=args.calls,
         manual_human_only=not args.all_manifest_calls,
         pause_s=args.pause,
+        transcript_dir=args.transcript_dir,
+        conversation_dir=args.conversation_dir,
+        reports_dir=args.reports_dir,
     )
     print(json.dumps({
         "status": report["status"],

@@ -1,0 +1,116 @@
+{
+  "call_id": "smartsemsar_rec8",
+  "source_audio_file": "smartsemsar_rec8.mp4",
+  "audio_file": "smartsemsar_rec8_standardized.wav",
+  "language": "ar",
+  "duration": 24.892,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 greets with \"اتفضلي حضرتك\" and asks qualifying questions about location, rooms, and budget, then summarizes and thanks the caller, matching broker behavior. SPEAKER_00 provides answers to those questions, matching client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 5.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "أتفضلي، حضرتك بتدوري على حاجة إيجار في منطقة معينة؟",
+      "text": "أتفضلي، حضرتك بتدوري على حاجة إيجار في منطقة معينة؟"
+    },
+    {
+      "turn_id": 2,
+      "start": 5.0,
+      "end": 8.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "أه، بدور على إيجار مصر الجديدة.",
+      "text": "أه، بدور على إيجار مصر الجديدة."
+    },
+    {
+      "turn_id": 3,
+      "start": 8.0,
+      "end": 11.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "تمام، مصر الجديدة، كم قوضة يا فندم تقريبا؟",
+      "text": "تمام، مصر الجديدة، كم قوضة يا فندم تقريبا؟"
+    },
+    {
+      "turn_id": 4,
+      "start": 11.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "غرفتين.",
+      "text": "غرفتين."
+    },
+    {
+      "turn_id": 5,
+      "start": 12.0,
+      "end": 13.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "والميزانية اللي في بالك؟",
+      "text": "والميزانية اللي في بالك؟"
+    },
+    {
+      "turn_id": 6,
+      "start": 13.0,
+      "end": 15.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "الغرفتين، والميزانية؟",
+      "text": "الغرفتين، والميزانية؟"
+    },
+    {
+      "turn_id": 7,
+      "start": 15.0,
+      "end": 16.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "خمساشر ألف.",
+      "text": "خمساشر ألف."
+    },
+    {
+      "turn_id": 8,
+      "start": 16.0,
+      "end": 19.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "خمساشر ألف، تمام يا فندم.",
+      "text": "خمساشر ألف، تمام يا فندم."
+    },
+    {
+      "turn_id": 9,
+      "start": 19.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "حلو، سنتحدث عن أشياء غرفتين في مصر الجديدة إيجار بالميزانية حوالي خمساشر ألف.",
+      "text": "حلو، سنتحدث عن أشياء غرفتين في مصر الجديدة إيجار بالميزانية حوالي خمساشر ألف."
+    },
+    {
+      "turn_id": 10,
+      "start": 24.0,
+      "end": 24.892,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "شكراً للتصال.",
+      "text": "شكراً للتصال."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

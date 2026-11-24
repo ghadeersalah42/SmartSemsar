@@ -1,0 +1,134 @@
+{
+  "call_id": "smartsemsar_rec1",
+  "source_audio_file": "smartsemsar_rec1.mp4",
+  "audio_file": "smartsemsar_rec1_standardized.wav",
+  "language": "ar",
+  "duration": 33.855,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 asks qualifying questions typical of a broker (type of transaction, budget, rooms, area) and SPEAKER_01 responds with preferences and details, indicating the client role."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "في التجمع الخامسة؟",
+      "text": "في التجمع الخامسة؟"
+    },
+    {
+      "turn_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "عايزة اتجار ولا تمليك؟",
+      "text": "عايزة اتجار ولا تمليك؟"
+    },
+    {
+      "turn_id": 3,
+      "start": 4.0,
+      "end": 7.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "اتجار؟ لا، تمليك، بلقى سمحني.",
+      "text": "اتجار؟ لا، تمليك، بلقى سمحني."
+    },
+    {
+      "turn_id": 4,
+      "start": 7.0,
+      "end": 9.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمليك؟ طب بميزانيتك كم؟",
+      "text": "تمليك؟ طب بميزانيتك كم؟"
+    },
+    {
+      "turn_id": 5,
+      "start": 9.0,
+      "end": 12.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "حوالي 4 مليون.",
+      "text": "حوالي 4 مليون."
+    },
+    {
+      "turn_id": 6,
+      "start": 12.0,
+      "end": 15.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "4 مليون في التجمع، أي كم غرفة؟",
+      "text": "4 مليون في التجمع، أي كم غرفة؟"
+    },
+    {
+      "turn_id": 7,
+      "start": 15.0,
+      "end": 18.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "3 غرفة يا فن، مش صغية.",
+      "text": "3 غرفة يا فن، مش صغية."
+    },
+    {
+      "turn_id": 8,
+      "start": 18.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "مسحيتها كم؟",
+      "text": "مسحيتها كم؟"
+    },
+    {
+      "turn_id": 9,
+      "start": 20.0,
+      "end": 22.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "3 غرفة يا فن؟",
+      "text": "3 غرفة يا فن؟"
+    },
+    {
+      "turn_id": 10,
+      "start": 22.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "المساحة يا عام، المساحة.",
+      "text": "المساحة يا عام، المساحة."
+    },
+    {
+      "turn_id": 11,
+      "start": 24.0,
+      "end": 32.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "ما عرفش المساحة بالزبط يا فن، بس 3 غرفة وفي التجمع الخامس، والميزانية حوالي 4 مليون.",
+      "text": "ما عرفش المساحة بالزبط يا فن، بس 3 غرفة وفي التجمع الخامس، والميزانية حوالي 4 مليون."
+    },
+    {
+      "turn_id": 12,
+      "start": 32.0,
+      "end": 33.855,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "طب جميل جدا.",
+      "text": "طب جميل جدا."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

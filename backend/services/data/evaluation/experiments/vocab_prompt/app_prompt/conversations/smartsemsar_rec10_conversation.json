@@ -1,0 +1,116 @@
+{
+  "call_id": "smartsemsar_rec10",
+  "source_audio_file": "smartsemsar_rec10.mp4",
+  "audio_file": "smartsemsar_rec10_standardized.wav",
+  "language": "ar",
+  "duration": 43.352,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 01 greets with office language, asks qualifying questions (location, budget, rooms), repeats summary and thanks the caller, typical broker behavior. Speaker 00 answers with preferences (buy, budget, rooms, area), typical client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 9.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "أقدم مع حضرتك مكتب عكرات، كنت أحبب أعرف من حضرتك بالدوري على بيجار أو تمليك، وإيه البجت أو الميزانية اللي تبالك؟",
+      "text": "أقدم مع حضرتك مكتب عكرات، كنت أحبب أعرف من حضرتك بالدوري على بيجار أو تمليك، وإيه البجت أو الميزانية اللي تبالك؟"
+    },
+    {
+      "turn_id": 2,
+      "start": 9.0,
+      "end": 13.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "أريد شيء تمليك، معي ميزانية ستة مليون.",
+      "text": "أريد شيء تمليك، معي ميزانية ستة مليون."
+    },
+    {
+      "turn_id": 3,
+      "start": 13.0,
+      "end": 17.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "ستة مليون، طيب، كم غرفة في زين حضرتك؟",
+      "text": "ستة مليون، طيب، كم غرفة في زين حضرتك؟"
+    },
+    {
+      "turn_id": 4,
+      "start": 19.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "ماذا؟",
+      "text": "ماذا؟"
+    },
+    {
+      "turn_id": 5,
+      "start": 20.0,
+      "end": 22.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "كم غرفة؟",
+      "text": "كم غرفة؟"
+    },
+    {
+      "turn_id": 6,
+      "start": 22.0,
+      "end": 24.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "كم غرفة؟ ثلاث غرف.",
+      "text": "كم غرفة؟ ثلاث غرف."
+    },
+    {
+      "turn_id": 7,
+      "start": 24.0,
+      "end": 26.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "ثلاث غرف؟",
+      "text": "ثلاث غرف؟"
+    },
+    {
+      "turn_id": 8,
+      "start": 26.0,
+      "end": 30.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "هناك منطقة معينة في مصر، في بلك؟",
+      "text": "هناك منطقة معينة في مصر، في بلك؟"
+    },
+    {
+      "turn_id": 9,
+      "start": 30.0,
+      "end": 33.0,
+      "speaker": "SPEAKER_00",
+      "role": "client",
+      "raw_text": "أكتوبر، مثلا، والشيخ زايد، شيخ زايد،",
+      "text": "أكتوبر، مثلا، والشيخ زايد، شيخ زايد،"
+    },
+    {
+      "turn_id": 10,
+      "start": 33.0,
+      "end": 43.0,
+      "speaker": "SPEAKER_01",
+      "role": "broker",
+      "raw_text": "زايد، حوضي، طلب غرف، تمليك، في زايد أو أكتوبر، والميزانية بحدود ستة مليون، تمام يا فندم؟ شكراً لتصار حضرتك.",
+      "text": "زايد، حوضي، طلب غرف، تمليك، في زايد أو أكتوبر، والميزانية بحدود ستة مليون، تمام يا فندم؟ شكراً لتصار حضرتك."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

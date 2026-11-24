@@ -1,0 +1,233 @@
+{
+  "call_id": "smartsemsar_rec6",
+  "source_audio_file": "smartsemsar_rec6.mp4",
+  "audio_file": "smartsemsar_rec6_standardized.wav",
+  "language": "ar",
+  "duration": 33.739,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker_01 introduces as \"مكتب عقارات\" but then describes needs (apartment, location, rooms, rent vs buy) and uses polite address \"يا فندم\" typical of client speaking to broker. Speaker_00 asks about budget, repeats \"ايجار\", and then summarizes the requirements back (\"شقة اربع غرف في مدينة نصر ايجار بميزانية حوالي تمن تلاف جنيه\"), which matches broker behavior of confirming and closing. Hence SPEAKER_00 is broker, SPEAKER_01 is client."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 0.9,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "مكتب عقارات",
+      "text": "مكتب عقارات"
+    },
+    {
+      "turn_id": 2,
+      "start": 0.9,
+      "end": 2.78,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "اتفضالي كنت بتدوري علي",
+      "text": "اتفضالي كنت بتدوري علي"
+    },
+    {
+      "turn_id": 3,
+      "start": 2.78,
+      "end": 4.4,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "بدور على شقة اف",
+      "text": "بدور على شقة اف"
+    },
+    {
+      "turn_id": 4,
+      "start": 4.4,
+      "end": 5.34,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "مدينة نصر",
+      "text": "مدينة نصر"
+    },
+    {
+      "turn_id": 5,
+      "start": 5.34,
+      "end": 6.04,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "تمام يا فندم",
+      "text": "تمام يا فندم"
+    },
+    {
+      "turn_id": 6,
+      "start": 6.04,
+      "end": 8.18,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "اربع غرف",
+      "text": "اربع غرف"
+    },
+    {
+      "turn_id": 7,
+      "start": 8.18,
+      "end": 9.2,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "كام قوضة",
+      "text": "كام قوضة"
+    },
+    {
+      "turn_id": 8,
+      "start": 9.2,
+      "end": 9.64,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "اربع",
+      "text": "اربع"
+    },
+    {
+      "turn_id": 9,
+      "start": 9.64,
+      "end": 10.9,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "تمام حضرتك",
+      "text": "تمام حضرتك"
+    },
+    {
+      "turn_id": 10,
+      "start": 10.9,
+      "end": 11.92,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "اربع",
+      "text": "اربع"
+    },
+    {
+      "turn_id": 11,
+      "start": 11.92,
+      "end": 12.92,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "مش",
+      "text": "مش"
+    },
+    {
+      "turn_id": 12,
+      "start": 12.92,
+      "end": 14.48,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "دمليك ولا ايجار",
+      "text": "دمليك ولا ايجار"
+    },
+    {
+      "turn_id": 13,
+      "start": 14.48,
+      "end": 15.72,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "والميزانية",
+      "text": "والميزانية"
+    },
+    {
+      "turn_id": 14,
+      "start": 15.72,
+      "end": 16.56,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "ايجار",
+      "text": "ايجار"
+    },
+    {
+      "turn_id": 15,
+      "start": 16.56,
+      "end": 18.42,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "ايجار",
+      "text": "ايجار"
+    },
+    {
+      "turn_id": 16,
+      "start": 18.42,
+      "end": 19.72,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "والميزانية تقريبا",
+      "text": "والميزانية تقريبا"
+    },
+    {
+      "turn_id": 17,
+      "start": 19.72,
+      "end": 20.88,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام تلاف",
+      "text": "تمام تلاف"
+    },
+    {
+      "turn_id": 18,
+      "start": 20.88,
+      "end": 23.52,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام تلاف",
+      "text": "تمام تلاف"
+    },
+    {
+      "turn_id": 19,
+      "start": 23.52,
+      "end": 24.36,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام يا فندم",
+      "text": "تمام يا فندم"
+    },
+    {
+      "turn_id": 20,
+      "start": 24.36,
+      "end": 25.82,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "شقة اربع غرف",
+      "text": "شقة اربع غرف"
+    },
+    {
+      "turn_id": 21,
+      "start": 25.82,
+      "end": 26.78,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "في مدينة نصر",
+      "text": "في مدينة نصر"
+    },
+    {
+      "turn_id": 22,
+      "start": 26.78,
+      "end": 27.84,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "ايجار بميزانية",
+      "text": "ايجار بميزانية"
+    },
+    {
+      "turn_id": 23,
+      "start": 27.84,
+      "end": 29.2,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "حوالي تمن تلاف جنيه",
+      "text": "حوالي تمن تلاف جنيه"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

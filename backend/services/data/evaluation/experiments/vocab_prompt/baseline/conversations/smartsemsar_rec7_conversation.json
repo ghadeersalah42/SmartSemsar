@@ -1,0 +1,125 @@
+{
+  "call_id": "smartsemsar_rec7",
+  "source_audio_file": "smartsemsar_rec7.mp4",
+  "audio_file": "smartsemsar_rec7_standardized.wav",
+  "language": "ar",
+  "duration": 29.931,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 asks qualifying questions (room count, purchase vs rent, budget), summarizes the request and thanks the caller, which matches broker behavior. SPEAKER_01 provides the request details (property type, location, rooms, purchase intent, budget) typical of a client."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 1.46,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "كيف يا فندم؟ اتفضل",
+      "text": "كيف يا فندم؟ اتفضل"
+    },
+    {
+      "turn_id": 2,
+      "start": 1.46,
+      "end": 4.24,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "انا محتاج بيلا في 6 اكتوبر",
+      "text": "انا محتاج بيلا في 6 اكتوبر"
+    },
+    {
+      "turn_id": 3,
+      "start": 4.24,
+      "end": 8.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام يا فندم كام غرفه تقريبا؟",
+      "text": "تمام يا فندم كام غرفه تقريبا؟"
+    },
+    {
+      "turn_id": 4,
+      "start": 8.54,
+      "end": 9.24,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "4 غرف",
+      "text": "4 غرف"
+    },
+    {
+      "turn_id": 5,
+      "start": 9.24,
+      "end": 13.86,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "طيب شراء ولا ايجار؟",
+      "text": "طيب شراء ولا ايجار؟"
+    },
+    {
+      "turn_id": 6,
+      "start": 13.86,
+      "end": 15.24,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "شراء طبعا",
+      "text": "شراء طبعا"
+    },
+    {
+      "turn_id": 7,
+      "start": 15.24,
+      "end": 18.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام والميزانية في حدود كم؟",
+      "text": "تمام والميزانية في حدود كم؟"
+    },
+    {
+      "turn_id": 8,
+      "start": 18.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "8 مليون جنيه 10 مليون جنيه كم؟",
+      "text": "8 مليون جنيه 10 مليون جنيه كم؟"
+    },
+    {
+      "turn_id": 9,
+      "start": 21.22,
+      "end": 24.62,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام يا فندم خلاص بيلا 4 غرف في اكتوبر",
+      "text": "تمام يا فندم خلاص بيلا 4 غرف في اكتوبر"
+    },
+    {
+      "turn_id": 10,
+      "start": 24.62,
+      "end": 28.82,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمليك ميزانية من 8 ل 10 مليون جنيه",
+      "text": "تمليك ميزانية من 8 ل 10 مليون جنيه"
+    },
+    {
+      "turn_id": 11,
+      "start": 28.82,
+      "end": 29.931,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "شكرا لاتصار حضرت",
+      "text": "شكرا لاتصار حضرت"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

@@ -1,0 +1,35 @@
+{
+  "call_id": "smartsemsar_rec7",
+  "source_audio_file": "smartsemsar_rec7.mp4",
+  "audio_file": "smartsemsar_rec7_standardized.wav",
+  "language": "ar",
+  "duration": 29.931,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 asks qualifying questions (room count, purchase vs rent, budget), summarizes the request and thanks the caller, which matches broker behavior. SPEAKER_01 provides the request details (property type, location, rooms, purchase intent, budget) typical of a client."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 1,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 29.931,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "كاير يا فندم، اتفضل. أنا محتاج فيلا في 6 أكتوبر. تمام يا فندم، كم غرفة تقريبا؟ أربع غرف. طيب، شراء ولا إيجار؟ شراء طبعا. تمام، والميزانية في حدود كم؟ 8 مليون جنيه، 10 مليون جنيه كم؟ تمام يا فندم، خلاص، فيلا أربع غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه. شكراً لانتصار حضرتكم.",
+      "text": "كاير يا فندم، اتفضل. أنا محتاج فيلا في 6 أكتوبر. تمام يا فندم، كم غرفة تقريبا؟ أربع غرف. طيب، شراء ولا إيجار؟ شراء طبعا. تمام، والميزانية في حدود كم؟ 8 مليون جنيه، 10 مليون جنيه كم؟ تمام يا فندم، خلاص، فيلا أربع غرف في أكتوبر، تمليك، ميزانية من 8 إلى 10 مليون جنيه. شكراً لانتصار حضرتكم."
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

@@ -1,0 +1,53 @@
+{
+  "call_id": "smartsemsar_rec5",
+  "source_audio_file": "smartsemsar_rec5.mp4",
+  "audio_file": "smartsemsar_rec5_standardized.wav",
+  "language": "ar",
+  "duration": 29.396,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker_00 summarizes the client's requirements, offers to find options, and proposes next steps (visit or WhatsApp details), typical broker behavior. Speaker_01 provides the initial request and budget, matching client role despite an opening phrase that resembles a broker greeting."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 13.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "نحن خير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على بلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر، ممكن أعرف ميزانيتك محدود كم تقريباً عشان أزبط لك اختيارات مناسبة؟",
+      "text": "نحن خير يا فندم، مع حضرتك مكتب عقارات، لو حضرتك بتدوري على بلا تمليك في التجمع، خمس غرف ومساحتها حوالي 180 متر، ممكن أعرف ميزانيتك محدود كم تقريباً عشان أزبط لك اختيارات مناسبة؟"
+    },
+    {
+      "turn_id": 2,
+      "start": 13.0,
+      "end": 15.0,
+      "speaker": "SPEAKER_01",
+      "role": "client",
+      "raw_text": "12 مليون",
+      "text": "12 مليون"
+    },
+    {
+      "turn_id": 3,
+      "start": 15.0,
+      "end": 28.0,
+      "speaker": "SPEAKER_00",
+      "role": "broker",
+      "raw_text": "تمام يا فندم، بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون، هشوف لك شوية اختيارات مناسبة، ممكن أحدد لك المعادل زيارة أو أبعط لك التفاصيل على الواتساب؟",
+      "text": "تمام يا فندم، بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون، هشوف لك شوية اختيارات مناسبة، ممكن أحدد لك المعادل زيارة أو أبعط لك التفاصيل على الواتساب؟"
+    }
+  ],
+  "role_source": "copied from the official conversation by time overlap (pyannote not re-run)"
+}

@@ -1,0 +1,110 @@
+{
+  "call_id": "smartsemsar_rec1",
+  "source_audio_file": "smartsemsar_rec1.mp4",
+  "audio_file": "smartsemsar_rec1_standardized.wav",
+  "whisper_model": "large-v3-turbo",
+  "asr_backend": "faster-whisper",
+  "language": "ar",
+  "initial_prompt": null,
+  "segments": [
+    {
+      "segment_id": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "في التجمع الخامس",
+      "normalized_text": "في التجمع الخامس"
+    },
+    {
+      "segment_id": 2,
+      "start": 2.0,
+      "end": 4.0,
+      "text": "عايز اتجار ولا تمليك؟",
+      "normalized_text": "عايز اتجار ولا تمليك؟"
+    },
+    {
+      "segment_id": 3,
+      "start": 4.0,
+      "end": 6.0,
+      "text": "اتجار لا تمليك",
+      "normalized_text": "اتجار لا تمليك"
+    },
+    {
+      "segment_id": 4,
+      "start": 6.0,
+      "end": 9.0,
+      "text": "تمليك؟ طب بميزانيتك كم؟",
+      "normalized_text": "تمليك؟ طب بميزانيتك كم؟"
+    },
+    {
+      "segment_id": 5,
+      "start": 9.0,
+      "end": 12.0,
+      "text": "حوالي 4 مليون",
+      "normalized_text": "حوالي 4 مليون"
+    },
+    {
+      "segment_id": 6,
+      "start": 12.0,
+      "end": 15.0,
+      "text": "4 مليون في التجمع؟ أي كم غرفة؟",
+      "normalized_text": "4 مليون في التجمع؟ اي كم غرفة؟"
+    },
+    {
+      "segment_id": 7,
+      "start": 15.0,
+      "end": 18.0,
+      "text": "3 غرفة يا فن، مش صغية",
+      "normalized_text": "3 غرفة يا فن، مش صغية"
+    },
+    {
+      "segment_id": 8,
+      "start": 18.0,
+      "end": 20.0,
+      "text": "مسحيتها كم؟",
+      "normalized_text": "مسحيتها كم؟"
+    },
+    {
+      "segment_id": 9,
+      "start": 20.0,
+      "end": 22.0,
+      "text": "3 غرفة يا فن",
+      "normalized_text": "3 غرفة يا فن"
+    },
+    {
+      "segment_id": 10,
+      "start": 22.0,
+      "end": 24.0,
+      "text": "المساحة يا عام المساحة",
+      "normalized_text": "المساحة يا عام المساحة"
+    },
+    {
+      "segment_id": 11,
+      "start": 24.0,
+      "end": 28.0,
+      "text": "ما عرفش المساحة بالظبط يا فن، بس 3 قوض",
+      "normalized_text": "ما عرفش المساحة بالظبط يا فن، بس 3 قوض"
+    },
+    {
+      "segment_id": 12,
+      "start": 28.0,
+      "end": 30.0,
+      "text": "وفي التجمع الخامس",
+      "normalized_text": "وفي التجمع الخامس"
+    },
+    {
+      "segment_id": 13,
+      "start": 30.0,
+      "end": 32.0,
+      "text": "والميزانية حوالي 4 مليون",
+      "normalized_text": "والميزانية حوالي 4 مليون"
+    },
+    {
+      "segment_id": 14,
+      "start": 32.0,
+      "end": 33.855,
+      "text": "طب جميل جداً",
+      "normalized_text": "طب جميل جدا"
+    }
+  ],
+  "full_transcript": "في التجمع الخامس عايز اتجار ولا تمليك؟ اتجار لا تمليك تمليك؟ طب بميزانيتك كم؟ حوالي 4 مليون 4 مليون في التجمع؟ اي كم غرفة؟ 3 غرفة يا فن، مش صغية مسحيتها كم؟ 3 غرفة يا فن المساحة يا عام المساحة ما عرفش المساحة بالظبط يا فن، بس 3 قوض وفي التجمع الخامس والميزانية حوالي 4 مليون طب جميل جدا"
+}
