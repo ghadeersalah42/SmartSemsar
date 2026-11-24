@@ -1,0 +1,114 @@
+{
+  "call_id": "smartsemsar_rec6",
+  "source_audio_file": "smartsemsar_rec6.mp4",
+  "audio_file": "smartsemsar_rec6_standardized.wav",
+  "language": "ar",
+  "duration": 33.739,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "medium",
+    "reasoning": "SPEAKER_00 asks clarifying questions (rent, budget) and later summarizes the requirements, typical broker behavior. SPEAKER_01 provides the property preferences (location, rooms, rent) and answers, typical client behavior, despite an initial greeting that could be ambiguous."
+  },
+  "unassigned_speaker_segments": 1,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 14.1,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 10.177,
+      "overlap_ratio": 0.7218,
+      "speaker_dominance": 0.9938,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "مكتب عقارات، تفضلي، كنت بتدوري عليها، بدور على شقة، في مدينة نصر، تمام يا فندم، أربعة غرف، كم قوضة؟ أربعة، تمام، حضرتك، أربعة، ماشي، دمليك، ولا",
+      "text": "مكتب عقارات، تفضلي، كنت بتدوري عليها، بدور علي شقة، في مدينة نصر، تمام يا فندم، اربعة غرف، كم قوضة؟ اربعة، تمام، حضرتك، اربعة، ماشي، دمليك، ولا",
+      "role": "client"
+    },
+    {
+      "turn_id": 2,
+      "start": 14.1,
+      "end": 15.92,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.152,
+      "overlap_ratio": 0.633,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "إجار، والميزانية؟",
+      "text": "اجار، والميزانية؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 3,
+      "start": 15.92,
+      "end": 17.3,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.641,
+      "overlap_ratio": 0.4645,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "إجار،",
+      "text": "اجار،",
+      "role": "client"
+    },
+    {
+      "turn_id": 4,
+      "start": 17.3,
+      "end": 29.36,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 9.231,
+      "overlap_ratio": 0.7654,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "إجار، والميزانية تقريباً، تمام تلاف، تمام تلاف، تمام يا فندم، شقة أربعة غرف، في مدينة نصر، إجار بميزانية حوالي تمن تلاف جنيه،",
+      "text": "اجار، والميزانية تقريبا، تمام تلاف، تمام تلاف، تمام يا فندم، شقة اربعة غرف، في مدينة نصر، اجار بميزانية حوالي تمن تلاف جنيه،",
+      "role": "broker"
+    },
+    {
+      "turn_id": 5,
+      "start": 31.46,
+      "end": 33.36,
+      "speaker": "UNKNOWN",
+      "speaker_assigned": false,
+      "overlap_duration": 0.0,
+      "overlap_ratio": 0.0,
+      "speaker_dominance": 0.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [],
+      "assignment_status": "unassigned_no_overlap",
+      "raw_text": "ترجمة نانسي قنقر",
+      "text": "ترجمة نانسي قنقر",
+      "role": "unassigned"
+    }
+  ]
+}

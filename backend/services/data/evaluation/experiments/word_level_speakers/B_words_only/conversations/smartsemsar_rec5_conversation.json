@@ -1,0 +1,169 @@
+{
+  "call_id": "smartsemsar_rec5",
+  "source_audio_file": "smartsemsar_rec5.mp4",
+  "audio_file": "smartsemsar_rec5_standardized.wav",
+  "language": "ar",
+  "duration": 29.396,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "Speaker 00 repeats the client's requirements, offers to find options, and proposes next steps (visit or WhatsApp details) – typical broker behavior. Speaker 01 provides the property criteria (type, rooms, size, budget) and answers the budget question, matching client role."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.84,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.624,
+      "overlap_ratio": 0.9239,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "نحن خير يا فندم مع حضرتك مكتب عقارات",
+      "text": "نحن خير يا فندم مع حضرتك مكتب عقارات",
+      "role": "client"
+    },
+    {
+      "turn_id": 2,
+      "start": 2.84,
+      "end": 5.68,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.84,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "لو حضرتك بتدوري على بلا تمليك في التجمع",
+      "text": "لو حضرتك بتدوري علي بلا تمليك في التجمع",
+      "role": "client"
+    },
+    {
+      "turn_id": 3,
+      "start": 5.68,
+      "end": 8.36,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.68,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "خمس غرف ومساحتها حوالي 180 متر",
+      "text": "خمس غرف ومساحتها حوالي 180 متر",
+      "role": "client"
+    },
+    {
+      "turn_id": 4,
+      "start": 8.36,
+      "end": 12.64,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 4.024,
+      "overlap_ratio": 0.9402,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ممكن اعرف ميزانيتك محدود كم تقريبا عشان ازبطلك اختيارات مناسبة",
+      "text": "ممكن اعرف ميزانيتك محدود كم تقريبا عشان ازبطلك اختيارات مناسبة",
+      "role": "client"
+    },
+    {
+      "turn_id": 5,
+      "start": 12.64,
+      "end": 13.88,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.754,
+      "overlap_ratio": 0.6081,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "12 مليون",
+      "text": "12 مليون",
+      "role": "client"
+    },
+    {
+      "turn_id": 6,
+      "start": 14.88,
+      "end": 20.72,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 5.333,
+      "overlap_ratio": 0.9132,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون",
+      "text": "تمام يا فندم بلا خمس غرف حوالي 180 متر في التجمع بميزانية 12 مليون",
+      "role": "broker"
+    },
+    {
+      "turn_id": 7,
+      "start": 20.72,
+      "end": 22.78,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.858,
+      "overlap_ratio": 0.9019,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "هاشوفلك شوية اختيارات مناسبة",
+      "text": "هاشوفلك شوية اختيارات مناسبة",
+      "role": "broker"
+    },
+    {
+      "turn_id": 8,
+      "start": 22.78,
+      "end": 26.86,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 4.08,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ممكن احددلك المعادل زيارة او ابعتلك التفاصيل على الواتساب",
+      "text": "ممكن احددلك المعادل زيارة او ابعتلك التفاصيل علي الواتساب",
+      "role": "broker"
+    }
+  ]
+}

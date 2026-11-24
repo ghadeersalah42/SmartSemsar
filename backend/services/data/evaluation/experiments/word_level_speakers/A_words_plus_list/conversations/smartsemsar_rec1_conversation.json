@@ -1,0 +1,243 @@
+{
+  "call_id": "smartsemsar_rec1",
+  "source_audio_file": "smartsemsar_rec1.mp4",
+  "audio_file": "smartsemsar_rec1_standardized.wav",
+  "language": "ar",
+  "duration": 33.855,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 consistently asks intake questions (location, تمليك vs ايجار, budget, عدد الغرف, المساحة) and uses polite address typical of a real‑estate office, indicating the broker role. SPEAKER_01 provides answers about preferences and repeats details, matching the client role."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 1.58,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.996,
+      "overlap_ratio": 0.6304,
+      "speaker_dominance": 0.8198,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "في التجمع الخامس؟",
+      "text": "في التجمع الخامس؟",
+      "role": "client"
+    },
+    {
+      "turn_id": 2,
+      "start": 1.58,
+      "end": 3.66,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.451,
+      "overlap_ratio": 0.6976,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "عايزة أتجار ولا تمليك؟",
+      "text": "عايزة اتجار ولا تمليك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 3,
+      "start": 3.66,
+      "end": 5.94,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.454,
+      "overlap_ratio": 0.6377,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "إتجار؟ لا، تمليك.",
+      "text": "اتجار؟ لا، تمليك.",
+      "role": "client"
+    },
+    {
+      "turn_id": 4,
+      "start": 6.5,
+      "end": 9.5,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.856,
+      "overlap_ratio": 0.6187,
+      "speaker_dominance": 0.8825,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "تمليك؟ طب، ميزانيتك كم؟",
+      "text": "تمليك؟ طب، ميزانيتك كم؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 5,
+      "start": 9.5,
+      "end": 11.34,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.488,
+      "overlap_ratio": 0.8087,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "حوالي 4 مليون.",
+      "text": "حوالي 4 مليون.",
+      "role": "client"
+    },
+    {
+      "turn_id": 6,
+      "start": 11.68,
+      "end": 15.24,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.345,
+      "overlap_ratio": 0.6587,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "4 مليون في التجمع؟ أي كم غرفة؟",
+      "text": "4 مليون في التجمع؟ اي كم غرفة؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 7,
+      "start": 15.24,
+      "end": 17.48,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.587,
+      "overlap_ratio": 0.7085,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "3 غرف يا فندم، مش صغية.",
+      "text": "3 غرف يا فندم، مش صغية.",
+      "role": "client"
+    },
+    {
+      "turn_id": 8,
+      "start": 18.22,
+      "end": 19.84,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.793,
+      "overlap_ratio": 0.4895,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "مساحيتها كم؟",
+      "text": "مساحيتها كم؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 19.84,
+      "end": 21.94,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.86,
+      "overlap_ratio": 0.4095,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "3 غرف يا فندم؟",
+      "text": "3 غرف يا فندم؟",
+      "role": "client"
+    },
+    {
+      "turn_id": 10,
+      "start": 21.94,
+      "end": 23.64,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.164,
+      "overlap_ratio": 0.6847,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "المساحة يا عام، المساحة.",
+      "text": "المساحة يا عام، المساحة.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 11,
+      "start": 23.64,
+      "end": 32.2,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 7.053,
+      "overlap_ratio": 0.8239,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ما عرفش المساحة بالزبط يا فندم، بس ثلاث قوض، وفي التجمع الخامس، والميزانية حوالي 4 مليون.",
+      "text": "ما عرفش المساحة بالزبط يا فندم، بس ثلاث قوض، وفي التجمع الخامس، والميزانية حوالي 4 مليون.",
+      "role": "client"
+    },
+    {
+      "turn_id": 12,
+      "start": 32.3,
+      "end": 33.2,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.9,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "طب جميل جداً.",
+      "text": "طب جميل جدا.",
+      "role": "broker"
+    }
+  ]
+}

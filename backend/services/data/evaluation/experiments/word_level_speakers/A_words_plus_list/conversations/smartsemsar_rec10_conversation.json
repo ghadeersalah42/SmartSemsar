@@ -1,0 +1,205 @@
+{
+  "call_id": "smartsemsar_rec10",
+  "source_audio_file": "smartsemsar_rec10.mp4",
+  "audio_file": "smartsemsar_rec10_standardized.wav",
+  "language": "ar",
+  "duration": 43.352,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "client",
+    "SPEAKER_01": "broker"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_01 introduces as a real‑estate office, asks qualifying questions (budget, rooms, location) and ends with a summary and thank you, typical broker behavior. SPEAKER_00 provides answers to those questions, typical client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 9.38,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 8.826,
+      "overlap_ratio": 0.9409,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "مكتب عقارات، كنت أحبب أعرف من حضرتك بالدوري على بيجار أو تمليك، وإيه البجت أو الميزانية اللي تباليك؟",
+      "text": "مكتب عقارات، كنت احبب اعرف من حضرتك بالدوري علي بيجار او تمليك، وايه البجت او الميزانية اللي تباليك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 9.38,
+      "end": 12.9,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 3.52,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "أريد شيء تمليك، معي ميزانية 6 مليون.",
+      "text": "اريد شيء تمليك، معي ميزانية 6 مليون.",
+      "role": "client"
+    },
+    {
+      "turn_id": 3,
+      "start": 13.58,
+      "end": 17.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 3.081,
+      "overlap_ratio": 0.9009,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "6 مليون، طيب، كم غرفة في زين حضرتك؟",
+      "text": "6 مليون، طيب، كم غرفة في زين حضرتك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 4,
+      "start": 19.6,
+      "end": 20.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.327,
+      "overlap_ratio": 0.8175,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ماذا؟",
+      "text": "ماذا؟",
+      "role": "client"
+    },
+    {
+      "turn_id": 5,
+      "start": 20.74,
+      "end": 22.32,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.945,
+      "overlap_ratio": 0.5981,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "كم غرفة؟",
+      "text": "كم غرفة؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 6,
+      "start": 22.32,
+      "end": 23.8,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.325,
+      "overlap_ratio": 0.8953,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "كم غرفة؟ ثلاث غرف.",
+      "text": "كم غرفة؟ ثلاث غرف.",
+      "role": "client"
+    },
+    {
+      "turn_id": 7,
+      "start": 24.4,
+      "end": 25.84,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.86,
+      "overlap_ratio": 0.5972,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ثلاث غرف؟",
+      "text": "ثلاث غرف؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 8,
+      "start": 25.84,
+      "end": 29.72,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 3.476,
+      "overlap_ratio": 0.8959,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "طيب، هناك منطقة معينة في مصر، في بلك؟",
+      "text": "طيب، هناك منطقة معينة في مصر، في بلك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 29.72,
+      "end": 32.8,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.958,
+      "overlap_ratio": 0.6357,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "أكتوبر، مثلا، الشيخ زايد، الشيخ زايد،",
+      "text": "اكتوبر، مثلا، الشيخ زايد، الشيخ زايد،",
+      "role": "client"
+    },
+    {
+      "turn_id": 10,
+      "start": 33.84,
+      "end": 42.96,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 7.948,
+      "overlap_ratio": 0.8715,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "زايد، عادي، طلب غرف، تمليك، في زايد أو أكتوبر، والميزانية بحدود 6 مليون، تمام يا فندم؟ شكراً لتصار حضرتك.",
+      "text": "زايد، عادي، طلب غرف، تمليك، في زايد او اكتوبر، والميزانية بحدود 6 مليون، تمام يا فندم؟ شكرا لتصار حضرتك.",
+      "role": "broker"
+    }
+  ]
+}

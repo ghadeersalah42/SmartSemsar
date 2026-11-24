@@ -75,6 +75,14 @@ REAL_ESTATE_WORD_LIST = (
     "المعادي، مدينة نصر."
 )
 WHISPER_INITIAL_PROMPT = REAL_ESTATE_WORD_LIST if os.environ.get("SMARTSEMSAR_WHISPER_WORD_LIST") == "1" else None
+# Speakers per word: Whisper returns a timestamp for every word, each word takes the pyannote speaker
+# talking at that moment, and a Whisper segment that holds two speakers is split where the speaker
+# changes. Without this, one long segment gets one speaker for everything said in it.
+# OFF by default: on the 10 calls it fixed the long-segment problem of the word list (QC 10/10), but
+# role inference became unstable on rec5/rec6 (the same conversation got different roles on reruns),
+# because per-word speakers inherit pyannote's speaker confusion instead of a per-segment majority.
+# See experiments/word_level_speakers/RESULTS.md. Turn it on with SMARTSEMSAR_WORD_LEVEL_SPEAKERS=1.
+WORD_LEVEL_SPEAKERS = os.environ.get("SMARTSEMSAR_WORD_LEVEL_SPEAKERS", "0") == "1"
 DIARIZATION_MODEL = "pyannote/speaker-diarization-community-1"
 EXPECTED_SPEAKERS = 2
 TARGET_SAMPLE_RATE = 16000
@@ -657,6 +665,7 @@ def transcribe(wav_path: Path | str, device: str, whisper_model: Optional[Any] =
         beam_size=5,
         vad_filter=False,
         initial_prompt=WHISPER_INITIAL_PROMPT,
+        word_timestamps=WORD_LEVEL_SPEAKERS,
     )
     segments = list(segments)
     audio_duration = float(getattr(info, "duration", 0.0) or 0.0)
@@ -699,13 +708,25 @@ def transcribe(wav_path: Path | str, device: str, whisper_model: Optional[Any] =
 
         seg_idx = len(result) + 1
         safe_print(f"{seg_idx:02d}. [{start_s:.2f}s -> {end_s:.2f}s] {original}")
-        result.append({
+        item = {
             "segment_id": seg_idx,
             "start": start_s,
             "end": end_s,
             "text": original,
             "normalized_text": normalize_arabic_text(original),
-        })
+        }
+        words = []
+        for w in getattr(s, "words", None) or []:
+            w_text = str(getattr(w, "word", "") or "")
+            w_start, w_end = float(w.start), float(w.end)
+            if audio_duration > 0.0:
+                w_end = min(w_end, audio_duration)
+            if not w_text.strip() or w_end <= w_start or w_start >= end_s:
+                continue
+            words.append({"start": round(max(start_s, w_start), 3), "end": round(w_end, 3), "word": w_text})
+        if words:
+            item["words"] = words
+        result.append(item)
 
     if dropped_overflow:
         print(f"Filtered overflow segments: {dropped_overflow}")
@@ -951,6 +972,77 @@ def assign_speaker(
             "assignment_status": status,
         }
     return best_speaker, best_overlap
+
+
+def _word_speaker(start: float, end: float, turns: list[dict[str, Any]], previous: Optional[str]) -> Optional[str]:
+    """Speaker with the most overlap with this word; the nearest turn if none overlaps."""
+    best, best_ov = None, 0.0
+    for tr in turns:
+        if tr.get("start") is None or tr.get("end") is None or not tr.get("speaker"):
+            continue
+        ov = overlap_duration(start, end, float(tr["start"]), float(tr["end"]))
+        if ov > best_ov or (ov == best_ov and ov > 0 and tr["speaker"] == previous):
+            best, best_ov = tr["speaker"], ov
+    if best is not None:
+        return best
+    mid = (start + end) / 2
+    valid = [tr for tr in turns if tr.get("start") is not None and tr.get("end") is not None and tr.get("speaker")]
+    if not valid:
+        return previous
+    near = min(valid, key=lambda tr: (max(float(tr["start"]) - mid, mid - float(tr["end"]), 0.0),
+                                      tr["speaker"] != previous))
+    return near["speaker"]
+
+
+def split_segments_by_speaker(
+    transcript_segments: list[dict[str, Any]],
+    speaker_turns: list[dict[str, Any]],
+    *,
+    min_island_sec: float = 0.3,
+) -> list[dict[str, Any]]:
+    """Split Whisper segments where the pyannote speaker changes, using word timestamps.
+
+    Each word takes the speaker talking at that moment. A single short word (< min_island_sec)
+    between two words of the same other speaker is treated as a boundary glitch and joins them.
+    Segments without word timestamps are returned unchanged.
+    """
+    out: list[dict[str, Any]] = []
+    for seg in transcript_segments:
+        words = seg.get("words") or []
+        if not words or not speaker_turns:
+            out.append(seg)
+            continue
+        labels: list[Optional[str]] = []
+        prev = None
+        for w in words:
+            prev = _word_speaker(float(w["start"]), float(w["end"]), speaker_turns, prev)
+            labels.append(prev)
+        for i in range(1, len(words) - 1):
+            if (labels[i] != labels[i - 1] and labels[i - 1] == labels[i + 1]
+                    and float(words[i]["end"]) - float(words[i]["start"]) < min_island_sec):
+                labels[i] = labels[i - 1]
+        groups: list[list[dict[str, Any]]] = []
+        for w, lab in zip(words, labels):
+            if groups and groups[-1][0]["_spk"] == lab:
+                groups[-1].append({**w, "_spk": lab})
+            else:
+                groups.append([{**w, "_spk": lab}])
+        if len(groups) == 1:
+            out.append(seg)
+            continue
+        for g in groups:
+            text = "".join(w["word"] for w in g).strip()
+            out.append({
+                "segment_id": len(out) + 1,
+                "start": float(g[0]["start"]),
+                "end": float(g[-1]["end"]),
+                "text": text,
+                "normalized_text": normalize_arabic_text(text),
+                "split_from_segment": seg.get("segment_id"),
+            })
+    for i, s in enumerate(out, 1):
+        s["segment_id"] = i
+    return out
 
 
 def build_conversation(
@@ -1711,8 +1803,11 @@ def process_call(
 
     print(f"[{clean_call_id}] Stage 5/7: Transcript-Diarization Alignment", flush=True)
     conversation_path = dirs["conversations"] / f"{clean_call_id}_conversation.json"
+    aligned_segments = split_segments_by_speaker(segments, turns) if WORD_LEVEL_SPEAKERS else segments
+    if len(aligned_segments) != len(segments):
+        print(f"Split {len(segments)} Whisper segments into {len(aligned_segments)} single-speaker segments (word timestamps)")
     conversation = build_conversation(
-        segments,
+        aligned_segments,
         turns,
         min_overlap_sec=min_overlap_sec,
         min_overlap_ratio=min_overlap_ratio,

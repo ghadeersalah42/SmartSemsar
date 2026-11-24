@@ -921,6 +921,50 @@ def test_pipeline_word_list_matches_the_tested_one():
     assert pipeline.REAL_ESTATE_WORD_LIST == EXTENDED_PROMPT
 
 
+def _w(start, end, word):
+    return {"start": start, "end": end, "word": word}
+
+
+_TWO_SPEAKER_TURNS = [
+    {"start": 0.0, "end": 3.0, "speaker": "SPEAKER_00"},
+    {"start": 3.2, "end": 6.0, "speaker": "SPEAKER_01"},
+]
+
+
+def test_segment_with_two_speakers_is_split_at_the_change():
+    seg = {"segment_id": 1, "start": 0.0, "end": 6.0, "text": "كام غرفة؟ تلات غرف",
+           "normalized_text": "كام غرفة؟ تلات غرف",
+           "words": [_w(0.1, 1.0, " كام"), _w(1.0, 2.5, " غرفة؟"), _w(3.3, 4.5, " تلات"), _w(4.5, 5.8, " غرف")]}
+    out = pipeline.split_segments_by_speaker([seg], _TWO_SPEAKER_TURNS)
+    assert [s["text"] for s in out] == ["كام غرفة؟", "تلات غرف"]
+    assert (out[0]["start"], out[0]["end"]) == (0.1, 2.5)
+    assert (out[1]["start"], out[1]["end"]) == (3.3, 5.8)
+    conv = pipeline.build_conversation(out, _TWO_SPEAKER_TURNS)
+    assert [t["speaker"] for t in conv] == ["SPEAKER_00", "SPEAKER_01"]
+
+
+def test_one_speaker_segment_and_no_word_timestamps_stay_as_they_are():
+    one = {"segment_id": 1, "start": 0.0, "end": 2.0, "text": "اهلا يا فندم", "normalized_text": "اهلا يا فندم",
+           "words": [_w(0.1, 0.8, " اهلا"), _w(0.8, 1.9, " يا فندم")]}
+    plain = {"segment_id": 2, "start": 3.3, "end": 5.0, "text": "شقة", "normalized_text": "شقة"}
+    out = pipeline.split_segments_by_speaker([one, plain], _TWO_SPEAKER_TURNS)
+    assert [s["text"] for s in out] == ["اهلا يا فندم", "شقة"]
+    assert "split_from_segment" not in out[0]
+
+
+def test_short_word_glitch_does_not_split():
+    turns = [{"start": 0.0, "end": 2.0, "speaker": "A"}, {"start": 2.0, "end": 2.2, "speaker": "B"},
+             {"start": 2.2, "end": 5.0, "speaker": "A"}]
+    seg = {"segment_id": 1, "start": 0.0, "end": 5.0, "text": "x", "normalized_text": "x",
+           "words": [_w(0.0, 1.9, " طيب"), _w(2.0, 2.2, " يعني"), _w(2.3, 4.0, " تمام")]}
+    out = pipeline.split_segments_by_speaker([seg], turns)
+    assert len(out) == 1
+
+
+def test_word_level_speakers_ask_whisper_for_word_timestamps():
+    assert _capture_transcribe_kwargs().get("word_timestamps") is pipeline.WORD_LEVEL_SPEAKERS
+
+
 def test_utf8_arabic_json_roundtrip(tmp_path):
     p = tmp_path / "arabic_conv.json"
     payload = {"text": "في التجمع الخامس", "speaker_role_mapping": {"SPEAKER_00": "broker"}}

@@ -1,0 +1,244 @@
+{
+  "call_id": "smartsemsar_rec4",
+  "source_audio_file": "smartsemsar_rec4.mp4",
+  "audio_file": "smartsemsar_rec4_standardized.wav",
+  "language": "ar",
+  "duration": 39.636,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 greets as a real‑estate office, asks qualifying questions (location, rooms, rent vs ownership, budget), summarizes the request and ends with thank you, which matches broker behavior. SPEAKER_01 responds with property preferences, confirming they are the client."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 3.64,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 3.51,
+      "overlap_ratio": 0.9643,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "سأل خير يا فندم مع حضرتك مكتب عقراط كنت بتدوري عليهم",
+      "text": "سال خير يا فندم مع حضرتك مكتب عقراط كنت بتدوري عليهم",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 3.64,
+      "end": 7.18,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.565,
+      "overlap_ratio": 0.7246,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "انا بدور على شقة في التجامعة الخامس",
+      "text": "انا بدور علي شقة في التجامعة الخامس",
+      "role": "client"
+    },
+    {
+      "turn_id": 3,
+      "start": 7.18,
+      "end": 10.92,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 3.02,
+      "overlap_ratio": 0.8075,
+      "speaker_dominance": 0.9876,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "تمام يا فندم التجامعة الخامس كم اوضة تقريبا؟",
+      "text": "تمام يا فندم التجامعة الخامس كم اوضة تقريبا؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 4,
+      "start": 10.92,
+      "end": 13.34,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.42,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ثلاث غرف مش هايزة صغيرة",
+      "text": "ثلاث غرف مش هايزة صغيرة",
+      "role": "client"
+    },
+    {
+      "turn_id": 5,
+      "start": 13.34,
+      "end": 18.88,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 4.59,
+      "overlap_ratio": 0.8285,
+      "speaker_dominance": 0.9843,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "ماشي ثلاثة او طيب ده ايجار ولا تمليك؟",
+      "text": "ماشي ثلاثة او طيب ده ايجار ولا تمليك؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 6,
+      "start": 18.88,
+      "end": 22.96,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 3.877,
+      "overlap_ratio": 0.9502,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ايجار بفضل يعني عشرين الف",
+      "text": "ايجار بفضل يعني عشرين الف",
+      "role": "client"
+    },
+    {
+      "turn_id": 7,
+      "start": 24.06,
+      "end": 26.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.483,
+      "overlap_ratio": 0.7644,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام في حدود كم مسلا؟",
+      "text": "تمام في حدود كم مسلا؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 8,
+      "start": 26.52,
+      "end": 27.6,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.058,
+      "overlap_ratio": 0.9796,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "حدود عشر الف",
+      "text": "حدود عشر الف",
+      "role": "client"
+    },
+    {
+      "turn_id": 9,
+      "start": 27.6,
+      "end": 34.8,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 5.283,
+      "overlap_ratio": 0.7338,
+      "speaker_dominance": 0.9897,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "طيب شقة ايجار في التجامعة الخامس تلات غرف ميزينية حوالي عشرين الف ساعة",
+      "text": "طيب شقة ايجار في التجامعة الخامس تلات غرف ميزينية حوالي عشرين الف ساعة",
+      "role": "broker"
+    },
+    {
+      "turn_id": 10,
+      "start": 34.8,
+      "end": 35.6,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.338,
+      "overlap_ratio": 0.4225,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ساعة",
+      "text": "ساعة",
+      "role": "client"
+    },
+    {
+      "turn_id": 11,
+      "start": 36.3,
+      "end": 38.74,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.411,
+      "overlap_ratio": 0.9881,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام شكرا لاتصال حضرتك يا فندم",
+      "text": "تمام شكرا لاتصال حضرتك يا فندم",
+      "role": "broker"
+    },
+    {
+      "turn_id": 12,
+      "start": 38.74,
+      "end": 39.6,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.742,
+      "overlap_ratio": 0.8628,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "اسجلتك",
+      "text": "اسجلتك",
+      "role": "broker"
+    }
+  ]
+}

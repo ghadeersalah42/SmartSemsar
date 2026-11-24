@@ -1,0 +1,244 @@
+{
+  "call_id": "smartsemsar_rec7",
+  "source_audio_file": "smartsemsar_rec7.mp4",
+  "audio_file": "smartsemsar_rec7_standardized.wav",
+  "language": "ar",
+  "duration": 29.931,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 asks qualifying questions (room count, purchase vs rent, budget), summarizes the request, and ends with a thank you, which matches broker behavior. SPEAKER_01 provides the property requirements, answering the broker's questions, matching client behavior."
+  },
+  "unassigned_speaker_segments": 0,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 0.78,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.624,
+      "overlap_ratio": 0.8,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "كيف يا فندم؟",
+      "text": "كيف يا فندم؟",
+      "role": "client"
+    },
+    {
+      "turn_id": 2,
+      "start": 0.78,
+      "end": 1.44,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.413,
+      "overlap_ratio": 0.6258,
+      "speaker_dominance": 0.7536,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "اتفضل",
+      "text": "اتفضل",
+      "role": "broker"
+    },
+    {
+      "turn_id": 3,
+      "start": 1.44,
+      "end": 4.24,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.712,
+      "overlap_ratio": 0.6114,
+      "speaker_dominance": 0.9667,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "انا محتاج بيلا في 6 اكتوبر",
+      "text": "انا محتاج بيلا في 6 اكتوبر",
+      "role": "client"
+    },
+    {
+      "turn_id": 4,
+      "start": 5.38,
+      "end": 8.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.198,
+      "overlap_ratio": 0.8389,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم كام غرفه تقريبا؟",
+      "text": "تمام يا فندم كام غرفه تقريبا؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 5,
+      "start": 8.56,
+      "end": 9.22,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.66,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "4 غرف",
+      "text": "4 غرف",
+      "role": "client"
+    },
+    {
+      "turn_id": 6,
+      "start": 11.0,
+      "end": 13.72,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.109,
+      "overlap_ratio": 0.7754,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "طيب شراء ولا ايجار؟",
+      "text": "طيب شراء ولا ايجار؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 7,
+      "start": 13.72,
+      "end": 15.1,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.742,
+      "overlap_ratio": 0.5377,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "شراء طبعا",
+      "text": "شراء طبعا",
+      "role": "client"
+    },
+    {
+      "turn_id": 8,
+      "start": 15.1,
+      "end": 18.0,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.177,
+      "overlap_ratio": 0.7507,
+      "speaker_dominance": 0.9637,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "تمام والميزانية في حدود كم؟",
+      "text": "تمام والميزانية في حدود كم؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 18.0,
+      "end": 20.0,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 2.0,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "8 مليون جنيه 10 مليون جنيه كم؟",
+      "text": "8 مليون جنيه 10 مليون جنيه كم؟",
+      "role": "client"
+    },
+    {
+      "turn_id": 10,
+      "start": 21.02,
+      "end": 24.62,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 3.343,
+      "overlap_ratio": 0.9286,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمام يا فندم خلاص بيلا 4 غرف في اكتوبر",
+      "text": "تمام يا فندم خلاص بيلا 4 غرف في اكتوبر",
+      "role": "broker"
+    },
+    {
+      "turn_id": 11,
+      "start": 24.62,
+      "end": 28.78,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 3.676,
+      "overlap_ratio": 0.8837,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمليك ميزانية من 8 ل 10 مليون جنيه",
+      "text": "تمليك ميزانية من 8 ل 10 مليون جنيه",
+      "role": "broker"
+    },
+    {
+      "turn_id": 12,
+      "start": 28.78,
+      "end": 29.9,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.114,
+      "overlap_ratio": 0.9946,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "شكرا لاتصار حضر",
+      "text": "شكرا لاتصار حضر",
+      "role": "broker"
+    }
+  ]
+}

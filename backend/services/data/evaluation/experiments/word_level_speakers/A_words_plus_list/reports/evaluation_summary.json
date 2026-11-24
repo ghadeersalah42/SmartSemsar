@@ -1,0 +1,56 @@
+{
+  "generated_at_utc": "2026-11-24T15:39:50.094054+00:00",
+  "status": "EVALUATED",
+  "manifest_loaded": true,
+  "manifest_error": null,
+  "total_calls": 10,
+  "total_errors": 0,
+  "call_ids": [
+    "smartsemsar_rec1",
+    "smartsemsar_rec2",
+    "smartsemsar_rec3",
+    "smartsemsar_rec4",
+    "smartsemsar_rec5",
+    "smartsemsar_rec6",
+    "smartsemsar_rec7",
+    "smartsemsar_rec8",
+    "smartsemsar_rec9",
+    "smartsemsar_rec10"
+  ],
+  "wer_cer": {
+    "status": "EVALUATED",
+    "evaluated_calls": 10,
+    "pending_calls": 0,
+    "missing_pipeline_output_calls": 0,
+    "error_calls": 0,
+    "macro_wer": 0.410103,
+    "micro_wer": 0.404959,
+    "macro_cer": 0.183159,
+    "micro_cer": 0.180416
+  },
+  "der": {
+    "status": "EVALUATED",
+    "evaluated_calls": 10,
+    "pending_calls": 0,
+    "missing_pipeline_output_calls": 0,
+    "error_calls": 0,
+    "macro_der": 0.163665,
+    "micro_der": 0.161092
+  },
+  "role_accuracy": {
+    "status": "EVALUATED",
+    "evaluated_calls": 10,
+    "pending_calls": 0,
+    "pending_role_prediction_calls": 0,
+    "missing_pipeline_output_calls": 0,
+    "error_calls": 0,
+    "macro_role_accuracy": 0.95,
+    "micro_role_accuracy": 0.95
+  },
+  "audio_quality": {
+    "status": "EVALUATED",
+    "evaluated_calls": 10,
+    "pending_calls": 0,
+    "error_calls": 0
+  }
+}

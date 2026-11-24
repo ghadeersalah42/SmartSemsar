@@ -1,0 +1,261 @@
+{
+  "call_id": "smartsemsar_rec2",
+  "source_audio_file": "smartsemsar_rec2.mp4",
+  "audio_file": "smartsemsar_rec2_standardized.wav",
+  "language": "ar",
+  "duration": 31.347,
+  "num_speakers": 2,
+  "speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_role_mapping": {
+    "SPEAKER_00": "broker",
+    "SPEAKER_01": "client"
+  },
+  "speaker_role_inference": {
+    "method": "groq:openai/gpt-oss-120b",
+    "confidence": "high",
+    "reasoning": "SPEAKER_00 asks typical intake questions (location, rooms, rent vs تمليك, budget) and summarizes the request, ending with thank you, indicating the broker role. SPEAKER_01 provides the client's preferences (needs in العاصمة الإدارية, number of rooms, budget), indicating the client role."
+  },
+  "unassigned_speaker_segments": 1,
+  "ambiguous_speaker_segments": 0,
+  "conversation": [
+    {
+      "turn_id": 1,
+      "start": 0.0,
+      "end": 2.88,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 2.396,
+      "overlap_ratio": 0.8319,
+      "speaker_dominance": 0.9542,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "كنت حابب أعرف إيه المواصفات اللي في إدماجك،",
+      "text": "كنت حابب اعرف ايه المواصفات اللي في ادماجك،",
+      "role": "broker"
+    },
+    {
+      "turn_id": 2,
+      "start": 2.88,
+      "end": 3.38,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.5,
+      "overlap_ratio": 1.0,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ونتعب",
+      "text": "ونتعب",
+      "role": "client"
+    },
+    {
+      "turn_id": 3,
+      "start": 3.38,
+      "end": 5.22,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.206,
+      "overlap_ratio": 0.6554,
+      "speaker_dominance": 0.8505,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "عدد الغرف في الطريق.",
+      "text": "عدد الغرف في الطريق.",
+      "role": "broker"
+    },
+    {
+      "turn_id": 4,
+      "start": 5.38,
+      "end": 7.6,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.848,
+      "overlap_ratio": 0.8324,
+      "speaker_dominance": 0.9645,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "محتاجة حاجة في العاصمة الإدارية.",
+      "text": "محتاجة حاجة في العاصمة الادارية.",
+      "role": "client"
+    },
+    {
+      "turn_id": 5,
+      "start": 8.3,
+      "end": 15.16,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 5.216,
+      "overlap_ratio": 0.7603,
+      "speaker_dominance": 0.995,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned_multi_speaker_overlap",
+      "raw_text": "تمام، العاصمة الإدارية، كم غرفة تقريباً إيجار ولا تمليك، والميزانية في حدود كام؟",
+      "text": "تمام، العاصمة الادارية، كم غرفة تقريبا ايجار ولا تمليك، والميزانية في حدود كام؟",
+      "role": "broker"
+    },
+    {
+      "turn_id": 6,
+      "start": 16.56,
+      "end": 17.66,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 0.793,
+      "overlap_ratio": 0.7209,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ثلاث قد",
+      "text": "ثلاث قد",
+      "role": "client"
+    },
+    {
+      "turn_id": 7,
+      "start": 19.78,
+      "end": 20.56,
+      "speaker": "UNKNOWN",
+      "speaker_assigned": false,
+      "overlap_duration": 0.0,
+      "overlap_ratio": 0.0,
+      "speaker_dominance": 0.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [],
+      "assignment_status": "unassigned_no_overlap",
+      "raw_text": "تمليك",
+      "text": "تمليك",
+      "role": "unassigned"
+    },
+    {
+      "turn_id": 8,
+      "start": 20.56,
+      "end": 21.22,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 0.405,
+      "overlap_ratio": 0.6136,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "تمليك",
+      "text": "تمليك",
+      "role": "broker"
+    },
+    {
+      "turn_id": 9,
+      "start": 21.22,
+      "end": 22.62,
+      "speaker": "SPEAKER_01",
+      "speaker_assigned": true,
+      "overlap_duration": 1.047,
+      "overlap_ratio": 0.7479,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_01"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "اثنين ونصف مليون",
+      "text": "اثنين ونصف مليون",
+      "role": "client"
+    },
+    {
+      "turn_id": 10,
+      "start": 22.62,
+      "end": 25.54,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.782,
+      "overlap_ratio": 0.6103,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "ماشي شقة ثلاث غرف تمليك",
+      "text": "ماشي شقة ثلاث غرف تمليك",
+      "role": "broker"
+    },
+    {
+      "turn_id": 11,
+      "start": 25.54,
+      "end": 27.28,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.537,
+      "overlap_ratio": 0.8833,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "في العاصمة الإدارية حوالي",
+      "text": "في العاصمة الادارية حوالي",
+      "role": "broker"
+    },
+    {
+      "turn_id": 12,
+      "start": 27.28,
+      "end": 28.72,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.337,
+      "overlap_ratio": 0.9285,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "اثنين ونصف مليون جنيه",
+      "text": "اثنين ونصف مليون جنيه",
+      "role": "broker"
+    },
+    {
+      "turn_id": 13,
+      "start": 28.72,
+      "end": 31.06,
+      "speaker": "SPEAKER_00",
+      "speaker_assigned": true,
+      "overlap_duration": 1.987,
+      "overlap_ratio": 0.8491,
+      "speaker_dominance": 1.0,
+      "is_ambiguous": false,
+      "overlapping_speakers": [
+        "SPEAKER_00"
+      ],
+      "assignment_status": "assigned",
+      "raw_text": "شكرا لاتصال حضرتك في أمان الله",
+      "text": "شكرا لاتصال حضرتك في امان الله",
+      "role": "broker"
+    }
+  ]
+}
