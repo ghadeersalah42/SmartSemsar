@@ -15,6 +15,7 @@ from contextvars import ContextVar
 from typing import Dict, Any, Optional, Callable, List
 
 from .compat import traceable
+from backend.ai_config import config_version, model_default
 from .config import TRACES_DIR
 
 # ContextVar to bind all child stage spans under a single parent session trace
@@ -82,6 +83,7 @@ class SessionTraceContext:
             "session_id": self.session_id,
             "stage_name": stage_name,
             "prompt_version": prompt_version,
+            "config_version": config_version(),
             "model_answered": model_answered,
             "latency_ms": round(latency_ms, 2),
             "ttft_ms": round(ttft_ms, 2) if ttft_ms is not None else None,
@@ -158,7 +160,7 @@ def get_active_session() -> Optional[SessionTraceContext]:
 def langsmith_trace(
     agent_name: str,
     prompt_version: str = "v1.0.0",
-    default_model: str = "openai/gpt-oss-20b",
+    default_model: str = model_default("intent"),
     stage_name: Optional[str] = None,
 ):
     """
@@ -179,6 +181,7 @@ def langsmith_trace(
                 "agent_name": agent_name,
                 "stage_name": resolved_stage,
                 "prompt_version": version_used,
+                "config_version": config_version(),
                 "model_name": model_used,
             }
             active = get_active_session()
@@ -235,7 +238,7 @@ def langsmith_trace(
 def build_langchain_config(
     agent_name: str,
     prompt_version: str = "v1.0.0",
-    model_name: str = "openai/gpt-oss-20b",
+    model_name: str = model_default("intent"),
     stage_name: Optional[str] = None,
     session_id: Optional[str] = None,
 ) -> Dict[str, Any]:
@@ -249,6 +252,7 @@ def build_langchain_config(
             "agent_name": agent_name,
             "stage_name": resolved_stage,
             "prompt_version": prompt_version,
+            "config_version": config_version(),
             "model_name": model_name,
             "session_id": session_id or "default_session",
         },

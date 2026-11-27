@@ -124,7 +124,8 @@ class LangSmithEvalRunner:
         Detects regressions against the baseline version.
         """
         prompt_data = self.hub.pull_prompt(agent_name, version=prompt_version)
-        model_name = prompt_data.get("target_model", "openai/gpt-oss-20b")
+        from backend.ai_config import model_default
+        model_name = prompt_data.get("target_model", model_default("intent"))
 
         # Map agent to dataset and evaluator
         if agent_name == "intent_detector":

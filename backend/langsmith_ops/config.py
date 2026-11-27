@@ -4,6 +4,9 @@ LangSmith LLMOps Configuration for Smart Semsar
 
 import os
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # repo root, so backend/ imports
+from backend.ai_config import threshold  # noqa: E402
 try:
     from dotenv import load_dotenv
     load_dotenv(Path(__file__).resolve().parents[1] / '.env')
@@ -32,5 +35,5 @@ DATASET_ORCHESTRATOR = "smart_semsar_orchestrator_golden_set"
 DATASET_REQUIREMENTS = "smart_semsar_customer_reqs_golden_set"
 
 # Evaluation Thresholds
-MAX_ALLOWED_ACCURACY_DROP = 0.02  # Maximum allowed drop (2%) before regression failure
-MIN_PASSING_ACCURACY = 0.90      # Minimum acceptable accuracy score (90%)
+MAX_ALLOWED_ACCURACY_DROP = threshold("evaluation.max_allowed_accuracy_drop")  # 2 % - config/ai_config.yaml
+MIN_PASSING_ACCURACY = threshold("evaluation.min_passing_accuracy")            # 90 % - config/ai_config.yaml

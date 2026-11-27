@@ -28,6 +28,7 @@ from typing import Optional, Union
 
 import requests
 
+from backend.ai_config import model_default, prompt, threshold
 from backend.config import mask_secrets, setting
 from backend.schema.design import DesignPreferences
 from backend.schema.plan import Plan, load_plan
@@ -36,28 +37,9 @@ from backend.services.furniture_actions import apply_actions, describe_room
 from backend.services.furniture_placer import stage_plan
 from backend.services.staging_validator import validate_staging
 
-MAX_ROUNDS = 3
+MAX_ROUNDS = threshold("furnisher.max_rounds")
 
-SYSTEM_PROMPT = """You are an interior designer furnishing an empty apartment for a real-estate preview.
-Each room is described with lettered walls (A, B, ...): their length, doors, windows, built-ins and how
-much free wall is left. Use only catalog items, and say where each piece goes with these instructions:
-
-  {"item": "<catalog id>", "place": "wall", "wall": "<letter>", "align": "center|start|end", "name": "<label>"}
-  {"item": "<catalog id>", "place": "wall", "wall": "<letter>", "align_to": "<label>"}
-  {"item": "<catalog id>", "place": "beside", "ref": "<label>", "side": "both|left|right"}
-  {"item": "<catalog id>", "place": "in_front_of", "ref": "<label>", "gap_m": 0.45, "face_ref": false}
-  {"item": "<catalog id>", "place": "center"}   or   {"item": "<catalog id>", "place": "free"}
-  {"remove": "<placed item id or label>"}
-
-"name" labels a piece so later instructions can refer to it. face_ref true turns a piece to face the
-reference (a free-standing TV unit facing the sofa).
-
-Design rules: beds, sofas and storage stand with their back against a wall; a piece only goes on a
-wall whose free wall is at least its width; nothing tall in front of a window; never block a door
-or the way between doors; kitchens and bathrooms already have their built-ins; sides marked "open"
-have no wall. Follow the customer's style and wishes. A few well-placed pieces beat a crowded room.
-
-Answer with JSON only: {"rooms": {"<room id>": [<instruction>, ...]}, "summary": "<one sentence for the customer>"}"""
+SYSTEM_PROMPT = prompt("furniture_plan")   # text lives in config/ai_config.yaml (prompts.furniture_plan)
 
 
 @dataclass
@@ -81,11 +63,11 @@ class LLMClient:
 
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai"
-GEMINI_DEFAULT_MODEL = "gemini-flash-latest"
-GEMINI_BACKUP_MODEL = "gemini-flash-lite-latest"     # lighter, usually free when the main one is busy
+GEMINI_DEFAULT_MODEL = model_default("furniture_gemini")
+GEMINI_BACKUP_MODEL = model_default("gemini_backup")     # lighter, usually free when the main one is busy
 # Groq retired llama-3.3-70b-versatile; this one answered in October 2026.
 # backend/services/model_check.py finds a working one when this goes too.
-GROQ_DEFAULT_MODEL = "openai/gpt-oss-120b"
+GROQ_DEFAULT_MODEL = model_default("furniture_groq")
 
 
 def detect_llms() -> list[LLMClient]:
@@ -105,7 +87,7 @@ def detect_llms() -> list[LLMClient]:
     base = setting("OLLAMA_BASE_URL", "http://localhost:11434/v1").rstrip("/")
     try:
         requests.get(f"{base}/models", timeout=1.5).raise_for_status()
-        model = setting("SMARTSEMSAR_OLLAMA_MODEL", "qwen2.5")
+        model = setting("SMARTSEMSAR_OLLAMA_MODEL", model_default("local_llm"))
         found.append(LLMClient(f"ollama/{model}", base, model, timeout=240.0))
     except requests.RequestException:
         pass

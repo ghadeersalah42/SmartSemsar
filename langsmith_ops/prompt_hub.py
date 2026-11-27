@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 
 from .config import PROMPTS_BACKUP_DIR
+from backend.ai_config import model_default
 from .compat import Client
 
 
@@ -25,7 +26,7 @@ class LangSmithPromptHub:
         agent_name: str,
         system_prompt: str,
         version: str,
-        target_model: str = "openai/gpt-oss-20b",
+        target_model: str = model_default("intent"),
         description: str = "",
         output_schema: Optional[str] = None
     ) -> str:

@@ -14,6 +14,9 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))  # repo root, so backend/ imports
+from backend.ai_config import model, prompt  # noqa: E402
+
 import librosa
 import numpy as np
 import soundfile as sf
@@ -35,9 +38,9 @@ DIARIZATION_DIR = TRANSCRIPT_DIR / "diarization"
 
 HF_TOKEN = os.environ.get("HF_TOKEN")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
+GEMINI_MODEL = model("call_extraction")   # config/ai_config.yaml; GEMINI_MODEL env still overrides
 
-WHISPER_MODEL = "large-v3-turbo"
+WHISPER_MODEL = model("asr_call")
 DIARIZATION_MODEL = "pyannote/speaker-diarization-community-1"
 EXPECTED_SPEAKERS = 2
 
@@ -371,38 +374,7 @@ class CustomerProfile(BaseModel):
     purpose: Optional[str] = Field(default=None, description="Purpose of buying.")
 
 
-SYSTEM_PROMPT = """
-You are an AI real-estate sales assistant.
-
-Extract structured customer requirements
-from an Arabic real-estate phone call.
-
-The conversation may contain:
-
-- Egyptian Arabic
-- Arabic dialect
-- ASR spelling mistakes
-- Informal real-estate terminology
-
-Rules:
-
-1. Understand intended meaning from context.
-
-2. Correct obvious ASR errors only when
-   the intended meaning is clear.
-
-3. Normalize real-estate terminology.
-
-4. Convert amounts expressed in millions
-   to Egyptian pounds.
-
-5. Do NOT invent information.
-
-6. If a field is not mentioned or cannot
-   be reliably inferred, return null.
-
-7. Extract only customer property requirements.
-"""
+SYSTEM_PROMPT = prompt("call_extraction")   # text lives in config/ai_config.yaml (prompts.call_extraction)
 
 
 def extract_customer_profile(conversation):

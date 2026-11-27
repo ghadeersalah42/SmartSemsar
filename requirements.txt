@@ -54,3 +54,4 @@ rank-bm25
 
 langsmith>=0.1.0
 tabulate
+pyyaml>=6.0

@@ -25,10 +25,11 @@ import uuid
 from pathlib import Path
 from typing import Optional
 
+from backend.ai_config import threshold
 from backend.config import setting
 
 URL_ENV, KEY_ENV = "SMARTSEMSAR_COLAB_URL", "SMARTSEMSAR_COLAB_KEY"
-GENERATE_TIMEOUT_S = 600        # a coloured Hunyuan3D piece takes 3-4 min on a T4; a cold GPU longer
+GENERATE_TIMEOUT_S = threshold("timeouts_s.image_to_3d")        # a coloured Hunyuan3D piece takes 3-4 min on a T4; a cold GPU longer
 
 
 class ColabError(RuntimeError):

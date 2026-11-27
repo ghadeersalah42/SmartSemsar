@@ -32,6 +32,7 @@ from typing import Optional
 
 from PIL import Image
 
+from backend.ai_config import model_default, prompt
 from backend.config import mask_secrets, setting
 from backend.schema.design import FurniturePhoto
 from backend.schema.staging import Catalog, load_catalog
@@ -41,39 +42,18 @@ KEY_ENV, MODEL_ENV, URL_ENV = "GEMINI_API_KEY", "SMARTSEMSAR_GEMINI_MODEL", "SMA
 GROQ_KEY_ENV, GROQ_MODEL_ENV = "GROQ_API_KEY", "SMARTSEMSAR_GROQ_VISION_MODEL"
 # Groq retired llama-4-scout; this one read furniture photos in October 2026.
 # backend/services/model_check.py finds a working one when this goes too.
-GROQ_DEFAULT_MODEL = "qwen/qwen3.8-27b"
+GROQ_DEFAULT_MODEL = model_default("vision_groq")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-DEFAULT_MODEL = "gemini-flash-latest"   # alias Google keeps pointed at the current Flash model
+DEFAULT_MODEL = model_default("vision_gemini")   # alias Google keeps pointed at the current Flash model
 # tried when the main model stays busy (503) or is gone (404): a lighter model, usually free of the rush
-BACKUP_MODEL_ENV, BACKUP_MODEL = "SMARTSEMSAR_GEMINI_BACKUP_MODEL", "gemini-flash-lite-latest"
+BACKUP_MODEL_ENV, BACKUP_MODEL = "SMARTSEMSAR_GEMINI_BACKUP_MODEL", model_default("gemini_backup")
 DEFAULT_URL = "https://generativelanguage.googleapis.com/v1beta"
 MAX_IMAGE_PX = 1024
 BUSY_CODES = {500, 502, 503, 504}      # "high demand" and other temporary errors
 BUSY_RETRY_WAITS_S = (2, 5)            # wait before the 2nd and 3rd try
 WIDTH_RANGE_M = (0.3, 3.5)      # an estimate outside this is ignored
 
-PROMPT = """You are helping a home-staging app. Look at the photo and answer with ONE JSON object, nothing else.
-
-{{
-  "scene": one of ["single_item", "several_items", "room", "not_furniture"],
-  "fully_visible": true or false,
-  "kind": one of {kinds} or "other",
-  "name": short plain name of the piece, e.g. "round swivel armchair",
-  "width_m": your estimate of its real width in meters, as a number,
-  "style": one of ["modern", "classic", "minimal", "industrial", "unknown"],
-  "colors": up to 3 main colours as plain words,
-  "materials": up to 3 main materials as plain words,
-  "description": one sentence describing the look, usable as a style brief
-}}
-
-Rules:
-- "single_item": exactly one piece of furniture is the subject. Cushions on a sofa are part of it.
-- "several_items": two or more separate pieces. "room": an interior scene. "not_furniture": anything else.
-- "fully_visible": false if the piece is cut off by the frame or mostly hidden.
-- "kind": choose the closest from the list; use "other" only if none fits. A wide one-person seat is an "armchair".
-- For "room" or "several_items", set kind to "other" and width_m to null, and still fill style, colors,
-  materials and description for the whole picture.
-- Never invent details you cannot see."""
+PROMPT = prompt("furniture_vision")   # text lives in config/ai_config.yaml (prompts.furniture_vision)
 
 
 class VisionError(RuntimeError):

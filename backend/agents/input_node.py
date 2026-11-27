@@ -17,6 +17,7 @@ from backend.schema.state import AgentState, PropertyItem, CustomerRequirements
 from backend.guardrails.clarify import (find_unclear, drop_guesses, clarification_question,
                                         with_clarification, FIELD_ORDER)
 from backend.guardrails.pii import safe_print
+from backend.ai_config import threshold
 import re
 from typing import Optional, Literal, List, Dict, Any
 from langgraph.types import interrupt
@@ -64,7 +65,7 @@ def deal_type_from(text: str) -> Optional[str]:
     return None
 
 
-MAX_CLARIFY_QUESTIONS = 2
+MAX_CLARIFY_QUESTIONS = threshold("conversation.max_clarify_questions")
 _HAS_NUMBER = re.compile(r"[0-9٠-٩۰-۹]|مليون|ألف|الف|واحد|اتنين|تلات|اربع|أربع|خمس|ست|سبع|تمان|تسع|عشر|مية|ميت")
 
 

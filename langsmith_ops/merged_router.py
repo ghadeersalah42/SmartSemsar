@@ -10,6 +10,7 @@ from typing import Dict, Any, Generator, Tuple, Optional
 from pydantic import BaseModel, Field
 
 from .tracer import langsmith_trace, build_langchain_config
+from backend.ai_config import model_default
 
 
 class MergedRouterIntent(BaseModel):
@@ -24,7 +25,7 @@ class MergedRouterIntent(BaseModel):
 
 
 MERGED_PROMPT_VERSION = "v1.2.0-merged"
-MERGED_MODEL = "openai/gpt-oss-20b"
+MERGED_MODEL = model_default("orchestrator")
 
 
 @langsmith_trace(

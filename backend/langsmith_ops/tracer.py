@@ -7,12 +7,13 @@ Fulfills the core requirement:
 import functools
 from typing import Dict, Any, Optional, Callable
 from .compat import traceable
+from backend.ai_config import config_version, model_default
 
 
 def langsmith_trace(
     agent_name: str,
     prompt_version: str = "v1.0.0",
-    default_model: str = "openai/gpt-oss-20b"
+    default_model: str = model_default("intent")
 ):
     """
     Decorator that instruments any agent call for LangSmith,
@@ -27,6 +28,7 @@ def langsmith_trace(
             meta = {
                 "agent_name": agent_name,
                 "prompt_version": version_used,
+                "config_version": config_version(),
                 "model_name": model_used
             }
             tags_list = [agent_name, version_used, model_used]
@@ -46,7 +48,7 @@ def langsmith_trace(
 def build_langchain_config(
     agent_name: str,
     prompt_version: str = "v1.0.0",
-    model_name: str = "openai/gpt-oss-20b",
+    model_name: str = model_default("intent"),
     session_id: Optional[str] = None
 ) -> Dict[str, Any]:
     """
@@ -57,6 +59,7 @@ def build_langchain_config(
         "metadata": {
             "agent_name": agent_name,
             "prompt_version": prompt_version,
+            "config_version": config_version(),
             "model_name": model_name,
             "session_id": session_id or "default_session"
         },

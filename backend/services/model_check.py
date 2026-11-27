@@ -21,6 +21,7 @@ from typing import Callable, Optional
 
 import requests
 
+from backend.ai_config import threshold
 from backend.config import mask_secrets, setting
 from backend.services import llm_furnisher, vision_service
 
@@ -32,7 +33,7 @@ GEMINI_MODELS = ["gemini-flash-latest", "gemini-flash-lite-latest", "gemini-3.8-
 GROQ_TEXT_FIRST = ["openai/gpt-oss-120b", "openai/gpt-oss-20b", "llama-3.3-70b-versatile"]
 GROQ_VISION_WORDS = ("qwen", "llama-4", "vision", "-vl", "scout", "maverick")
 GROQ_NOT_CHAT = ("whisper", "tts", "guard", "compound", "playai", "orpheus", "allam", "safeguard")
-TIMEOUT_S = 40
+TIMEOUT_S = threshold("timeouts_s.model_check")
 
 
 def _short(e: Exception) -> str:

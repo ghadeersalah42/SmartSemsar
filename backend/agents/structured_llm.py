@@ -7,9 +7,11 @@ gpt-oss-20b على Groq أحياناً بيرجع رد فاضي بدل الـ to
 """
 from langchain_groq import ChatGroq
 
+from backend.ai_config import model
 
-def structured_llm(schema, model_name: str = "openai/gpt-oss-20b"):
-    llm = ChatGroq(model_name=model_name, temperature=0)
+
+def structured_llm(schema, model_name: str | None = None):
+    llm = ChatGroq(model_name=model_name or model("orchestrator"), temperature=0)
     tools = llm.with_structured_output(schema)
     json_schema = llm.with_structured_output(schema, method="json_schema")
     return tools.with_fallbacks([json_schema, tools])

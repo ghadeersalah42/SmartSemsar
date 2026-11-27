@@ -183,6 +183,7 @@ import chromadb
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from backend.schema.state import CustomerRequirements
+from backend.ai_config import model, threshold
 
 LOCATION_ALIASES = {
     "التجمع الخامس": ["The 5th Settlement"], "التجمع الاول": ["The 1st Settlement"], "التجمع": ["Settlement", "New Cairo"],
@@ -193,7 +194,7 @@ LOCATION_ALIASES = {
     "اسكندرية": ["Alexandria"], "الاسكندرية": ["Alexandria"], "سموحة": ["Smouha"], "الشيخ زايد": ["Sheikh Zayed"],
 }
 
-AREA_TOLERANCE = 0.10
+AREA_TOLERANCE = threshold("matching.area_tolerance")
 
 PROPERTY_TYPE_WORDS = {
     "studio": ["studio"],
@@ -202,8 +203,8 @@ PROPERTY_TYPE_WORDS = {
     "townhouse": ["townhouse", "town house"],
 }
 
-E5_MODEL_NAME = "intfloat/multilingual-e5-small"
-RERANKER_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+E5_MODEL_NAME = model("embedding")
+RERANKER_MODEL_NAME = model("reranker")
 
 
 def extract_property_type(title: Any) -> str:
@@ -301,9 +302,9 @@ class PropertyMatchingService:
         filtered = self.df.copy()
 
         if reqs.budget_max and reqs.budget_max > 0:
-            filtered = filtered[filtered["price"] <= (reqs.budget_max * 1.10)]
+            filtered = filtered[filtered["price"] <= (reqs.budget_max * threshold("matching.budget_max_slack"))]
         if reqs.budget_min and reqs.budget_min > 0:
-            filtered = filtered[filtered["price"] >= (reqs.budget_min * 0.9)]
+            filtered = filtered[filtered["price"] >= (reqs.budget_min * threshold("matching.budget_min_slack"))]
 
         if not ignore_rooms_and_area:
             if reqs.bedrooms and "pf_bedrooms" in filtered.columns:
@@ -400,7 +401,8 @@ class PropertyMatchingService:
         all_bm25 = self._bm25.get_scores(query_text.lower().split())
         bm25_scores = np.array([float(all_bm25[self._id_to_pos[pid]]) for pid in valid_ids], dtype=float)
 
-        hybrid_scores = 0.5 * _normalize_scores(dense_scores) + 0.5 * _normalize_scores(bm25_scores)
+        hybrid_scores = (threshold("matching.dense_weight") * _normalize_scores(dense_scores)
+                         + threshold("matching.bm25_weight") * _normalize_scores(bm25_scores))
         order = np.argsort(-hybrid_scores)[: min(top_n, len(valid_ids))]
         cand_ids = [valid_ids[i] for i in order]
 

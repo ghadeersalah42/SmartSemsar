@@ -18,6 +18,7 @@ import gradio as gr
 from pydantic import BaseModel, Field
 from faster_whisper import WhisperModel
 from backend.schema.state import CustomerRequirements
+from backend.ai_config import model, prompt
 
 
 # ---------- 1) Schema ----------
@@ -42,7 +43,7 @@ def get_whisper_model():
     global _whisper_model
     if _whisper_model is None:
         # ممكن كمان نستخدم "base" أو "small" لو الـ medium بيستهلك الرامات عندك
-        _whisper_model = WhisperModel("small", device="cpu", compute_type="int8")
+        _whisper_model = WhisperModel(model("asr_local"), device="cpu", compute_type="int8")
     return _whisper_model
 
 def transcribe_audio(file_path: str) -> str:
@@ -57,7 +58,7 @@ def transcribe_audio(file_path: str) -> str:
     return " ".join(s.text.strip() for s in segments).strip()
 
 
-VOICE_PROMPT = "طلب عقاري بالعامية المصرية: شقة، فيلا، دوبلكس، أوض نوم، ميزانية، مليون، متر، التجمع، الشيخ زايد، تشطيب، تقسيط."
+VOICE_PROMPT = prompt("asr_vocabulary")   # text lives in config/ai_config.yaml (prompts.asr_vocabulary)
 
 
 def transcribe_voice_note(file_path: str) -> str:
@@ -70,7 +71,7 @@ def transcribe_voice_note(file_path: str) -> str:
             with open(file_path, "rb") as f:
                 result = Groq().audio.transcriptions.create(
                     file=(os.path.basename(file_path), f.read()),
-                    model="whisper-large-v3", prompt=VOICE_PROMPT, temperature=0)
+                    model=model("asr_cloud"), prompt=VOICE_PROMPT, temperature=0)
             return (result.text or "").strip()
         except Exception as e:
             print(f"Groq transcription failed, using local Whisper: {e}")
@@ -78,50 +79,10 @@ def transcribe_voice_note(file_path: str) -> str:
 
 
 # ---------- 3) LLM extraction (Ollama) ----------
-MODEL_NAME = "qwen2.5"      # المتسطب على الجهاز (ollama list)
+MODEL_NAME = model("intake_local")      # المتسطب على الجهاز (ollama list) - config/ai_config.yaml
 # "qwen2.5"
 # model=
-SYSTEM_PROMPT = '''You are a real-estate intake assistant.
-You receive raw text gathered from a phone call transcript and/or free text written
-by a customer. The input may be in Arabic, English, or a mix of both
-(including Egyptian dialect and code-switching).
-
-Extract the customer's property requirements and respond with ONLY a single valid
-JSON object matching this exact schema, no prose, no markdown fences:
-
-{
-  "location": string or null,
-  "budget_min": number or null,
-  "budget_max": number or null,
-  "area_sqm": number or null,
-  "bedrooms": integer or null,
-  "property_type": one of ["apartment","villa","duplex","studio","townhouse","unknown"],
-  "purpose": one of ["living","investment","unknown"],
-  "deal_type": one of ["rent","buy","unknown"],
-  "notes": string or null,
-  "missing_fields": array of field names you could not determine
-}
-
-Rules:
-- Never invent values. If a field is not mentioned, set it to null and add its name to missing_fields.
-- Numbers must be plain numbers (no currency symbols, no commas).
-- Budgets are full Egyptian pounds:
-  * "5 مليون" / "5 million" / "5m" -> 5000000
-  * "800 ألف" / "800k" / "800 alf" -> 800000
-  * "8 آلاف" / "تمن آلاف" / "8 alf" -> 8000 (be careful with zeros: "ألف" = 1,000, NOT 10,000).
-- Price per square meter ("سعر المتر", "المتر بـ", "el metr", "per m2", "price per m"):
-  * If both a price per m² and area_sqm are present (or inferable), compute total budget = price_per_m2 * area_sqm and put it in budget_max.
-  * When a price per m² is given for buying (e.g. "20 ألف" or "30 ألف" للمتر), deal_type is typically "buy" unless "إيجار/rent" is explicitly stated.
-- A single budget figure ("بميزانية 5 مليون", "في حدود 8 آلاف", "up to 5 million") is budget_max only; set budget_min only for a range or an explicit minimum.
-- Keep the "location" and "notes" values in their original language as stated by the customer.
-- Respond in JSON only.
-- Use "notes" ONLY for extra customer requirements that do not fit any other field (for example: near schools, quiet area, high floor).
-- Never copy budget, area, bedrooms, or location text into "notes". If there is nothing extra, set "notes" to null.
-- Do NOT guess "property_type" or "purpose". Use "unknown" unless the customer clearly states them.
-- "deal_type": "rent" for إيجار / ايجار / أأجر / rent, "buy" for تمليك / شراء / اشتري / أشتري / buy; otherwise "unknown" (a budget alone does not decide it).
-- Ask, don't guess: if a number is ambiguous (for example two bare numbers side by side such as "70 6", or a budget with no unit such as "ميزانيتي 6"), set that field to null and add it to missing_fields. Never pick one reading yourself.
-- If the input contains a line starting with "توضيح العميل:", it is the customer's answer to our question and overrides anything earlier that it contradicts.
-'''
+SYSTEM_PROMPT = prompt("intake_extraction")   # text lives in config/ai_config.yaml (prompts.intake_extraction)
 
 
 def build_user_prompt(call_transcript=None, raw_text=None) -> str:
@@ -147,7 +108,7 @@ def _llm_json(messages) -> str:
         try:
             from groq import Groq
             response = Groq().chat.completions.create(
-                model=os.getenv("SMARTSEMSAR_GROQ_MODEL", "openai/gpt-oss-120b"),
+                model=model("intake_extraction"),
                 messages=messages, response_format={"type": "json_object"}, temperature=0)
             return response.choices[0].message.content
         except Exception as e:
@@ -155,15 +116,15 @@ def _llm_json(messages) -> str:
                 from langsmith_ops.fallback_monitor import log_fallback_alert
                 log_fallback_alert(
                     stage_name="input_extraction",
-                    failed_model=os.getenv("SMARTSEMSAR_GROQ_MODEL", "openai/gpt-oss-120b"),
+                    failed_model=model("intake_extraction"),
                     error=e,
-                    next_model=f"ollama/{os.getenv('SMARTSEMSAR_OLLAMA_MODEL', MODEL_NAME)}",
+                    next_model=f"ollama/{model('intake_local')}",
                 )
             except Exception:
                 pass
             print(f"Groq extraction failed, using Ollama: {e}")
     response = ollama.chat(
-        model=os.getenv("SMARTSEMSAR_OLLAMA_MODEL", MODEL_NAME),
+        model=model("intake_local"),
         format="json", messages=messages, options={"temperature": 0})
     return response["message"]["content"]
 

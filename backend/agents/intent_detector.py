@@ -2,6 +2,7 @@ from langchain_groq import ChatGroq
 from pydantic import BaseModel, Field
 from backend.schema.state import AgentState, PropertyItem
 from backend.guardrails.pii import safe_print
+from backend.ai_config import model, prompt, prompt_version
 
 import json
 import re
@@ -45,95 +46,7 @@ class IntentDetection(BaseModel):
         )
     )
 
-intent_prompt = """
-        You are an Intent Detection component inside an AI real-estate
-        sales assistant.
-
-        Your job is to identify the PRIMARY INTENT of the customer
-        from the conversation.
-
-        You MUST choose exactly one of these intents:
-
-            1. new_search
-                The customer wants to start a new search for properties.
-
-            2. modify_search
-                The customer wants to change an existing search requirement.
-                Examples:
-                - عايز حاجة اكبر
-                - عايز سعر اقل
-                - عايز عدد غرف اكتر
-                - مش عايز القاهرة الجديدة
-                - عايزها تشطيب كامل
-
-            3. alternative_search
-                The customer wants to see OTHER / DIFFERENT property options.
-                Examples:
-                - عايز اشوف شقق تانية
-                - وريني حاجة تانية
-                - عندك بدائل؟
-                - ممكن اشوف اختيارات تانية؟
-
-            4. positive_feedback
-                The customer expresses satisfaction or approval
-                about a property.
-
-            5. negative_feedback
-                The customer expresses dissatisfaction or rejection
-                about a property.
-
-            6. property_inquiry
-                The customer asks for information about a property.
-                Examples:
-                - كام سعرها؟
-                - المساحة كام؟
-                - فيها كام اوضة؟
-
-            7. booking_request
-                The customer wants to book, visit, schedule or reserve
-                a property.
-
-            8. general_question
-                A general question that is related to the service
-                but does not fit the previous categories.
-
-            9. unknown
-                The intent cannot be confidently determined.
-
-            IMPORTANT RULES:
-
-                - Focus on the customer's PRIMARY intent.
-                - CRITICAL DISTINCTION (new_search vs modify_search):
-                  * If the customer uses modification/change words or comparatives (e.g., "غير", "خلي", "خليها", "عدل", "قلل", "زود", "بدل", "أرخص", "أكبر", "أصغر", "لا مش عايز", "khali", "ghayar", "zawed", "ar5as"), ALWAYS classify as `modify_search`, EVEN IF no prior conversation is shown.
-                  * Only use `new_search` when starting a fresh search (e.g., "بدور على", "عايز شقة", "ابحث عن", "3ayez sha2a", "badawar").
-
-                - CRITICAL DISTINCTION (property_inquiry vs general_question vs unknown):
-                  * `property_inquiry`: Any question about a specific property's location proximity, rooms, price, area, or features (e.g., "هي قريبة من...", "كام أوضة", "سعرها كام", "فيها أسانسير").
-                  * `general_question`: Questions ONLY about the platform/company itself (commission, payment plans, how 3D staging works, coverage areas).
-                  * `unknown`: Greetings ("هلا والله", "sabah el kheir"), mic checks ("تست تست"), filler ("ok tamam"), or off-topic chat.
-                  
-                - Do not confuse positive feedback with a request for alternatives.
-                - If the customer says they like a property BUT requests a change,
-                prefer modify_search.
-                
-                Example:
-                "الشقة حلوة بس عايز حاجة أكبر"
-                => modify_search
-
-                - If the customer explicitly asks to see different properties
-                without specifying a change:
-                
-                "عايز اشوف شقق تانية"
-                => alternative_search
-
-                - Return exactly one intent.
-                - Confidence must be between 0 and 1.
-                - The reason must be short.
-
-            Customer conversation:
-
-            {conversation}
-            """
+intent_prompt = prompt("intent")   # text lives in config/ai_config.yaml (prompts.intent)
  
 VALID_INTENTS : Set[str] = {
     "new_search",
@@ -149,10 +62,10 @@ VALID_INTENTS : Set[str] = {
 
 
 from backend.agents.structured_llm import structured_llm
-llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
+llm = ChatGroq(model_name=model("intent"), temperature=0)
 # llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0)
 # llm = ChatGroq(model_name="openai/gpt-oss-20b", temperature=0)
-structured_micro_llm = structured_llm(IntentDetection)   # فيه fallback لو الـ tool call رجع فاضي
+structured_micro_llm = structured_llm(IntentDetection, model("intent"))   # فيه fallback لو الـ tool call رجع فاضي
 # structured_intent_llm = llm.with_structured_output(IntentDetection)
 
 intent_chain = (
@@ -194,7 +107,7 @@ except Exception:
     def langsmith_trace(*args, **kwargs):
         return lambda fn: fn
 
-@langsmith_trace(agent_name="intent_detector", prompt_version="v1.1.0", default_model="openai/gpt-oss-20b", stage_name="detect_micro_intent")
+@langsmith_trace(agent_name="intent_detector", prompt_version=prompt_version("intent"), default_model=model("intent"), stage_name="detect_micro_intent")
 def detect_intent(conversation: str) -> Dict[str, Any]:
     
     normalized_text = normalize_arabic_text(conversation)
