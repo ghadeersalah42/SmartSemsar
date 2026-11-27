@@ -18,3 +18,15 @@ In the code:
 - `backend/services/multi_furnish.py`: own pieces -> catalog -> rules or LLM -> validator -> walkthrough.
 - `backend/services/model_check.py`: Gemini and Groq retire models often; `python -m backend.services.model_check`
   shows which ones answer and points the app at them.
+
+## Round 2: Furnishing and 3D numbers
+
+Results are in `reports/furnishing/` (one `.md` for the slide, one `.json` with every run).
+
+| Requirement | Command | What it measures |
+|---|---|---|
+| Layouts that pass the validator on the first try, and the top rejection reasons | `python -m backend.eval.layout_benchmark` (add `--llm --limit 12` for the LLM planner; uses API quota) | Every plan in `data/plans` x 5 customer profiles. Rules: a room where `keep_paths_open` had to drop items failed its first try. LLM: round 1 of `llm_furnisher`, reasons read from each failed instruction |
+| Success on ~30 real photos (poor light, odd angles, clutter) | `python -m backend.eval.photo_benchmark run --photos-root "<folder with the photo folders>"` | The hand-labelled set `data/eval/furniture_photos.csv`: expected kinds (empty = must be refused) and conditions per photo |
+| Time per 3D piece and cache hit rate | the same with `--generator colab` (or `trellis`), run twice; or `python -m backend.services.furnishing_metrics` for the live app | Every `multi_furnish.raw_model` call is logged to `data/metrics/furnishing.jsonl` (time, cache hit / miss) |
+
+The photos stay outside the repo; `photo_benchmark select` drafts a new set from the folders (darkest first), to be checked by eye.

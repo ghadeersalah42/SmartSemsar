@@ -166,7 +166,15 @@ class RoomView:
             feats = [f"door at {a:.1f}-{b:.1f} m" for a, b in w.doors]
             feats += [f"window at {a:.1f}-{b:.1f} m" for a, b in w.windows]
             feats += [f"built-in {t.replace('_', ' ')} at {a:.1f}-{b:.1f} m" for a, b, t in w.fixtures]
-            free = ", ".join(f"{b - a:.1f} m" for a, b in self.free_spans(w, tall=False)) or "none"
+            # what is really left: pieces already against this wall take their stretch, and tall
+            # pieces cannot use the stretch under a window (on_wall uses the same spans)
+            taken = [_interval(_poly(i.footprint()), w.p0, w.t, w.length) for i in items
+                     if _poly(i.footprint()).distance(w.segment()) < 0.2]
+            low, tall = ([(a, b) for a, b in _subtract(self.free_spans(w, tall=t), taken) if b - a >= 0.3]
+                         for t in (False, True))
+            free = ", ".join(f"{b - a:.1f} m" for a, b in low) or "none"
+            if tall != low:
+                free += f" (tall pieces: {', '.join(f'{b - a:.1f} m' for a, b in tall) or 'none'})"
             lines.append(f"  wall {w.label} ({w.side}, {w.length:.1f} m): {'; '.join(feats) or 'plain wall'}"
                          f"; free wall: {free}")
         loose = [x.type.replace("_", " ") for x in self.fixtures if x.room_id == r.id

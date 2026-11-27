@@ -1,0 +1,722 @@
+{
+ "summary": {
+  "overall": {
+   "photos": 30,
+   "success": 22,
+   "rate": 0.733
+  },
+  "pieces": {
+   "photos": 24,
+   "success": 17,
+   "rate": 0.708
+  },
+  "must_refuse": {
+   "photos": 6,
+   "success": 5,
+   "rate": 0.833
+  },
+  "by_condition": {
+   "clutter": {
+    "photos": 19,
+    "success": 15,
+    "rate": 0.789
+   },
+   "cut_off": {
+    "photos": 2,
+    "success": 0,
+    "rate": 0.0
+   },
+   "glare": {
+    "photos": 2,
+    "success": 2,
+    "rate": 1.0
+   },
+   "low_light": {
+    "photos": 14,
+    "success": 11,
+    "rate": 0.786
+   },
+   "normal": {
+    "photos": 3,
+    "success": 2,
+    "rate": 0.667
+   },
+   "odd_angle": {
+    "photos": 6,
+    "success": 3,
+    "rate": 0.5
+   }
+  },
+  "outcomes": {
+   "3d_ok": 17,
+   "refused": 5,
+   "bad_3d_size": 4,
+   "3d_error": 1,
+   "wrong_kind": 1,
+   "wrongly_accepted": 1,
+   "refused:several_items": 1
+  },
+  "vision_s_median": 4.4
+ },
+ "model_3d": {
+  "colab": {
+   "calls": 22,
+   "cache_hits": 18,
+   "cache_hit_rate": 0.818,
+   "generated": 3,
+   "failed": 1,
+   "seconds_mean": 241.3,
+   "seconds_median": 232.8,
+   "seconds_p95": 260.03
+  }
+ },
+ "generator": "colab",
+ "vision_model": "gemini-flash-lite-latest",
+ "results": [
+  {
+   "photo": "ترابيزات/IMG20230731191111.jpg",
+   "expected_kinds": [
+    "dining_table",
+    "desk"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 3.7,
+   "usable": true,
+   "kind": "dining_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.6,
+    1.18,
+    0.7
+   ]
+  },
+  {
+   "photo": "ترابيزات/IMG20230731191113.jpg",
+   "expected_kinds": [
+    "dining_table",
+    "desk"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 3.0,
+   "usable": true,
+   "kind": "dining_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "success": false,
+   "stage": "3d_error",
+   "error": "ColabError: Colab server answered 503: ngrok gateway error\nThe server returned an invalid or incomplete HTTP response.\r\n\r\nERR_NGROK_3004\r\n",
+   "model_3d_s": 342.3
+  },
+  {
+   "photo": "ترابيزات/IMG20230731191139.jpg",
+   "expected_kinds": [
+    "dining_table",
+    "desk",
+    "console_table"
+   ],
+   "conditions": [
+    "odd_angle",
+    "cut_off"
+   ],
+   "vision_s": 3.3,
+   "usable": true,
+   "kind": "dining_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.4,
+   "model_3d_s": 231.0,
+   "success": false,
+   "stage": "bad_3d_size",
+   "error": "Fitted height is 4.15 m. Try turning the model 90 degrees or giving a different width."
+  },
+  {
+   "photo": "ترابيزات/IMG20220309194141.jpg",
+   "expected_kinds": [
+    "dining_table",
+    "console_table",
+    "desk"
+   ],
+   "conditions": [
+    "clutter"
+   ],
+   "vision_s": 5.3,
+   "usable": true,
+   "kind": "dining_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.4,
+   "model_3d_s": 0.0,
+   "success": false,
+   "stage": "bad_3d_size",
+   "error": "Fitted height is 0.15 m. Try turning the model 90 degrees or giving a different width."
+  },
+  {
+   "photo": "ترابيزات/IMG20220408000920.jpg",
+   "expected_kinds": [
+    "coffee_table"
+   ],
+   "conditions": [
+    "clutter",
+    "odd_angle"
+   ],
+   "vision_s": 5.3,
+   "usable": true,
+   "kind": "coffee_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.1,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.1,
+    0.64,
+    0.65
+   ]
+  },
+  {
+   "photo": "ترابيزات/٢٠٢٠٠٧٢٨_١٣٥٩٠٣.jpg",
+   "expected_kinds": [],
+   "conditions": [
+    "normal"
+   ],
+   "vision_s": 4.5,
+   "usable": false,
+   "kind": null,
+   "scene": "several_items",
+   "reason": "This photo shows several pieces. Upload one piece at a time.",
+   "width_m": null,
+   "success": true,
+   "stage": "refused"
+  },
+  {
+   "photo": "ركنة و انتريه/IMG20220904191640.jpg",
+   "expected_kinds": [
+    "sofa"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 4.0,
+   "usable": true,
+   "kind": "sofa",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 2.0,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    2.0,
+    0.95,
+    1.41
+   ]
+  },
+  {
+   "photo": "ركنة و انتريه/IMG-20210505-WA0027.jpg",
+   "expected_kinds": [
+    "sofa"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 3.3,
+   "usable": true,
+   "kind": "sofa",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.6,
+    1.1,
+    0.94
+   ]
+  },
+  {
+   "photo": "ركنة و انتريه/IMG20220904191616.jpg",
+   "expected_kinds": [
+    "sofa"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 4.4,
+   "usable": true,
+   "kind": "sofa",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 2.1,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    2.1,
+    0.95,
+    0.86
+   ]
+  },
+  {
+   "photo": "ركنة و انتريه/٢٠١٩٠٩١٠_١٢٠٢٠٧.jpg",
+   "expected_kinds": [
+    "sofa"
+   ],
+   "conditions": [
+    "clutter"
+   ],
+   "vision_s": 4.8,
+   "usable": true,
+   "kind": "sofa",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 2.2,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    2.2,
+    0.66,
+    1.2
+   ]
+  },
+  {
+   "photo": "ركنة و انتريه/IMG20221104162526.jpg",
+   "expected_kinds": [
+    "console_table",
+    "tv",
+    "dresser",
+    "bookshelf"
+   ],
+   "conditions": [
+    "normal"
+   ],
+   "vision_s": 4.0,
+   "usable": true,
+   "kind": "tv",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.6,
+    0.48,
+    0.58
+   ]
+  },
+  {
+   "photo": "ركنة و انتريه/IMG20221019142957.jpg",
+   "expected_kinds": [
+    "sofa"
+   ],
+   "conditions": [
+    "clutter",
+    "odd_angle"
+   ],
+   "vision_s": 4.6,
+   "usable": true,
+   "kind": "sofa",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 2.5,
+   "model_3d_s": 0.0,
+   "success": false,
+   "stage": "bad_3d_size",
+   "error": "Fitted height is 4.82 m. Try turning the model 90 degrees or giving a different width."
+  },
+  {
+   "photo": "كراسي/٢٠٢٠٠٥٣١_١٣١٧٤٢.jpg",
+   "expected_kinds": [],
+   "conditions": [
+    "glare"
+   ],
+   "vision_s": 4.2,
+   "usable": false,
+   "kind": null,
+   "scene": "not_furniture",
+   "reason": "No furniture was found in this photo.",
+   "width_m": null,
+   "success": true,
+   "stage": "refused"
+  },
+  {
+   "photo": "كراسي/٢٠١٩٠٩٢٥_١٤١٩١٨.jpg",
+   "expected_kinds": [
+    "dining_chair",
+    "armchair"
+   ],
+   "conditions": [
+    "low_light"
+   ],
+   "vision_s": 4.3,
+   "usable": true,
+   "kind": "dining_chair",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 0.5,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    0.5,
+    0.37,
+    0.71
+   ]
+  },
+  {
+   "photo": "كراسي/٢٠١٩٠٩٢٥_١٤١٩١٧.jpg",
+   "expected_kinds": [
+    "dining_chair",
+    "armchair"
+   ],
+   "conditions": [
+    "low_light"
+   ],
+   "vision_s": 4.6,
+   "usable": true,
+   "kind": "dining_chair",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 0.5,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    0.5,
+    0.38,
+    0.71
+   ]
+  },
+  {
+   "photo": "كراسي/٢٠٢٠٠٤٢٦_٢١٤٠٢٥.jpg",
+   "expected_kinds": [
+    "armchair",
+    "dining_chair"
+   ],
+   "conditions": [
+    "odd_angle",
+    "clutter"
+   ],
+   "vision_s": 4.4,
+   "usable": true,
+   "kind": "armchair",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 0.85,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    0.85,
+    1.0,
+    0.76
+   ]
+  },
+  {
+   "photo": "كراسي/IMG20220309194146.jpg",
+   "expected_kinds": [],
+   "conditions": [
+    "clutter"
+   ],
+   "vision_s": 5.0,
+   "usable": false,
+   "kind": null,
+   "scene": "several_items",
+   "reason": "This photo shows several pieces. Upload one piece at a time.",
+   "width_m": null,
+   "success": true,
+   "stage": "refused"
+  },
+  {
+   "photo": "كراسي/٢٠٢٠٠٤٢٧_٢٢٥٢٤٧.jpg",
+   "expected_kinds": [
+    "armchair"
+   ],
+   "conditions": [
+    "clutter",
+    "odd_angle"
+   ],
+   "vision_s": 3.4,
+   "usable": true,
+   "kind": "armchair",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 0.85,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    0.85,
+    1.03,
+    1.02
+   ]
+  },
+  {
+   "photo": "غرفة نوم/٢٠٢٠١١٢٢_١٤٠٥١١.jpg",
+   "expected_kinds": [
+    "bed"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 3.9,
+   "usable": true,
+   "kind": "bed",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.6,
+    1.77,
+    0.63
+   ]
+  },
+  {
+   "photo": "غرفة نوم/٢٠٢٠١١٢٢_١٤٠٥١٤.jpg",
+   "expected_kinds": [
+    "bed"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 4.1,
+   "usable": true,
+   "kind": "bed",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.6,
+    1.85,
+    0.57
+   ]
+  },
+  {
+   "photo": "غرفة نوم/IMG20231003184918.jpg",
+   "expected_kinds": [
+    "dresser",
+    "desk"
+   ],
+   "conditions": [
+    "odd_angle"
+   ],
+   "vision_s": 4.2,
+   "usable": true,
+   "kind": "console_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.4,
+   "success": false,
+   "stage": "wrong_kind"
+  },
+  {
+   "photo": "غرفة نوم/٢٠١٩٠٨١٩_١٩٢٦٤٤.jpg",
+   "expected_kinds": [
+    "dining_table",
+    "desk",
+    "coffee_table"
+   ],
+   "conditions": [
+    "clutter"
+   ],
+   "vision_s": 4.9,
+   "usable": true,
+   "kind": "dining_table",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    1.6,
+    1.28,
+    0.77
+   ]
+  },
+  {
+   "photo": "غرفة نوم/IMG20211206115449.jpg",
+   "expected_kinds": [
+    "wardrobe"
+   ],
+   "conditions": [
+    "glare"
+   ],
+   "vision_s": 7.5,
+   "usable": true,
+   "kind": "wardrobe",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 2.2,
+   "model_3d_s": 0.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    2.2,
+    0.35,
+    2.2
+   ]
+  },
+  {
+   "photo": "غرفة أطفال/IMG20230120183142.jpg",
+   "expected_kinds": [],
+   "conditions": [
+    "low_light"
+   ],
+   "vision_s": 5.2,
+   "usable": false,
+   "kind": null,
+   "scene": "several_items",
+   "reason": "This photo shows several pieces. Upload one piece at a time.",
+   "width_m": null,
+   "success": true,
+   "stage": "refused"
+  },
+  {
+   "photo": "غرفة أطفال/٢٠١٩٠٧٢٥_١٥٠١٢٣.jpg",
+   "expected_kinds": [
+    "bed"
+   ],
+   "conditions": [
+    "low_light",
+    "cut_off"
+   ],
+   "vision_s": 3.8,
+   "usable": true,
+   "kind": "bed",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "model_3d_s": 0.0,
+   "success": false,
+   "stage": "bad_3d_size",
+   "error": "Fitted depth is 0.13 m. Try turning the model 90 degrees or giving a different width."
+  },
+  {
+   "photo": "غرفة أطفال/IMG20220627231331.jpg",
+   "expected_kinds": [],
+   "conditions": [
+    "normal"
+   ],
+   "vision_s": 4.4,
+   "usable": true,
+   "kind": "bed",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 1.6,
+   "success": false,
+   "stage": "wrongly_accepted"
+  },
+  {
+   "photo": "غرفة أطفال/٢٠٢٠١٠٠٣_٢٢٠٢١٤(0).jpg",
+   "expected_kinds": [
+    "wardrobe"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 3.4,
+   "usable": true,
+   "kind": "wardrobe",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 2.4,
+   "model_3d_s": 232.8,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    2.4,
+    0.52,
+    2.39
+   ]
+  },
+  {
+   "photo": "مطابخ/IMG20230128190850.jpg",
+   "expected_kinds": [
+    "bookshelf",
+    "wardrobe",
+    "dresser"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 4.8,
+   "usable": true,
+   "kind": "wardrobe",
+   "scene": "single_item",
+   "reason": null,
+   "width_m": 0.9,
+   "model_3d_s": 260.0,
+   "success": true,
+   "stage": "3d_ok",
+   "size_m": [
+    0.9,
+    0.29,
+    1.28
+   ]
+  },
+  {
+   "photo": "مطابخ/IMG20230127192224.jpg",
+   "expected_kinds": [
+    "bookshelf",
+    "wardrobe",
+    "dresser"
+   ],
+   "conditions": [
+    "low_light",
+    "clutter"
+   ],
+   "vision_s": 4.2,
+   "usable": false,
+   "kind": null,
+   "scene": "several_items",
+   "reason": "This photo shows several pieces. Upload one piece at a time.",
+   "width_m": null,
+   "success": false,
+   "stage": "refused:several_items"
+  },
+  {
+   "photo": "مطابخ/IMG20230404231110.jpg",
+   "expected_kinds": [],
+   "conditions": [
+    "clutter"
+   ],
+   "vision_s": 5.3,
+   "usable": false,
+   "kind": null,
+   "scene": "not_furniture",
+   "reason": "No furniture was found in this photo.",
+   "width_m": null,
+   "success": true,
+   "stage": "refused"
+  }
+ ]
+}
